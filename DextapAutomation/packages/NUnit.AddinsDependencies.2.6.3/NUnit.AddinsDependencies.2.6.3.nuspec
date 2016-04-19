@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NUnit.AddinsDependencies</id>
+    <version>2.6.3</version>
+    <authors>charliepoole</authors>
+    <owners>charliepoole</owners>
+    <licenseUrl>http://nunit.org/?p=license&amp;r=2.5.3</licenseUrl>
+    <projectUrl>http://nunit.org/index.php?p=download</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The minimal set of dependencies to produce NUnit extensions and addins.</description>
+    <copyright>Copyright © 2002-2009 Charlie Poole, Copyright © 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Copyright © 2000-2002 Philip A. Craig</copyright>
+    <tags>NUnit Addin plug-in extension extensibility unit test runner custom Testeroids</tags>
+  </metadata>
+</package>

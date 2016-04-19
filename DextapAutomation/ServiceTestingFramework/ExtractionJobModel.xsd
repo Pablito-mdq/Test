@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ExtractionJobModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ID" type="xs:int" nillable="true" maxOccurs="1"  default="0" />
+        <xs:element name="JobName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ProjectCode" type="xs:string"  nillable="true" maxOccurs="1" />
+        <xs:element name="DatabaseName" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="ExportType" type="xs:string"  nillable="true" maxOccurs="1"  default="DDF" />
+        <xs:element name="ExportVariables" type="xs:string" nillable="true" minOccurs="1" maxOccurs="1" />
+        <xs:element name="DBServer">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ServerType" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="OpCo">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Region">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Mdd">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Status" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="Results" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="Owner">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="1" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Password" type="xs:string" nillable="true"  minOccurs="0" maxOccurs="1" default="" />
+        <xs:element name="LastRun"  type="xs:string"  nillable="true" maxOccurs="1" />
+        <xs:element name="NextRun" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="Tags" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="QuotaLimit" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="WeekFilter" type="xs:string" nillable="true" maxOccurs="1" default="All" />
+        <xs:element name="AllOpenEnds" type="xs:boolean" nillable="true" maxOccurs="1" default="true" />
+        <xs:element name="RespondentType" type="xs:string" nillable="true" maxOccurs="1" default="Completes" />
+        <xs:element name="DataFilter" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="Query" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="FrequencyType" type="xs:string" nillable="true" maxOccurs="1" default="Inactive" />
+        <xs:element name="Timezone" type="xs:string" nillable="true" maxOccurs="1" />
+        <xs:element name="RunImmediately" type="xs:boolean" nillable="true"  maxOccurs="1"  default="false" />
+        <xs:element name="Archived" type="xs:boolean" nillable="true"  maxOccurs="1"  default="false" />
+        <xs:element name="ReportsOnly" type="xs:boolean" nillable="true"  maxOccurs="1"  default="false" />
+        <xs:element name="MDMVersion" type="xs:string" nillable="true" maxOccurs="1" default="All" />
+        <xs:element name="CopyLatestMdd" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="false" />
+        <xs:element name="ExportSampleTable" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="false" />
+        <xs:element name="ExportDau" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="true" />
+        <xs:element name="ExportQuotaTable" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="false" />
+        <xs:element name="DataView" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1" default="Default" />
+        <xs:element name="EndDate" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1" default="" />
+        <xs:element name="LegacyShell" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="false" />
+        <xs:element name="ExportLegacyShellVariables" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="false" />
+        <xs:element name="DataCutFilters" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataCutFilterModel" maxOccurs="20">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="ExtractionJobID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="Name" type="xs:string" maxOccurs="1" />
+                    <xs:element name="Filter" type="xs:string" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Emails" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmailModel"  maxOccurs="20">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="ExtractionJobID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="Address" type="xs:string" maxOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reports" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportModel" maxOccurs="4">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="ExtractionJobID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="ReportType" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ID"  type="xs:int" nillable="true" maxOccurs="1" />
+                          <xs:element name="Name" type="xs:string" nillable="true" maxOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OnNextCaseEventSection" type="xs:string" nillable="true" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Notifications" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NotificationModel" maxOccurs="20">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="ExtractionJobID" type="xs:int" nillable="true" maxOccurs="1" />
+                    <xs:element name="Name" type="xs:string" maxOccurs="1" />
+                    <xs:element name="ExtraData" type="xs:string" maxOccurs="1"  />
+                    <xs:element name="PostProcess" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1" default="true" />
+                    <xs:element name="Url" type="xs:string" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FrameworkConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <waiting>
+    <implicitly>90</implicitly>
+    <pageload>90</pageload>
+  </waiting>
+  <drivers>
+    <driver>
+      <name>Firefox</name>
+      <capabilities>
+      </capabilities>
+    </driver>
+    <driver>
+      <name>IE</name>
+      <capabilities>
+      </capabilities>
+    </driver>
+    <driver>
+      <name>Chrome</name>
+      <arguments>
+        <argument value="" />
+      </arguments>
+      <capabilities>
+        <capability name="proxy" value="" />
+      </capabilities>
+    </driver>
+  </drivers>
+</FrameworkConfig>
