@@ -53,7 +53,7 @@
     <Compile Include="Pages\MainHomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\AdminPage\AdminHomePage.cs" />
-    <Compile Include="Tests\DextapBaseTest.cs" />
+    <Compile Include="Tests\WorkStrideBaseTest.cs" />
     <Compile Include="Pages\EditProfilePage.cs" />
     <Compile Include="Pages\RewardsHomePage.cs" />
     <Compile Include="Pages\AdminPage\ProxyHomePage.cs" />

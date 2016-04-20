@@ -12,7 +12,7 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'ADMIN')]")]
         private IWebElement _lnkAdmin;
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/nomination')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'RECOGNIZE')]")]
         private IWebElement _lnkNomination;
 
         [FindsBy(How = How.Id, Using = "jobs_length")]
@@ -55,7 +55,9 @@ namespace SeleniumDemo.Pages
 
         public NominationHomePage NavigateToNomination()
         {
-            _lnkNomination.Click();
+            Synchronization.WaitForElementToBePresent(_lnkNomination);
+            if (_lnkNomination.Displayed)
+                _lnkNomination.Click();
             return NewPage<NominationHomePage>();
         }
     }

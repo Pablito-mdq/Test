@@ -62,7 +62,9 @@ namespace SeleniumDemo.Tests
             NominationHomePage nominationPage = home.NavigateToNomination();
             nominationPage.SearchEmployee("Joanna Copeland");
             nominationPage.SelectAward();
-            nominationPage.SelectValues().FillMsg().FillReason();
+            nominationPage.SelectValues().FillMsg().FillReason().ClickNext();
+            nominationPage.PrintReward().SendRecognition();
+            Assert.AreEqual("Success!",nominationPage.GetSuccesMsg(),"The recognition was not send successfully");
         }
 
         [Test]
