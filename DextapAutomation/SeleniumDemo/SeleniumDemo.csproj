@@ -62,6 +62,7 @@
     <Compile Include="Pages\NominationPage\NominationHomePage.cs" />
     <Compile Include="Pages\NominationPage\Step2.cs" />
     <Compile Include="Pages\PendingApprovals.cs" />
+    <Compile Include="Pages\Reports\AllAwards.cs" />
     <Compile Include="Pages\Textron\RecognitionSteps.cs" />
     <Compile Include="Pages\WorkStridePage.cs" />
     <Compile Include="Pages\MainHomePage.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Tests\MallTest.cs" />
     <Compile Include="Tests\Akron\NominationTests.cs" />
+    <Compile Include="Pages\Reports\ReportsPage.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />
     <Compile Include="Pages\EditProfilePage.cs" />

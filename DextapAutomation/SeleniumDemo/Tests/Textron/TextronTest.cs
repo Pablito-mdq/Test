@@ -1,9 +1,11 @@
-﻿using NUnit.Framework;
+﻿using System.ComponentModel.Design;
+using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.NominationPage;
+using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
@@ -151,12 +153,11 @@ namespace SeleniumDemo.Tests.Textron
                 Assert.IsTrue(home.IsPopUpRecognitionShow(), "Pop up recognition is not showing up");
                 PendingApprovals pending = home.ClickHereAwardPopUp();
                 Assert.AreEqual("Pending Approvals", pending.GetTitleMenu(), "Title is not pending approval");
-                pending.ApproveAward().ClickApprove();
+                pending.DeclineAward().ClickDeclined();
                 proxy = pending.ExitProxy();
-                home = proxy.LoginProxyAsuser().EnterUserName(proxy_name).ProxyToMainHomePage();
-                MyAwards awards = home.ClosePopUp().NavigateToMyAwards();
-                Assert.AreEqual(secondAward, awards.GetAwardName(1, 6), "The last award that someone gave you is not present");
-                awards.OpenDetailsAward(1, 7);
+                AllAwards allAwardsPage = proxy.NavigateToReports().clickAllAwards();
+                Assert.AreEqual(secondAward, allAwardsPage.GetAwardName(1, 5), "Award is not the expected");
+                Assert.AreEqual("Denied", allAwardsPage.GetStatus(1, 6), "Award was not Denied");
             }
         }
     }

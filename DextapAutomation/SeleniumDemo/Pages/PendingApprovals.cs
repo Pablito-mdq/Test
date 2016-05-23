@@ -13,6 +13,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//input[contains(@value,'Approve')]")]
         private IWebElement _btnApprove;
 
+        [FindsBy(How = How.XPath, Using = "//input[contains(@value,'Decline')]")]
+        private IWebElement _btnDecline;
+
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Exit Proxy')]")]
         private IWebElement _lnkExitProxy;
 
@@ -38,6 +41,12 @@ namespace SeleniumDemo.Pages
             ScrollTo(_lnkExitProxy);
             _lnkExitProxy.Click();
             return NewPage<AdminHomePage>();
+        }
+
+        public AwardDetailsPopUp DeclineAward()
+        {
+            _btnDecline.Click();
+            return NewPage<AwardDetailsPopUp>();
         }
     }
 }
