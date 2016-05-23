@@ -2,10 +2,6 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SeleniumDemo.Tests
 {
@@ -36,7 +32,7 @@ namespace SeleniumDemo.Tests
         private IWebElement CboOpCo;
 
         [FindsBy(How = How.Id, Using = "Region")]
-        private IWebElement CboRegion;
+        private IWebElement _cboRegion;
 
         [FindsBy(How = How.Id, Using = "First")]
         private IWebElement TxtFirstName;
@@ -87,13 +83,13 @@ namespace SeleniumDemo.Tests
 
         public EditProfilePage SelectRegion(string region)
         {
-            new SelectElement(CboRegion).SelectByText(region);
+            new SelectElement(_cboRegion).SelectByText(region);
             return this;
         }
 
         public bool AreFieldsCorrectEnable()
         {
-            if ((TxtFirstName.Enabled) && (TxtLastName.Enabled) && (CboOpCo.Enabled) && (CboRegion.Enabled))
+            if ((TxtFirstName.Enabled) && (TxtLastName.Enabled) && (CboOpCo.Enabled) && (_cboRegion.Enabled))
                 if ((TxtEmail.Enabled) && (CboTimeZones.Enabled))
                              return true;
             return false;
@@ -133,7 +129,7 @@ namespace SeleniumDemo.Tests
 
            public string GetRegion()
            {
-               return new SelectElement(CboRegion).SelectedOption.Text;
+               return new SelectElement(_cboRegion).SelectedOption.Text;
            }
 
            public string GetFirstName()

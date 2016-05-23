@@ -1,14 +1,11 @@
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
-using Protractor;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Threading;
+using OpenQA.Selenium;
+using Protractor;
 
 namespace WebDriverFramework.PageObject
 {
@@ -91,7 +88,7 @@ namespace WebDriverFramework.PageObject
                     int yDiff = rectangle.Bottom - previous.Bottom;
                     // Scroll
                     RunScript(String.Format("window.scrollBy({0}, {1})", xDiff, yDiff));
-                    System.Threading.Thread.Sleep(200);
+                    Thread.Sleep(200);
                 }
 
                 // Take Screenshot

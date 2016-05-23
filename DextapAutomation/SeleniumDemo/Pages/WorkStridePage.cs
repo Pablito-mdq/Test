@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebDriverFramework.PageObject;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages.AdminPage;
+using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Tests;
+using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages
 {
@@ -36,16 +31,28 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[@href='/Dextap/Mdd?Length=6']")]
         private IWebElement LnkDownloadMdd;
 
-        [FindsBy(How = How.XPath, Using = "//a[@href='/AlertHistory']")]
-        private IWebElement LnkAlertHistory;
-     
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/my_awards')]")]
+        private IWebElement _lnkMyAwards;
+
+        [FindsBy(How = How.XPath, Using = "//img[contains(@src,'company.png')]")]
+        private IWebElement _lnkHomePage;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'ADMIN')]")]
+        private IWebElement _lnkAdmin;
 
         public WorkStridePage(IWebDriver driver) : base(driver) { }
-        
-        public AdminHomePage NavigateNewJob ()
-          {
-              return NewPage<AdminHomePage>();
-          }
+
+       public MainHomePage NavigateToHomePage()
+       {
+          _lnkHomePage.Click();
+          return NewPage<MainHomePage>();
+       }
+
+       public AdminHomePage NavigateToAdminHomePage()
+       {
+           _lnkAdmin.Click();
+           return NewPage<AdminHomePage>();
+       }
         public EditProfilePage NavigateToolsProfile()
         {
             LnkTools.Click();
@@ -60,10 +67,13 @@ namespace SeleniumDemo.Pages
             _lnkNavigateReedem.Click();
             return NewPage<RewardsHomePage>();
         }
-        public bool ToolsOptions()
+
+        public MyAwards NavigateToMyAwards()
         {
-            LnkTools.Click();
-            return (LnkAlertHistory.Displayed && LnkDownloadMdd.Displayed && LnkProfile.Displayed);
+            Synchronization.WaitForElementToBePresent(_lnkMyAwards);
+            _lnkMyAwards.Click();
+            return NewPage<MyAwards>();
         }
+
     }
 }

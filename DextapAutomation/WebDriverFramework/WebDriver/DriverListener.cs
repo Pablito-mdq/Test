@@ -1,9 +1,9 @@
 ﻿
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Events;
 using System;
 using System.Drawing.Imaging;
 using log4net;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Events;
 
 namespace WebDriverFramework.WebDriver
 {

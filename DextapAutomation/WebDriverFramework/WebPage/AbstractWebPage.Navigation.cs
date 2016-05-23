@@ -1,5 +1,4 @@
 using OpenQA.Selenium;
-using System;
 
 namespace WebDriverFramework.PageObject
 {
@@ -49,6 +48,15 @@ namespace WebDriverFramework.PageObject
         protected void SwitchToWindow(string windowName)
         {
             WebDriver.SwitchTo().Window(windowName);
+        }
+
+        /// <summary>
+        /// Refresh the specified URL.
+        /// </summary>
+        /// <param name="url">URL to navigate to.</param>
+        public void Refresh()
+        {
+            WebDriver.Navigate().Refresh();
         }
     }
 }

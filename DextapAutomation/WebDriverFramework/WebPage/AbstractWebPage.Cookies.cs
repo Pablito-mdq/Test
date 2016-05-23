@@ -1,7 +1,5 @@
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 using System;
-using WebDriverFramework.PageObject.Internals;
+using OpenQA.Selenium;
 
 namespace WebDriverFramework.PageObject
 {

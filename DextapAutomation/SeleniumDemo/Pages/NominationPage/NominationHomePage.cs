@@ -1,9 +1,10 @@
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using SeleniumDemo.Pages;
+using SeleniumDemo.Pages.AdminPage;
+using SeleniumDemo.Tests.Pages;
 
 namespace SeleniumDemo.Pages.NominationPage
 {
@@ -15,60 +16,23 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.Name, Using = "employee-lookup")]
         private IWebElement _txtName;
 
-        [FindsBy(How = How.Id, Using = "reward-detail-form-25-MESSAGE")]
-        private IWebElement _txtMsg;
-
-        [FindsBy(How = How.Id, Using = "reward-detail-form-25-REASON")]
-        private IWebElement _txtReason;
-
         [FindsBy(How = How.Id, Using = "recog_PersonalizeImg2")]
         private IWebElement _imgRecognition2;
 
+        [FindsBy(How = How.XPath, Using = "//textarea[@name='REASON']")]
+        private IWebElement _txtReason;
+
         public NominationHomePage (IWebDriver driver) : base(driver) { }
 
-        public NominationHomePage SearchEmployee(string employee)
+        public Step2 SearchEmployeeFound(string employee)
         {
-            Synchronization.WaitForElementToBePresent(_txtName);
+            Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
             _txtName.SendKeys(employee);
-            Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@src,'http://demoassets.workstride.com/resources/companies/workstride/employeeUploads/default/profileDefault.jpg')]"));
-            FindElement(By.XPath("//img[contains(@src,'http://demoassets.workstride.com/resources/companies/workstride/employeeUploads/default/profileDefault.jpg')]")).Click();
-            return NewPage<NominationHomePage>();
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='searchSlider']/div/div/div/img")).Click();
+            return NewPage<Step2>();
         }
 
-        public NominationHomePage SelectAward()
-        {
-            IWebElement step2 = FindElement(By.Id("recogStep2"));
-            Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'Thank You')]"));
-            if (step2.Displayed)
-                FindElement(By.XPath("//h4[contains(.,'Thank You')]")).Click();
-            return NewPage<NominationHomePage>();
-        }
-
-        public NominationHomePage SelectValues()
-        {
-            FindElements(By.ClassName("radio")).First().Click();
-            return this;
-        }
-
-        public NominationHomePage FillMsg()
-        {
-            _txtMsg.SendKeys("test");
-            return this;
-        }
-
-        public NominationHomePage FillReason()
-        {
-            _txtReason.SendKeys("holahola");
-            return this;
-        }
-
-        public NominationHomePage ClickNext()
-        {
-            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]"));
-            FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
-            return NewPage<NominationHomePage>();
-        }
-
+        
         public NominationHomePage SelectRecognition()
         {
             _imgRecognition2 = FindElement(By.XPath("//*[@id='recog_PersonalizeImg2']/img"));
@@ -80,11 +44,18 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage PrintReward()
         {
-            FindElement(By.XPath("//h4[contains(.,'I want to print this award.')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@data-id,'PRINT')]")).Click();
             return NewPage<NominationHomePage>();
         }
 
-        public NominationHomePage SendRecognition()
+        public NominationHomePage EmailReward()
+        {
+            Synchronization.WaitForElementToBePresent
+                (By.XPath("//div[contains(@data-id,'EMAIL')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage ClickSendRecognition()
         {
             IWebElement send =
                 Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Send Recognition')]"));
@@ -98,6 +69,84 @@ namespace SeleniumDemo.Pages.NominationPage
             IWebElement success = FindElement(By.XPath("//h3[contains(.,'Success!')]"));
             Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Success!')]"));
             return success.Text;
+        }
+
+        public string GetErrorEmployeeMsg()
+        {
+            IWebElement error = FindElement(By.XPath("//div[contains(@class,'no-results')]"));
+            Synchronization.WaitForElementToBePresent(error);
+            return error.Text;
+        }
+
+        public NominationHomePage SearchEmployeeNotFound(string employee)
+        {
+             Synchronization.WaitForElementToBePresent(_txtName);
+            _txtName.SendKeys(employee);
+            return NewPage<NominationHomePage>();
+        }
+
+        public MainHomePage ClickFinish()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/welcome')]")).Click();
+            return NewPage<MainHomePage>();
+        }
+
+        public string GetDeliverLabel(string deliver)
+        {
+            IWebElement[] deliveroption = FindElements(By.ClassName("deliverySelection")).ToArray();
+            return deliver == "email" ? deliveroption[0].Text : deliveroption[1].Text;
+        }
+
+        public int GetCountEditLnk()
+        {
+            if (FindElement(By.XPath("//*[@id='recogStep3']/div[1]/span[2]"))!=null &&
+                (FindElement(By.XPath("//*[@id='recogStep2']/div[1]/span[2]")) != null))
+                return 2;
+            return 0;
+        }
+
+        public string GetReadyToSendMsg()
+        {
+            return FindElement(By.XPath("//h3[contains(.,'Ready to send?')]")).Text;
+        }
+
+        public string GetBtnFinishLabel()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Finish')]")).Text.ToUpper();
+        }
+
+        public string GetBtnRecognizOtherLabel()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/nomination')]")).Text.ToUpper();
+        }
+
+        public NominationHomePage DeliverType(string deliver)
+        {
+            return deliver == "Print" ? PrintReward() : EmailReward();
+        }
+
+        public AdminHomePage ExitProxy()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]")).Click();
+            return NewPage<AdminHomePage>();
+        }
+
+        public Step2 FillReason(string reason)
+        {
+            _txtReason.SendKeys(reason);
+            return NewPage<Step2>();
+        }
+
+        public NominationHomePage ClickNext()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]"));
+            FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public string GetAwardName(int p)
+        {
+            throw new NotImplementedException();
         }
     }
 }

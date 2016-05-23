@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 using WebDriverFramework.Factories;
 using WebDriverFramework.PageObject;
+using WebDriverFramework.WebPage;
 
 namespace WebDriverFramework.TestCase
 {
@@ -20,7 +19,7 @@ namespace WebDriverFramework.TestCase
             lock (Padlock)
             {
                 IWebDriver driver = factory.getDriverFor(browser);
-                InitialPage = (T)WebPage.WebPageActivator.Activate<T>(driver);
+                InitialPage = (T)WebPageActivator.Activate<T>(driver);
             }
         }
     }
@@ -33,7 +32,7 @@ namespace WebDriverFramework.TestCase
             lock (Padlock)
             {
                 IWebDriver driver = factory.getDriverWithAngularSupportFor(browser);
-                InitialPage = (T)WebPage.WebPageActivator.Activate<T>(driver);
+                InitialPage = (T)WebPageActivator.Activate<T>(driver);
             }
         }
     }

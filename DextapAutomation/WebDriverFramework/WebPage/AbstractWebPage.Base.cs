@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
 using WebDriverFramework.PageObject.Internals;
+using WebDriverFramework.WebPage;
 
 namespace WebDriverFramework.PageObject
 {
@@ -44,7 +44,7 @@ namespace WebDriverFramework.PageObject
         /// <returns>An instance of the specified Page Object</returns>
         protected T NewPage<T>() where T : AbstractWebPage
         {
-            return (T)WebPage.WebPageActivator.Activate<T>(WebDriver);
+            return (T)WebPageActivator.Activate<T>(WebDriver);
         }
 
         /// <summary>

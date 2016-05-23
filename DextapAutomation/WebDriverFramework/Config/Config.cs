@@ -1,11 +1,11 @@
-﻿using log4net.Config;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
-using System;
+﻿using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using log4net.Config;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using WebDriverFramework.WebDriver;
 
 namespace WebDriverFramework

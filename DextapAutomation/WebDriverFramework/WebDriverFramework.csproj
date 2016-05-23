@@ -110,6 +110,7 @@
     <Compile Include="WebPage\AbstractWebPage.Elements.cs" />
     <Compile Include="WebPage\AbstractWebPage.Scripting.cs" />
     <Compile Include="WebPage\AbstractWebPage.Cookies.cs" />
+    <Compile Include="WebPage\AbstractWebPage.TableElement.cs" />
     <Compile Include="WebPage\Keyboard.cs" />
     <Compile Include="WebPage\Mouse.cs" />
     <Compile Include="WebPage\Interactions.cs" />

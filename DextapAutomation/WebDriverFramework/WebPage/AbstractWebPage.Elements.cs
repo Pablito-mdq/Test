@@ -1,6 +1,7 @@
-using OpenQA.Selenium;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading;
+using OpenQA.Selenium;
 
 namespace WebDriverFramework.PageObject
 {
@@ -13,7 +14,15 @@ namespace WebDriverFramework.PageObject
         /// <returns>Instance of IWebElement, if found. Null otherwise.</returns>
         protected IWebElement FindElement(By locator)
         {
-            return Synchronization.WaitForElementToBePresent(locator);
+            try
+            {
+                return Synchronization.WaitForElementToBePresent(locator);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         /// <summary>

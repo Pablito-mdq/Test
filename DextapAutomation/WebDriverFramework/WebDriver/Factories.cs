@@ -1,13 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.PhantomJS;
 using OpenQA.Selenium.Remote;
 using Protractor;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
 using WebDriverFramework.Drivers;
 using WebDriverFramework.Interfaces;
 using WebDriverFramework.WebDriver;
@@ -118,6 +119,7 @@ namespace WebDriverFramework.Factories
 
             IWebDriver driver = (IWebDriver)new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory + @"\libs", options);
             driver.Manage().Window.Maximize();
+            //driver.Manage().Window.Size = new Size(400, 400);
             return driver;
         }
 
@@ -169,7 +171,7 @@ namespace WebDriverFramework.Factories
              * view context and go back to native portion of the app, call:
              * "mobile: leaveWebView" with execute_script() in RemoteWebDriver
              */
-            System.Collections.ObjectModel.ReadOnlyCollection<string> windows = driver.WindowHandles;
+            ReadOnlyCollection<string> windows = driver.WindowHandles;
             foreach (string window in windows)
             {
                 driver.SwitchTo().Window(window);

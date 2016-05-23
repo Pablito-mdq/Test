@@ -48,16 +48,41 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AwardData.cs" />
+    <Compile Include="Models\TestExecutionModel.cs" />
+    <Compile Include="Models\ProxyData.cs" />
+    <Compile Include="Pages\AwardDetailsPopUp.cs" />
+    <Compile Include="Pages\LeftMenu\DetailsAward.cs" />
+    <Compile Include="Pages\LeftMenu\GoToMall\CompanyGiftCard.cs" />
+    <Compile Include="Pages\LeftMenu\MyAwards.cs" />
+    <Compile Include="Pages\Login\ContactUs.cs" />
+    <Compile Include="Pages\Login\ForgotPassword.cs" />
+    <Compile Include="Pages\Login\Language.cs" />
+    <Compile Include="Pages\Login\Register.cs" />
     <Compile Include="Pages\NominationPage\NominationHomePage.cs" />
+    <Compile Include="Pages\NominationPage\Step2.cs" />
+    <Compile Include="Pages\PendingApprovals.cs" />
+    <Compile Include="Pages\Textron\RecognitionSteps.cs" />
     <Compile Include="Pages\WorkStridePage.cs" />
     <Compile Include="Pages\MainHomePage.cs" />
-    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\Login\LoginPage.cs" />
     <Compile Include="Pages\AdminPage\AdminHomePage.cs" />
+    <Compile Include="Tests\BAE\BaeTest.cs" />
+    <Compile Include="Pages\LeftMenu\GoToMall\GoToMallHomePage.cs" />
+    <Compile Include="Pages\Textron\MainHomePageFail.cs" />
+    <Compile Include="Tests\LoginPageTests.cs" />
+    <Compile Include="Tests\MallTest.cs" />
+    <Compile Include="Tests\Akron\NominationTests.cs" />
+    <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />
     <Compile Include="Pages\EditProfilePage.cs" />
     <Compile Include="Pages\RewardsHomePage.cs" />
     <Compile Include="Pages\AdminPage\ProxyHomePage.cs" />
-    <Compile Include="Tests\SampleTestSuite.cs" />
+    <Compile Include="Tests\HomePageTest.cs" />
+    <Compile Include="Utils\ConfigUtil.cs" />
+    <Compile Include="Utils\DataParser.cs" />
+    <Compile Include="Utils\DateUtils.cs" />
+    <Compile Include="Utils\SeleniumUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Gallio, Version=3.3.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
@@ -110,6 +135,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="ThoughtWorks.Selenium.Core, Version=2.43.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Selenium.RC.2.43.1\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
       <Private>True</Private>
@@ -127,7 +154,18 @@
       <Name>WebDriverFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\BAE\" />
+    <Folder Include="Pages\Sprint\" />
+    <Folder Include="Tests\Sprint\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="data.xml" />
+    <Content Include="Preconditions.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Label="DownloadChromeDriverBuildTask">
     <CoreBuildDependsOn>DownloadChromeDriver;$(CoreBuildDependsOn)</CoreBuildDependsOn>

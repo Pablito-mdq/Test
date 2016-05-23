@@ -1,8 +1,5 @@
+using System.Text.RegularExpressions;
 using MbUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace WebDriverFramework.Validations
 {
@@ -28,7 +25,7 @@ namespace WebDriverFramework.Validations
         /// <param name="pattern">The regex pattern to use</param>
         public static void StringsMatchesPattern(string actual, string pattern)
         {
-            Assert.IsTrue(System.Text.RegularExpressions.Regex.IsMatch(actual, pattern));
+            Assert.IsTrue(Regex.IsMatch(actual, pattern));
         }
 
     }

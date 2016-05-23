@@ -1,11 +1,8 @@
+using System;
+using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.UI;
-using Protractor;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Threading;
 using WebDriverFramework.WebDriver;
 
 namespace WebDriverFramework.PageObject.Internals
@@ -21,7 +18,7 @@ namespace WebDriverFramework.PageObject.Internals
         {
             this.WebDriver = driver;
             this.wait = new WebDriverWait(GetPlainDriver(WebDriver), Config.getDriverImplicitWaitTime());
-            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            wait.PollingInterval = TimeSpan.FromMilliseconds(450);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
         }
 
@@ -48,7 +45,7 @@ namespace WebDriverFramework.PageObject.Internals
         /// </summary>
         public IWebElement WaitForElementToBePresent(By locator)
         {
-            return wait.Until<IWebElement>(Expectations.ElementIsClickable(locator));
+           return  wait.Until<IWebElement>(Expectations.ElementIsClickable(locator));
         }
 
         public IList<IWebElement> WaitForElementsToBePresent(By locator)
