@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1025]C:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\SeleniumDemo.dll</TopNode>
+  <SelectedNode>[0-1025]C:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\SeleniumDemo.dll</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1025]C:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\SeleniumDemo.dll" Expanded="true" />
+    <Node UniqueName="[0-1026]SeleniumDemo" Expanded="true" />
+    <Node UniqueName="[0-1027]SeleniumDemo.Tests" Expanded="true" />
+    <Node UniqueName="[0-1028]SeleniumDemo.Tests.BAE" Expanded="true" />
+    <Node UniqueName="[0-1002]SeleniumDemo.Tests.BAE.SampleTestSuite" Expanded="true" />
+    <Node UniqueName="[0-1023]SeleniumDemo.Tests.HomePageTest" Expanded="true" />
+    <Node UniqueName="[0-1007]SeleniumDemo.Tests.LoginPageTests" Expanded="true" />
+    <Node UniqueName="[0-1014]SeleniumDemo.Tests.MallTest" Expanded="true" />
+    <Node UniqueName="[0-1017]SeleniumDemo.Tests.NominationTests" Expanded="true" />
+    <Node UniqueName="[0-1029]SeleniumDemo.Tests.Textron" Expanded="true" />
+    <Node UniqueName="[0-1020]SeleniumDemo.Tests.Textron.TextronTest" Expanded="true" />
+    <Node UniqueName="[0-1000]SeleniumDemo.Tests.WorkStrideBaseTest&lt;T&gt;" Expanded="true" />
+  </Nodes>
+</VisualState>

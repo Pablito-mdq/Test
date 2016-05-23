@@ -1,0 +1,17 @@
+<Constants>
+		  <Name>Nancy Delgado</Name>
+		  <ProxyName>Timothy Davis</ProxyName>
+		  <AwardName>Gift Certificate or Cash</AwardName>
+		  <SecondAwardName>Appreciation Award</SecondAwardName>
+		  <PopulationImpact>Less than 10</PopulationImpact>
+		  <FinancialImpact>Not Applicable or Less Than $10,000</FinancialImpact>
+		  <BussinesImpact>Employee or Team</BussinesImpact>
+		  <AmountValue>$25.00</AmountValue>
+		  <Value></Value>
+		  <ProjectTask>06990</ProjectTask>
+		  <Objectives>Improve Processes</Objectives>
+		  <Message>QA Test Submission</Message>
+		  <Reason>QA Test Submission</Reason>
+		  <Sendtype>Email</Sendtype>
+          <ApprovalName>Linda Napoli</ApprovalName>
+ </Constants>

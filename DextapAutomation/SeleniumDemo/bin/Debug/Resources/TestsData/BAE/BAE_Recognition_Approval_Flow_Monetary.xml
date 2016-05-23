@@ -1,0 +1,14 @@
+<Constants>
+		  <Name>Amy Gordon</Name>
+		  <ProxyName>Vern Klein</ProxyName>
+		  <AwardName>Pioneer Award</AwardName>
+		  <PopulationImpact>Less than 10</PopulationImpact>
+		  <FinancialImpact>Less than $10,000</FinancialImpact>
+		  <BussinesImpact>Employee or team</BussinesImpact>
+		  <AmountValueInt>25</AmountValueInt>
+		  <Value></Value>
+		  <Message>QA Monetary Test Submission</Message>
+		  <CompanyValue>Bold</CompanyValue>
+		  <Sendtype>Email</Sendtype>
+          <ApprovalName>Kari Coronado</ApprovalName>
+ </Constants>

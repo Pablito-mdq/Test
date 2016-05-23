@@ -1,0 +1,10 @@
+<Constants>
+		  <Name>Smith</Name>
+		  <AwardName>Appreciation Award</AwardName>
+		  <AmountValue></AmountValue>
+		  <Value>Teamwork</Value>
+		  <Impact></Impact>
+		  <Message>probando</Message>
+		  <Reason>holaasdfasdf</Reason>
+		  <Sendtype>Email</Sendtype>
+ </Constants>

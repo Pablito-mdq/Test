@@ -1,0 +1,8 @@
+<Constants>
+	<BAE>http://qabaeimpact.workstride.net/login</BAE>
+	<Sprint>http://qairecognize.workstride.net/login</Sprint>
+	<Akron>http://qaakrongeneralcelebrations.workstride.net</Akron>
+	<TRU>http://qatruplusawards.workstride.net/login?nosso=1</TRU>
+	<Textron>http://qarewardstextron.workstride.net/login?nosso=1</Textron>
+	<WorkStride>http://demo.workstride.com</WorkStride>
+</Constants>
