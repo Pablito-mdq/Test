@@ -5,6 +5,6 @@
 	<Test Name="Join_Now" Execution="Yes"/>
 	<Test Name="Forgot_Password" Execution="Yes"/>
         <Test Name="Contact_Us" Execution="Yes"/>
-        <Test Name="Recognize_Someone" Execution="Yes"/>
-	<Test Name="Recognition_Flow_Non_Monetary" Execution="Yes"/>
+        <Test Name="Akron_Recognize_Someone" Execution="Yes"/>
+	<Test Name="Akron_Recognition_Flow_Non_Monetary" Execution="Yes"/>
 </TestList>

@@ -17,11 +17,11 @@ namespace SeleniumDemo.Tests
         /// <summary>
         /// 
         /// </summary>
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("Akron")]
         //WS-218
         [Test]
-        public void Recognize_Someone()
+        public void Akron_Recognize_Someone()
         {
             if (!DataParser.ReturnExecution("Recognize_Someone"))
                 Assert.Ignore();
@@ -59,11 +59,11 @@ namespace SeleniumDemo.Tests
                     "Button finish its not correct write");
             }
         }
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("Akron")]
         //WS-956
         [Test]
-        public void Recognition_Flow_Non_Monetary()
+        public void Akron_Recognition_Flow_Non_Monetary()
         {
             if (!DataParser.ReturnExecution("Recognition_Flow_Non_Monetary"))
                 Assert.Ignore();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -80,6 +81,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage SearchEmployeeNotFound(string employee)
         {
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'suggestTitle')]"));
              Synchronization.WaitForElementToBePresent(_txtName);
             _txtName.SendKeys(employee);
             return NewPage<NominationHomePage>();

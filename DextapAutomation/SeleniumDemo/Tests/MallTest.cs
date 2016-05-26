@@ -5,7 +5,7 @@ using SeleniumDemo.Pages.LeftMenu.GoToMall;
 
 namespace SeleniumDemo.Tests
 {
-    [Category("Smoke")]
+    [Category("Regression")]
     [Category("BAE")]
     [Category("Cleveland")]
     class MallTest : WorkStrideBaseTest<LoginPage>

@@ -7,11 +7,12 @@
 		<Test Name="Join_Now" Execution="Yes"/>//WS-917
 		<Test Name="Forgot_Password" Execution="Yes"/>//WS-917
         <Test Name="Contact_Us" Execution="Yes"/>//WS-917
+		<Test Name="Recognition_Employee_Not_Found" Execution="Yes"/>//WS-917
         <Test Name="Recognize_Someone" Execution="No"/>//WS-218
 		<Test Name="Recognition_Flow_Non_Monetary" Execution="No"/>//WS-956
 		<Test Name="Enhanced_Proxy" Execution="No"/>//WS-317
 		<Test Name="Recognition_Approval_Flow_Non_Monetary" Execution="No"/>//WS-921
 		<Test Name="Recognition_Standard_Approval_Monetary_Flow" Execution="Yes"/>//WS-927
-<Test Name="TEXTRON_Recognition_Standard_Denial_Monetary_Flow" Execution="Yes"/>//WS-933
+		<Test Name="TEXTRON_Recognition_Standard_Denial_Monetary_Flow" Execution="Yes"/>//WS-933
 
 </TestList>

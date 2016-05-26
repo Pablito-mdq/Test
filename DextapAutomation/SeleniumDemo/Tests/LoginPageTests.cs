@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.Login;
+using SeleniumDemo.Pages.NominationPage;
 
 namespace SeleniumDemo.Tests
 {
@@ -8,7 +9,7 @@ namespace SeleniumDemo.Tests
     {
         public const string file ="Resources\\Enhanced_Proxy.xml";
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Validate_Login_Generic()
@@ -25,7 +26,7 @@ namespace SeleniumDemo.Tests
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Login()
@@ -41,7 +42,7 @@ namespace SeleniumDemo.Tests
         }
 
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Fail_Login()
@@ -57,7 +58,7 @@ namespace SeleniumDemo.Tests
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Join_Now()
@@ -75,7 +76,7 @@ namespace SeleniumDemo.Tests
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Forgot_Password()
@@ -93,7 +94,7 @@ namespace SeleniumDemo.Tests
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         //WS-917
         [Test]
         public void Contact_Us()
@@ -130,19 +131,21 @@ namespace SeleniumDemo.Tests
                 Assert.AreEqual("SUBMIT", contactUsPage.GetSubmitBtnTxt(), "The label is not correct");
             }
         }
-
-
-
-
-        /*
-        [Category("Smoke")]
+        
+        [Category("Regression")]
         [Test]
-        public void EmployeeNotFound()
+        public void Recognition_Employee_Not_Found()
         {
-            NominationHomePage nominationPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
-            nominationPage.SearchEmployeeNotFound("Chuck Norris");
-            Assert.AreEqual("We can't find anyone matching your search.", nominationPage.GetErrorEmployeeMsg(), "The user exists or the msg is not the correct");
+            if (!Utils.DataParser.ReturnExecution("Recognition_Employee_Not_Found"))
+                Assert.Ignore();
+            else
+            {
+                NominationHomePage nominationPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
+                nominationPage.SearchEmployeeNotFound("Chuck Norris");
+                Assert.AreEqual("Unfortunately we are unable to provide any suggestions at this time. Try using the field above to look-up a colleague.", nominationPage.GetErrorEmployeeMsg(),
+                    "The user exists or the msg  not the correct");
+            }
         }
-        */
+        
     }
 }

@@ -18,11 +18,11 @@ namespace SeleniumDemo.Tests.BAE
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
         
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("BAE" )]
         //WS-317
         [Test]
-        public void Enhanced_Proxy()
+        public void BAE_Enhanced_Proxy()
         {
             if (!Utils.DataParser.ReturnExecution("Enhanced_Proxy"))
                 Assert.Ignore();
@@ -40,7 +40,7 @@ namespace SeleniumDemo.Tests.BAE
             }
         }
         
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("BAE")]
         //WS-917
         [Test]
@@ -59,11 +59,11 @@ namespace SeleniumDemo.Tests.BAE
 
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("BAE")]
         //WS-921
         [Test]
-        public void Recognition_Approval_Flow_Non_Monetary()
+        public void BAE_Recognition_Approval_Flow_Non_Monetary()
         {
             if (!Utils.DataParser.ReturnExecution("Recognition_Approval_Flow_Non_Monetary"))
                 Assert.Ignore();
@@ -111,7 +111,7 @@ namespace SeleniumDemo.Tests.BAE
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("BAE")]
         //WS-924
         [Test]

@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
@@ -17,7 +16,9 @@ namespace SeleniumDemo.Tests.Textron
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
-        [Category("Smoke")]
+        [Category("Regression")]
+        [Category("Textron")]
+
         //WS-917
         [Test]
         public void Fail_Login_Textron()
@@ -35,7 +36,7 @@ namespace SeleniumDemo.Tests.Textron
             }
         }
 
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("Textron")]
         //WS-927
         [Test]
@@ -99,7 +100,7 @@ namespace SeleniumDemo.Tests.Textron
         }
 
 
-        [Category("Smoke")]
+        [Category("Regression")]
         [Category("Textron")]
         //WS-927
         [Test]

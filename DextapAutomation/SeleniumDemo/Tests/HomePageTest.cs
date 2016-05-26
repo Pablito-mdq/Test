@@ -6,7 +6,7 @@ namespace SeleniumDemo.Tests
     /// <summary>
     /// 
     /// </summary>
-    [Category("Smoke")]
+    [Category("Regression")]
     class HomePageTest : WorkStrideBaseTest<LoginPage>
     {
 

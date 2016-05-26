@@ -18,7 +18,7 @@ namespace WebDriverFramework.PageObject.Internals
         {
             this.WebDriver = driver;
             this.wait = new WebDriverWait(GetPlainDriver(WebDriver), Config.getDriverImplicitWaitTime());
-            wait.PollingInterval = TimeSpan.FromMilliseconds(450);
+            wait.PollingInterval = TimeSpan.FromMilliseconds(350);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
         }
 
@@ -92,7 +92,5 @@ namespace WebDriverFramework.PageObject.Internals
             Func<IWebElement, Boolean> isNotPresent = delegate(IWebElement e) { return e == null || !e.Displayed; };
             new DefaultWait<IWebElement>(element).Until(isNotPresent);
         }
-
-
     }
 }
