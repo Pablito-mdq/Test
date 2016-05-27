@@ -8,6 +8,7 @@
         <Test Name="Contact_Us" Execution="Yes"/>//WS-917
 		<Test Name="BAE_Enhanced_Proxy" Execution="Yes"/>WS-317
         <Test Name="Akron_Recognition_Approval_Flow_Non_Monetary" Execution="Yes"/>//WS-921
+		<Test Name="BAE_Recognition_Approval_Flow_Non_Monetary" Execution="Yes"/>//WS-921
 		<Test Name="BAE_Recognition_Approval_Flow_Monetary" Execution="Yes"/>//WS-924
 </TestList>
 

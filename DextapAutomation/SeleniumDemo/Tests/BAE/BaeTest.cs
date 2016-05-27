@@ -65,11 +65,11 @@ namespace SeleniumDemo.Tests.BAE
         [Test]
         public void BAE_Recognition_Approval_Flow_Non_Monetary()
         {
-            if (!Utils.DataParser.ReturnExecution("Recognition_Approval_Flow_Non_Monetary"))
+            if (!Utils.DataParser.ReturnExecution("BAE_Recognition_Approval_Flow_Non_Monetary"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Recognition_Approval_Flow_Non_Monetary.xml";
+                _file = "Resources\\TestsData\\" + client + "\\BAE_Recognition_Approval_Flow_Non_Monetary.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),

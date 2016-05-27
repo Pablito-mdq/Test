@@ -68,11 +68,11 @@ namespace SeleniumDemo.Tests
             else
             {
                 Register registerPage = InitialPage.Go().ClickJoinNow();
-                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "email field is not available");
-                Assert.IsTrue(registerPage.IsLastNameAvailable(), "continue button is not available");
-                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "email field is not available");
+                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
+                Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
+                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "ID field is not available");
                 Assert.IsTrue(registerPage.IsEmailFieldAvailable(), "email field is not available");
-                Assert.IsTrue(registerPage.IRegisterBtnAvailable(), "email field is not available");
+                Assert.IsTrue(registerPage.IRegisterBtnAvailable(), "Register button is not available");
             }
         }
 

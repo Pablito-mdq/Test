@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
@@ -51,6 +52,7 @@ namespace SeleniumDemo.Pages
         public MyAwards NavigateToMyAwards()
         {
             Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            Thread.Sleep(2500);
             Synchronization.WaitForElementToBePresent(_lnkMyAwards);
             _lnkMyAwards.Click();
             return NewPage<MyAwards>();
