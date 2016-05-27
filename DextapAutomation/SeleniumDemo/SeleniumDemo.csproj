@@ -73,7 +73,7 @@
     <Compile Include="Pages\Textron\MainHomePageFail.cs" />
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Tests\MallTest.cs" />
-    <Compile Include="Tests\Akron\NominationTests.cs" />
+    <Compile Include="Tests\Akron\AkronTests.cs" />
     <Compile Include="Pages\Reports\ReportsPage.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />

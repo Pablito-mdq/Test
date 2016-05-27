@@ -50,6 +50,7 @@ namespace SeleniumDemo.Pages
 
         public MyAwards NavigateToMyAwards()
         {
+            Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             Synchronization.WaitForElementToBePresent(_lnkMyAwards);
             _lnkMyAwards.Click();
             return NewPage<MyAwards>();

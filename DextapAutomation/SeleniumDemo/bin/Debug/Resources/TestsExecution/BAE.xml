@@ -2,11 +2,12 @@
         <Test Name="Validate_Login_BAE" Execution="Yes"/>//WS-917
 		<Test Name="Login" Execution="Yes"/>//WS-917
 		<Test Name="Fail_Login" Execution="Yes"/>//WS-917
+		<Test Name="Recognition_Employee_Not_Found" Execution="Yes"/>//WS-917
 		<Test Name="Join_Now" Execution="Yes"/>//WS-917
 		<Test Name="Forgot_Password" Execution="Yes"/>//WS-917
         <Test Name="Contact_Us" Execution="Yes"/>//WS-917
-		<Test Name="Enhanced_Proxy" Execution="Yes"/>WS-317
-        <Test Name="Recognition_Approval_Flow_Non_Monetary" Execution="Yes"/>//WS-921
+		<Test Name="BAE_Enhanced_Proxy" Execution="Yes"/>WS-317
+        <Test Name="Akron_Recognition_Approval_Flow_Non_Monetary" Execution="Yes"/>//WS-921
 		<Test Name="BAE_Recognition_Approval_Flow_Monetary" Execution="Yes"/>//WS-924
 </TestList>
 

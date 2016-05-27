@@ -72,9 +72,9 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public Step2 SelectValueOfAward(string amount)
         {
-            Synchronization.WaitForElementToBePresent(_cboValue);
-            if (amount!="")
-                new SelectElement(_cboValue).SelectByText(amount);
+            if (_cboValue!=null)
+               if (amount!="")
+                 new SelectElement(_cboValue).SelectByText(amount);
             return this;
         }
 

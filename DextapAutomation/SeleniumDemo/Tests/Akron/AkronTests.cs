@@ -23,11 +23,11 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Akron_Recognize_Someone()
         {
-            if (!DataParser.ReturnExecution("Recognize_Someone"))
+            if (!DataParser.ReturnExecution("Akron_Recognize_Someone"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\"+client+"\\Recognize_Someone.xml";
+                _file = "Resources\\TestsData\\" + client + "\\Akron_Recognize_Someone.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
@@ -65,11 +65,11 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Akron_Recognition_Flow_Non_Monetary()
         {
-            if (!DataParser.ReturnExecution("Recognition_Flow_Non_Monetary"))
+            if (!DataParser.ReturnExecution("Akron_Recognition_Flow_Non_Monetary"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Recognition_Flow_Non_Monetary.xml";
+                _file = "Resources\\TestsData\\" + client + "\\Akron_Recognition_Flow_Non_Monetary.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),

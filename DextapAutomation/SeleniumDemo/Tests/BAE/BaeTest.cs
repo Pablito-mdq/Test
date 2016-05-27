@@ -24,11 +24,11 @@ namespace SeleniumDemo.Tests.BAE
         [Test]
         public void BAE_Enhanced_Proxy()
         {
-            if (!Utils.DataParser.ReturnExecution("Enhanced_Proxy"))
+            if (!Utils.DataParser.ReturnExecution("BAE_Enhanced_Proxy"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Enhanced_Proxy.xml";
+                _file = "Resources\\TestsData\\" + client + "\\BAE_Enhanced_Proxy.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();

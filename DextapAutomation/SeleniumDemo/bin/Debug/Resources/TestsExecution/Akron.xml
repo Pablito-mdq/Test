@@ -1,10 +1,11 @@
 <TestList>
         <Test Name="Validate_Login_Generic" Execution="Yes"/>
+		<Test Name="BAE_Enhanced_Proxy" Execution="Yes"/>
         <Test Name="Login" Execution="Yes"/>
-	<Test Name="Fail_Login" Execution="Yes"/>
-	<Test Name="Join_Now" Execution="Yes"/>
-	<Test Name="Forgot_Password" Execution="Yes"/>
+		<Test Name="Fail_Login" Execution="Yes"/>
+		<Test Name="Join_Now" Execution="No"/>
+		<Test Name="Forgot_Password" Execution="Yes"/>
         <Test Name="Contact_Us" Execution="Yes"/>
         <Test Name="Akron_Recognize_Someone" Execution="Yes"/>
-	<Test Name="Akron_Recognition_Flow_Non_Monetary" Execution="Yes"/>
+		<Test Name="Akron_Recognition_Flow_Non_Monetary" Execution="Yes"/>
 </TestList>
