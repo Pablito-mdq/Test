@@ -12,7 +12,7 @@
 		<Test Name="Recognition_Flow_Non_Monetary" Execution="No"/>//WS-956
 		<Test Name="Enhanced_Proxy" Execution="No"/>//WS-317
 		<Test Name="Recognition_Approval_Flow_Non_Monetary" Execution="No"/>//WS-921
-		<Test Name="Recognition_Standard_Approval_Monetary_Flow" Execution="Yes"/>//WS-927
-		<Test Name="TEXTRON_Recognition_Standard_Denial_Monetary_Flow" Execution="Yes"/>//WS-933
+		<Test Name="Textron_Recognition_Standard_Approval_Monetary_Flow" Execution="Yes"/>//WS-927
+		<Test Name="Textron_Recognition_Standard_Denial_Monetary_Flow" Execution="Yes"/>//WS-933
 
 </TestList>

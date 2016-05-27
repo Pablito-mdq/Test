@@ -20382,3 +20382,397 @@ OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate elemen
 2016-05-27 11:09:09,160 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='MESSAGE']
 2016-05-27 11:09:09,294 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='REASON']
 2016-05-27 11:09:09,331 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='REASON']
+2016-05-27 12:18:20,840 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:18:24,880 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:18:24,885 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:18:24,922 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:18:25,177 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:18:25,205 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:18:25,332 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:18:25,367 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:18:25,404 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:18:25,498 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:18:46,657 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:18:46,682 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:18:46,716 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:18:48,036 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:18:48,040 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:18:48,071 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:18:48,112 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:18:48,799 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:18:48,801 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:18:48,842 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:18:50,150 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:18:50,174 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:18:50,209 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:18:52,006 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:18:52,620 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,675 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,696 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,753 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,774 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,800 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,813 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,823 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:18:52,857 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'RECOGNIZE'
+2016-05-27 12:18:54,551 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'RECOGNIZE'
+2016-05-27 12:18:55,824 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Name: employee-lookup
+2016-05-27 12:18:55,834 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Name: employee-lookup
+2016-05-27 12:27:40,886 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:27:44,916 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:27:44,920 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:27:44,956 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:27:45,125 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:27:45,151 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:27:45,268 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:27:45,290 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:27:45,320 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:27:45,389 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:28:18,302 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:28:22,012 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:28:22,016 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:28:22,055 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:28:22,281 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:28:22,338 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:28:22,450 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:28:22,482 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:28:22,521 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:28:33,104 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:28:54,460 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:28:54,483 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:28:54,518 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:28:55,895 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:28:55,900 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:28:55,943 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:28:55,987 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:28:56,662 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:28:56,666 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:28:56,713 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:28:57,782 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:28:57,810 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:28:57,839 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:28:59,142 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:28:59,356 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,580 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,620 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,659 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,670 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,689 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,702 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,714 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:28:59,778 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'RECOGNIZE'
+2016-05-27 12:29:01,480 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'RECOGNIZE'
+2016-05-27 12:29:02,752 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Name: employee-lookup
+2016-05-27 12:29:02,764 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Name: employee-lookup
+2016-05-27 12:30:03,734 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,404 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,478 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,498 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,532 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,544 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,561 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,574 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:30:04,577 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:30:04,604 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:30:04,643 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element '$25.00'
+2016-05-27 12:30:04,698 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element '$25.00'
+2016-05-27 12:30:04,702 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:30:04,732 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:30:06,472 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:30:06,504 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:30:06,531 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:30:06,617 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:30:06,767 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:30:06,809 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:30:07,016 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='REASON']
+2016-05-27 12:30:07,186 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='REASON']
+2016-05-27 12:30:12,517 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:30:12,592 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:30:12,633 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:30:13,289 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:30:13,292 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:30:13,394 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:30:14,484 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:30:14,510 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:30:14,539 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:30:16,182 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:30:18,587 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@value,'Approve')]
+2016-05-27 12:30:18,640 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@value,'Approve')]
+2016-05-27 12:30:18,669 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:30:18,732 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:30:18,737 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:30:18,947 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:30:19,153 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:30:19,197 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:30:19,281 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'APPROVE'
+2016-05-27 12:30:19,361 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'APPROVE'
+2016-05-27 12:30:40,820 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,852 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,872 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,882 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,892 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,904 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,919 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,936 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:30:40,961 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Exit Proxy'
+2016-05-27 12:30:42,189 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Exit Proxy'
+2016-05-27 12:30:42,274 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:30:42,314 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:30:42,359 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:30:43,071 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:30:43,077 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:30:43,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:30:44,308 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:30:44,345 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:30:44,376 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:30:45,823 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:31:08,425 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,452 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,473 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,505 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,515 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,528 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:31:08,562 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ' My Awards'
+2016-05-27 12:31:10,447 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ' My Awards'
+2016-05-27 12:33:51,870 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:33:56,464 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:33:56,475 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:33:56,547 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:33:56,793 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:33:56,819 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:33:56,943 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:33:56,978 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:33:57,007 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:34:06,550 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:34:26,988 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:34:27,008 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:34:27,043 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:34:28,314 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:34:28,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:34:28,378 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:34:28,413 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:34:29,171 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:34:29,174 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:34:29,220 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:34:30,342 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:34:30,388 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:34:30,421 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:34:31,816 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:34:31,993 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,017 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,035 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,235 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,244 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,258 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,267 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,278 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:34:32,382 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'RECOGNIZE'
+2016-05-27 12:34:33,867 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'RECOGNIZE'
+2016-05-27 12:34:35,210 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Name: employee-lookup
+2016-05-27 12:34:35,223 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Name: employee-lookup
+2016-05-27 12:36:33,477 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:36:38,073 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:36:38,086 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:36:38,155 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:36:38,409 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:36:38,435 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:36:38,554 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:36:38,578 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:36:38,613 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:36:50,799 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:11,377 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:37:11,398 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:37:11,430 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:37:12,733 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:37:12,735 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:37:12,778 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:37:12,816 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:37:13,482 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:37:13,485 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:37:13,518 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:37:14,631 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:37:14,655 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:37:14,685 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:37:16,003 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:16,188 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,329 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,346 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,368 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,578 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,595 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,609 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,625 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:37:16,686 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'RECOGNIZE'
+2016-05-27 12:37:18,336 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'RECOGNIZE'
+2016-05-27 12:37:19,612 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Name: employee-lookup
+2016-05-27 12:37:19,637 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Name: employee-lookup
+2016-05-27 12:37:24,785 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,066 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,085 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,094 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,101 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,112 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,129 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,215 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:37:25,218 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:37:25,253 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:37:25,419 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:37:25,652 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:25,657 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:37:25,700 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:37:26,860 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:37:26,917 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:37:26,950 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:37:27,018 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:27,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:37:27,180 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:37:27,440 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='REASON']
+2016-05-27 12:37:27,528 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='REASON']
+2016-05-27 12:37:32,019 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:37:32,050 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:37:32,145 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:37:32,841 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:37:32,843 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:37:32,874 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:37:33,988 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:37:34,010 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:37:34,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:37:35,339 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:37,406 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@value,'Approve')]
+2016-05-27 12:37:37,430 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@value,'Approve')]
+2016-05-27 12:37:37,453 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:37:37,511 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:37:37,514 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:37:37,796 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:37:38,062 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:37:38,077 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:37:38,153 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'APPROVE'
+2016-05-27 12:37:38,292 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'APPROVE'
+2016-05-27 12:37:59,645 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,674 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,691 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,701 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,710 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,720 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,736 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,752 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:37:59,775 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Exit Proxy'
+2016-05-27 12:38:00,912 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Exit Proxy'
+2016-05-27 12:38:00,916 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:38:00,956 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:38:00,996 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:38:01,617 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:38:01,619 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:38:01,666 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:38:02,773 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:38:02,800 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:38:02,823 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:38:04,512 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:38:26,519 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,545 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,563 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,597 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,605 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,617 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/my_awards')]
+2016-05-27 12:38:26,651 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ' My Awards'
+2016-05-27 12:38:28,264 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ' My Awards'
+2016-05-27 12:40:01,827 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:40:06,377 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-05-27 12:40:06,385 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-05-27 12:40:06,460 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-05-27 12:40:06,722 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-05-27 12:40:06,749 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-05-27 12:40:06,884 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-05-27 12:40:06,917 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-05-27 12:40:06,948 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:40:19,119 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:40:39,866 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:40:39,893 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-05-27 12:40:39,952 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:40:41,266 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:40:41,267 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:40:41,318 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:40:41,360 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:40:42,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:40:42,050 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:40:42,093 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:40:43,203 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:40:43,226 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:40:43,257 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:40:44,552 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:40:44,797 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:44,821 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:44,842 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,106 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,114 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,133 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,141 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,156 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'RECOGNIZE')]
+2016-05-27 12:40:45,266 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'RECOGNIZE'
+2016-05-27 12:40:46,735 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'RECOGNIZE'
+2016-05-27 12:40:48,036 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Name: employee-lookup
+2016-05-27 12:40:48,049 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Name: employee-lookup
+2016-05-27 12:40:53,400 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,672 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,682 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,697 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,708 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,949 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:53,967 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:54,171 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //select[contains(@name,'AMOUNT')]
+2016-05-27 12:40:54,173 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:40:54,227 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "$25.00"]
+2016-05-27 12:40:54,274 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element '$25.00'
+2016-05-27 12:40:54,346 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element '$25.00'
+2016-05-27 12:40:54,349 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:40:54,378 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'PROJECT_TASK')]
+2016-05-27 12:40:56,018 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:40:56,078 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]
+2016-05-27 12:40:56,107 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:40:56,179 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:40:56,319 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:40:56,380 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='MESSAGE']
+2016-05-27 12:40:56,689 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //textarea[@name='REASON']
+2016-05-27 12:40:56,729 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //textarea[@name='REASON']
+2016-05-27 12:41:01,372 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-05-27 12:41:01,423 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-05-27 12:41:01,457 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-05-27 12:41:02,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-05-27 12:41:02,157 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-05-27 12:41:02,249 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-05-27 12:41:03,362 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-05-27 12:41:03,388 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-05-27 12:41:03,419 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:41:04,779 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:41:07,001 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@value,'Decline')]
+2016-05-27 12:41:07,027 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@value,'Decline')]
+2016-05-27 12:41:07,059 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-05-27 12:41:07,144 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-05-27 12:41:07,147 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:41:07,372 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:41:07,527 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:41:07,651 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
+2016-05-27 12:41:07,680 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'DECLINE'
+2016-05-27 12:41:07,828 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'DECLINE'
+2016-05-27 12:41:29,006 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,030 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,047 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,065 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,073 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,091 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,112 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,123 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Exit Proxy')]
+2016-05-27 12:41:29,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Exit Proxy'
+2016-05-27 12:41:30,336 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Exit Proxy'
+2016-05-27 12:41:30,340 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(@href,'/report/awards')]
+2016-05-27 12:41:30,387 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(@href,'/report/awards')]
+2016-05-27 12:41:30,433 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'REPORTS'
+2016-05-27 12:41:31,684 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'REPORTS'
+2016-05-27 12:41:37,368 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,395 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,413 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,444 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,454 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,467 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'All Awards')]
+2016-05-27 12:41:37,501 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ' All Awards'
+2016-05-27 12:41:38,341 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ' All Awards'

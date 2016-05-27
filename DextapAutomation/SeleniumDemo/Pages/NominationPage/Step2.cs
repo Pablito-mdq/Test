@@ -38,7 +38,7 @@ namespace SeleniumDemo.Pages.NominationPage
         {
             IWebElement step2 = Synchronization.WaitForElementToBePresent(By.Id("recogStep2"));
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award)));
-            if (step2.Displayed)
+            if ((step2.Displayed) && (FindElement(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Displayed))
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Click();
             return NewPage<Step2>();
         }

@@ -40,13 +40,13 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         //WS-927
         [Test]
-        public void Recognition_Standard_Approval_Monetary_Flow()
+        public void Textron_Recognition_Standard_Approval_Monetary_Flow()
         {
-            if (!DataParser.ReturnExecution("Recognition_Standard_Approval_Monetary_Flow"))
+            if (!DataParser.ReturnExecution("Textron_Recognition_Standard_Approval_Monetary_Flow"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Recognition_Standard_Approval_Monetary_Flow.xml";
+                _file = "Resources\\TestsData\\" + client + "\\Textron_Recognition_Standard_Approval_Monetary_Flow.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
@@ -104,13 +104,13 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         //WS-927
         [Test]
-        public void TEXTRON_Recognition_Standard_Denial_Monetary_Flow()
+        public void Textron_Recognition_Standard_Denial_Monetary_Flow()
         {
-            if (!DataParser.ReturnExecution("TEXTRON_Recognition_Standard_Denial_Monetary_Flow"))
+            if (!DataParser.ReturnExecution("Textron_Recognition_Standard_Denial_Monetary_Flow"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\TEXTRON_Recognition_Standard_Denial_Monetary_Flow.xml";
+                _file = "Resources\\TestsData\\" + client + "\\Textron_Recognition_Standard_Denial_Monetary_Flow.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
