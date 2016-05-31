@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SeleniumDemo.Models;
 using SeleniumDemo.Utils;
 using WebDriverFramework;
 using WebDriverFramework.PageObject;

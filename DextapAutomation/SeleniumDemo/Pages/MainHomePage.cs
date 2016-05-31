@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 
@@ -12,6 +11,9 @@ namespace SeleniumDemo.Pages
     {
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'RECOGNIZE')]")]
         private IWebElement _lnkNomination;
+        
+        [FindsBy(How = How.XPath, Using = "//li[contains(.,'RECOGNIZE')]")]
+        private IWebElement _lnkNominationSprint;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'javascript:void(0);')]")]
         private IWebElement _lnkDisplayOpt;
@@ -117,6 +119,14 @@ namespace SeleniumDemo.Pages
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Click Here')]")).Click();
             return NewPage<PendingApprovals>();
+        }
+
+        public NominationHomePage NavigateToNominationSprint()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkNominationSprint);
+            if (_lnkNominationSprint.Displayed)
+                _lnkNominationSprint.Click();
+            return NewPage<NominationHomePage>();
         }
     }
 }

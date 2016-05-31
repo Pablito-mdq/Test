@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;

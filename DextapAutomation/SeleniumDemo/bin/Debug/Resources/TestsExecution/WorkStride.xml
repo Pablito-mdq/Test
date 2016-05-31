@@ -7,7 +7,6 @@
 		<Test Name="Forgot_Password" Execution="Yes"/>//WS-917
         <Test Name="Contact_Us" Execution="Yes"/>//WS-917
 		<Test Name="Recognition_Employee_Not_Found" Execution="Yes"/>//WS-917
-        <Test Name="Recognize_Someone" Execution="No"/>//WS-218
-		<Test Name="Recognition_Flow_Non_Monetary" Execution="No"/>//WS-956
-		<Test Name="Enhanced_Proxy" Execution="No"/>//WS-317
+		<Test Name="WorkStride_Add_Product_to_Cart" Execution="Yes"/>//WS-65
+		<Test Name="WorkStride_Search_Filters" Execution="Yes"/>//WS-57
 </TestList>

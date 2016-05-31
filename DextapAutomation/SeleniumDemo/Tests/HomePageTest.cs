@@ -14,7 +14,7 @@ namespace SeleniumDemo.Tests
         /// WS_XXX
         /// </summary>
         /// 
-
+        /*
         [Test]
         public void WS_120()
         {
@@ -43,6 +43,6 @@ namespace SeleniumDemo.Tests
                     "The user exists or the msg is not the correct");
                 Assert.IsTrue(mainPage.IDatePickerAvailable(), "Date picker is not available");
             }
-        }
+        }*/
     }
 }

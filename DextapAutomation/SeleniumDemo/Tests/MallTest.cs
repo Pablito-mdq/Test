@@ -1,7 +1,5 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.LeftMenu.GoToMall;
 
 namespace SeleniumDemo.Tests
 {
@@ -10,10 +8,15 @@ namespace SeleniumDemo.Tests
     [Category("Cleveland")]
     class MallTest : WorkStrideBaseTest<LoginPage>
     {
-
+        /*
         [Test]
-        public void WS_65()
+        //WS-65
+        public void WorkStride_Search_Filters()
         {
+          if (!Utils.DataParser.ReturnExecution("WorkStride_Search_Filters"))
+                Assert.Ignore();
+            elseWorkStride_Search_Filters
+            {
             LoginPage loginPage = InitialPage.Go().Logon();
             MainHomePage menuPage = loginPage.ClickLogin();
             GoToMallHomePage mallPage = menuPage.NavigateToMall();
@@ -52,11 +55,17 @@ namespace SeleniumDemo.Tests
             Assert.AreEqual("  Sports and Fitness", mallPage.GetFilterChkTypeByCategory(29), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Toys and Games", mallPage.GetFilterChkTypeByCategory(30), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Travel & Entertainment", mallPage.GetFilterChkTypeByCategory(31), "The category to filter it's wrong labeled");
+         }
         }
-
-        [Test] 
-        public void WS_57()
+        /*
+        [Test]
+        //WS-57
+        public void WorkStride_Add_Product_to_Cart()
         {
+           if (!Utils.DataParser.ReturnExecution("WorkStride_Add_Product_to_Cart"))
+                Assert.Ignore();
+            else
+            {
             string name = "Foot Locker", deliver = "email";
             GoToMallHomePage mallPage = InitialPage.Go().Logon().ClickLogin().NavigateToMall();
             CompanyGiftCard giftCardPage = mallPage.SearchCompany(name).SelectCompany();
@@ -66,6 +75,7 @@ namespace SeleniumDemo.Tests
             Assert.AreEqual("10",giftCardPage.GetAmount(),"10 is not the default amount");
             giftCardPage.ClickPlusAmount().ClickPlusAmount().ClickPlusAmount();
             Assert.IsTrue(giftCardPage.IsQtyAvailable(),"Quantity field is available");
-        }
+          }
+        }*/
     }
 }

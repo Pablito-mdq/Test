@@ -1,14 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Serialization;
+﻿using System.Xml.Linq;
 using System.Xml.XPath;
-using Gallio.Model.Isolation;
-using NUnit.Framework;
-using SeleniumDemo.Models;
 
 namespace SeleniumDemo.Utils
 {

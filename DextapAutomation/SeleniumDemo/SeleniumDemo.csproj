@@ -75,6 +75,7 @@
     <Compile Include="Tests\MallTest.cs" />
     <Compile Include="Tests\Akron\AkronTests.cs" />
     <Compile Include="Pages\Reports\ReportsPage.cs" />
+    <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />
     <Compile Include="Pages\EditProfilePage.cs" />
@@ -159,7 +160,6 @@
   <ItemGroup>
     <Folder Include="Pages\BAE\" />
     <Folder Include="Pages\Sprint\" />
-    <Folder Include="Tests\Sprint\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config.xml">

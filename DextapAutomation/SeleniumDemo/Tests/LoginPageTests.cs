@@ -2,6 +2,7 @@
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
+using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests
 {
@@ -14,7 +15,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Validate_Login_Generic()
         {
-            if (!Utils.DataParser.ReturnExecution("Validate_Login_Generic"))
+            if (!DataParser.ReturnExecution("Validate_Login_Generic"))
                 Assert.Ignore();
             else
             {
@@ -31,7 +32,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Login()
         {
-            if (!Utils.DataParser.ReturnExecution("Login"))
+            if (!DataParser.ReturnExecution("Login"))
                 Assert.Ignore();
             else
             {
@@ -47,7 +48,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Fail_Login()
         {
-            if (!Utils.DataParser.ReturnExecution("Fail_Login"))
+            if (!DataParser.ReturnExecution("Fail_Login"))
                 Assert.Ignore();
             else
             {
@@ -63,7 +64,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Join_Now()
         {
-            if (!Utils.DataParser.ReturnExecution("Join_Now"))
+            if (!DataParser.ReturnExecution("Join_Now"))
                 Assert.Ignore();
             else
             {
@@ -81,7 +82,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Forgot_Password()
         {
-            if (!Utils.DataParser.ReturnExecution("Forgot_Password"))
+            if (!DataParser.ReturnExecution("Forgot_Password"))
                 Assert.Ignore();
             else
             {
@@ -99,7 +100,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Contact_Us()
         {
-            if (!Utils.DataParser.ReturnExecution("Contact_Us"))
+            if (!DataParser.ReturnExecution("Contact_Us"))
                 Assert.Ignore();
             else
             {
@@ -136,7 +137,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Recognition_Employee_Not_Found()
         {
-            if (!Utils.DataParser.ReturnExecution("Recognition_Employee_Not_Found"))
+            if (!DataParser.ReturnExecution("Recognition_Employee_Not_Found"))
                 Assert.Ignore();
             else
             {

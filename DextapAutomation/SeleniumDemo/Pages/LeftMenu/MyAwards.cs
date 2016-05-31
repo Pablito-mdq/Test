@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Events;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using WebDriverFramework.WebPage;
 
 namespace SeleniumDemo.Pages.LeftMenu
 {

@@ -24,7 +24,7 @@ namespace SeleniumDemo.Tests.BAE
         [Test]
         public void BAE_Enhanced_Proxy()
         {
-            if (!Utils.DataParser.ReturnExecution("BAE_Enhanced_Proxy"))
+            if (!DataParser.ReturnExecution("BAE_Enhanced_Proxy"))
                 Assert.Ignore();
             else
             {
@@ -46,7 +46,7 @@ namespace SeleniumDemo.Tests.BAE
         [Test]
         public void Validate_Login_BAE()
         {
-            if (!Utils.DataParser.ReturnExecution("Validate_Login_BAE"))
+            if (!DataParser.ReturnExecution("Validate_Login_BAE"))
                 Assert.Ignore();
             else
             {
@@ -65,7 +65,7 @@ namespace SeleniumDemo.Tests.BAE
         [Test]
         public void BAE_Recognition_Approval_Flow_Non_Monetary()
         {
-            if (!Utils.DataParser.ReturnExecution("BAE_Recognition_Approval_Flow_Non_Monetary"))
+            if (!DataParser.ReturnExecution("BAE_Recognition_Approval_Flow_Non_Monetary"))
                 Assert.Ignore();
             else
             {

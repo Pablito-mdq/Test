@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.Login;
+using SeleniumDemo.Utils;
 using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages
@@ -32,27 +32,30 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//label[contains(@for,'password')]")]
         private IWebElement _lblPassword;
 
+        [FindsBy(How = How.Id, Using = "companyId")]
+        private IWebElement _txtCompnayId;
+
 
         public LoginPage(IWebDriver driver) : base(driver){}
 
         public LoginPage Go()
         {
-            string client = SeleniumDemo.Utils.ConfigUtil.ImportClient("Resources\\Config.xml");
+            string client = ConfigUtil.ImportClient("Resources\\Config.xml");
             Navigate(client != ""
-                ? string.Format("{0}", SeleniumDemo.Utils.ConfigUtil.ImportConfigURL("Resources\\Url.xml", client))
-                : SeleniumDemo.Utils.ConfigUtil.ImportConfigURL("Resources\\Url.xml", "WorkStride"));
+                ? string.Format("{0}", ConfigUtil.ImportConfigURL("Resources\\Url.xml", client))
+                : ConfigUtil.ImportConfigURL("Resources\\Url.xml", "WorkStride"));
             return this;
         }
 
         public LoginPage EnterUsername()
         {
-            _txtUsername.SendKeys(SeleniumDemo.Utils.ConfigUtil.ImportConfigUsername("Resources\\Config.xml"));
+            _txtUsername.SendKeys(ConfigUtil.ImportConfigUsername("Resources\\Config.xml"));
             return this;
         }
 
         public LoginPage EnterPassword()
         {
-            _txtPassword.SendKeys(SeleniumDemo.Utils.ConfigUtil.ImportConfigPassword("Resources\\Config.xml"));
+            _txtPassword.SendKeys(ConfigUtil.ImportConfigPassword("Resources\\Config.xml"));
             return this;
         }
 
@@ -183,6 +186,12 @@ namespace SeleniumDemo.Pages
         public LoginPage ClickLoginTextron()
         {
             FindElement(By.XPath("//input[@id='submit_button']")).Click();
+            return this;
+        }
+
+        public LoginPage EnterId()
+        {
+            _txtCompnayId.SendKeys("474");
             return this;
         }
     }

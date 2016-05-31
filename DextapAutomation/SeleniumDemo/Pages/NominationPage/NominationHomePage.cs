@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages.AdminPage;
-using SeleniumDemo.Tests.Pages;
 
 namespace SeleniumDemo.Pages.NominationPage
 {
@@ -149,6 +146,39 @@ namespace SeleniumDemo.Pages.NominationPage
         public string GetAwardName(int p)
         {
             throw new NotImplementedException();
+        }
+
+        public NominationHomePage SelectRecipientType(string type)
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'Suggestions')]"));
+            IWebElement[] recipient =
+                Synchronization.WaitForElementsToBePresent(By.XPath("//span[contains(@class,'recipient-select-text')]"))
+                    .ToArray();
+            if (recipient[0].Displayed)
+              if (type == "single")
+                recipient[0].Click();
+              else
+                if (type == "multiple")
+                    recipient[1].Click();
+                else
+                    recipient[2].Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage SearchEmployeeFoundMultiple(string user)
+        {
+            IWebElement element = Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user)));
+            if (element.Displayed)
+                element.Click();
+          return NewPage<NominationHomePage>();
+
+        }
+
+        public Step2 ClickNextStep2()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]"));
+            FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
+            return NewPage<Step2>();
         }
     }
 }
