@@ -10,7 +10,7 @@ namespace SeleniumDemo.Tests.Sprint
     {
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-
+/*
         [Category("Regression")]
         [Category("Sprint")]
 
@@ -54,6 +54,6 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("RECOGNIZE", recognitionPage.GetBtnRecognizOtherLabel(),
                     "Button finish its not correct write");
             }
-        }
+        }*/
     }
 }

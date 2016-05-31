@@ -180,5 +180,12 @@ namespace SeleniumDemo.Pages.NominationPage
             FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
             return NewPage<Step2>();
         }
+
+        public NominationHomePage SelectSubAwardType()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//h4[@class='ecard-edit-heading']"));
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Business')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
     }
 }
