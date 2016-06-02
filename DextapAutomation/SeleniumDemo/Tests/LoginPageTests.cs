@@ -8,14 +8,14 @@ namespace SeleniumDemo.Tests
 {
     class LoginPageTests : WorkStrideBaseTest<LoginPage>
     {
-        public const string file ="Resources\\Enhanced_Proxy.xml";
 
         [Category("Regression")]
+        [Category("WorkStride")]
         //WS-917
         [Test]
-        public void Validate_Login_Generic()
+        public void WS_1044()
         {
-            if (!DataParser.ReturnExecution("Validate_Login_Generic"))
+            if (!DataParser.ReturnExecution("WS_1044"))
                 Assert.Ignore();
             else
             {
@@ -24,31 +24,19 @@ namespace SeleniumDemo.Tests
                 Assert.AreEqual("Password", loginPage.GetPasswordTitleGeneric(), "title is not Password");
                 Assert.IsTrue(loginPage.IsUsernameFieldAvl(), "username field is not available");
                 Assert.IsTrue(loginPage.IsPasswordFieldAvl(), "password field is not available");
-            }
-        }
-
-        [Category("Regression")]
-        //WS-917
-        [Test]
-        public void Login()
-        {
-            if (!DataParser.ReturnExecution("Login"))
-                Assert.Ignore();
-            else
-            {
-                LoginPage loginPage = InitialPage.Go().Logon();
+                loginPage.Logon();
                 MainHomePage myJobs = loginPage.ClickLogin();
                 Assert.IsTrue(loginPage.Imlogin(), "You are not login");
             }
         }
 
-
         [Category("Regression")]
+        [Category("WorkStride")]
         //WS-917
         [Test]
-        public void Fail_Login()
+        public void WS_1045()
         {
-            if (!DataParser.ReturnExecution("Fail_Login"))
+            if (!DataParser.ReturnExecution("WS_1045"))
                 Assert.Ignore();
             else
             {
@@ -60,11 +48,12 @@ namespace SeleniumDemo.Tests
         }
 
         [Category("Regression")]
+        [Category("WorkStride")]
         //WS-917
         [Test]
-        public void Join_Now()
+        public void WS_1047()
         {
-            if (!DataParser.ReturnExecution("Join_Now"))
+            if (!DataParser.ReturnExecution("WS_1047"))
                 Assert.Ignore();
             else
             {
@@ -78,11 +67,12 @@ namespace SeleniumDemo.Tests
         }
 
         [Category("Regression")]
+        [Category("WorkStride")]
         //WS-917
         [Test]
-        public void Forgot_Password()
+        public void WS_1046()
         {
-            if (!DataParser.ReturnExecution("Forgot_Password"))
+            if (!DataParser.ReturnExecution("WS_1046"))
                 Assert.Ignore();
             else
             {
@@ -96,11 +86,12 @@ namespace SeleniumDemo.Tests
         }
 
         [Category("Regression")]
+        [Category("WorkStride")]
         //WS-917
         [Test]
-        public void Contact_Us()
+        public void WS_1048()
         {
-            if (!DataParser.ReturnExecution("Contact_Us"))
+            if (!DataParser.ReturnExecution("WS_1048"))
                 Assert.Ignore();
             else
             {
@@ -132,8 +123,9 @@ namespace SeleniumDemo.Tests
                 Assert.AreEqual("SUBMIT", contactUsPage.GetSubmitBtnTxt(), "The label is not correct");
             }
         }
-        
+        /*
         [Category("Regression")]
+         * [Category("WorkStride")]
         [Test]
         public void Recognition_Employee_Not_Found()
         {
@@ -146,7 +138,7 @@ namespace SeleniumDemo.Tests
                 Assert.AreEqual("Unfortunately we are unable to provide any suggestions at this time. Try using the field above to look-up a colleague.", nominationPage.GetErrorEmployeeMsg(),
                     "The user exists or the msg  not the correct");
             }
-        }
-        
+        }*/
+
     }
 }

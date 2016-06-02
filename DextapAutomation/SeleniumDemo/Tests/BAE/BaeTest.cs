@@ -22,13 +22,13 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE" )]
         //WS-317
         [Test]
-        public void BAE_Enhanced_Proxy()
+        public void WS_317()
         {
-            if (!DataParser.ReturnExecution("BAE_Enhanced_Proxy"))
+            if (!DataParser.ReturnExecution("WS_317"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\BAE_Enhanced_Proxy.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_317.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -44,9 +44,9 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-917
         [Test]
-        public void Validate_Login_BAE()
+        public void WS_1044_BAE()
         {
-            if (!DataParser.ReturnExecution("Validate_Login_BAE"))
+            if (!DataParser.ReturnExecution("WS_1044_BAE"))
                 Assert.Ignore();
             else
             {
@@ -63,13 +63,13 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-921
         [Test]
-        public void BAE_Recognition_Approval_Flow_Non_Monetary()
+        public void WS_921()
         {
-            if (!DataParser.ReturnExecution("BAE_Recognition_Approval_Flow_Non_Monetary"))
+            if (!DataParser.ReturnExecution("WS_921"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\BAE_Recognition_Approval_Flow_Non_Monetary.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_921.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
@@ -115,13 +115,13 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-924
         [Test]
-        public void BAE_Recognition_Approval_Flow_Monetary()
+        public void WS_924()
         {
-            if (!DataParser.ReturnExecution("BAE_Recognition_Approval_Flow_Monetary"))
+            if (!DataParser.ReturnExecution("WS_924"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\BAE_Recognition_Approval_Flow_Monetary.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_924.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     secondAward = AwardData.GetSecondAwardName(_file),

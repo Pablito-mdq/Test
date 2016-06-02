@@ -1,12 +1,8 @@
 <TestList>
-        <Test Name="Validate_Login_Generic" Execution="Yes"/>//WS-917
-        <Test Name="Validate_Login_BAE" Execution="No"/>//WS-917
-        <Test Name="Login" Execution="Yes"/>//WS-917
-		<Test Name="Fail_Login" Execution="Yes"/>//WS-917
-		<Test Name="Join_Now" Execution="Yes"/>//WS-917
-		<Test Name="Forgot_Password" Execution="Yes"/>//WS-917
-        <Test Name="Contact_Us" Execution="Yes"/>//WS-917
-		<Test Name="Recognition_Employee_Not_Found" Execution="Yes"/>//WS-917
-		<Test Name="WorkStride_Add_Product_to_Cart" Execution="Yes"/>//WS-65
-		<Test Name="WorkStride_Search_Filters" Execution="Yes"/>//WS-57
+        <Test Name="WS_1044_BAE" Execution="No"/>//WS-917
+        <Test Name="WS_1044" Execution="Yes"/>
+		<Test Name="WS_1045" Execution="Yes"/>
+		<Test Name="WS_1047" Execution="Yes"/>
+		<Test Name="WS_1046" Execution="Yes"/>
+        <Test Name="WS_1048" Execution="Yes"/>
 </TestList>

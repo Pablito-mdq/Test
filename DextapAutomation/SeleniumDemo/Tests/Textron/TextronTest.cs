@@ -18,12 +18,11 @@ namespace SeleniumDemo.Tests.Textron
 
         [Category("Regression")]
         [Category("Textron")]
-
         //WS-917
         [Test]
-        public void Fail_Login_Textron()
+        public void WS_1045_Textron()
         {
-            if (!DataParser.ReturnExecution("Fail_Login_Textron"))
+            if (!DataParser.ReturnExecution("WS_1045_Textron"))
                 Assert.Ignore();
             else
             {
@@ -40,13 +39,13 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         //WS-927
         [Test]
-        public void Textron_Recognition_Standard_Approval_Monetary_Flow()
+        public void WS_927()
         {
-            if (!DataParser.ReturnExecution("Textron_Recognition_Standard_Approval_Monetary_Flow"))
+            if (!DataParser.ReturnExecution("WS_927"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Textron_Recognition_Standard_Approval_Monetary_Flow.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_927.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
@@ -102,15 +101,15 @@ namespace SeleniumDemo.Tests.Textron
 
         [Category("Regression")]
         [Category("Textron")]
-        //WS-927
+        
         [Test]
-        public void Textron_Recognition_Standard_Denial_Monetary_Flow()
+        public void WS_933()
         {
-            if (!DataParser.ReturnExecution("Textron_Recognition_Standard_Denial_Monetary_Flow"))
+            if (!DataParser.ReturnExecution("WS_933"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Textron_Recognition_Standard_Denial_Monetary_Flow.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_933.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
@@ -159,6 +158,65 @@ namespace SeleniumDemo.Tests.Textron
                 AllAwards allAwardsPage = proxy.NavigateToReports().clickAllAwards();
                 Assert.AreEqual(secondAward, allAwardsPage.GetAwardName(1, 5), "Award is not the expected");
                 Assert.AreEqual("Denied", allAwardsPage.GetStatus(1, 6), "Award was not Denied");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Textron")]
+        
+        [Test]
+        public void WS_951()
+        {
+            if (!DataParser.ReturnExecution("WS_951"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_951.xml";
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
+                    populationImpact = AwardData.GetAwardPopulationImpact(_file),
+                    financialImpact = AwardData.GetAwardFinancialImpact(_file),
+                    bussinesImpact = AwardData.GetAwardBussinesImpact(_file),
+                    amount = AwardData.GetAwardAmountValue(_file), objetives = AwardData.GetAwardObjetives(_file),
+                    printype = AwardData.GetAwardDeliverType(_file),
+                    msg = AwardData.GetAwardMessage(_file), projectTask = AwardData.GetAwardProjectTask(_file),
+                    reason = AwardData.GetAwardReason(_file),
+                proxy_name = ProxyData.GetProxyUserName(_file),
+                approval_name = AwardData.GetApprovalUserName(_file);
+                ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
+                    .LoginProxyAsuser().EnterUserName(user);
+                MainHomePage home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + user, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Step2 step2 = home.NavigateToNomination()
+                    .SearchEmployeeFound(proxy_name)
+                    .SelectAward(award)
+                    .SelectValues(populationImpact)
+                    .SelectValues(financialImpact)
+                    .SelectValues(bussinesImpact)
+                    .ClickNextSameStep();
+                Assert.AreEqual("Appreciation Award", step2.GetAwardName("Appreciation Award"), "Award is not the same as expected");
+                Assert.AreEqual("Honors Award", step2.GetAwardName("Honors Award"), "Award is not the same as expected");
+                Assert.AreEqual("Excellence Award", step2.GetAwardName("Excellence Award"), "Award is not the same as expected");
+                Assert.AreEqual("Distinction Award", step2.GetAwardName("Distinction Award"), "Award is not the same as expected");
+                NominationHomePage recognitionPage = step2.SelectSecondAward(secondAward).SelectValueOfAward(amount)
+                    .SelectProjectTask(projectTask)
+                    .CheckProjectApproval()
+                    .SelectValues(objetives)
+                    .FillMsg(msg)
+                    .FillReason(reason)
+                    .ClickNext();
+                recognitionPage.DeliverType(printype);
+                Assert.AreEqual(2, recognitionPage.GetCountEditLnk(), "Edit links are not two");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+                AdminHomePage proxy = recognitionPage.ExitProxy();
+                home = proxy.LoginProxyAsuser().EnterUserName(approval_name).ProxyToMainHomePage();
+                Assert.IsTrue(home.IsPopUpRecognitionShow(), "Pop up recognition is not showing up");
+                PendingApprovals change = home.ClickHereAwardPopUp();
+                Assert.AreEqual("Pending Approvals", change.GetTitleMenu(), "Title is not pending approval");
+                change.ChangeAward().ChangeValue().ClickUpgrade();
+                Assert.AreEqual("Pending Approvals", change.GetTitleMenu(), "Title is not pending approval");
             }
         }
     }

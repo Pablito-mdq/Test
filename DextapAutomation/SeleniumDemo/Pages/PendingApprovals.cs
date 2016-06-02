@@ -15,8 +15,8 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Exit Proxy')]")]
         private IWebElement _lnkExitProxy;
 
-        [FindsBy(How = How.Id, Using = "Mdd")]
-        private IWebElement TxtMddName;
+        [FindsBy(How = How.XPath, Using = "//input[contains(@value,'Change')]")]
+        private IWebElement _btnChange;
 
         public PendingApprovals(IWebDriver driver) : base(driver) { }
 
@@ -43,6 +43,18 @@ namespace SeleniumDemo.Pages
         {
             _btnDecline.Click();
             return NewPage<AwardDetailsPopUp>();
+        }
+
+        public AwardDetailsPopUp ChangeAward()
+        {
+            _btnChange.Click();
+            return NewPage<AwardDetailsPopUp>();
+        }
+
+        public string GetStatusMsg()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Pending Approvals')]"));
+            return Synchronization.WaitForElementToBePresent(By.XPath("//td[contains(@class,'alignCenter approval-response-message')]")).Text;
         }
     }
 }

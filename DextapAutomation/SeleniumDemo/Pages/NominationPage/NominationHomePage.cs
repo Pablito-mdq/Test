@@ -20,6 +20,9 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.XPath, Using = "//textarea[@name='REASON']")]
         private IWebElement _txtReason;
 
+        [FindsBy(How = How.Id, Using = "ccUserLookupInput")]
+        private IWebElement _txtCCEmail;
+
         public NominationHomePage (IWebDriver driver) : base(driver) { }
 
         public Step2 SearchEmployeeFound(string employee)
@@ -48,6 +51,8 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage EmailReward()
         {
+            Synchronization.WaitForElementToBePresent
+                (By.XPath("//div[contains(@data-id,'EMAIL')]"));
             Synchronization.WaitForElementToBePresent
                 (By.XPath("//div[contains(@data-id,'EMAIL')]")).Click();
             return NewPage<NominationHomePage>();
@@ -143,11 +148,6 @@ namespace SeleniumDemo.Pages.NominationPage
             return NewPage<NominationHomePage>();
         }
 
-        public string GetAwardName(int p)
-        {
-            throw new NotImplementedException();
-        }
-
         public NominationHomePage SelectRecipientType(string type)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'Suggestions')]"));
@@ -181,11 +181,28 @@ namespace SeleniumDemo.Pages.NominationPage
             return NewPage<Step2>();
         }
 
-        public NominationHomePage SelectSubAwardType()
+        public NominationHomePage SelectSubAwardType(string type,string type2)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//h4[@class='ecard-edit-heading']"));
-            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Business')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]",type))).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]", type2))).Click();
             return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage FillEditCardEditor(string message)
+        {
+            IWebElement msg = Synchronization.WaitForElementToBePresent(
+                By.XPath("//textarea[contains(@ng-model,'recognize.ecard.content[textarea.name]')]"));
+            msg.SendKeys(message);
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage EnterUserCCEmail(string ccEmail)
+        {
+            Synchronization.WaitForElementToBePresent(_txtCCEmail);
+            _txtCCEmail.SendKeys(ccEmail);
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'typeahead-user-name')]")).Click();
+            return this;
         }
     }
 }

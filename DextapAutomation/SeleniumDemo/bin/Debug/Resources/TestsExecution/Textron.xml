@@ -1,18 +1,16 @@
 <TestList>
-        <Test Name="Validate_Login_Generic" Execution="Yes"/>//WS-917
-		<Test Name="Validate_Login_BAE" Execution="No"/>//WS-917
-		<Test Name="Fail_Login_Textron" Execution="Yes"/>//WS-917
-        <Test Name="Login" Execution="Yes"/>//WS-917
-		<Test Name="Fail_Login" Execution="No"/>//WS-917
-		<Test Name="Join_Now" Execution="Yes"/>//WS-917
-		<Test Name="Forgot_Password" Execution="Yes"/>//WS-917
-        <Test Name="Contact_Us" Execution="Yes"/>//WS-917
-		<Test Name="Recognition_Employee_Not_Found" Execution="Yes"/>//WS-917
-        <Test Name="Recognize_Someone" Execution="No"/>//WS-218
-		<Test Name="Recognition_Flow_Non_Monetary" Execution="No"/>//WS-956
-		<Test Name="Enhanced_Proxy" Execution="No"/>//WS-317
-		<Test Name="Recognition_Approval_Flow_Non_Monetary" Execution="No"/>//WS-921
-		<Test Name="Textron_Recognition_Standard_Approval_Monetary_Flow" Execution="Yes"/>//WS-927
-		<Test Name="Textron_Recognition_Standard_Denial_Monetary_Flow" Execution="Yes"/>//WS-933
-
+        <Test Name="WS_1044_BAE" Execution="No"/>
+		<Test Name="WS_1045_Textron" Execution="Yes"/>
+        <Test Name="WS_1044" Execution="Yes"/>
+		<Test Name="WS_1045" Execution="No"/>
+		<Test Name="WS_1047" Execution="Yes"/>
+		<Test Name="WS_1046" Execution="Yes"/>
+        <Test Name="WS_1048" Execution="Yes"/>
+		<Test Name="WS_218" Execution="No"/>
+		<Test Name="WS_956" Execution="No"/>
+		<Test Name="WS_317" Execution="No"/>
+		<Test Name="WS_921" Execution="No"/>
+		<Test Name="WS_927" Execution="Yes"/>
+		<Test Name="WS_933" Execution="Yes"/>
+		<Test Name="WS_951" Execution="Yes"/>
 </TestList>

@@ -8,9 +8,9 @@ namespace SeleniumDemo.Tests.Sprint
 {
     class SprintTest  : WorkStrideBaseTest<LoginPage>
     {
-        private static string _file;
+       /* private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-/*
+
         [Category("Regression")]
         [Category("Sprint")]
 
@@ -23,11 +23,11 @@ namespace SeleniumDemo.Tests.Sprint
             else
             {
                 _file = "Resources\\TestsData\\" + client + "\\Sprint_DISTRIBUTION_LISTS.xml";
-                string user = AwardData.GetAwardUserName(_file),
-                    award = AwardData.GetAwardName(_file),
-                    printype = AwardData.GetAwardDeliverType(_file),
-                    ccEmail = AwardData.GetAwardMessage(_file),
-                    futureDate = AwardData.GetAwardMessage(_file);
+                string user = AwardData.GetAwardUserName(_file),msg =  AwardData.GetAwardMessage(_file),
+                    award = AwardData.GetAwardName(_file), subAward1 =  AwardData.GetAwardSubType1(_file),
+                    printype = AwardData.GetAwardDeliverType(_file), subAward2 =  AwardData.GetAwardSubType2(_file),
+                    ccEmail = AwardData.GetAwardCCEmail(_file),
+                    futureDate = AwardData.GetAwardFutureDate(_file);
                 NominationHomePage recognitionPage = InitialPage.Go().Logon().EnterId().ClickLogin().NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
@@ -35,9 +35,9 @@ namespace SeleniumDemo.Tests.Sprint
                     .ClickNextStep2()
                     .SelectAward(award)
                     .ClickNext()
-                    .SelectSubAwardType()
+                    .SelectSubAwardType(subAward1,subAward2)
                     .ClickNext()
-                    .FillEditCardEditor()
+                    .FillEditCardEditor(msg)
                     .ClickNext()
                     .EnterUserCCEmail(ccEmail).EnterFutureDate(futureDate).ClickNext();
                 Assert.AreEqual("I want to email this award.", recognitionPage.GetDeliverLabel("email"),

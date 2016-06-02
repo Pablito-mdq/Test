@@ -19,13 +19,13 @@ namespace SeleniumDemo.Tests
         [Category("Akron")]
         //WS-218
         [Test]
-        public void Akron_Recognize_Someone()
+        public void WS_218()
         {
-            if (!DataParser.ReturnExecution("Akron_Recognize_Someone"))
+            if (!DataParser.ReturnExecution("WS_218"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Akron_Recognize_Someone.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_218.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
@@ -61,13 +61,13 @@ namespace SeleniumDemo.Tests
         [Category("Akron")]
         //WS-956
         [Test]
-        public void Akron_Recognition_Flow_Non_Monetary()
+        public void WS_956()
         {
-            if (!DataParser.ReturnExecution("Akron_Recognition_Flow_Non_Monetary"))
+            if (!DataParser.ReturnExecution("WS_956"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Akron_Recognition_Flow_Non_Monetary.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_956.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),

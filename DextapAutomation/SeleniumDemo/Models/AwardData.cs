@@ -107,5 +107,25 @@ namespace SeleniumDemo.Models
         {
             return GetAward(configFile, "CompanyValue");
         }
+
+        public static string GetAwardSubType1(string configFile)
+        {
+            return GetAward(configFile, "AwardSubType1");
+        }
+
+        public static string GetAwardSubType2(string configFile)
+        {
+            return GetAward(configFile, "AwardSubType2");
+        }
+
+        public static string GetAwardCCEmail(string configFile)
+        {
+            return GetAward(configFile, "CCEmail");
+        }
+
+        public static string GetAwardFutureDate(string configFile)
+        {
+            return GetAward(configFile, "FutureDate");
+        }
     }
 }

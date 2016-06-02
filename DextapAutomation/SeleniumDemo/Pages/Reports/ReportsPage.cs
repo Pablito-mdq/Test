@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumDemo.Pages.Reports
@@ -12,6 +13,7 @@ namespace SeleniumDemo.Pages.Reports
 
         public AllAwards clickAllAwards()
         {
+            Thread.Sleep(1500);
             Synchronization.WaitForElementToBePresent(_lnkAllAwardsLkn);
             _lnkAllAwardsLkn.Click();
             return NewPage<AllAwards>();
