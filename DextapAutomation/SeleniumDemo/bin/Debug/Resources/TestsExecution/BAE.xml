@@ -6,8 +6,7 @@
 		<Test Name="WS_1046" Execution="Yes"/>
         <Test Name="WS_1048" Execution="Yes"/>
 		<Test Name="WS_317" Execution="Yes"/>
-        <Test Name="WS_956" Execution="Yes"/>
+        <Test Name="WS_956" Execution="No"/>
 		<Test Name="WS_921" Execution="Yes"/>
 		<Test Name="WS_924" Execution="Yes"/>
 </TestList>
-

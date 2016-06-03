@@ -26,12 +26,11 @@ namespace SeleniumDemo.Tests
             else
             {
                 _file = "Resources\\TestsData\\" + client + "\\WS_218.xml";
+                AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
-                    amount = AwardData.GetAwardAmountValue(_file),
-                    impact = AwardData.GetAwardImpact(_file),
-                    printype = AwardData.GetAwardDeliverType(_file),
+                    amount = AwardData.GetAwardAmountValue(_file), printype = AwardData.GetAwardDeliverType(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     reason = AwardData.GetAwardMessage(_file);
                 NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
@@ -68,12 +67,11 @@ namespace SeleniumDemo.Tests
             else
             {
                 _file = "Resources\\TestsData\\" + client + "\\WS_956.xml";
+                AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
-                    amount = AwardData.GetAwardAmountValue(_file),
-                    impact = AwardData.GetAwardImpact(_file),
-                    printype = AwardData.GetAwardDeliverType(_file),
+                    amount = AwardData.GetAwardAmountValue(_file), printype = AwardData.GetAwardDeliverType(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     reason = AwardData.GetAwardReason(_file),
                 proxy_name = ProxyData.GetProxyUserName(_file);

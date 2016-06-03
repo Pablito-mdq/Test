@@ -23236,3 +23236,401 @@ System.InvalidOperationException: unknown error: Element is not clickable at poi
 2016-06-02 17:42:35,453 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@class,'submit')]
 2016-06-02 17:42:35,645 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'UPGRADE'
 2016-06-02 17:42:35,774 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'UPGRADE'
+2016-06-03 16:39:18,394 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:39:26,639 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:39:26,840 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-03 16:39:26,862 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-03 16:39:26,880 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-03 16:39:26,911 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-03 16:39:26,920 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-03 16:39:26,944 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-03 16:39:26,961 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-03 16:39:26,987 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-03 16:39:27,000 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-03 16:39:27,011 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-03 16:39:27,104 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-03 16:39:27,252 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-03 16:39:27,356 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-03 16:39:27,388 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-03 16:39:27,415 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-03 16:39:40,279 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-03 16:40:09,978 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:40:16,102 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:40:16,103 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-03 16:40:16,193 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-03 16:40:16,432 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-03 16:40:16,462 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-03 16:40:16,559 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-03 16:40:16,601 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-03 16:40:16,632 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-03 16:40:20,166 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-03 16:41:09,487 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:13,834 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:13,836 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: passwordSelect
+2016-06-03 16:41:13,950 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: passwordSelect
+2016-06-03 16:41:13,977 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Forgot Password'
+2016-06-03 16:41:14,316 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Forgot Password'
+2016-06-03 16:41:16,469 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: forgotError
+2016-06-03 16:41:17,015 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: forgotError
+2016-06-03 16:41:17,044 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: email
+2016-06-03 16:41:17,077 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: email
+2016-06-03 16:41:17,091 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: email
+2016-06-03 16:41:17,225 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: email
+2016-06-03 16:41:17,244 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: forgotPasswordSubmit
+2016-06-03 16:41:17,266 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: forgotPasswordSubmit
+2016-06-03 16:41:17,275 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: forgotPasswordSubmit
+2016-06-03 16:41:17,405 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: forgotPasswordSubmit
+2016-06-03 16:41:17,427 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: forgotPasswordSubmit
+2016-06-03 16:41:17,439 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: forgotPasswordSubmit
+2016-06-03 16:41:28,252 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:35,224 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:35,236 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-03 16:41:35,293 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-03 16:41:35,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-03 16:41:35,526 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-03 16:41:35,528 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-03 16:41:36,453 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-03 16:41:36,768 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-03 16:41:37,138 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-03 16:41:37,499 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-03 16:41:37,604 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-03 16:41:37,631 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-03 16:41:37,657 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-03 16:41:37,729 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-03 16:41:37,750 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-03 16:41:37,758 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-03 16:41:37,782 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-03 16:41:37,821 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-03 16:41:37,845 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-03 16:41:37,853 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-03 16:41:37,887 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-03 16:41:37,989 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-03 16:41:38,031 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-03 16:41:38,051 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-03 16:41:38,092 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-03 16:41:48,447 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:53,116 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:41:53,117 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contactUsLink
+2016-06-03 16:41:53,270 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contactUsLink
+2016-06-03 16:41:53,297 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Contact Us'
+2016-06-03 16:41:53,452 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Contact Us'
+2016-06-03 16:41:53,455 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_first_name
+2016-06-03 16:41:53,645 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_first_name
+2016-06-03 16:41:53,686 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_first_name
+2016-06-03 16:41:53,988 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_first_name
+2016-06-03 16:41:54,150 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_last_name
+2016-06-03 16:41:54,260 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_last_name
+2016-06-03 16:41:54,382 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_last_name
+2016-06-03 16:41:54,404 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_last_name
+2016-06-03 16:41:54,416 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_email
+2016-06-03 16:41:54,433 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_email
+2016-06-03 16:41:54,440 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_email
+2016-06-03 16:41:54,500 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_email
+2016-06-03 16:41:54,550 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,570 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,576 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,590 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,596 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,605 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,617 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,624 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,626 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:54,641 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:54,664 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,671 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,678 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,685 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,691 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,699 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,710 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,720 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,721 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:54,738 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:54,756 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,763 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,769 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,780 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,789 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,797 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,805 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,819 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,820 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:54,837 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:54,854 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,874 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,879 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,891 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,897 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,907 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,914 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,923 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,925 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:54,933 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:54,952 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,960 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,965 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,975 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:54,986 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,011 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,037 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,050 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,061 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,084 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,092 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,100 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,124 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,139 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,304 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,313 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,323 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,332 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,352 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,360 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,364 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,371 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,377 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,390 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,400 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,408 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,410 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,417 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,435 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,443 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,448 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,460 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,466 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,477 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,484 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,492 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,492 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,501 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,529 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,540 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,551 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,558 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,564 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,593 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,603 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,618 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,619 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,636 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,662 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,672 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,681 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,693 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,703 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,715 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,722 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,730 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,731 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:55,739 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:55,760 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,767 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,772 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,783 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,788 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,796 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,807 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,814 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:55,814 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "Gift Certificate - Balance"]
+2016-06-03 16:41:55,832 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "Gift Certificate - Balance"]
+2016-06-03 16:41:55,851 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Gift Certificate - Balance'
+2016-06-03 16:41:55,993 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Gift Certificate - Balance'
+2016-06-03 16:41:55,994 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,012 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,018 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,034 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,046 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,063 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,070 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,085 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,097 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,112 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:56,121 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,136 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:56,151 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:56,168 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:56,175 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:56,189 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:56,201 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,209 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,214 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,224 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,230 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,237 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,243 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,251 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,251 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:56,260 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:56,271 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,278 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,283 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,290 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,295 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,302 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,312 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "Gift Certificate - Add Value"]
+2016-06-03 16:41:56,338 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "Gift Certificate - Add Value"]
+2016-06-03 16:41:56,353 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Gift Certificate - Add Value'
+2016-06-03 16:41:56,396 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Gift Certificate - Add Value'
+2016-06-03 16:41:56,398 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,405 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,412 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,432 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,445 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,454 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,460 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,467 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,476 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,491 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:56,499 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,506 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:56,520 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:56,529 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:56,539 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:56,548 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:56,555 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,564 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,572 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,583 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,673 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,686 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,692 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,699 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,701 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:56,710 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:56,726 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,756 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,761 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,768 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,773 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,783 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,793 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,799 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:56,801 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "Gift Certificate - History"]
+2016-06-03 16:41:56,815 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "Gift Certificate - History"]
+2016-06-03 16:41:56,846 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Gift Certificate - History'
+2016-06-03 16:41:56,882 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Gift Certificate - History'
+2016-06-03 16:41:56,887 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,896 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,901 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:56,909 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:56,941 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,948 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,954 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:56,963 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:56,970 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,978 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:56,983 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:56,991 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:57,000 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,008 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,013 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,021 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,028 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,064 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,070 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,077 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,082 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,092 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,099 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,107 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,107 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:57,116 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:57,126 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,134 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,140 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,154 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,161 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,167 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,177 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,178 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "Gift Certificate - Activation Status"]
+2016-06-03 16:41:57,197 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "Gift Certificate - Activation Status"]
+2016-06-03 16:41:57,213 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Gift Certificate - Activation Status'
+2016-06-03 16:41:57,375 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Gift Certificate - Activation Status'
+2016-06-03 16:41:57,377 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:57,385 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:57,390 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:57,397 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:57,413 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:57,422 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:57,427 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:57,460 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:57,467 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:57,474 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:57,480 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:57,488 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:57,501 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,512 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,518 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,525 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,533 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,540 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,547 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,556 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,564 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,572 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,578 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,585 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,587 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:57,594 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:57,616 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,626 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,631 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,639 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,646 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,653 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,665 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,673 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,674 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: .//option[normalize-space(.) = "Gift Certificate - Order Status"]
+2016-06-03 16:41:57,690 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: .//option[normalize-space(.) = "Gift Certificate - Order Status"]
+2016-06-03 16:41:57,721 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Gift Certificate - Order Status'
+2016-06-03 16:41:57,776 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Gift Certificate - Order Status'
+2016-06-03 16:41:57,778 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:57,786 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:57,792 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_order_id
+2016-06-03 16:41:57,803 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_order_id
+2016-06-03 16:41:57,811 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:57,818 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:57,824 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_year
+2016-06-03 16:41:57,831 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_year
+2016-06-03 16:41:57,839 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:57,847 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:57,858 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_month
+2016-06-03 16:41:57,867 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_month
+2016-06-03 16:41:57,874 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,883 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,889 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_day
+2016-06-03 16:41:57,895 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_day
+2016-06-03 16:41:57,902 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,909 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,917 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,924 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,931 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,937 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,944 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,950 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_nature_of_inquiry
+2016-06-03 16:41:57,952 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.TagName: option
+2016-06-03 16:41:57,960 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.TagName: option
+2016-06-03 16:41:58,058 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_comments
+2016-06-03 16:41:58,072 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_comments
+2016-06-03 16:41:58,082 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_comments
+2016-06-03 16:41:58,097 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_comments
+2016-06-03 16:41:58,125 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_submit
+2016-06-03 16:41:58,140 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_submit
+2016-06-03 16:41:58,148 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: contact_us_submit
+2016-06-03 16:41:58,163 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: contact_us_submit
+2016-06-03 16:45:50,090 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:45:54,554 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qatruplusawards.workstride.net/login?nosso=1
+2016-06-03 16:45:54,560 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-03 16:45:54,606 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-03 16:45:54,874 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-03 16:45:54,902 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-03 16:45:54,990 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-03 16:45:55,033 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-03 16:45:55,064 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-03 16:45:57,947 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''

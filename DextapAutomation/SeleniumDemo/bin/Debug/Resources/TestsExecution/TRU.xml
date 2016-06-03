@@ -1,0 +1,9 @@
+<TestList>
+        <Test Name="WS_1044_BAE" Execution="No"/>//WS-917
+        <Test Name="WS_1044" Execution="Yes"/>
+		<Test Name="WS_1045" Execution="No"/>
+		<Test Name="WS_1045_Textron" Execution="Yes"/>
+		<Test Name="WS_1047" Execution="Yes"/>
+		<Test Name="WS_1046" Execution="Yes"/>
+        <Test Name="WS_1048" Execution="Yes"/>
+</TestList>
