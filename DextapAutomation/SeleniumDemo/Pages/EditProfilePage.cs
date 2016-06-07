@@ -40,6 +40,15 @@ namespace SeleniumDemo.Tests
         [FindsBy(How = How.Id, Using = "Last")]
         private IWebElement TxtLastName;
 
+        [FindsBy(How = How.Id, Using = "preferred_name")]
+        private IWebElement _txtPreferredName;
+
+        [FindsBy(How = How.Id, Using = "password_again")]
+        private IWebElement _txtConfirmPassword;
+
+        [FindsBy(How = How.Id, Using = "profile_submit")]
+        private IWebElement _btnSubmit;
+        
        public EditProfilePage(IWebDriver driver) : base(driver) { }
 
         public bool ScreenDisplay()
@@ -144,6 +153,32 @@ namespace SeleniumDemo.Tests
            public string PopUpMessageSpell()
            {
                return (FindElement(By.Id("dialog-modal")).Text);
+           }
+
+           public string GetTitleName(string title)
+           {
+               return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Profile Settings')]")).Text;
+           }
+
+           public EditProfilePage EnterPreferedName(string preferredName)
+           {
+               _txtConfirmPassword.SendKeys("Demo9494");
+               _txtPreferredName.SendKeys(preferredName);
+               return this;
+           }
+
+           public EditProfilePage ClickSubmit()
+           {
+               _btnSubmit.Click();
+               Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[@id='ui-spinner-container']"));
+               return NewPage<EditProfilePage>();
+           }
+
+           public string GetShowName(string preferredName)
+           {
+               return
+                   Synchronization.WaitForElementToBePresent(
+                       By.XPath(string.Format("//b[contains(.,'{0}')]", preferredName))).Text;
            }
     }
 }

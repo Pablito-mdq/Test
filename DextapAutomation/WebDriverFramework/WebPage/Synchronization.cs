@@ -45,7 +45,15 @@ namespace WebDriverFramework.PageObject.Internals
         /// </summary>
         public IWebElement WaitForElementToBePresent(By locator)
         {
-           return  wait.Until<IWebElement>(Expectations.ElementIsClickable(locator));
+            try
+            {
+                return wait.Until<IWebElement>(Expectations.ElementIsClickable(locator));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         public IList<IWebElement> WaitForElementsToBePresent(By locator)

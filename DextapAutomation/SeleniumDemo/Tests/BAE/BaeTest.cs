@@ -3,15 +3,14 @@ using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
+using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests.BAE
 {
-
-
-    
+  
     class SampleTestSuite : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
@@ -170,6 +169,59 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual(secondAward, awards.GetAwardName(1, 4), "The last award that someone gave you is not present");
                 awards.OpenDetailsAward(1, 7);
             }
+        }
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-917
+        [Test]
+        public void WS_1052()
+        {
+            if (!DataParser.ReturnExecution("WS_1052"))
+                Assert.Ignore();
+            else
+            {
+                 _file = "Resources\\TestsData\\" + client + "\\WS_1052.xml";
+                string firstName = RegisterData.GetRegisterFirstName(_file),
+                    lastName = RegisterData.GetRegisterLastName(_file),
+                    ID = RegisterData.GetRegisterID(_file),
+                    email = RegisterData.GetRegisterEmail(_file);
+                Register registerPage = InitialPage.Go().ClickJoinNow();
+                Assert.AreEqual("First Name",registerPage.GetName("First Name"),"First Name is now well spell");
+                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
+                Assert.AreEqual("Last Name", registerPage.GetName("Last Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
+                Assert.AreEqual("Employee ID", registerPage.GetName("Employee ID"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "ID field is not available");
+                Assert.AreEqual("Email Address", registerPage.GetName("Email Address"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsEmailFieldAvailable(), "email field is not available");
+                registerPage.EnterFirstName(firstName)
+                    .EnterLastName(lastName)
+                    .EnterEmployeeID(ID)
+                    .EnterEmployeeEmail(email)
+                    .ClickRegister();
+                Assert.AreEqual("Success!\r\nWe found you. Check your inbox at " + email + " for a link to finish registration. Thank you!",registerPage.GetSuccessMsg(),"Message is not the expected");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-917
+        [Test]
+        public void WS_175()
+        {
+            if (!DataParser.ReturnExecution("WS_175"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_175.xml";
+                string preferredName = RegisterData.GetRegisterPreferedName(_file);
+                EditProfilePage profilePage = InitialPage.Go().Logon().ClickLogin().EditProfile();
+                Assert.AreEqual("Profile Settings", profilePage.GetTitleName("Profile Settings"), "Title is now well spell");
+                profilePage.EnterPreferedName(preferredName).ClickSubmit();
+                Assert.AreEqual(preferredName, profilePage.GetShowName(preferredName), "Prefered Name is now well spell");
+                MainHomePage mainPage = profilePage.NavigateToHomePage();
+                Assert.AreEqual("Welcome " + preferredName + " to the BAE Systems, IMPACT!", mainPage.GetWelcomeTitle(), "Welcome Ttile is now well spell");
+           }
         }
     }
 }

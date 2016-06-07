@@ -13,7 +13,6 @@ namespace SeleniumDemo.Tests.Textron
     class TextronTest : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
-        private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
         [Category("Regression")]

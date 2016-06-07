@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using NUnit.Framework;
+using System.Xml.Linq;
 
 namespace SeleniumDemo.Models
 {
@@ -14,6 +15,8 @@ namespace SeleniumDemo.Models
             var xElement = xelement.Element(string.Format("{0}", value));
             if (xElement != null)
                 values = xElement.Value;
+            else
+                Assert.Fail("The field" + value + "is not present in the file" + configFile);
             return values;
         }
 

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AwardData.cs" />
+    <Compile Include="Models\RegisterData.cs" />
     <Compile Include="Models\TestExecutionModel.cs" />
     <Compile Include="Models\ProxyData.cs" />
     <Compile Include="Pages\AwardDetailsPopUp.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Tests\MallTest.cs" />
     <Compile Include="Tests\Akron\AkronTests.cs" />
     <Compile Include="Pages\Reports\ReportsPage.cs" />
+    <Compile Include="Tests\ProxyTests.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />

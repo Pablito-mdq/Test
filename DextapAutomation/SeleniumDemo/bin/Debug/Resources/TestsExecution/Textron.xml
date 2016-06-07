@@ -13,4 +13,6 @@
 		<Test Name="WS_927" Execution="Yes"/>
 		<Test Name="WS_933" Execution="Yes"/>
 		<Test Name="WS_951" Execution="Yes"/>
+		<Test Name="WS_1062" Execution="Yes"/>
+		<Test Name="WS_1063" Execution="Yes"/>
 </TestList>

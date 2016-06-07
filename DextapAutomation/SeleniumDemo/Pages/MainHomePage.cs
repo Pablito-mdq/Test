@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
+using SeleniumDemo.Tests;
 
 namespace SeleniumDemo.Pages
 {
@@ -20,6 +21,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Go To Mall')]")]
         private IWebElement _lnkNavigateToMall;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(@class,'myAcctLink')]")]
+        private IWebElement _lnkMyAccount;
 
         public MainHomePage(IWebDriver driver) : base(driver) { }
 
@@ -127,6 +131,25 @@ namespace SeleniumDemo.Pages
             if (_lnkNominationSprint.Displayed)
                 _lnkNominationSprint.Click();
             return NewPage<NominationHomePage>();
+        }
+
+        public EditProfilePage EditProfile()
+        {
+            _lnkMyAccount.Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/settings')]")).Click();
+            return NewPage<EditProfilePage>();
+        }
+
+        public string GetWelcomeTitle()
+        {
+            return Synchronization.WaitForElementToBePresent(By.ClassName("mall-top-link")).Text;
+        }
+
+        public bool IsAdmLnkPresent()
+        {
+            if (FindElement(By.XPath("//a[contains(.,'ADMIN')]")) != null)
+                return FindElement(By.XPath("//a[contains(.,'ADMIN')]")).Displayed;
+            return false;
         }
     }
 }

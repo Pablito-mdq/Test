@@ -23634,3 +23634,398 @@ System.InvalidOperationException: unknown error: Element is not clickable at poi
 2016-06-03 16:45:55,033 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
 2016-06-03 16:45:55,064 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
 2016-06-03 16:45:57,947 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 14:20:09,683 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:20:20,688 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:20:20,697 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 14:20:20,736 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 14:20:20,762 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 14:20:20,890 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 14:20:21,208 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:20:21,266 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:20:21,564 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:20:21,680 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:20:22,151 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:20:22,213 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:20:22,226 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:20:22,252 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:20:56,346 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:21:00,452 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:21:00,466 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 14:21:00,497 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 14:21:00,527 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 14:21:00,631 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 14:21:01,301 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:21:01,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:21:01,411 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:21:01,607 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:21:02,044 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:21:02,084 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:21:02,110 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:21:02,178 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:21:02,287 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:21:02,312 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:21:02,322 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:21:02,342 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:21:02,441 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 14:21:02,461 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 14:21:02,469 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 14:21:02,493 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 14:59:51,986 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:59:56,017 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net/login
+2016-06-06 14:59:56,031 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 14:59:56,109 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 14:59:56,149 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 14:59:56,286 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 14:59:56,637 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:56,719 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:56,811 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:56,879 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:57,135 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:57,345 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:57,356 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:57,421 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:57,821 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:57,842 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:57,871 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:57,893 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:58,001 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 14:59:58,022 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 14:59:58,031 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 14:59:58,053 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 14:59:58,076 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:58,089 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 14:59:58,298 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:58,399 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 14:59:58,511 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:58,528 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 14:59:58,623 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 14:59:58,633 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 14:59:58,699 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-06 14:59:58,729 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-06 14:59:58,755 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Register'
+2016-06-06 14:59:58,804 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Register'
+2016-06-06 15:01:09,419 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-06 15:01:13,414 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-06 15:01:13,429 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 15:01:13,476 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 15:01:13,504 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 15:01:13,653 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 15:01:14,005 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:14,084 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:14,267 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:14,426 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:14,977 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,092 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,137 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,161 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,275 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:15,296 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:15,311 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:15,333 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:15,428 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:01:15,456 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:01:15,469 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:01:15,490 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:01:15,513 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:15,525 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:01:15,811 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,823 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:01:15,942 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:15,962 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:01:16,091 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:01:16,104 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:01:16,325 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:01:16,372 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:01:16,402 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Register'
+2016-06-06 15:01:16,557 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Register'
+2016-06-06 15:02:12,466 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-06 15:02:17,058 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-06 15:02:17,079 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 15:02:17,154 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 15:02:17,190 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 15:02:17,319 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 15:02:17,583 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:17,714 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:17,727 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:17,849 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:18,634 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:18,661 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:18,670 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:18,742 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:18,878 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:18,919 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:18,932 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:18,957 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:19,064 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:02:19,086 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:02:19,095 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:02:19,126 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:02:19,145 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:19,156 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:02:19,290 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:19,305 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:02:19,363 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:19,377 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:02:19,465 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:02:19,475 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:02:19,714 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:02:19,752 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:02:19,779 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Register'
+2016-06-06 15:02:19,828 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Register'
+2016-06-06 15:03:55,081 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-06 15:03:59,858 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-06 15:03:59,879 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: registerSelect
+2016-06-06 15:03:59,946 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: registerSelect
+2016-06-06 15:03:59,973 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-06 15:04:00,138 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-06 15:04:00,522 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:00,612 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:00,655 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:00,718 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:01,226 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:01,325 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:01,335 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:01,358 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:01,591 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:01,613 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:01,622 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:01,643 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:01,762 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:04:01,783 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:04:01,791 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:04:01,827 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:04:01,845 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:01,857 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'first_Name')]
+2016-06-06 15:04:02,076 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:02,089 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'last_Name')]
+2016-06-06 15:04:02,255 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:02,265 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[contains(@name,'company_Employee_Id')]
+2016-06-06 15:04:02,315 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: emailAddress
+2016-06-06 15:04:02,326 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: emailAddress
+2016-06-06 15:04:02,625 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:04:02,648 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //button[contains(@type,'submit')]
+2016-06-06 15:04:02,678 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Register'
+2016-06-06 15:04:02,795 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Register'
+2016-06-07 12:09:12,020 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 12:09:19,893 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 12:09:19,900 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 12:09:19,939 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 12:09:20,223 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 12:09:20,258 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 12:09:20,403 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 12:09:20,431 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 12:09:20,470 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 12:09:37,541 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 12:09:57,595 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(@class,'myAcctLink')]
+2016-06-07 12:09:57,620 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(@class,'myAcctLink')]
+2016-06-07 12:09:57,674 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'My Account'
+2016-06-07 12:09:57,814 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'My Account'
+2016-06-07 12:10:05,165 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: password_again
+2016-06-07 12:10:05,192 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: password_again
+2016-06-07 12:10:05,327 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: preferred_name
+2016-06-07 12:10:05,358 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: preferred_name
+2016-06-07 12:10:05,504 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: profile_submit
+2016-06-07 12:10:05,533 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: profile_submit
+2016-06-07 12:10:05,567 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 12:10:05,683 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 12:10:06,791 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //img[contains(@src,'company.png')]
+2016-06-07 12:10:06,822 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //img[contains(@src,'company.png')]
+2016-06-07 12:10:06,848 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 12:10:08,040 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:03:11,637 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 14:03:19,159 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 14:03:19,175 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:03:19,220 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:03:19,321 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:03:19,343 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:03:19,590 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:03:19,622 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:03:19,667 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:03:31,337 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:03:52,213 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:03:52,238 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:03:52,272 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:03:53,606 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:03:53,609 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:03:53,705 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:03:53,744 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:03:54,542 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:03:54,544 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:03:54,574 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:03:55,909 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 14:03:55,940 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 14:03:55,983 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:04:03,446 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:24:19,758 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://demo.workstride.com
+2016-06-07 14:24:27,825 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://demo.workstride.com
+2016-06-07 14:24:27,842 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:24:27,902 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:24:28,184 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:24:28,245 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:24:28,370 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:24:28,406 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:24:28,446 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:24:42,758 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:24:43,754 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:24:43,998 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:24:44,113 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:24:52,286 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:24:52,291 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:24:52,318 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:24:52,351 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Proxy as User'
+2016-06-07 14:24:53,371 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Proxy as User'
+2016-06-07 14:24:53,375 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:24:53,428 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:26:45,836 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://demo.workstride.com
+2016-06-07 14:26:52,537 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://demo.workstride.com
+2016-06-07 14:26:52,556 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:26:52,632 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:26:52,838 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:26:52,916 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:26:53,051 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:26:53,085 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:26:53,110 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:27:08,995 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:27:10,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:27:10,332 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:27:10,385 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:27:10,472 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:27:10,474 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:27:17,568 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:27:17,642 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'Proxy as User'
+2016-06-07 14:27:18,662 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'Proxy as User'
+2016-06-07 14:27:18,667 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:27:18,770 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:28:19,570 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 14:28:24,174 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 14:28:24,201 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:28:24,238 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:28:24,500 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:28:24,533 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:28:24,661 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:28:24,687 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:28:24,715 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:28:24,813 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:28:45,504 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:28:45,531 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:28:45,572 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:28:46,752 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:28:46,755 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:28:46,786 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:28:46,830 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:28:47,452 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:28:47,456 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:28:47,512 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:28:49,126 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 14:28:49,150 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 14:28:49,180 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:28:50,800 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:54:41,053 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 14:54:48,960 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 14:54:48,983 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:54:49,050 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:54:49,299 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:54:49,393 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:54:49,523 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:54:49,561 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:54:49,593 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:55:00,854 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:55:21,652 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:55:21,674 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:55:21,712 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:55:23,057 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:55:23,058 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:55:23,090 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:55:23,135 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:55:23,833 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:55:23,839 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:55:23,866 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:55:25,407 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 14:55:25,435 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 14:55:25,472 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:55:25,551 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:55:27,349 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:55:47,412 ERROR[OpenQA.Selenium.Chrome.ChromeDriver]: Exception occurred! Taking screenshot.
+OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(.,'ADMIN')]"}
+  (Session info: chrome=50.0.2661.102)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.3 x86_64)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)
+   at OpenQA.Selenium.By.<>c__DisplayClasse.<XPath>b__c(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at OpenQA.Selenium.Support.Events.EventFiringWebDriver.FindElement(By by)
+2016-06-07 14:57:23,610 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 14:57:27,684 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 14:57:27,700 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 14:57:27,785 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 14:57:28,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 14:57:28,094 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 14:57:28,213 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 14:57:28,243 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 14:57:28,278 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:57:40,340 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 14:58:00,775 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:58:00,799 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 14:58:00,833 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:58:02,173 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:58:02,178 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 14:58:02,211 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 14:58:02,251 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 14:58:02,933 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 14:58:02,937 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 14:58:02,970 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 14:58:04,118 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 14:58:04,146 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 14:58:04,189 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 14:58:04,234 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 15:02:47,690 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 15:02:52,023 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 15:02:52,041 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 15:02:52,087 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 15:02:52,236 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 15:02:52,328 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 15:02:52,435 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 15:02:52,461 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 15:02:52,497 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 15:03:06,121 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 15:03:26,781 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 15:03:26,809 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 15:03:26,846 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 15:03:28,019 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 15:03:28,024 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 15:03:28,065 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 15:03:28,106 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 15:03:28,749 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 15:03:28,754 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 15:03:28,831 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 15:03:29,985 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 15:03:30,008 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 15:03:30,048 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 15:03:31,643 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 15:12:17,771 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qabaeimpact.workstride.net
+2016-06-07 15:12:21,930 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qabaeimpact.workstride.net
+2016-06-07 15:12:21,944 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-07 15:12:21,978 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-07 15:12:22,074 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-07 15:12:22,229 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-07 15:12:22,368 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-07 15:12:22,393 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-07 15:12:22,435 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 15:12:34,384 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-07 15:12:55,077 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 15:12:55,106 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'ADMIN')]
+2016-06-07 15:12:55,146 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 15:12:56,527 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 15:12:56,532 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //a[@href='/proxy']
+2016-06-07 15:12:56,595 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[@href='/proxy']
+2016-06-07 15:12:56,651 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-07 15:12:57,475 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-07 15:12:57,482 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-07 15:12:57,568 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: user-lookup
+2016-06-07 15:12:58,836 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@type='submit']
+2016-06-07 15:12:58,874 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@type='submit']
+2016-06-07 15:12:58,915 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-07 15:13:00,556 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''

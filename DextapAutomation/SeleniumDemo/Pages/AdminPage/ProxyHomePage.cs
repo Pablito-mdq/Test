@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MbUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages;
 
@@ -17,7 +18,10 @@ namespace SeleniumDemo.Tests.Pages
         public ProxyHomePage EnterUserName(string name)
         {
             _txtUserName.SendKeys(name);
-            Synchronization.WaitForElementToBePresent(By.Id("ui-id-1")).Click();
+            if (Synchronization.WaitForElementToBePresent(By.Id("ui-id-1"))!=null)
+                Synchronization.WaitForElementToBePresent(By.Id("ui-id-1")).Click();
+            else
+                Assert.Fail("User was not found");
             return this;
         }
 
