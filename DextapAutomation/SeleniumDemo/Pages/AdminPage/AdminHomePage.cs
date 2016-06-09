@@ -62,5 +62,17 @@ namespace SeleniumDemo.Pages.AdminPage
             _lnkProxy.Click();
             return NewPage<ProxyHomePage>();
         }
+
+        public bool IsShowNameAdmin(string preferredName)
+        {
+            if (
+                Synchronization.WaitForElementToBePresent(
+                    By.XPath(string.Format("//b[contains(.,'{0}')]", preferredName))) != null)
+                return
+                    Synchronization.WaitForElementToBePresent(
+                        By.XPath(string.Format("//b[contains(.,'{0}')]", preferredName))).Text == preferredName;
+            return false;
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
@@ -56,7 +57,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage ClickNext()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]"));
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
             FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
             return NewPage<NominationHomePage>();
         }
@@ -115,6 +116,15 @@ namespace SeleniumDemo.Pages.NominationPage
         {
             FindElement(By.XPath(string.Format("//span[contains(.,'{0}')]",companyValue))).Click();
             return this;
+        }
+
+        public NominationHomePage SelectAwardMultiple(string award)
+        {
+            IWebElement step2 = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'What Award')]"));
+            IWebElement[] awards = Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).ToArray();
+            if ((step2.Displayed) && (awards[0].Displayed))
+                awards[0].Click();
+            return NewPage<NominationHomePage>();
         }
     }
 }

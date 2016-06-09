@@ -2,9 +2,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests;
+using SeleniumDemo.Tests.Pages;
 
 namespace SeleniumDemo.Pages
 {
@@ -150,6 +152,12 @@ namespace SeleniumDemo.Pages
             if (FindElement(By.XPath("//a[contains(.,'ADMIN')]")) != null)
                 return FindElement(By.XPath("//a[contains(.,'ADMIN')]")).Displayed;
             return false;
+        }
+
+        public ProxyHomePage ExitProxy()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]")).Click();
+            return NewPage<ProxyHomePage>();
         }
     }
 }

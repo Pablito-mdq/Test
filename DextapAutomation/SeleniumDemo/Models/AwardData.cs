@@ -23,7 +23,7 @@ namespace SeleniumDemo.Models
             if (xElement != null)
                 values = xElement.Value;
             else
-                Assert.Fail("The field" + value + "is not present in the file" + configFile);
+                Assert.Fail("The field " + value + " is not present in the file" + configFile);
             return values;
         }
 

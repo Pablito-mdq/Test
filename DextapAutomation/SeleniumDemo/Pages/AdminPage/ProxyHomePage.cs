@@ -31,5 +31,12 @@ namespace SeleniumDemo.Tests.Pages
            _btnProxy.Click();
             return NewPage<MainHomePage>();
         }
+
+        public bool IsAdminLoginUsernameLevel(string preferedName)
+        {
+            if (FindElement(By.XPath(string.Format("//b[contains(.,'{0}')]", preferedName))) != null)
+                return FindElement(By.XPath(string.Format("//b[contains(.,'{0}')]", preferedName))).Displayed;
+            return false;
+        }
     }
 }

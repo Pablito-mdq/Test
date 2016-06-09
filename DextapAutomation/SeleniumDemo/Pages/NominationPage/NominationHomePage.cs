@@ -23,6 +23,9 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.Id, Using = "ccUserLookupInput")]
         private IWebElement _txtCCEmail;
 
+        [FindsBy(How = How.Id, Using = "reward-detail-form--FUTURE_DATE")]
+        private IWebElement _txtFutureDate;
+
         public NominationHomePage (IWebDriver driver) : base(driver) { }
 
         public Step2 SearchEmployeeFound(string employee)
@@ -167,32 +170,36 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage SearchEmployeeFoundMultiple(string user)
         {
-            IWebElement element = Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user)));
-            if (element.Displayed)
-                element.Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(.,'Search for an employee:')]"));
+            Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
+            _txtName.SendKeys(user);
+            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user))).Click();
           return NewPage<NominationHomePage>();
 
         }
 
         public Step2 ClickNextStep2()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]"));
-            FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'btn-generic submitEmployees')]"));
+            FindElement(By.XPath("//button[contains(@class,'btn-generic submitEmployees')]")).Click();
             return NewPage<Step2>();
         }
 
         public NominationHomePage SelectSubAwardType(string type,string type2)
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//h4[@class='ecard-edit-heading']"));
-            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]",type))).Click();
-            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]", type2))).Click();
+            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
+            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]")).FirstOrDefault().Click();
+            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
+            IWebElement[] selections =Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]")).ToArray();
+            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
+            selections[2].Click();
             return NewPage<NominationHomePage>();
         }
 
         public NominationHomePage FillEditCardEditor(string message)
         {
             IWebElement msg = Synchronization.WaitForElementToBePresent(
-                By.XPath("//textarea[contains(@ng-model,'recognize.ecard.content[textarea.name]')]"));
+                By.XPath("//textarea[contains(@ng-repeat,'textarea in recognize.ecard.template.layoutDetails.desktop_textareas')]"));
             msg.SendKeys(message);
             return NewPage<NominationHomePage>();
         }
@@ -203,6 +210,39 @@ namespace SeleniumDemo.Pages.NominationPage
             _txtCCEmail.SendKeys(ccEmail);
             Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'typeahead-user-name')]")).Click();
             return this;
+        }
+
+        public NominationHomePage EnterFutureDate(string futureDate)
+        {
+            Synchronization.WaitForElementToBePresent(_txtFutureDate);
+            _txtCCEmail.SendKeys(futureDate);
+            return this;
+        }
+
+        public NominationHomePage ClickNextFillCard()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@ng-click,'ecardNext()')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage ClickNextStep()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next Step')]")).Click();
+            return NewPage<NominationHomePage>();
+            
+        }
+
+        public string GetBtnSendRecognition()
+        {
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@ng-click,'submitRecognition()')]"))
+                    .Text;
+        }
+
+        public NominationHomePage ClickNextGeneric()
+        {
+           Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next')]")).Click();
+            return NewPage<NominationHomePage>();
         }
     }
 }

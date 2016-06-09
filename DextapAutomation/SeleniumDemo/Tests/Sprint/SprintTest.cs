@@ -8,7 +8,7 @@ namespace SeleniumDemo.Tests.Sprint
 {
     class SprintTest  : WorkStrideBaseTest<LoginPage>
     {
-       /* private static string _file;
+        private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
         [Category("Regression")]
@@ -16,13 +16,13 @@ namespace SeleniumDemo.Tests.Sprint
 
         //SPRIN-67
         [Test]
-        public void Sprint_DISTRIBUTION_LISTS()
+        public void Sprin_67()
         {
-            if (!DataParser.ReturnExecution("Sprint_DISTRIBUTION_LISTS"))
+            if (!DataParser.ReturnExecution("Sprin_67"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Sprint_DISTRIBUTION_LISTS.xml";
+                _file = "Resources\\TestsData\\" + client + "\\Sprin_67.xml";
                 string user = AwardData.GetAwardUserName(_file),msg =  AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file), subAward1 =  AwardData.GetAwardSubType1(_file),
                     printype = AwardData.GetAwardDeliverType(_file), subAward2 =  AwardData.GetAwardSubType2(_file),
@@ -33,27 +33,22 @@ namespace SeleniumDemo.Tests.Sprint
                     .SelectRecipientType("multiple")
                     .SearchEmployeeFoundMultiple(user)
                     .ClickNextStep2()
-                    .SelectAward(award)
-                    .ClickNext()
+                    .SelectAwardMultiple(award)
                     .SelectSubAwardType(subAward1,subAward2)
-                    .ClickNext()
+                    .ClickNextFillCard()
                     .FillEditCardEditor(msg)
-                    .ClickNext()
-                    .EnterUserCCEmail(ccEmail).EnterFutureDate(futureDate).ClickNext();
-                Assert.AreEqual("I want to email this award.", recognitionPage.GetDeliverLabel("email"),
-                    "Label is not correct");
-                Assert.AreEqual("I want to print this award.", recognitionPage.GetDeliverLabel("print"),
-                    "Label is not correct");
-                recognitionPage.DeliverType(printype);
-                Assert.AreEqual(2, recognitionPage.GetCountEditLnk(), "Edit links are not two");
-                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                    .ClickNextStep()
+                    .EnterUserCCEmail(ccEmail).EnterFutureDate(futureDate).ClickNextGeneric();
+               Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
                     "The message is not ready to send");
+               Assert.AreEqual("SEND RECOGNITION",recognitionPage.GetBtnSendRecognition(),"Submit button is not well written");
                 recognitionPage.ClickSendRecognition();
                 Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
                 Assert.AreEqual("RECOGNIZE", recognitionPage.GetBtnRecognizOtherLabel(),
                     "Button finish its not correct write");
+                Assert.Fail("Missing steps DUE to bug, ticket name SPRIN-91");
             }
-        }*/
+        }
     }
 }
