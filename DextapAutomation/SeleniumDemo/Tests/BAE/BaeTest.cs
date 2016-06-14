@@ -3,6 +3,7 @@ using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
+using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
@@ -223,5 +224,70 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("Welcome " + preferredName + " to the BAE Systems, IMPACT!", mainPage.GetWelcomeTitle(), "Welcome Ttile is now well spell");
            }
         }
+        [Category("Regression")]
+        [Category("BAE")]
+
+        [Test]
+        public void WS_1070()
+        {
+            if (!DataParser.ReturnExecution("WS_1070"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1070.xml";
+                username = ProxyData.GetProxyUserName(_file);
+                string username2 = ProxyData.GetProxySecondUserName(_file), award = AwardData.GetAwardName(_file),
+                    msg = AwardData.GetAwardMessage(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                EventCalendar eventPage = home.NavigateToEventCalendar();
+                eventPage.ClickRecent();
+                Assert.AreEqual(username2 + "\r\nBirthday", eventPage.GetNameList(0), username2 + " is not present");
+                NominationHomePage nomination = eventPage.clickSendRecognition().SelectAward(award).FillMsg(msg).SelectImgs();
+                nomination.EmailReward().ClickSendRecognition();
+                Assert.AreEqual("Success!", nomination.GetSuccesMsg(), "Message its not success");
+                Assert.AreEqual("FINISH", nomination.GetBtnFinishLabel(), "Button finish its not correct write");
+                Assert.AreEqual("RECOGNIZE", nomination.GetBtnRecognizOtherLabel(),
+                    "Button finish its not correct write");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+
+        [Test]
+        public void WS_1084()
+        {
+            if (!DataParser.ReturnExecution("WS_1084"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1084.xml";
+                username = ProxyData.GetProxyUserName(_file);
+                string username2 = ProxyData.GetProxySecondUserName(_file), award = AwardData.GetAwardName(_file),
+                    msg = AwardData.GetAwardMessage(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                EventCalendar eventPage = home.NavigateToEventCalendar();
+                eventPage.ClickRecent();
+                Assert.AreEqual(username2 + "\r\n12 year Anniversary", eventPage.GetNameList(6), username2 + " is not present");
+                NominationHomePage nomination = eventPage.clickSendAniversaryCard().SelectAward(award).FillMsg(msg).SelectImgs();
+                nomination.EmailReward().ClickSendRecognition();
+                Assert.AreEqual("Success!", nomination.GetSuccesMsg(), "Message its not success");
+                Assert.AreEqual("FINISH", nomination.GetBtnFinishLabel(), "Button finish its not correct write");
+                Assert.AreEqual("RECOGNIZE", nomination.GetBtnRecognizOtherLabel(),
+                    "Button finish its not correct write");
+            }
+        } 
     }
 }

@@ -58,7 +58,6 @@ namespace SeleniumDemo.Pages.NominationPage
         public NominationHomePage ClickNext()
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
-            FindElement(By.XPath("//button[contains(@class,'midBannerBtn submitAward')]")).Click();
             return NewPage<NominationHomePage>();
         }
 
@@ -124,6 +123,14 @@ namespace SeleniumDemo.Pages.NominationPage
             IWebElement[] awards = Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).ToArray();
             if ((step2.Displayed) && (awards[0].Displayed))
                 awards[0].Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage SelectImgs()
+        {
+            IWebElement[] img =
+                Synchronization.WaitForElementsToBePresent(By.XPath("//img[contains(@src,'Thumbnail.png')]")).ToArray();
+            img[1].Click();
             return NewPage<NominationHomePage>();
         }
     }

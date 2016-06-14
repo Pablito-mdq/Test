@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages.AdminPage;
+using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests;
@@ -27,6 +28,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//span[contains(@class,'myAcctLink')]")]
         private IWebElement _lnkMyAccount;
 
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/event_calendar')]")]
+        private IWebElement _lnkEventCalendar;
+        
         public MainHomePage(IWebDriver driver) : base(driver) { }
 
         public MainHomePage SelectShowEntries(string entries)
@@ -158,6 +162,14 @@ namespace SeleniumDemo.Pages
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]")).Click();
             return NewPage<ProxyHomePage>();
+        }
+
+        public EventCalendar NavigateToEventCalendar()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkEventCalendar);
+            if (_lnkEventCalendar.Displayed)
+                _lnkEventCalendar.Click();
+            return NewPage<EventCalendar>();
         }
     }
 }

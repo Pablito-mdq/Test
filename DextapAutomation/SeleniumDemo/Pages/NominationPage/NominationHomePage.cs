@@ -63,6 +63,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage ClickSendRecognition()
         {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Send Recognition')]"));
             IWebElement send =
                 Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Send Recognition')]"));
             send.Click();

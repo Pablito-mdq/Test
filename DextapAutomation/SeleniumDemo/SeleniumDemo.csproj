@@ -72,6 +72,7 @@
     <Compile Include="Tests\BAE\BaeTest.cs" />
     <Compile Include="Pages\LeftMenu\GoToMall\GoToMallHomePage.cs" />
     <Compile Include="Pages\Textron\MainHomePageFail.cs" />
+    <Compile Include="Pages\LeftMenu\EventCalendar\EventCalendar.cs" />
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Tests\MallTest.cs" />
     <Compile Include="Tests\Akron\AkronTests.cs" />
