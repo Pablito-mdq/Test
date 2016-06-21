@@ -7,29 +7,10 @@ namespace SeleniumDemo.Pages.AdminPage
 {
     public class AdminHomePage : WorkStridePage
     {
-        [FindsBy(How = How.Id, Using = "Mdd")]
-        private IWebElement TxtMddFileUpload;
-
         [FindsBy(How = How.XPath, Using = "//a[@href='/proxy']")] private IWebElement _lnkProxy;
 
 
         public AdminHomePage(IWebDriver driver) : base(driver) { }
-
-
-        public AdminHomePage CopyMDDFile(string mmdName)
-        {
-            //ChkAutoCopyMDD.Click();
-            //TxtMddName.SendKeys(mmdName);
-            IWebElement BtnCopyMdd = FindElement(By.Id("AutoCopyStartButton"));
-            BtnCopyMdd.Click();
-            Synchronization.WaitForElementNotToBePresent(By.Id("progress-indicator"));
-            return this;
-        }
-
-        public string GetTimeZone()
-        {
-            return new SelectElement(TxtMddFileUpload).SelectedOption.Text;
-        }
 
         public string GetMddError()
         {
@@ -42,24 +23,11 @@ namespace SeleniumDemo.Pages.AdminPage
             return FindElement(By.Name("Emails[0].Address")).Text;
         }
 
-        public string GetOpCo()
-        {
-            return new SelectElement(TxtMddFileUpload).SelectedOption.Text;
-        }
-
-        public string GetRegion()
-        {
-            return new SelectElement(TxtMddFileUpload).SelectedOption.Text;
-        }
-
-        public string GetDataMsg()
-        {
-            return TxtMddFileUpload.GetAttribute(GetTitle());
-        }
-
         public ProxyHomePage LoginProxyAsuser()
         {
-            _lnkProxy.Click();
+            Synchronization.WaitForElementToBePresent(_lnkProxy);
+            if (_lnkProxy.Displayed)
+                 _lnkProxy.Click();
             return NewPage<ProxyHomePage>();
         }
 
@@ -73,6 +41,13 @@ namespace SeleniumDemo.Pages.AdminPage
                         By.XPath(string.Format("//b[contains(.,'{0}')]", preferredName))).Text == preferredName;
             return false;
 
+        }
+
+        public MainHomePage ClosePopUp()
+        {
+           Synchronization.WaitForElementToBePresent(By.ClassName("closeParent")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'ADMIN')]"));
+            return NewPage<MainHomePage>();
         }
     }
 }

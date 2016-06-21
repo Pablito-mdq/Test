@@ -6,5 +6,5 @@
 		  <Impact>Team</Impact>
 		  <Message>probando</Message>
 		  <Reason>holaasdfasdf</Reason>
-		  <Sendtype>Email</Sendtype>
+		  <SendType>Email</SendType>
  </Constants>

@@ -12,6 +12,6 @@
 		  <Objectives>Improve Processes</Objectives>
 		  <Message>QA Test Submission</Message>
 		  <Reason>QA Test Submission</Reason>
-		  <Sendtype>Email</Sendtype>
+		  <SendType>Email</SendType>
           <ApprovalName>Linda Napoli</ApprovalName>
  </Constants>

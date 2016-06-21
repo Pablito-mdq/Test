@@ -7,5 +7,5 @@
 		  <Impact></Impact>
 		  <Message>QA Test Submission</Message>
 		  <Reason></Reason>
-		  <Sendtype>Email</Sendtype>
+		  <SendType>Email</SendType>
  </Constants>

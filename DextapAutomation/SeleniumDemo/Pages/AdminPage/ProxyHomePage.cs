@@ -19,7 +19,7 @@ namespace SeleniumDemo.Tests.Pages
         {
             _txtUserName.SendKeys(name);
             if (Synchronization.WaitForElementToBePresent(By.Id("ui-id-1"))!=null)
-                Synchronization.WaitForElementToBePresent(By.Id("ui-id-1")).Click();
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]",name))).Click();
             else
                 Assert.Fail("User was not found");
             return this;

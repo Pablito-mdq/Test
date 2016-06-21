@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
@@ -26,11 +27,15 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.Id, Using = "reward-detail-form--FUTURE_DATE")]
         private IWebElement _txtFutureDate;
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'employeeMultiSelect selected')]")]
+        private IWebElement _btnMulti;
+
         public NominationHomePage (IWebDriver driver) : base(driver) { }
 
         public Step2 SearchEmployeeFound(string employee)
         {
             Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
+            _txtName.Clear();
             _txtName.SendKeys(employee);
             Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='searchSlider']/div/div/div/img")).Click();
             return NewPage<Step2>();
@@ -173,6 +178,7 @@ namespace SeleniumDemo.Pages.NominationPage
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(.,'Search for an employee:')]"));
             Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
+            _txtName.Clear();
             _txtName.SendKeys(user);
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user))).Click();
           return NewPage<NominationHomePage>();
@@ -243,7 +249,49 @@ namespace SeleniumDemo.Pages.NominationPage
         public NominationHomePage ClickNextGeneric()
         {
            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next')]")).Click();
+           return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage ClickEdit()
+        {
+            IWebElement edit = Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep1']/div[1]/span[2]"));
+            Thread.Sleep(1500);
+            Synchronization.WaitForElementToBePresent(edit);
+            edit.Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'stepNumber')]"));
             return NewPage<NominationHomePage>();
+        }
+
+        public bool BringToStep1()
+        {
+            Thread.Sleep(2500);
+          IWebElement step= Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'stepNumber')]"));
+          var color = step.GetCssValue("background-color");
+           return color == ("rgba(114, 122, 127, 1)");
+        }
+
+        public NominationHomePage ClickMultipleRecipients()
+        {
+            IWebElement multi = Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'employeeMultiSelect')]"));
+            if (multi.Displayed)
+                multi.Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage ClickRemove(int p)
+        {
+            IWebElement[] list =Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'remove')]")).ToArray();
+            list[0].Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public bool IsFirstUserAddedPresent(string user)
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep1']/div[1]/span[2]")).Click();
+            IWebElement element = Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'Aaron {0}')]",user)));
+            if (element != null)
+                return false;
+            return true;
         }
     }
 }

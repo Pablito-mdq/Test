@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
@@ -17,6 +18,51 @@ namespace SeleniumDemo.Tests.BAE
         private static string _file;
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-317
+        [Test]
+        public void WS_61()
+        {
+            if (!DataParser.ReturnExecution("WS_61"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_61.xml";
+                string url = GeneralData.GetUrl(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                home.NavigateToMall();
+                Assert.AreEqual(url,home.GetCurrentUrl(),"The URL is not correct");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-317
+        [Test]
+        public void WS_69()
+        {
+            if (!DataParser.ReturnExecution("WS_69"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_69.xml";
+                username = AwardData.GetAwardUserName(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                NominationHomePage recognitionPage =home.NavigateToNomination();
+                //SCENARIO 1
+                recognitionPage.SearchEmployeeFound(username);
+                recognitionPage.ClickEdit();
+                Assert.IsTrue(recognitionPage.BringToStep1(),"You didnt go back to step 1");
+                //SCENARIO 2
+                recognitionPage = home.NavigateToNomination();
+                recognitionPage.ClickMultipleRecipients().SearchEmployeeFoundMultiple(username).SearchEmployeeFoundMultiple("John");
+                recognitionPage.ClickNextGeneric().ClickEdit().ClickRemove(0);
+                Assert.IsFalse(recognitionPage.IsFirstUserAddedPresent(username),"First User still in the list selected");
+
+            }
+        }
         
         [Category("Regression")]
         [Category("BAE" )]

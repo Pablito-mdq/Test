@@ -9,6 +9,6 @@
 		  <Value></Value>
 		  <Message>QA Monetary Test Submission</Message>
 		  <CompanyValue>Bold</CompanyValue>
-		  <Sendtype>Email</Sendtype>
+		  <SendType>Email</SendType>
           <ApprovalName>Kari Coronado</ApprovalName>
  </Constants>

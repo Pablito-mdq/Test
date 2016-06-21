@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -19,6 +20,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//li[contains(.,'RECOGNIZE')]")]
         private IWebElement _lnkNominationSprint;
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'RECOGNIZE')]")]
+        private IWebElement _lnkNominationPinnacola;
+
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'javascript:void(0);')]")]
         private IWebElement _lnkDisplayOpt;
 
@@ -30,6 +34,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/event_calendar')]")]
         private IWebElement _lnkEventCalendar;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'ADMIN')]")]
+        private IWebElement _lnkAdmin;
         
         public MainHomePage(IWebDriver driver) : base(driver) { }
 
@@ -46,7 +53,7 @@ namespace SeleniumDemo.Pages
 
         public string GetProxyLoginMsg()
         {
-            return FindElement(By.XPath("/html/body/div[1]/p")).Text;
+            return Synchronization.WaitForElementToBePresent(By.XPath("/html/body/div[1]/p")).Text;
         }
 
         public NominationHomePage NavigateToNomination()
@@ -55,6 +62,12 @@ namespace SeleniumDemo.Pages
             if (_lnkNomination.Displayed)
                 _lnkNomination.Click();
             return NewPage<NominationHomePage>();
+        }
+
+        public GoToMallHomePage NavigateToRedeem()
+        {
+            _lnkNavigateToMall.Click();
+            return NewPage<GoToMallHomePage>();
         }
 
         public GoToMallHomePage NavigateToMall()
@@ -170,6 +183,34 @@ namespace SeleniumDemo.Pages
             if (_lnkEventCalendar.Displayed)
                 _lnkEventCalendar.Click();
             return NewPage<EventCalendar>();
+        }
+
+        public ProxyHomePage NavigateToAdminHomePagePinnacola()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkAdmin);
+            Synchronization.WaitForElementToBePresent(_lnkAdmin);
+            if (_lnkAdmin.Displayed)
+                _lnkAdmin.Click();
+            return NewPage<ProxyHomePage>();
+        }
+
+        public string GetProxyLoginMsgPinnacol()
+        {
+            return (Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-blurb')]")).Text) + (Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='proxy-header']/div[1]/span[3]/strong")).Text);
+        }
+
+        public NominationHomePage NavigateToNominationPinnacola()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkNominationPinnacola);
+            if (_lnkNominationPinnacola.Displayed)
+                _lnkNominationPinnacola.Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public int GetAwardPoint()
+        {
+            string a= Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'points-value')]")).Text;
+            return Int32.Parse(a);
         }
     }
 }

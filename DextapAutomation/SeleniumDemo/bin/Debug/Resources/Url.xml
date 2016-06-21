@@ -1,8 +1,9 @@
 <Constants>
-	<BAE>http://qabaeimpact.workstride.net</BAE>
+	<BAE>http://devbaeimpact.workstride.net</BAE>
 	<Sprint>http://qa.workstride.net</Sprint>
 	<Akron>http://qaakrongeneralcelebrations.workstride.net</Akron>
 	<TRU>http://qatruplusawards.workstride.net/login?nosso=1</TRU>
 	<Textron>http://qarewardstextron.workstride.net/login?nosso=1</Textron>
 	<WorkStride>http://demo.workstride.com</WorkStride>
+	<Pinnacol>http://devpinnacol.workstride.net/login</Pinnacol>
 </Constants>

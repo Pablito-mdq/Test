@@ -3,8 +3,10 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
+using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests;
+using SeleniumDemo.Tests.Pages;
 using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages
@@ -32,6 +34,14 @@ namespace SeleniumDemo.Pages
        {
           _lnkHomePage.Click();
           return NewPage<MainHomePage>();
+       }
+
+       public ProxyHomePage NavigateToAdminHomePagePinnacola()
+       {
+           Synchronization.WaitForElementToBePresent(_lnkAdmin);
+           if (_lnkAdmin.Displayed)
+               _lnkAdmin.Click();
+           return NewPage<ProxyHomePage>();
        }
 
        public AdminHomePage NavigateToAdminHomePage()

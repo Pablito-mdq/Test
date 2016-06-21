@@ -7,6 +7,6 @@
 		  <Impact></Impact>
 		  <Message>QA Test Comments</Message>
 		  <Reason>QA Test Comments</Reason>
-		  <Sendtype>Email</Sendtype>
+		  <SendType>Email</SendType>
 
  </Constants>
