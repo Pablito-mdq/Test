@@ -88,7 +88,7 @@ namespace SeleniumDemo.Models
 
         public static string GetAwardBussinesImpact(string configFile)
         {
-            return GetAward(configFile, "BussinesImpact");
+            return GetAward(configFile, "BussinessImpact");
         }
 
         public static string GetSecondAwardName(string configFile)

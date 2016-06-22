@@ -19,13 +19,13 @@ namespace SeleniumDemo.Tests.Pinnacol
         [Category("Pinnacol")]
         //PIN_240
         [Test]
-        public void PIN_240()
+        public void WS_1096()
         {
-            if (!DataParser.ReturnExecution("PIN_240"))
+            if (!DataParser.ReturnExecution("WS_1096"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\PIN_240.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_1096.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),

@@ -28996,3 +28996,53 @@ OpenQA.Selenium.WebDriverTimeoutException: timeout: Timed out receiving message 
 2016-06-21 16:44:54,010 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //a[contains(.,'Go To Mall')]
 2016-06-21 16:44:54,045 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ' Go To Mall'
 2016-06-21 16:44:58,878 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ' Go To Mall'
+2016-06-22 11:12:24,036 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-06-22 11:13:34,389 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://qarewardstextron.workstride.net/login?nosso=1
+2016-06-22 11:16:58,050 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Navigating to URL http://devpinnacol.workstride.net/login
+2016-06-22 11:17:06,358 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Done navigation to URL http://devpinnacol.workstride.net/login
+2016-06-22 11:17:06,360 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='username']
+2016-06-22 11:17:06,390 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='username']
+2016-06-22 11:17:06,592 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //input[@name='password']
+2016-06-22 11:17:06,678 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //input[@name='password']
+2016-06-22 11:17:06,762 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: loginSubmit
+2016-06-22 11:17:06,778 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.Id: loginSubmit
+2016-06-22 11:17:06,806 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element ''
+2016-06-22 11:17:12,312 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element ''
+2016-06-22 11:17:32,698 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,716 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,738 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,779 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,794 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,803 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,918 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,928 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,936 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,944 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,971 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:32,982 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Element found using By.XPath: //span[contains(.,'ADMIN')]
+2016-06-22 11:17:33,006 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: About to click element 'ADMIN'
+2016-06-22 11:17:39,277 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Clicked element 'ADMIN'
+2016-06-22 11:17:39,299 INFO [OpenQA.Selenium.Chrome.ChromeDriver]: Attempting to find element By.Id: user-lookup
+2016-06-22 11:17:39,322 ERROR[OpenQA.Selenium.Chrome.ChromeDriver]: Exception occurred! Taking screenshot.
+OpenQA.Selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.3 x86_64)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
+   at OpenQA.Selenium.By.<>c__DisplayClass2.<Id>b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at OpenQA.Selenium.Support.Events.EventFiringWebDriver.FindElement(By by)
+2016-06-22 11:17:39,335 ERROR[OpenQA.Selenium.Chrome.ChromeDriver]: Could not capture screenshot!
+OpenQA.Selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=51.0.2704.103)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.3 x86_64)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.GetScreenshot()
+   at OpenQA.Selenium.Support.Events.EventFiringWebDriver.GetScreenshot()
+   at WebDriverFramework.WebDriver.DriverListener.TakeScreenshotOnException(Object sender, WebDriverExceptionEventArgs e) in c:\Users\PabloRojas\Documents\Fw\DextapAutomation\WebDriverFramework\WebDriver\DriverListener.cs:line 72
