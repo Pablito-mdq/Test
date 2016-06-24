@@ -56,5 +56,13 @@ namespace SeleniumDemo.Pages
             Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Pending Approvals')]"));
             return Synchronization.WaitForElementToBePresent(By.XPath("//td[contains(@class,'alignCenter approval-response-message')]")).Text;
         }
+
+        public MainHomePage ExitProxyToMainPage()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkExitProxy);
+            ScrollTo(_lnkExitProxy);
+            _lnkExitProxy.Click();
+            return NewPage<MainHomePage>();
+        }
     }
 }

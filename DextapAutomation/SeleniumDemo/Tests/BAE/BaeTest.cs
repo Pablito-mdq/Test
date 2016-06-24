@@ -5,6 +5,7 @@ using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
+using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
@@ -12,7 +13,7 @@ using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests.BAE
 {
-  
+
     class SampleTestSuite : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
@@ -20,43 +21,29 @@ namespace SeleniumDemo.Tests.BAE
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
 
-       /* [Test]
-        //WS-57
-        public void WorkStride_Add_Product_to_Cart()
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Category("Cleveland")]
+        [Test]
+        //WS-65
+        public void WS_65()
         {
-           if (!Utils.DataParser.ReturnExecution("WorkStride_Add_Product_to_Cart"))
+            if (!Utils.DataParser.ReturnExecution("WS_65"))
                 Assert.Ignore();
             else
             {
-            string name = "Foot Locker", deliver = "email";
-            GoToMallHomePage mallPage = InitialPage.Go().Logon().ClickLogin().NavigateToMall();
-            CompanyGiftCard giftCardPage = mallPage.SearchCompany(name).SelectCompany();
-            Assert.AreEqual("Email (Instant)", giftCardPage.GetDeliverMethod("email"), "The deliver method is not well written");
-            Assert.AreEqual("Mail (A Few Days)", giftCardPage.GetDeliverMethod("person"), "The deliver method is not well written");
-            giftCardPage.SelectDeliverMethod(deliver);
-            Assert.AreEqual("10",giftCardPage.GetAmount(),"10 is not the default amount");
-            giftCardPage.ClickPlusAmount().ClickPlusAmount().ClickPlusAmount();
-            Assert.IsTrue(giftCardPage.IsQtyAvailable(),"Quantity field is available");
-          }
-        }*/
-    /*[Category("Regression")]
-    [Category("BAE")]
-    [Category("Cleveland")]
-    [Test]
-        //WS-65
-        public void WorkStride_Search_Filters()
-        {
-          if (!Utils.DataParser.ReturnExecution("WorkStride_Search_Filters"))
-                Assert.Ignore();
-            elseWorkStride_Search_Filters
-            {
-            LoginPage loginPage = InitialPage.Go().Logon();
-            MainHomePage menuPage = loginPage.ClickLogin();
-            GoToMallHomePage mallPage = menuPage.NavigateToMall();
-            Assert.AreEqual(" By Price:",mallPage.GetFilterTitleText(0),"The subtitle is not the right one");
-            Assert.AreEqual("  Under $25",mallPage.GetFilterChkTypeByPrice(0),"The category to filter it's wrong labeled");
-            Assert.AreEqual("  $25 - $50", mallPage.GetFilterChkTypeByPrice(1), "The category to filter it's wrong labeled");
-            Assert.AreEqual("  $50 - $100", mallPage.GetFilterChkTypeByPrice(2), "The category to filter it's wrong labeled");
+                MainHomePage menuPage = InitialPage.Go().Logon().ClickLogin();
+                GoToMallHomePage mallPage = menuPage.NavigateToMall();
+                Assert.AreEqual(" By Price:", mallPage.GetFilterTitleText(0), "The subtitle is not the right one");
+                Assert.AreEqual("  Under $25", mallPage.GetFilterChkTypeByPrice(0), "The category to filter it's wrong labeled");
+                Assert.AreEqual("  $25 - $50", mallPage.GetFilterChkTypeByPrice(1), "The category to filter it's wrong labeled");
+                mallPage.CheckOptionByPrice("Under $25");
+                Assert.IsTrue(mallPage.FilterByPriceUnderWorks("$25"), "The Filter Under $25 is not working");
+                mallPage.CheckOptionByPrice("Under $25");
+                mallPage.CheckOptionByPrice("$25 - $50");
+                Assert.IsTrue(mallPage.FilterByPriceUnderWorks("$25"), "The Filter $25 - $50 is not working");
+                /*Assert.AreEqual("  $50 - $100", mallPage.GetFilterChkTypeByPrice(2), "The category to filter it's wrong labeled");
             Assert.AreEqual("  $100 - $250", mallPage.GetFilterChkTypeByPrice(3), "The category to filter it's wrong labeled");
             Assert.AreEqual("  $250 - $500", mallPage.GetFilterChkTypeByPrice(4), "The category to filter it's wrong labeled");
             Assert.AreEqual("  $500 +", mallPage.GetFilterChkTypeByPrice(5), "The category to filter it's wrong labeled");
@@ -87,9 +74,9 @@ namespace SeleniumDemo.Tests.BAE
             Assert.AreEqual("  Restaurants", mallPage.GetFilterChkTypeByCategory(28), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Sports and Fitness", mallPage.GetFilterChkTypeByCategory(29), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Toys and Games", mallPage.GetFilterChkTypeByCategory(30), "The category to filter it's wrong labeled");
-            Assert.AreEqual("  Travel & Entertainment", mallPage.GetFilterChkTypeByCategory(31), "The category to filter it's wrong labeled");
-         }
-        }*/
+            Assert.AreEqual("  Travel & Entertainment", mallPage.GetFilterChkTypeByCategory(31), "The category to filter it's wrong labeled");*/
+            }
+        }
 
         [Category("Regression")]
         [Category("BAE")]
@@ -105,7 +92,7 @@ namespace SeleniumDemo.Tests.BAE
                 string url = GeneralData.GetUrl(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 home.NavigateToMall();
-                Assert.AreEqual(url,home.GetCurrentUrl(),"The URL is not correct");
+                Assert.AreEqual(url, home.GetCurrentUrl(), "The URL is not correct");
             }
         }
 
@@ -122,22 +109,22 @@ namespace SeleniumDemo.Tests.BAE
                 _file = "Resources\\TestsData\\" + client + "\\WS_69.xml";
                 username = AwardData.GetAwardUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
-                NominationHomePage recognitionPage =home.NavigateToNomination();
+                NominationHomePage recognitionPage = home.NavigateToNomination();
                 //SCENARIO 1
                 recognitionPage.SearchEmployeeFound(username);
                 recognitionPage.ClickEdit();
-                Assert.IsTrue(recognitionPage.BringToStep1(),"You didnt go back to step 1");
+                Assert.IsTrue(recognitionPage.BringToStep1(), "You didnt go back to step 1");
                 //SCENARIO 2
                 recognitionPage = home.NavigateToNomination();
                 recognitionPage.ClickMultipleRecipients().SearchEmployeeFoundMultiple(username).SearchEmployeeFoundMultiple("John");
                 recognitionPage.ClickNextGeneric().ClickEdit().ClickRemove(0);
-                Assert.IsFalse(recognitionPage.IsFirstUserAddedPresent(username),"First User still in the list selected");
+                Assert.IsFalse(recognitionPage.IsFirstUserAddedPresent(username), "First User still in the list selected");
 
             }
         }
-        
+
         [Category("Regression")]
-        [Category("BAE" )]
+        [Category("BAE")]
         //WS-317
         [Test]
         public void WS_317()
@@ -157,7 +144,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
             }
         }
-        
+
         [Category("Regression")]
         [Category("BAE")]
         //WS-917
@@ -197,18 +184,18 @@ namespace SeleniumDemo.Tests.BAE
                     msg = AwardData.GetAwardMessage(_file),
                     reason = AwardData.GetAwardReason(_file),
                 proxy_name = ProxyData.GetProxyUserName(_file);
-                ProxyHomePage proxyPage =  InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
+                ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
                     .LoginProxyAsuser().EnterUserName(proxy_name);
                 MainHomePage home = proxyPage.ProxyToMainHomePage();
                 Assert.AreEqual("You are proxied in under: " + proxy_name, home.GetProxyLoginMsg(),
                     "The message of proxy login is not correct");
-                NominationHomePage recognitionPage =home.NavigateToNomination();
+                NominationHomePage recognitionPage = home.NavigateToNomination();
                 recognitionPage
                     .SearchEmployeeFound(user)
                     .SelectAward(award)
                     .SelectValues(value)
                     .FillMsg(msg);
-                if (reason!="")
+                if (reason != "")
                     recognitionPage.FillReason(reason);
                 recognitionPage.ClickNext();
                 recognitionPage.DeliverType(printype);
@@ -222,10 +209,10 @@ namespace SeleniumDemo.Tests.BAE
                     "Button finish its not correct write");
                 AdminHomePage proxy = recognitionPage.ExitProxy();
                 home = proxy.LoginProxyAsuser().EnterUserName(user).ProxyToMainHomePage();
-                Assert.IsTrue(home.IsPopUpRecognitionShow(),"Pop up recognition is not showing up");
+                Assert.IsTrue(home.IsPopUpRecognitionShow(), "Pop up recognition is not showing up");
                 MyAwards awards = home.ClosePopUp().NavigateToMyAwards();
-                Assert.AreEqual(award,awards.GetAwardName(1,4),"The last award that someone gave you is not present");
-                awards.OpenDetailsAward(1,7);
+                Assert.AreEqual(award, awards.GetAwardName(1, 4), "The last award that someone gave you is not present");
+                awards.OpenDetailsAward(1, 7);
             }
         }
 
@@ -247,11 +234,11 @@ namespace SeleniumDemo.Tests.BAE
                     financialImpact = AwardData.GetAwardFinancialImpact(_file),
                     bussinesImpact = AwardData.GetAwardBussinesImpact(_file);
                 int amount = AwardData.GetAwardAmountValueNumbers(_file);
-                    string printype = AwardData.GetAwardDeliverType(_file),
-                    msg = AwardData.GetAwardMessage(_file), reason = AwardData.GetAwardReason(_file),
-                    companyValue = AwardData.GetAwardCompanyValue(_file),
-                proxy_name = ProxyData.GetProxyUserName(_file),
-                approval_name = AwardData.GetApprovalUserName(_file);
+                string printype = AwardData.GetAwardDeliverType(_file),
+                msg = AwardData.GetAwardMessage(_file), reason = AwardData.GetAwardReason(_file),
+                companyValue = AwardData.GetAwardCompanyValue(_file),
+            proxy_name = ProxyData.GetProxyUserName(_file),
+            approval_name = AwardData.GetApprovalUserName(_file);
                 ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
                     .LoginProxyAsuser().EnterUserName(proxy_name);
                 MainHomePage home = proxyPage.ProxyToMainHomePage();
@@ -299,13 +286,13 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                 _file = "Resources\\TestsData\\" + client + "\\WS_1052.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_1052.xml";
                 string firstName = RegisterData.GetRegisterFirstName(_file),
                     lastName = RegisterData.GetRegisterLastName(_file),
                     ID = RegisterData.GetRegisterID(_file),
                     email = RegisterData.GetRegisterEmail(_file);
                 Register registerPage = InitialPage.Go().ClickJoinNow();
-                Assert.AreEqual("First Name",registerPage.GetName("First Name"),"First Name is now well spell");
+                Assert.AreEqual("First Name", registerPage.GetName("First Name"), "First Name is now well spell");
                 Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
                 Assert.AreEqual("Last Name", registerPage.GetName("Last Name"), "First Name is now well spell");
                 Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
@@ -318,7 +305,7 @@ namespace SeleniumDemo.Tests.BAE
                     .EnterEmployeeID(ID)
                     .EnterEmployeeEmail(email)
                     .ClickRegister();
-                Assert.AreEqual("Success!\r\nWe found you. Check your inbox at " + email + " for a link to finish registration. Thank you!",registerPage.GetSuccessMsg(),"Message is not the expected");
+                Assert.AreEqual("Success!\r\nWe found you. Check your inbox at " + email + " for a link to finish registration. Thank you!", registerPage.GetSuccessMsg(), "Message is not the expected");
             }
         }
 
@@ -340,7 +327,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual(preferredName, profilePage.GetShowName(preferredName), "Prefered Name is now well spell");
                 MainHomePage mainPage = profilePage.NavigateToHomePage();
                 Assert.AreEqual("Welcome " + preferredName + " to the BAE Systems, IMPACT!", mainPage.GetWelcomeTitle(), "Welcome Ttile is now well spell");
-           }
+            }
         }
         [Category("Regression")]
         [Category("BAE")]
@@ -406,6 +393,6 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("RECOGNIZE", nomination.GetBtnRecognizOtherLabel(),
                     "Button finish its not correct write");
             }
-        } 
+        }
     }
 }

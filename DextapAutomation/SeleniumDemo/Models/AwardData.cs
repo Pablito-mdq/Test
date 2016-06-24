@@ -130,5 +130,10 @@ namespace SeleniumDemo.Models
         {
             return GetAward(configFile, "FutureDate");
         }
+
+        internal static string GetAwardCustomerImpact(string configFile)
+        {
+            return GetAward(configFile, "CustomerImpact");
+        }
     }
 }

@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
+using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests;
@@ -28,10 +29,23 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'ADMIN')]")]
         private IWebElement _lnkAdmin;
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'ADMIN')]")]
+        private IWebElement _lnkAdminSpan;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/approval')]")]
+        private IWebElement _lnkPending;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/my_redemptions')]")]
+        private IWebElement _lnkMyRedemptions;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/customer_appreciation')]")]
+        private IWebElement _lnkSendAppreciation;
+
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
        public MainHomePage NavigateToHomePage()
        {
+           Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@id,'ui-spinner-container')]"));
           _lnkHomePage.Click();
           return NewPage<MainHomePage>();
        }
@@ -48,6 +62,13 @@ namespace SeleniumDemo.Pages
        {
            _lnkAdmin.Click();
            return NewPage<AdminHomePage>();
+       }
+
+       public ProxyHomePage NavigateToAdminHomePageSpan()
+       {
+           Synchronization.WaitForElementToBePresent(_lnkAdminSpan);
+           _lnkAdminSpan.Click();
+           return NewPage<ProxyHomePage>();
        }
 
         public RewardsHomePage NavigateToRewardsHomePage()
@@ -75,5 +96,22 @@ namespace SeleniumDemo.Pages
             return NewPage<ReportsPage>();
         }
 
+        public PendingApprovals NavigateToPendingApprovals()
+        {
+            _lnkPending.Click();
+            return NewPage<PendingApprovals>();
+        }
+
+        public MyRedemptions NavigateToMyRedemptions()
+        {
+            _lnkMyRedemptions.Click();
+            return NewPage<MyRedemptions>();
+        }
+
+        public SendAppreciationPage NavigateToSendAppreciation()
+        {
+            _lnkSendAppreciation.Click();
+            return NewPage<SendAppreciationPage>();
+        }
     }
 }

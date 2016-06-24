@@ -293,5 +293,10 @@ namespace SeleniumDemo.Pages.NominationPage
                 return false;
             return true;
         }
+
+        internal object GetValueAward()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

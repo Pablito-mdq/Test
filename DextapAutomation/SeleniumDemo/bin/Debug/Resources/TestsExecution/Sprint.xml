@@ -12,5 +12,7 @@
 		<Test Name="WS_1062" Execution="Yes"/>
 		<Test Name="WS_1063" Execution="Yes"/>
 		<Test Name="Sprin_67" Execution="Yes"/>//SPRIN-67
+		<Test Name="WS_1118" Execution="Yes"/>
+		<Test Name="WS_1120" Execution="Yes"/>
 </TestList>
 

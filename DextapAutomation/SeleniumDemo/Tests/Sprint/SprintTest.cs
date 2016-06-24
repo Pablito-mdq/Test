@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
+using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Utils;
 
@@ -10,6 +11,64 @@ namespace SeleniumDemo.Tests.Sprint
     {
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        [Test]
+        //WS_1118
+        public void WS_1118()
+        {
+            if (!Utils.DataParser.ReturnExecution("WS_1118"))
+                Assert.Ignore();
+            else
+            {
+            string name = "Foot Locker", deliver = "email";
+            GoToMallHomePage mallPage = InitialPage.Go().Logon().ClickLogin().NavigateToRedeem();
+            CompanyGiftCard giftCardPage = mallPage.SearchCompany(name).SelectCompany();
+            Assert.AreEqual("10",giftCardPage.GetAmount(),"10 is not the default amount");
+            giftCardPage.ClickPlusAmount().ClickPlusAmount().ClickPlusAmount();
+            Assert.IsTrue(giftCardPage.IsQtyAvailable(),"Quantity field is available");
+            CompanyGifCart cartPage =   giftCardPage.ClickAddToCart().ClickGoToCart();
+            Assert.IsTrue(cartPage.IsFootLockerAdded(),"FootLocker was not added to the cart");
+            CheckOutPage checkout = cartPage.ClickCheckOut();
+                checkout.FillName("A")
+                    .FillLastName("A")
+                    .FillAddress("123 Test");
+                Assert.AreEqual("Please enter at least 2 characters.", checkout.GetErrorMsgFirstName(), "The Error Message is not present or show");
+                Assert.AreEqual("Please enter at least 2 characters.", checkout.GetErrorMsgLastName(), "The Error Message is not present or show");
+             }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        [Test]
+        //WS_1120
+        public void WS_1120()
+        {
+            if (!Utils.DataParser.ReturnExecution("WS_1120"))
+                Assert.Ignore();
+            else
+            {
+                string name = "Foot Locker", deliver = "email";
+                GoToMallHomePage mallPage = InitialPage.Go().Logon().ClickLogin().NavigateToRedeem();
+                CompanyGiftCard giftCardPage = mallPage.SearchCompany(name).SelectCompany();
+                Assert.AreEqual("10", giftCardPage.GetAmount(), "10 is not the default amount");
+                giftCardPage.ClickPlusAmount().ClickPlusAmount().ClickPlusAmount();
+                Assert.IsTrue(giftCardPage.IsQtyAvailable(), "Quantity field is available");
+                CompanyGifCart cartPage = giftCardPage.ClickAddToCart().ClickGoToCart();
+                Assert.IsTrue(cartPage.IsFootLockerAdded(), "FootLocker was not added to the cart");
+                CheckOutPage checkout = cartPage.ClickCheckOut();
+                //SCENARIO B
+                checkout.FillName("Test")
+                    .FillLastName("Test")
+                    .FillAddress("123 Test Street")
+                    .FillCity("Test")
+                    .FillZipCode("11101")
+                    .FillPhoneNumber("111 111 1111")
+                    .ClickNext();
+             Assert.IsTrue(checkout.IsPaymentOptionAvailable(),"Payment option is not available");
+            }
+        }
 
         [Category("Regression")]
         [Category("Sprint")]

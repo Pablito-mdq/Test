@@ -29,6 +29,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Go To Mall')]")]
         private IWebElement _lnkNavigateToMall;
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'REDEEM')]")]
+        private IWebElement _lnkNavigateToRedeem;
+
         [FindsBy(How = How.XPath, Using = "//span[contains(@class,'myAcctLink')]")]
         private IWebElement _lnkMyAccount;
 
@@ -66,7 +69,7 @@ namespace SeleniumDemo.Pages
 
         public GoToMallHomePage NavigateToRedeem()
         {
-            _lnkNavigateToMall.Click();
+            _lnkNavigateToRedeem.Click();
             return NewPage<GoToMallHomePage>();
         }
 
@@ -96,7 +99,7 @@ namespace SeleniumDemo.Pages
 
         public string GetShowOptTxt(string opt)
         {
-            return FindElement(By.XPath(string.Format("//label[contains(.,'{0}')]", opt))).Text;
+            return Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//label[contains(.,'{0}')]", opt))).Text;
         }
 
         public MainHomePage ClickSocialStream()
@@ -123,9 +126,9 @@ namespace SeleniumDemo.Pages
 
         public bool IsPopUpRecognitionShow()
         {
-            return
-                Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@class,'announcementIcon')]"))
-                    .Displayed;
+            if (Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@class,'announcementIcon')]"))!=null)
+            return Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@class,'announcementIcon')]")) .Displayed;
+            return false;
         }
 
         public MainHomePage ClosePopUp()
@@ -211,6 +214,28 @@ namespace SeleniumDemo.Pages
         {
             string a= Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'points-value')]")).Text;
             return Int32.Parse(a);
+        }
+
+        public string GetLeftMenuOpts(int opt)
+        {
+            switch (opt)
+            {
+                case 0:
+                   return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Recognize Someone')]")).Text;
+                case 1:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/event_calendar')]")).Text;
+                case 2:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Go To Mall')]")).Text;
+                case 3:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/my_awards')]")).Text;
+                case 4:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/approval')]")).Text;
+                case 5:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/my_redemptions')]")).Text;
+                case 6:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/customer_appreciation')]")).Text;
+            }
+            return "The option is not Available or present in this client";
         }
     }
 }

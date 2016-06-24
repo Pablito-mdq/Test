@@ -74,11 +74,17 @@
     <Compile Include="Pages\LeftMenu\GoToMall\GoToMallHomePage.cs" />
     <Compile Include="Pages\Textron\MainHomePageFail.cs" />
     <Compile Include="Pages\LeftMenu\EventCalendar\EventCalendar.cs" />
+    <Compile Include="Tests\EGroup\EGroupTestCases.cs" />
+    <Compile Include="Tests\HSS\HSS.cs" />
+    <Compile Include="Pages\LeftMenu\MyRedemption\MyRedemptions.cs" />
+    <Compile Include="Pages\LeftMenu\SendAppreciation\SendAppreciationPage.cs" />
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Tests\Akron\AkronTests.cs" />
     <Compile Include="Pages\Reports\ReportsPage.cs" />
     <Compile Include="Tests\Pinnacol\PinnacolTest.cs" />
     <Compile Include="Tests\ProxyTests.cs" />
+    <Compile Include="Pages\LeftMenu\GoToMall\CompanyGifCart.cs" />
+    <Compile Include="Pages\LeftMenu\GoToMall\CheckOutPage.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />
@@ -142,6 +148,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="ThoughtWorks.Selenium.Core, Version=2.43.1.0, Culture=neutral, processorArchitecture=MSIL">

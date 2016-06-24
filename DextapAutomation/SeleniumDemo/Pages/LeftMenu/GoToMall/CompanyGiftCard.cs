@@ -54,5 +54,17 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         {
             return _txtQty.Displayed && _txtQty.Enabled;
         }
+
+        public CompanyGiftCard ClickAddToCart()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@type,'submit')]")).Click();
+            return NewPage<CompanyGiftCard>();
+        }
+
+        public CompanyGifCart ClickGoToCart()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/mall/cart')]")).Click();
+            return NewPage<CompanyGifCart>();
+        }
     }
 }

@@ -18,4 +18,5 @@
 		<Test Name="WS_175" Execution="Yes"/>
 		<Test Name="WS_69" Execution="Yes"/>
 		<Test Name="WS_61" Execution="Yes"/>
+		<Test Name="WS_65" Execution="Yes"/>
 </TestList>

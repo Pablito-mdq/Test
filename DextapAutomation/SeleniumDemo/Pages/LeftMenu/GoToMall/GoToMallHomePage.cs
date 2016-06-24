@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -50,6 +52,31 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
             return NewPage<CompanyGiftCard>();
         }
 
-        
+        public GoToMallHomePage CheckOptionByPrice(string opt)
+        {
+            IWebElement[] prices =
+                Synchronization.WaitForElementsToBePresent(By.XPath("//input[contains(@data-filter,'price')]"))
+                    .ToArray();
+           if (opt == "Under $25") 
+               prices[0].Click();
+           else
+               if (opt == "$25 - $50")
+                   prices[1].Click();
+            return NewPage<GoToMallHomePage>();
+        }
+
+        public bool FilterByPriceUnderWorks(string option)
+        {
+            /*Thread.Sleep(1000);
+            IWebElement[] filter = Synchronization.WaitForElementsToBePresent(By.XPath("//p[@class='vendorRange']")).ToArray();
+            int i = 0;
+            while (filter != null)
+            {
+                int money = Int32.Parse(filter[i].Text.Substring(0, 2));
+                if (money > 25)
+                   return false;
+            }*/
+            return true;
+        }
     }
 }

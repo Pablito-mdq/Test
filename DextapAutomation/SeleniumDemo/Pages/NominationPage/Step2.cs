@@ -133,5 +133,18 @@ namespace SeleniumDemo.Pages.NominationPage
             img[1].Click();
             return NewPage<NominationHomePage>();
         }
+
+        public Step2 SelectSameValues(string value,int pos)
+        {
+            IWebElement[] a =
+                Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", value))).ToArray();
+            a[pos].Click();
+            return this;
+        }
+
+        public string GetValueAward()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@style,'font-size:18px;')]")).Text;
+        }
     }
 }
