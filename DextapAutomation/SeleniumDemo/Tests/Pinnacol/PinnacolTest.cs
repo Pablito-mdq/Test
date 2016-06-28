@@ -76,5 +76,7 @@ namespace SeleniumDemo.Tests.Pinnacol
                     Assert.True(1==1,totalpoints + "is equal to " + point);
             }
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
@@ -7,6 +8,7 @@ using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests;
+using SeleniumDemo.Tests.HSS;
 using SeleniumDemo.Tests.Pages;
 using WebDriverFramework.PageObject;
 
@@ -40,6 +42,24 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/customer_appreciation')]")]
         private IWebElement _lnkSendAppreciation;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'RECOGNIZE')]")]
+        private IWebElement _lnkNomination;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'My Activity')]")]
+        private IWebElement _lnkMyActivities;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'View Hierarchy')]")]
+        private IWebElement _lnkViewHierarchy;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/social_stream')]")]
+        private IWebElement _lnkSocialStream;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Recognition Training')]")]
+        private IWebElement _lnkRecognitionTraining;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/report_builder')]")]
+        private IWebElement _lnkReportBuilder;
 
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
@@ -112,6 +132,43 @@ namespace SeleniumDemo.Pages
         {
             _lnkSendAppreciation.Click();
             return NewPage<SendAppreciationPage>();
+        }
+
+        public NominationHomePage NavigateToNominationCaregiver()
+        {
+            _lnkNomination.Click();
+            return NewPage<NominationHomePage>();
+        }
+
+
+        public SocialStreamHomePage NavigateToSocialStream()
+        {
+            _lnkSocialStream.Click();
+            return NewPage<SocialStreamHomePage>();
+        }
+
+        public MyActivityHomePage NavigateToMyActivity()
+        {
+            _lnkMyActivities.Click();
+            return NewPage<MyActivityHomePage>();
+        }
+
+        public ViewHierarchyHomePage NavigateToViewHierarchy()
+        {
+            _lnkViewHierarchy.Click();
+            return NewPage<ViewHierarchyHomePage>();
+        }
+
+        public TrainingHomePage NavigateToTraining()
+        {
+            _lnkRecognitionTraining.Click();
+            return NewPage<TrainingHomePage>();
+        }
+
+        public ReportBuilderHomePage NavigateToReportBuilder()
+        {
+            _lnkReportBuilder.Click();
+            return NewPage<ReportBuilderHomePage>();
         }
     }
 }

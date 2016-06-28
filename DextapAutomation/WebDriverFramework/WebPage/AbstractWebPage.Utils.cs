@@ -1,3 +1,4 @@
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -52,6 +53,7 @@ namespace WebDriverFramework.PageObject
         /// <returns>The current URL for web page.</returns>
         public string GetCurrentUrl()
         {
+            Thread.Sleep(1000);
             return WebDriver.Url;
         }
 

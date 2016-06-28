@@ -35,7 +35,7 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//span[contains(@class,'myAcctLink')]")]
         private IWebElement _lnkMyAccount;
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/event_calendar')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Event Calendar')]")]
         private IWebElement _lnkEventCalendar;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(.,'ADMIN')]")]
@@ -182,7 +182,7 @@ namespace SeleniumDemo.Pages
 
         public EventCalendar NavigateToEventCalendar()
         {
-            Synchronization.WaitForElementToBePresent(_lnkEventCalendar);
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'calendar')]"));
             if (_lnkEventCalendar.Displayed)
                 _lnkEventCalendar.Click();
             return NewPage<EventCalendar>();
@@ -227,15 +227,35 @@ namespace SeleniumDemo.Pages
                 case 2:
                     return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Go To Mall')]")).Text;
                 case 3:
-                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/my_awards')]")).Text;
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'My Awards')]")).Text;
                 case 4:
-                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/approval')]")).Text;
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).Text;
                 case 5:
                     return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/my_redemptions')]")).Text;
                 case 6:
                     return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/customer_appreciation')]")).Text;
+                case 7:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Recognize Caregiver')]")).Text;
+                case 8:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/social_stream')]")).Text;
+                case 9:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/my_activities')]")).Text;
+                case 10:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/hierarchy')]")).Text;
+                case 11:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Recognition Training')]")).Text;
+                case 12:
+                    return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/report_builder')]")).Text;
             }
             return "The option is not Available or present in this client";
         }
+
+        public MainHomePage ExpandMenuPinnacol()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[@class='collapseBtn content quickLinksBtn leftMenuLink']")).Click();
+            return NewPage<MainHomePage>();
+        }
+
+        
     }
 }

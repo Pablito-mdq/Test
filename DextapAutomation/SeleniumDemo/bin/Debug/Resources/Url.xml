@@ -1,11 +1,18 @@
 <Constants>
-	<BAE>http://qabaeimpact.workstride.net</BAE>
+	<BAE>http://qabaeimpact.workstride.net/</BAE>
 	<Sprint>http://qairecognize.workstride.net/</Sprint>
-	<Akron>http://qaakrongeneralcelebrations.workstride.net</Akron>
+	<Akron>http://qaakrongeneralcelebrations.workstride.net/</Akron>
 	<TRU>http://qatruplusawards.workstride.net/login?nosso=1</TRU>
 	<Textron>http://qarewardstextron.workstride.net/login?nosso=1</Textron>
 	<WorkStride>http://demo.workstride.com</WorkStride>
-	<Pinnacol>http://devpinnacol.workstride.net/login</Pinnacol>
-	<EGroup>http://devegrouprewards.workstride.net/login</EGroup>
+	<Pinnacol>http://devpinnacol.workstride.net/</Pinnacol>
+	<EGroup>http://devegrouprewards.workstride.net/</EGroup>
 	<HSS>http://qahssrewards.workstride.net/</HSS>
+	<Cibu>http://devciburewards.workstride.net/</Cibu>
+	<GreatExpressions>http://qagedcrewards.workstride.net/login?nosso=1</GreatExpressions>
+	<UC>http://qaucdavis.workstride.net/login?nosso=1</UC>
+	<Eurest>http://qaeurestservicesgem.workstride.net/</Eurest>
+	<Shawcor>http://qashawcor.workstride.net/</Shawcor>
+	<HealthAlliance>http://qahahcaregiverconnection.workstride.net/</HealthAlliance>
+	<WesternConnecticut>http://qavaluedcelebrations.workstride.net/</WesternConnecticut>
 </Constants>

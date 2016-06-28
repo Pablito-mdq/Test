@@ -66,6 +66,7 @@
     <Compile Include="Pages\PendingApprovals.cs" />
     <Compile Include="Pages\Reports\AllAwards.cs" />
     <Compile Include="Pages\Textron\RecognitionSteps.cs" />
+    <Compile Include="Pages\LeftMenu\TrainingHomePage.cs" />
     <Compile Include="Pages\WorkStridePage.cs" />
     <Compile Include="Pages\MainHomePage.cs" />
     <Compile Include="Pages\Login\LoginPage.cs" />
@@ -78,6 +79,10 @@
     <Compile Include="Tests\HSS\HSS.cs" />
     <Compile Include="Pages\LeftMenu\MyRedemption\MyRedemptions.cs" />
     <Compile Include="Pages\LeftMenu\SendAppreciation\SendAppreciationPage.cs" />
+    <Compile Include="Pages\LeftMenu\SocialStreamHomePage.cs" />
+    <Compile Include="Pages\LeftMenu\MyActivityHomePage.cs" />
+    <Compile Include="Pages\LeftMenu\ViewHierarchyHomePage.cs" />
+    <Compile Include="Pages\LeftMenu\ReportBuilderHomePage.cs" />
     <Compile Include="Tests\LoginPageTests.cs" />
     <Compile Include="Tests\Akron\AkronTests.cs" />
     <Compile Include="Pages\Reports\ReportsPage.cs" />
