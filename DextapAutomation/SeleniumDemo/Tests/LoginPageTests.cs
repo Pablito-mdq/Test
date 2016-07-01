@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.Login;
-using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests

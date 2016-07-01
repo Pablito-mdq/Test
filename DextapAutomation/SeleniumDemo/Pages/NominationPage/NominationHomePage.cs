@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using SeleniumDemo.Pages.AdminPage;
 
 namespace SeleniumDemo.Pages.NominationPage
@@ -14,6 +15,9 @@ namespace SeleniumDemo.Pages.NominationPage
 
         [FindsBy(How = How.Name, Using = "employee-lookup")]
         private IWebElement _txtName;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'AMOUNT')]")]
+        private IWebElement _cboValue;
 
         [FindsBy(How = How.Id, Using = "recog_PersonalizeImg2")]
         private IWebElement _imgRecognition2;
@@ -180,8 +184,9 @@ namespace SeleniumDemo.Pages.NominationPage
             Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
             _txtName.Clear();
             _txtName.SendKeys(user);
+            if (Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", user)))!=null)
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user))).Click();
-          return NewPage<NominationHomePage>();
+           return NewPage<NominationHomePage>();
 
         }
 
@@ -294,9 +299,18 @@ namespace SeleniumDemo.Pages.NominationPage
             return true;
         }
 
-        internal object GetValueAward()
+        public string GetBtnRecognizOtherLabelSprint()
         {
-            throw new NotImplementedException();
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Recognize someone else')]"))
+                    .Text;
+        }
+
+        public Step2 SelectValueOfAwardSprint(string value)
+        {
+            if (_cboValue != null)
+               _cboValue.SendKeys(value);
+            return NewPage<Step2>();
         }
     }
 }

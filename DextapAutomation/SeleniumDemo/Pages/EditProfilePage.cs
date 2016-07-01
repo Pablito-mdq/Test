@@ -31,8 +31,8 @@ namespace SeleniumDemo.Tests
         [FindsBy(How = How.Id, Using = "Opco")]
         private IWebElement CboOpCo;
 
-        [FindsBy(How = How.Id, Using = "Region")]
-        private IWebElement _cboRegion;
+        [FindsBy(How = How.XPath, Using = "//input[contains(@type,'file')]")]
+        private IWebElement _btnUploadPhoto;
 
         [FindsBy(How = How.Id, Using = "First")]
         private IWebElement TxtFirstName;
@@ -90,20 +90,6 @@ namespace SeleniumDemo.Tests
             return this;
         }
 
-        public EditProfilePage SelectRegion(string region)
-        {
-            new SelectElement(_cboRegion).SelectByText(region);
-            return this;
-        }
-
-        public bool AreFieldsCorrectEnable()
-        {
-            if ((TxtFirstName.Enabled) && (TxtLastName.Enabled) && (CboOpCo.Enabled) && (_cboRegion.Enabled))
-                if ((TxtEmail.Enabled) && (CboTimeZones.Enabled))
-                             return true;
-            return false;
-        }
-
            public EditProfilePage EnterFirstName(string firstName)
            {
                TxtFirstName.Clear();
@@ -134,11 +120,6 @@ namespace SeleniumDemo.Tests
            public string GetOpCo()
            {
                return new SelectElement(CboOpCo).SelectedOption.Text;
-           }
-
-           public string GetRegion()
-           {
-               return new SelectElement(_cboRegion).SelectedOption.Text;
            }
 
            public string GetFirstName()
@@ -179,6 +160,19 @@ namespace SeleniumDemo.Tests
                return
                    Synchronization.WaitForElementToBePresent(
                        By.XPath(string.Format("//b[contains(.,'{0}')]", preferredName))).Text;
+           }
+
+           public EditProfilePage ClickUploadphoto()
+           {
+               _btnUploadPhoto.Click();
+               return NewPage<EditProfilePage>();
+           }
+
+           public int getsizeuploadim()
+           {
+               var c = Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@id,'imagePlaceholder')]")).Size.Height;
+               var d = Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@id,'imagePlaceholder')]")).Size.Width;
+               return c + d;
            }
     }
 }

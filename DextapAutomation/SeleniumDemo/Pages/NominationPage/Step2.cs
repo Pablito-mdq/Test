@@ -25,6 +25,15 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.XPath, Using = "//input[contains(@name,'APPROVAL_FROM_TASK_OWNER')]")]
         private IWebElement _chkApproval;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id='reward-detail-form--BEGIN_DATE']")]
+        private IWebElement _txtBeginDate;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id='reward-detail-form--END_DATE']")]
+        private IWebElement _txtEndDate;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'ALTERNATE_COST_CENTER')]")]
+        private IWebElement _txtAlternate;
+
         public Step2(IWebDriver driver) : base(driver){}
 
         public Step2 SelectAward(string award)
@@ -117,12 +126,12 @@ namespace SeleniumDemo.Pages.NominationPage
             return this;
         }
 
-        public NominationHomePage SelectAwardMultiple(string award)
+        public NominationHomePage SelectAwardMultiple(string award,int order)
         {
             IWebElement step2 = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'What Award')]"));
             IWebElement[] awards = Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).ToArray();
             if ((step2.Displayed) && (awards[0].Displayed))
-                awards[0].Click();
+                awards[order].Click();
             return NewPage<NominationHomePage>();
         }
 
@@ -145,6 +154,30 @@ namespace SeleniumDemo.Pages.NominationPage
         public string GetValueAward()
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@style,'font-size:18px;')]")).Text;
+        }
+
+        public Step2 EnterBeginDate(string date)
+        {
+            _txtBeginDate.SendKeys(date);
+            return this;
+        }
+
+        public Step2 EnterEndDate(string date)
+        {
+            _txtEndDate.SendKeys(date);
+            return this;
+        }
+
+        public Step2 FillDescription(string description)
+        {
+            _txtReason.SendKeys(description);
+            return this;
+        }
+
+        public Step2 FillAlternate(string alternate)
+        {
+            _txtAlternate.SendKeys(alternate);
+            return this;
         }
     }
 }

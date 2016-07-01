@@ -40,6 +40,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//span[contains(.,'ADMIN')]")]
         private IWebElement _lnkAdmin;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Sign Out')]")]
+        private IWebElement _lnkSignOut;
         
         public MainHomePage(IWebDriver driver) : base(driver) { }
 
@@ -256,6 +259,10 @@ namespace SeleniumDemo.Pages
             return NewPage<MainHomePage>();
         }
 
-        
+        public LoginPage ClickLogOut()
+        {
+            _lnkSignOut.Click();
+            return NewPage<LoginPage>();
+        }
     }
 }

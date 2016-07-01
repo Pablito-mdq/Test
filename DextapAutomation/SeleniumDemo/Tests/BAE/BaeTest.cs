@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
@@ -20,7 +20,23 @@ namespace SeleniumDemo.Tests.BAE
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
-
+        [Category("Regression")]
+        [Category("WorkStride")]
+        //WS-1133
+        [Test]
+        public void WS_1133()
+        {
+            if (!DataParser.ReturnExecution("WS_1133"))
+                Assert.Ignore();
+            else
+            {
+                LoginPage MainPage = InitialPage.Go().Logon();
+                string originalURL = MainPage.GetCurrentUrl();
+                LoginPage loginPage = MainPage.ClickLogin().ClickLogOut();
+                string newURL = loginPage.GetCurrentUrl();
+                Assert.AreEqual(originalURL,newURL,"The login page is not the same for SSO users");
+            }
+        }
 
         [Category("Regression")]
         [Category("BAE")]
@@ -29,7 +45,7 @@ namespace SeleniumDemo.Tests.BAE
         //WS-65
         public void WS_65()
         {
-            if (!Utils.DataParser.ReturnExecution("WS_65"))
+            if (!DataParser.ReturnExecution("WS_65"))
                 Assert.Ignore();
             else
             {
@@ -75,6 +91,29 @@ namespace SeleniumDemo.Tests.BAE
             Assert.AreEqual("  Sports and Fitness", mallPage.GetFilterChkTypeByCategory(29), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Toys and Games", mallPage.GetFilterChkTypeByCategory(30), "The category to filter it's wrong labeled");
             Assert.AreEqual("  Travel & Entertainment", mallPage.GetFilterChkTypeByCategory(31), "The category to filter it's wrong labeled");*/
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-317
+        [Test]
+        public void WS_1059()
+        {
+            if (!DataParser.ReturnExecution("WS_1059"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1059.xml";
+                string path = GeneralData.path(_file); int width = GeneralData.width(_file), height = GeneralData.height(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                var a = home.EditProfile();
+                a.ClickUploadphoto();
+                SendKeys.SendWait(path);
+                SendKeys.SendWait("{ENTER}");
+                int b = width*height;
+                var c = a.getsizeuploadim();
+                Assert.AreNotEqual(b,c, "The size is the same so,the image is not changed");
             }
         }
 

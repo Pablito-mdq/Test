@@ -1,10 +1,6 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.AdminPage;
-using SeleniumDemo.Pages.LeftMenu.EventCalendar;
-using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 

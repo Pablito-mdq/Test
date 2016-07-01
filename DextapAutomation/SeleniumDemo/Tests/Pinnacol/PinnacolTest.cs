@@ -1,12 +1,9 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.NominationPage;
-using SeleniumDemo.Utils;
-using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Tests.Pages;
-using WebDriverFramework.PageObject;
+using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests.Pinnacol
 {

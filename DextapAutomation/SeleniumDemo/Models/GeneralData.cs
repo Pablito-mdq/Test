@@ -25,9 +25,36 @@ namespace SeleniumDemo.Models
             return values;
         }
 
+        public static int GetDataInt(string configFile, string value)
+        {
+
+            XElement xelement = XElement.Load(configFile);
+            var xElement = xelement.Element(string.Format("{0}", value));
+            if (xElement != null)
+                values = xElement.Value;
+            else
+                Assert.Fail("The field" + value + "is not present in the file" + configFile);
+            return Int32.Parse(values);
+        }
+
         public static string GetUrl(string configFile)
         {
             return GetData(configFile, "Url");
+        }
+
+        public static string path(string configFile)
+        {
+            return GetData(configFile, "path");
+        }
+
+        public static int width(string configFile)
+        {
+            return GetDataInt(configFile, "width");
+        }
+
+        public static int height(string configFile)
+        {
+            return GetDataInt(configFile, "height");
         }
     }
 }

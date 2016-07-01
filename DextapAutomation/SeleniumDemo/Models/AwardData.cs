@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Xml.Linq;
+using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Models
 {
@@ -131,9 +132,39 @@ namespace SeleniumDemo.Models
             return GetAward(configFile, "FutureDate");
         }
 
-        internal static string GetAwardCustomerImpact(string configFile)
+        public static string GetAwardCustomerImpact(string configFile)
         {
             return GetAward(configFile, "CustomerImpact");
+        }
+
+        public static string GetAwardBeginDate(string configFile)
+        {
+            return DateUtils.GetCurrentDate().ToLongDateString();
+        }
+
+        public static string GetAwardEndDate(string configFile)
+        {
+            return DateUtils.GetDateOverdue();
+        }
+
+        public static string GetAwardCriteria(string configFile)
+        {
+            return GetAward(configFile, "Criteria");
+        }
+
+        public static string GetSubCriteria(string configFile)
+        {
+            return GetAward(configFile, "SubCriteria");
+        }
+
+        public static string GetAlternate(string configFile)
+        {
+            return GetAward(configFile, "Alternate");
+        }
+
+        public static string GetAwardDescription(string configFile)
+        {
+            return GetAward(configFile, "Description");
         }
     }
 }

@@ -18,7 +18,7 @@ namespace SeleniumDemo.Tests.Sprint
         //WS_1118
         public void WS_1118()
         {
-            if (!Utils.DataParser.ReturnExecution("WS_1118"))
+            if (!DataParser.ReturnExecution("WS_1118"))
                 Assert.Ignore();
             else
             {
@@ -45,7 +45,7 @@ namespace SeleniumDemo.Tests.Sprint
         //WS_1120
         public void WS_1120()
         {
-            if (!Utils.DataParser.ReturnExecution("WS_1120"))
+            if (!DataParser.ReturnExecution("WS_1120"))
                 Assert.Ignore();
             else
             {
@@ -92,7 +92,7 @@ namespace SeleniumDemo.Tests.Sprint
                     .SelectRecipientType("multiple")
                     .SearchEmployeeFoundMultiple(user)
                     .ClickNextStep2()
-                    .SelectAwardMultiple(award)
+                    .SelectAwardMultiple(award, 0)
                     .SelectSubAwardType(subAward1,subAward2)
                     .ClickNextFillCard()
                     .FillEditCardEditor(msg)
@@ -104,9 +104,58 @@ namespace SeleniumDemo.Tests.Sprint
                 recognitionPage.ClickSendRecognition();
                 Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
-                Assert.AreEqual("RECOGNIZE", recognitionPage.GetBtnRecognizOtherLabel(),
+                Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
                     "Button finish its not correct write");
                 Assert.Fail("Missing steps DUE to bug, ticket name SPRIN-91");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1130
+        [Test]
+        public void WS_1130()
+        {
+            if (!DataParser.ReturnExecution("WS_1130"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1130.xml";
+                string user = AwardData.GetAwardUserName(_file),msg = AwardData.GetAwardMessage(_file),
+                    award = AwardData.GetAwardName(_file),begindate = AwardData.GetAwardBeginDate(_file),
+                    endate = AwardData.GetAwardEndDate(_file),description = AwardData.GetAwardDescription(_file),
+                    Criteria = AwardData.GetAwardCriteria(_file),subCriteria = AwardData.GetSubCriteria(_file),
+                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file);
+                MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
+                    ClickOption("Proxy").EnterUserNameProxySprint(user).ProxyToMainHomePageSprint().ClosePopUp();
+                NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
+                recognitionPage
+                    .SelectRecipientType("multiple")
+                    .SearchEmployeeFoundMultiple("Brenda Michel")
+                    .SearchEmployeeFoundMultiple("Adri Johnson")
+                    .SearchEmployeeFoundMultiple("Ada Pitocco")
+                    .SearchEmployeeFoundMultiple("Alex Alvarado")
+                    .ClickNextStep2()
+                    .SelectAwardMultiple(award, 2)
+                    .SelectValueOfAwardSprint(value)
+                    .EnterBeginDate(begindate)
+                    .EnterEndDate(endate)
+                    .SelectValues(Criteria)
+                    .SelectValues(subCriteria)
+                    .FillDescription(description)
+                    .FillMsg(msg)
+                    .ClickNext()
+                    .EnterUserCCEmail(ccEmail).ClickNextGeneric();
+                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                     "The message is not ready to send");
+                Assert.AreEqual("SEND RECOGNITION", recognitionPage.GetBtnSendRecognition(), "Submit button is not well written");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+                Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
+                Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
+                    "Button finish its not correct write");
+                
             }
         }
     }

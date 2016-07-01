@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.NominationPage;
-using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests.EGroup

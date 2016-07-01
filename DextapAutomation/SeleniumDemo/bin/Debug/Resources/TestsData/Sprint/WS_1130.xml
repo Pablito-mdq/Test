@@ -1,0 +1,13 @@
+<Constants>
+		  <Name>Michelle Lizak</Name>
+		  <AwardName>e-Point Award</AwardName>
+		  <AmountValue>100</AmountValue>
+		  <BeginDate></BeginDate>
+		  <EndDate></EndDate>
+		  <Message>QA Test</Message>
+		  <Description>QA Test</Description>
+		  <Criteria>Network</Criteria>
+		  <SubCriteria>Ad hoc Recognition</SubCriteria>
+		  <CCEmail>Mic</CCEmail>
+		  <SendType>Email</SendType>
+ </Constants>
