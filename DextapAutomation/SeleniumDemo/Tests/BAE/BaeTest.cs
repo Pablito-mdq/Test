@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests.BAE
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
         [Category("Regression")]
-        [Category("WorkStride")]
+        [Category("BAE")]
         //WS-1133
         [Test]
         public void WS_1133()

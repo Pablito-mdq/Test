@@ -155,7 +155,58 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
                 Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
                     "Button finish its not correct write");
+                //this tc continues but fail step 18
                 
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1130
+        [Test]
+        public void WS_1135()
+        {
+            if (!DataParser.ReturnExecution("WS_1135"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1135.xml";
+                string user = AwardData.GetAwardUserName(_file), msg = AwardData.GetAwardMessage(_file),
+                    award = AwardData.GetAwardName(_file), begindate = AwardData.GetAwardBeginDate(_file),
+                    endate = AwardData.GetAwardEndDate(_file), description = AwardData.GetAwardDescription(_file),
+                    Criteria = AwardData.GetAwardCriteria(_file), subCriteria = AwardData.GetSubCriteria(_file),
+                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file);
+                MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
+                    ClickOption("Proxy").EnterUserNameProxySprint(user).ProxyToMainHomePageSprint().ClosePopUp();
+                NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
+                recognitionPage
+                    .SelectRecipientType("multiple")
+                    .SearchEmployeeFoundMultiple("Brenda Michel")
+                    .SearchEmployeeFoundMultiple("Adri Johnson")
+                    .SearchEmployeeFoundMultiple("Ada Pitocco")
+                    .SearchEmployeeFoundMultiple("Alex Alvarado")
+                    .ClickNextStep2()
+                    .SelectAwardMultiple(award, 2)
+                    .SelectValueOfAwardSprint(value)
+                    .EnterBeginDate(begindate)
+                    .EnterEndDate(endate)
+                    .SelectValues(Criteria)
+                    .SelectValues(subCriteria)
+                    .FillDescription(description)
+                    .FillMsg(msg)
+                    .ClickNext()
+                    .EnterUserCCEmail(ccEmail).ClickNextGeneric();
+                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                     "The message is not ready to send");
+                Assert.AreEqual("SEND RECOGNITION", recognitionPage.GetBtnSendRecognition(), "Submit button is not well written");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+                Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
+                Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
+                    "Button finish its not correct write");
+                //this tc continues but fail step 18
+
             }
         }
     }

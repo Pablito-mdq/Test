@@ -76,6 +76,7 @@
     <Compile Include="Pages\Textron\MainHomePageFail.cs" />
     <Compile Include="Pages\LeftMenu\EventCalendar\EventCalendar.cs" />
     <Compile Include="Tests\EGroup\EGroupTestCases.cs" />
+    <Compile Include="Tests\GreatExpressions\GreatExpressionsTests.cs" />
     <Compile Include="Tests\HSS\HSS.cs" />
     <Compile Include="Pages\LeftMenu\MyRedemption\MyRedemptions.cs" />
     <Compile Include="Pages\LeftMenu\SendAppreciation\SendAppreciationPage.cs" />
