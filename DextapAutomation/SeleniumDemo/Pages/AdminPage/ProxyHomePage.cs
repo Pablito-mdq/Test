@@ -55,21 +55,21 @@ namespace SeleniumDemo.Tests.Pages
             return NewPage<ProxyHomePage>();
         }
 
-        public ProxyHomePage EnterUserNameProxySprint(string user)
-        {
-            _txtUserNameSprint.SendKeys(user);
-            if (Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]", user))) != null)
-                Synchronization.WaitForElementToBePresent(By.XPath("//div[@data-ng-animate='2']")).Click();
-            else
-                Assert.Fail("User was not found");
-            return this;
-        }
-
         public MainHomePage ProxyToMainHomePageSprint()
         {
             Synchronization.WaitForElementNotToBePresent(By.Id("ui-id-1"));
             _btnProxySprint.Click();
             return NewPage<MainHomePage>();
+        }
+
+        public ProxyHomePage EnterUserNameProxySprint2(string user)
+        {
+            _txtUserNameSprint.SendKeys(user);
+            if (Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//li[@class='proxy_user-result']", user))) != null)
+                Synchronization.WaitForElementToBePresent(By.XPath("//li[@class='proxy_user-result']")).Click();
+            else
+                Assert.Fail("User was not found");
+            return this;
         }
     }
 }

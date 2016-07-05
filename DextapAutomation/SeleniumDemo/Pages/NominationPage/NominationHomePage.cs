@@ -312,5 +312,11 @@ namespace SeleniumDemo.Pages.NominationPage
                _cboValue.SendKeys(value);
             return NewPage<Step2>();
         }
+
+        public MainHomePage ExitProxy2()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]")).Click();
+            return NewPage<MainHomePage>();
+        }
     }
 }

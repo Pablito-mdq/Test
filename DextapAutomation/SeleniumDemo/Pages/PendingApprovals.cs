@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
 
@@ -63,6 +64,25 @@ namespace SeleniumDemo.Pages
             ScrollTo(_lnkExitProxy);
             _lnkExitProxy.Click();
             return NewPage<MainHomePage>();
+        }
+
+        public string GetFirstUserApproval()
+        {
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='DataTables_Table_0']/tbody/tr[1]/td[2]"))
+                    .Text;
+        }
+
+        public AwardDetailsPopUp ClickThumpsUp()
+        {
+            Synchronization.WaitForElementsToBePresent(By.XPath("//button[@uib-tooltip='Approve']")).FirstOrDefault().Click();
+            return NewPage<AwardDetailsPopUp>();
+        }
+
+        public AwardDetailsPopUp ClickThumpsDown()
+        {
+            Synchronization.WaitForElementsToBePresent(By.XPath("//button[@uib-tooltip='Decline']")).FirstOrDefault().Click();
+            return NewPage<AwardDetailsPopUp>();
         }
     }
 }

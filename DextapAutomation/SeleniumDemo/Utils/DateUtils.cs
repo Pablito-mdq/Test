@@ -14,7 +14,7 @@ namespace SeleniumDemo.Utils
         public static string GetDateDueToday()
         {
             //Console.WriteLine("Get due today date: " + GetCurrentDate().ToShortDateString());
-            string format = "MM/dd/yy";
+            string format = "MM/dd/yyyy";
 
             return Regex.Replace(GetCurrentDate().ToString(format), "-", "/");
         }
@@ -23,9 +23,9 @@ namespace SeleniumDemo.Utils
         public static string GetDateOverdue()
         {
             //Console.WriteLine("Get overdue date: " + GetCurrentDate().AddDays(-4).ToShortDateString());
-            string format = "MM/dd/yy";
+            string format = "MM/dd/yyyy";
 
-            return Regex.Replace(GetCurrentDate().AddDays(-4).ToString(format), "-", "/");
+            return Regex.Replace(GetCurrentDate().AddDays(-1).ToString(format), "-", "/");
         }
 
         //return "current date plus 4 days";

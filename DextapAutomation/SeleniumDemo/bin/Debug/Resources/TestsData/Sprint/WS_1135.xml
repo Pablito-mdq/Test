@@ -9,5 +9,6 @@
 		  <Criteria>Network</Criteria>
 		  <SubCriteria>Ad hoc Recognition</SubCriteria>
 		  <CCEmail>Mic</CCEmail>
+		  <ApprovalName>Nancy Malicoat</ApprovalName>
 		  <SendType>Email</SendType>
  </Constants>

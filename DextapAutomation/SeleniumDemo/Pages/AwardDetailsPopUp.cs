@@ -55,5 +55,29 @@ namespace SeleniumDemo.Pages
             Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]"));
             return NewPage<PendingApprovals>();
         }
+
+       public AwardDetailsPopUp ApproveAllorDeclineAll()
+       {
+           Synchronization.WaitForElementToBePresent(By.XPath("//textarea[contains(@name,'approvalComment')]")).SendKeys("QA Test");
+           Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'btn btn-generic')]")).Click();
+           return NewPage<AwardDetailsPopUp>();
+       }
+
+       public bool IsPopUpPresent()
+       {
+           return Synchronization.WaitForElementToBePresent(By.XPath("//div[@class='approvaltool-modal-innerwrapper']"))
+               .Displayed;
+       }
+
+       public string GetSuccesfullMsg()
+       {
+           return Synchronization.WaitForElementToBePresent(By.XPath("//p[contains(@class,'approvaltool_modal-successmsg')]")).Text;
+       }
+
+       public PendingApprovals ClickClose()
+       {
+           Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Close')]")).Click();
+           return NewPage<PendingApprovals>();
+       }
     }
 }

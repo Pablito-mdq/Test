@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -136,11 +137,13 @@ namespace SeleniumDemo.Pages
 
         public MainHomePage ClosePopUp()
         {
-            FindElement(
+            Thread.Sleep(1000);
+            Synchronization.WaitForElementToBePresent(
                 By.XPath(
                     "//img[contains(@src,'http://demoassets.workstride.com/resources/images/milestone_logo_newHire_120x120.png')]"));
             Synchronization.WaitForElementToBePresent(By.Id("modal"));
             FindElement(By.XPath("//*[@id='modal']/div/div/a")).Click();
+            Thread.Sleep(1000);
             return NewPage<MainHomePage>();
         }
 

@@ -139,12 +139,12 @@ namespace SeleniumDemo.Models
 
         public static string GetAwardBeginDate(string configFile)
         {
-            return DateUtils.GetCurrentDate().ToLongDateString();
+            return DateUtils.GetDateOverdue();
         }
 
         public static string GetAwardEndDate(string configFile)
         {
-            return DateUtils.GetDateOverdue();
+            return DateUtils.GetDateDueToday();
         }
 
         public static string GetAwardCriteria(string configFile)

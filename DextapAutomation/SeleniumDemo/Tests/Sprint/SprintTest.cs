@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
@@ -126,9 +127,10 @@ namespace SeleniumDemo.Tests.Sprint
                     award = AwardData.GetAwardName(_file),begindate = AwardData.GetAwardBeginDate(_file),
                     endate = AwardData.GetAwardEndDate(_file),description = AwardData.GetAwardDescription(_file),
                     Criteria = AwardData.GetAwardCriteria(_file),subCriteria = AwardData.GetSubCriteria(_file),
-                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file);
+                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file),
+                    proxyname = AwardData.GetApprovalUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
-                    ClickOption("Proxy").EnterUserNameProxySprint(user).ProxyToMainHomePageSprint().ClosePopUp();
+                    ClickOption("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
                 NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
@@ -145,7 +147,7 @@ namespace SeleniumDemo.Tests.Sprint
                     .SelectValues(subCriteria)
                     .FillDescription(description)
                     .FillMsg(msg)
-                    .ClickNext()
+                    .ClickNextSprint()
                     .EnterUserCCEmail(ccEmail).ClickNextGeneric();
                 Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
                      "The message is not ready to send");
@@ -155,8 +157,16 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
                 Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
                     "Button finish its not correct write");
-                //this tc continues but fail step 18
-                
+                recognitionPage.ExitProxy2();
+                Thread.Sleep(1000);
+                proxy = proxy.NavigateToAdminHomePageSpan().ClickOption("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
+                var pending = proxy.NavigateToPendingApprovals();
+                Assert.AreEqual(user, pending.GetFirstUserApproval(), user + " is not present");
+               var popUp = pending.ClickThumpsUp();
+                Assert.IsTrue(popUp.IsPopUpPresent(),"Pop Up To Approve or Decline was not present");
+                popUp.ApproveAllorDeclineAll();
+                Assert.AreEqual("Successfully approved!", popUp.GetSuccesfullMsg(), "Successfull message is not present");
+                popUp.ClickClose();
             }
         }
 
@@ -176,9 +186,10 @@ namespace SeleniumDemo.Tests.Sprint
                     award = AwardData.GetAwardName(_file), begindate = AwardData.GetAwardBeginDate(_file),
                     endate = AwardData.GetAwardEndDate(_file), description = AwardData.GetAwardDescription(_file),
                     Criteria = AwardData.GetAwardCriteria(_file), subCriteria = AwardData.GetSubCriteria(_file),
-                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file);
+                    value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file),
+                    proxyname = AwardData.GetApprovalUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
-                    ClickOption("Proxy").EnterUserNameProxySprint(user).ProxyToMainHomePageSprint().ClosePopUp();
+                    ClickOption("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
                 NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
@@ -195,7 +206,7 @@ namespace SeleniumDemo.Tests.Sprint
                     .SelectValues(subCriteria)
                     .FillDescription(description)
                     .FillMsg(msg)
-                    .ClickNext()
+                    .ClickNextSprint()
                     .EnterUserCCEmail(ccEmail).ClickNextGeneric();
                 Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
                      "The message is not ready to send");
@@ -205,8 +216,16 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
                 Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
                     "Button finish its not correct write");
-                //this tc continues but fail step 18
-
+                recognitionPage.ExitProxy2();
+                Thread.Sleep(1000);
+                proxy = proxy.NavigateToAdminHomePageSpan().ClickOption("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
+                var pending = proxy.NavigateToPendingApprovals();
+                Assert.AreEqual(user, pending.GetFirstUserApproval(), user + " is not present");
+                var popUp = pending.ClickThumpsDown();
+                Assert.IsTrue(popUp.IsPopUpPresent(), "Pop Up To Approve or Decline was not present");
+                popUp.ApproveAllorDeclineAll();
+                Assert.AreEqual("Successfully declined!", popUp.GetSuccesfullMsg(), "Successfull message is not present");
+                popUp.ClickClose();
             }
         }
     }

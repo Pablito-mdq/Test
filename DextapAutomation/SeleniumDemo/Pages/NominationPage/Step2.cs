@@ -179,5 +179,11 @@ namespace SeleniumDemo.Pages.NominationPage
             _txtAlternate.SendKeys(alternate);
             return this;
         }
+
+        public NominationHomePage ClickNextSprint()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'btn-generic submitAward')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
     }
 }
