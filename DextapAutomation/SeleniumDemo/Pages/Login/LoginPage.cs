@@ -1,8 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Net;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Utils;
 using WebDriverFramework.PageObject;
+using WebDriverFramework.WebDriver;
 
 namespace SeleniumDemo.Pages
 {
@@ -34,6 +37,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.Id, Using = "companyId")]
         private IWebElement _txtCompnayId;
+
+        [FindsBy(How = How.Id, Using = "homebody")]
+        private IWebElement _imgHome;
 
 
         public LoginPage(IWebDriver driver) : base(driver){}
@@ -193,6 +199,17 @@ namespace SeleniumDemo.Pages
         {
             _txtCompnayId.SendKeys("474");
             return this;
+        }
+       
+        public bool IshomePageLoadingRightImg(string p)
+        {
+            var src = _imgHome.GetAttribute("style");
+            return src.Contains(p);
+        }
+
+        public bool ImgVisible()
+        {
+            return _imgHome.Displayed && _imgHome.Enabled;
         }
     }
 }
