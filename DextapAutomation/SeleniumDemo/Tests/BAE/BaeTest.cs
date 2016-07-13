@@ -433,5 +433,47 @@ namespace SeleniumDemo.Tests.BAE
                     "Button finish its not correct write");
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+
+        [Test]
+        public void WS_1161()
+        {
+            if (!DataParser.ReturnExecution("WS_1161"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1161.xml";
+                string user = AwardData.GetAwardUserName(_file), user1 = AwardData.GetAwardUserName1(_file)
+                    , user2 = AwardData.GetAwardUserName2(_file), user3 = AwardData.GetAwardUserName3(_file),
+                    user4 = AwardData.GetAwardUserName4(_file), 
+                    user5 = AwardData.GetAwardUserName5(_file), proxy_name = ProxyData.GetProxyUserName(_file);
+                    
+                //Scenario 1
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
+                recognitionPage.ClickMultipleRecipients()
+                    .SearchEmployeeFoundMultiple(user)
+                    .SearchEmployeeFoundMultiple(user1)
+                    .SearchEmployeeFoundMultiple(user2).SearchEmployeeFoundMultiple(user3).ClickNextGeneric();
+                Assert.IsTrue(recognitionPage.IsStep2Block(),"Step2 is not blocked");
+
+                //Scenario 2
+                MainHomePage mainPage = recognitionPage.NavigateToAdminHomePage().LoginProxyAsuser().EnterUserName(proxy_name).ProxyToMainHomePage();
+                Step2 ste2 =mainPage.NavigateToNomination().SearchEmployeeFound(user4);
+                Assert.AreEqual("Rave",ste2.GetAwardName("Rave"),"Rave Award is not present");
+                Assert.AreEqual("Pioneer Award", ste2.GetAwardName("Pioneer Award"), "Pioneer Award is not present");
+                Assert.AreEqual("Pathfinder Award", ste2.GetAwardName("Pathfinder Award"), "Pathfinder Award is not present");
+                Assert.AreEqual("Trailblazer Award", ste2.GetAwardName("Trailblazer Award"), "Trailblazer Award is not present");
+
+                //Scenario 3
+                ste2.Refresh();
+                ste2 = recognitionPage.SearchEmployeeFound(user5);
+                Assert.AreEqual("Rave", ste2.GetAwardName("Rave"), "Rave Award is not present");
+                Assert.IsFalse(ste2.IsAwardPresent("Pioneer Award"), "Pioneer Award is  present");
+                Assert.IsFalse(ste2.IsAwardPresent("Pathfinder Award"), "Pathfinder Award not present");
+                Assert.IsFalse(ste2.IsAwardPresent("Trailblazer Award"), "Trailblazer Award not present");
+            }
+        }
     }
 }

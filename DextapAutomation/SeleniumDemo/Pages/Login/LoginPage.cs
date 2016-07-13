@@ -2,6 +2,7 @@
 using System.Net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumDemo.Models;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Utils;
 using WebDriverFramework.PageObject;
@@ -50,6 +51,17 @@ namespace SeleniumDemo.Pages
             Navigate(client != ""
                 ? string.Format("{0}", ConfigUtil.ImportConfigURL("Resources\\Url.xml", client))
                 : ConfigUtil.ImportConfigURL("Resources\\Url.xml", "WorkStride"));
+            return this;
+        }
+
+        public string GetUrl(string file)
+        {
+            return GeneralData.GetUrl(file);
+        }
+
+        public LoginPage GoSpecial(string testCase,string client,string file)
+        {
+            Navigate(string.Format("{0}",GetUrl(file)));
             return this;
         }
 

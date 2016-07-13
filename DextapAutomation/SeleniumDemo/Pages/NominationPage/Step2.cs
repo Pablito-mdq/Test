@@ -185,5 +185,11 @@ namespace SeleniumDemo.Pages.NominationPage
             Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'btn-generic submitAward')]")).Click();
             return NewPage<NominationHomePage>();
         }
+
+        public bool IsAwardPresent(string award)
+        {
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Displayed;
+        }
     }
 }

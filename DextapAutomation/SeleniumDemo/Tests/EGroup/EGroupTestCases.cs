@@ -49,7 +49,7 @@ namespace SeleniumDemo.Tests.EGroup
                 Assert.AreEqual("Pending Approvals", change.GetTitleMenu(), "Title is not pending approval");
                 change.ApproveAward().ClickApprove();
                 Assert.AreEqual("Pending Approvals", change.GetTitleMenu(), "Title is not pending approval");
-                home = change.ExitProxyToMainPage().NavigateToAdminHomePageSpan().EnterUserName(approval_name).ProxyToMainHomePage();
+                home = change.ExitProxyToMainPage().NavigateToAdminHomePageSpan().NavigateToAdminHomePageSpan().EnterUserName(approval_name).ProxyToMainHomePage();
                 Assert.IsFalse(home.IsPopUpRecognitionShow(), "Pop up recognition is showing up");
             }
         }

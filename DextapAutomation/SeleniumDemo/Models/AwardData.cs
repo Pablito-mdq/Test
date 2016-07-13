@@ -166,5 +166,31 @@ namespace SeleniumDemo.Models
         {
             return GetAward(configFile, "Description");
         }
+
+        public static string GetAwardUserName1(string configFile)
+        {
+            return GetAward(configFile, "Name1");
+        }
+
+        public static string GetAwardUserName2(string configFile)
+        {
+            return GetAward(configFile, "Name2");
+        }
+
+        public static string GetAwardUserName3(string configFile)
+        {
+            return GetAward(configFile, "Name3");
+        }
+
+        public static string GetAwardUserName4(string configFile)
+        {
+            return GetAward(configFile, "Name4");
+        }
+
+        public static string GetAwardUserName5(string configFile)
+        {
+            return GetAward(configFile, "Name5");
+        }
     }
+
 }

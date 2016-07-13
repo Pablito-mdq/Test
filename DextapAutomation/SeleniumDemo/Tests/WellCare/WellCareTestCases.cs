@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Utils;
-using NUnit.Framework;
 
 namespace SeleniumDemo.Tests.WellCare
 {

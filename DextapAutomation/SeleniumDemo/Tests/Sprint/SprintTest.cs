@@ -76,19 +76,18 @@ namespace SeleniumDemo.Tests.Sprint
 
         //SPRIN-67
         [Test]
-        public void Sprin_67()
+        public void WS_1024()
         {
-            if (!DataParser.ReturnExecution("Sprin_67"))
+            if (!DataParser.ReturnExecution("WS_1024"))
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\Sprin_67.xml";
+                _file = "Resources\\TestsData\\" + client + "\\WS_1024.xml";
                 string user = AwardData.GetAwardUserName(_file),msg =  AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file), subAward1 =  AwardData.GetAwardSubType1(_file),
-                    printype = AwardData.GetAwardDeliverType(_file), subAward2 =  AwardData.GetAwardSubType2(_file),
-                    ccEmail = AwardData.GetAwardCCEmail(_file),
+                    subAward2 =  AwardData.GetAwardSubType2(_file),ccEmail = AwardData.GetAwardCCEmail(_file),
                     futureDate = AwardData.GetAwardFutureDate(_file);
-                NominationHomePage recognitionPage = InitialPage.Go().Logon().EnterId().ClickLogin().NavigateToNominationSprint();
+                NominationHomePage recognitionPage = InitialPage.GoSpecial("WS_1024",client,_file).Logon().EnterId().ClickLogin().NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
                     .SearchEmployeeFoundMultiple(user)

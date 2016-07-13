@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
@@ -10,31 +11,26 @@ namespace SeleniumDemo.Pages.NominationPage
 {
     public class NominationHomePage : WorkStridePage
     {
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/proxy')]")]
-        private IWebElement _lnkProxy;
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/proxy')]")] private IWebElement _lnkProxy;
 
-        [FindsBy(How = How.Name, Using = "employee-lookup")]
-        private IWebElement _txtName;
+        [FindsBy(How = How.Name, Using = "employee-lookup")] private IWebElement _txtName;
 
-        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'AMOUNT')]")]
-        private IWebElement _cboValue;
+        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'AMOUNT')]")] private IWebElement _cboValue;
 
-        [FindsBy(How = How.Id, Using = "recog_PersonalizeImg2")]
-        private IWebElement _imgRecognition2;
+        [FindsBy(How = How.Id, Using = "recog_PersonalizeImg2")] private IWebElement _imgRecognition2;
 
-        [FindsBy(How = How.XPath, Using = "//textarea[@name='REASON']")]
-        private IWebElement _txtReason;
+        [FindsBy(How = How.XPath, Using = "//textarea[@name='REASON']")] private IWebElement _txtReason;
 
-        [FindsBy(How = How.Id, Using = "ccUserLookupInput")]
-        private IWebElement _txtCCEmail;
+        [FindsBy(How = How.Id, Using = "ccUserLookupInput")] private IWebElement _txtCCEmail;
 
-        [FindsBy(How = How.Id, Using = "reward-detail-form--FUTURE_DATE")]
-        private IWebElement _txtFutureDate;
+        [FindsBy(How = How.Id, Using = "reward-detail-form--FUTURE_DATE")] private IWebElement _txtFutureDate;
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'employeeMultiSelect selected')]")]
-        private IWebElement _btnMulti;
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'employeeMultiSelect selected')]")] private IWebElement
+            _btnMulti;
 
-        public NominationHomePage (IWebDriver driver) : base(driver) { }
+        public NominationHomePage(IWebDriver driver) : base(driver)
+        {
+        }
 
         public Step2 SearchEmployeeFound(string employee)
         {
@@ -45,7 +41,7 @@ namespace SeleniumDemo.Pages.NominationPage
             return NewPage<Step2>();
         }
 
-        
+
         public NominationHomePage SelectRecognition()
         {
             _imgRecognition2 = FindElement(By.XPath("//*[@id='recog_PersonalizeImg2']/img"));
@@ -97,7 +93,7 @@ namespace SeleniumDemo.Pages.NominationPage
         public NominationHomePage SearchEmployeeNotFound(string employee)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'suggestTitle')]"));
-             Synchronization.WaitForElementToBePresent(_txtName);
+            Synchronization.WaitForElementToBePresent(_txtName);
             _txtName.SendKeys(employee);
             return NewPage<NominationHomePage>();
         }
@@ -116,7 +112,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public int GetCountEditLnk()
         {
-            if (FindElement(By.XPath("//*[@id='recogStep3']/div[1]/span[2]"))!=null &&
+            if (FindElement(By.XPath("//*[@id='recogStep3']/div[1]/span[2]")) != null &&
                 (FindElement(By.XPath("//*[@id='recogStep2']/div[1]/span[2]")) != null))
                 return 2;
             return 0;
@@ -134,7 +130,8 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public string GetBtnRecognizOtherLabel()
         {
-            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/nomination')]")).Text.ToUpper();
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/nomination')]")).Text.ToUpper();
         }
 
         public NominationHomePage DeliverType(string deliver)
@@ -168,10 +165,9 @@ namespace SeleniumDemo.Pages.NominationPage
                 Synchronization.WaitForElementsToBePresent(By.XPath("//span[contains(@class,'recipient-select-text')]"))
                     .ToArray();
             if (recipient[0].Displayed)
-              if (type == "single")
-                recipient[0].Click();
-              else
-                if (type == "multiple")
+                if (type == "single")
+                    recipient[0].Click();
+                else if (type == "multiple")
                     recipient[1].Click();
                 else
                     recipient[2].Click();
@@ -184,25 +180,32 @@ namespace SeleniumDemo.Pages.NominationPage
             Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
             _txtName.Clear();
             _txtName.SendKeys(user);
-            if (Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", user)))!=null)
-            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]",user))).Click();
-           return NewPage<NominationHomePage>();
+            if (Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", user))) !=
+                null)
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", user)))
+                    .Click();
+            return NewPage<NominationHomePage>();
 
         }
 
         public Step2 ClickNextStep2()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'btn-generic submitEmployees')]"));
+            Synchronization.WaitForElementToBePresent(
+                By.XPath("//button[contains(@class,'btn-generic submitEmployees')]"));
             FindElement(By.XPath("//button[contains(@class,'btn-generic submitEmployees')]")).Click();
             return NewPage<Step2>();
         }
 
-        public NominationHomePage SelectSubAwardType(string type,string type2)
+        public NominationHomePage SelectSubAwardType(string type, string type2)
         {
             Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
-            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]")).FirstOrDefault().Click();
+            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"))
+                .FirstOrDefault()
+                .Click();
             Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
-            IWebElement[] selections =Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]")).ToArray();
+            IWebElement[] selections =
+                Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"))
+                    .ToArray();
             Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
             selections[2].Click();
             return NewPage<NominationHomePage>();
@@ -211,7 +214,8 @@ namespace SeleniumDemo.Pages.NominationPage
         public NominationHomePage FillEditCardEditor(string message)
         {
             IWebElement msg = Synchronization.WaitForElementToBePresent(
-                By.XPath("//textarea[contains(@ng-repeat,'textarea in recognize.ecard.template.layoutDetails.desktop_textareas')]"));
+                By.XPath(
+                    "//textarea[contains(@ng-repeat,'textarea in recognize.ecard.template.layoutDetails.desktop_textareas')]"));
             msg.SendKeys(message);
             return NewPage<NominationHomePage>();
         }
@@ -241,7 +245,7 @@ namespace SeleniumDemo.Pages.NominationPage
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next Step')]")).Click();
             return NewPage<NominationHomePage>();
-            
+
         }
 
         public string GetBtnSendRecognition()
@@ -253,13 +257,14 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage ClickNextGeneric()
         {
-           Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next')]")).Click();
-           return NewPage<NominationHomePage>();
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next')]")).Click();
+            return NewPage<NominationHomePage>();
         }
 
         public NominationHomePage ClickEdit()
         {
-            IWebElement edit = Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep1']/div[1]/span[2]"));
+            IWebElement edit =
+                Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep1']/div[1]/span[2]"));
             Thread.Sleep(1500);
             Synchronization.WaitForElementToBePresent(edit);
             edit.Click();
@@ -270,14 +275,16 @@ namespace SeleniumDemo.Pages.NominationPage
         public bool BringToStep1()
         {
             Thread.Sleep(2500);
-          IWebElement step= Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'stepNumber')]"));
-          var color = step.GetCssValue("background-color");
-           return color == ("rgba(114, 122, 127, 1)");
+            IWebElement step =
+                Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'stepNumber')]"));
+            var color = step.GetCssValue("background-color");
+            return color == ("rgba(114, 122, 127, 1)");
         }
 
         public NominationHomePage ClickMultipleRecipients()
         {
-            IWebElement multi = Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'employeeMultiSelect')]"));
+            IWebElement multi =
+                Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'employeeMultiSelect')]"));
             if (multi.Displayed)
                 multi.Click();
             return NewPage<NominationHomePage>();
@@ -285,7 +292,8 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage ClickRemove(int p)
         {
-            IWebElement[] list =Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'remove')]")).ToArray();
+            IWebElement[] list =
+                Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'remove')]")).ToArray();
             list[0].Click();
             return NewPage<NominationHomePage>();
         }
@@ -293,7 +301,8 @@ namespace SeleniumDemo.Pages.NominationPage
         public bool IsFirstUserAddedPresent(string user)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep1']/div[1]/span[2]")).Click();
-            IWebElement element = Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'Aaron {0}')]",user)));
+            IWebElement element =
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'Aaron {0}')]", user)));
             if (element != null)
                 return false;
             return true;
@@ -309,7 +318,7 @@ namespace SeleniumDemo.Pages.NominationPage
         public Step2 SelectValueOfAwardSprint(string value)
         {
             if (_cboValue != null)
-               _cboValue.SendKeys(value);
+                _cboValue.SendKeys(value);
             return NewPage<Step2>();
         }
 
@@ -318,5 +327,14 @@ namespace SeleniumDemo.Pages.NominationPage
             Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Exit Proxy')]")).Click();
             return NewPage<MainHomePage>();
         }
+
+        public bool IsStep2Block()
+        {
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@style,'display: block;')]"))
+                    .Displayed;
+        }
     }
 }
+
+
