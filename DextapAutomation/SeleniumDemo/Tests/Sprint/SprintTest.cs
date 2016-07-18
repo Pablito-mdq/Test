@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
@@ -129,7 +130,7 @@ namespace SeleniumDemo.Tests.Sprint
                     value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file),
                     proxyname = AwardData.GetApprovalUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
-                    ClickOption("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
+                    ClickOptionProxy("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
                 NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
@@ -158,7 +159,7 @@ namespace SeleniumDemo.Tests.Sprint
                     "Button finish its not correct write");
                 recognitionPage.ExitProxy2();
                 Thread.Sleep(1000);
-                proxy = proxy.NavigateToAdminHomePageSpan().ClickOption("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
+                proxy = proxy.NavigateToAdminHomePageSpan().ClickOptionProxy("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
                 var pending = proxy.NavigateToPendingApprovals();
                 Assert.AreEqual(user, pending.GetFirstUserApproval(), user + " is not present");
                var popUp = pending.ClickThumpsUp();
@@ -188,7 +189,7 @@ namespace SeleniumDemo.Tests.Sprint
                     value = AwardData.GetAwardAmountValue(_file), ccEmail = AwardData.GetAwardCCEmail(_file),
                     proxyname = AwardData.GetApprovalUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
-                    ClickOption("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
+                    ClickOptionProxy("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
                 NominationHomePage recognitionPage = proxy.NavigateToNominationSprint();
                 recognitionPage
                     .SelectRecipientType("multiple")
@@ -217,7 +218,7 @@ namespace SeleniumDemo.Tests.Sprint
                     "Button finish its not correct write");
                 recognitionPage.ExitProxy2();
                 Thread.Sleep(1000);
-                proxy = proxy.NavigateToAdminHomePageSpan().ClickOption("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
+                proxy = proxy.NavigateToAdminHomePageSpan().ClickOptionProxy("Proxy").EnterUserNameProxySprint2(proxyname).ProxyToMainHomePageSprint().ClosePopUp();
                 var pending = proxy.NavigateToPendingApprovals();
                 Assert.AreEqual(user, pending.GetFirstUserApproval(), user + " is not present");
                 var popUp = pending.ClickThumpsDown();
@@ -225,6 +226,33 @@ namespace SeleniumDemo.Tests.Sprint
                 popUp.ApproveAllorDeclineAll();
                 Assert.AreEqual("Successfully declined!", popUp.GetSuccesfullMsg(), "Successfull message is not present");
                 popUp.ClickClose();
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1155
+        [Test]
+        public void WS_1155()
+        {
+            if (!DataParser.ReturnExecution("WS_1155"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1155.xml";
+                string path = GeneralData.path(_file);
+                BulkAward bulk = InitialPage.GoSpecial("WS_1155",client,_file).EnterId().Logon().ClickLogin().NavigateToAdminHomePageSpan().
+                    ClickOptionBulk("Bulk Award Upload");
+                bulk.UploadFile();
+                foreach (char a in path)
+                {
+                    SendKeys.SendWait(a.ToString());
+                    Thread.Sleep(30);
+                }
+                SendKeys.SendWait("{ENTER}");
+                bulk.WaitForFileToUpload();
+                Assert.IsTrue(bulk.WasFileSuccessfullyUpload(),"The file was not successfully upload");
             }
         }
     }

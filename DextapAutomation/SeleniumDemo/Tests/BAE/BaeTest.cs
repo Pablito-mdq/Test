@@ -475,5 +475,20 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.IsFalse(ste2.IsAwardPresent("Trailblazer Award"), "Trailblazer Award not present");
             }
         }
+/*
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1133
+        [Test]
+        public void WS_1145()
+        {
+            if (!DataParser.ReturnExecution("WS_1145"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(),"No all Responses Get an successfully validation");
+            }
+        }*/
     }
 }

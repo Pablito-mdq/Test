@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Security.Authentication.ExtendedProtection;
+using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.LeftMenu;
@@ -6,7 +7,7 @@ using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests
+namespace SeleniumDemo.Tests.Akron
 {
     class NominationTests : WorkStrideBaseTest<LoginPage>
     {
@@ -105,6 +106,36 @@ namespace SeleniumDemo.Tests
                 MyAwards awards = home.ClosePopUp().NavigateToMyAwards();
                 Assert.AreEqual(award,awards.GetAwardName(1,5),"The last award that someone gave you is not present");
                 awards.OpenDetailsAward(1,8);
+            }
+        }
+        [Category("Regression")]
+        [Category("Akron")]
+        //WS-218
+        [Test]
+        public void WS_1166()
+        {
+            if (!DataParser.ReturnExecution("WS_1166"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                AwardData.GetAwardImpact(_file);
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file),
+                    value = AwardData.GetAwardValue(_file),
+                    amount = AwardData.GetAwardAmountValue(_file), printype = AwardData.GetAwardDeliverType(_file),
+                    msg = AwardData.GetAwardMessage(_file),
+                    reason = AwardData.GetAwardMessage(_file);
+
+                //Scenario 1
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
+                recognitionPage
+                    .SearchEmployeeFound(user)
+                    .SelectAward(award)
+                    .SelectValues(value)
+                    .FillMsg(msg)
+                    .FillReason(reason).ClickNext();
+                // BUG button upload is not present
             }
         }
     }

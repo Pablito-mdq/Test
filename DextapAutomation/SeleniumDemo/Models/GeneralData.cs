@@ -56,6 +56,11 @@ namespace SeleniumDemo.Models
         {
             return GetDataInt(configFile, "height");
         }
+
+        public static string path2(string configFile)
+        {
+            return GetData(configFile, "path2");
+        }
     }
 }
 

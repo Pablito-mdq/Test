@@ -1,8 +1,11 @@
 ﻿using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading;
 using MbUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages;
+using SeleniumDemo.Tests.Sprint;
 
 namespace SeleniumDemo.Tests.Pages
 {
@@ -25,8 +28,8 @@ namespace SeleniumDemo.Tests.Pages
         public ProxyHomePage EnterUserName(string name)
         {
             _txtUserName.SendKeys(name);
-            if (Synchronization.WaitForElementToBePresent(By.Id("ui-id-1"))!=null)
-                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]",name))).Click();
+            if (Synchronization.WaitForElementToBePresent(By.Id("ui-id-1")) != null)
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//div[contains(.,'{0}')]", name))).Click();
             else
                 Assert.Fail("User was not found");
             return this;
@@ -35,7 +38,7 @@ namespace SeleniumDemo.Tests.Pages
         public MainHomePage ProxyToMainHomePage()
         {
             Synchronization.WaitForElementNotToBePresent(By.Id("ui-id-1"));
-           _btnProxy.Click();
+            _btnProxy.Click();
             return NewPage<MainHomePage>();
         }
 
@@ -46,14 +49,24 @@ namespace SeleniumDemo.Tests.Pages
             return false;
         }
 
-        public ProxyHomePage ClickOption(string s)
+        public ProxyHomePage ClickOptionProxy(string s)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
             IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'valign center')]")).ToArray();
-            if (s== "Proxy")
+            if (s == "Proxy")
                 a[0].Click();
             return NewPage<ProxyHomePage>();
         }
+
+        public BulkAward ClickOptionBulk(string s)
+        {
+            Thread.Sleep(1500);
+            Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
+            if (s == "Bulk Award Upload")
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//*[@id='container']/div/div/div/div[1]/div/div/div", s))).Click();
+            return NewPage<BulkAward>();
+        }
+
 
         public MainHomePage ProxyToMainHomePageSprint()
         {

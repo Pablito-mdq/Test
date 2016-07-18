@@ -91,6 +91,7 @@
     <Compile Include="Tests\ProxyTests.cs" />
     <Compile Include="Pages\LeftMenu\GoToMall\CompanyGifCart.cs" />
     <Compile Include="Pages\LeftMenu\GoToMall\CheckOutPage.cs" />
+    <Compile Include="Pages\AdminPage\BulkAward.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\WellCare\WellCareTestCases.cs" />

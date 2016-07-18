@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
+using System.Windows.Forms;
+using MbUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -267,5 +271,39 @@ namespace SeleniumDemo.Pages
             _lnkSignOut.Click();
             return NewPage<LoginPage>();
         }
+
+        public bool GetAllHttpLinkResponses()
+        {
+            using (var client = new WebClient())
+            {
+                byte[] imageData = client.DownloadData("http://qabaeimpact.workstride.net/welcome");
+            }
+            IWebElement[] links = FindElements(By.TagName("href")).ToArray();
+            WebResponse error = null;
+            for (int i = 0; i < links.Length; i++)
+            {
+                if (!isValidURL(links[i].Text, error))
+                    Assert.Fail(links[i].Text + "has a Http error " + error);
+                    return false;
+            }
+            return true;
+        }
+
+        public static bool isValidURL(string url,WebResponse error) 
+        {
+            WebRequest webRequest = WebRequest.Create(url);
+            WebResponse webResponse;
+            try
+            {
+                webResponse = webRequest.GetResponse();
+                error = webResponse;
+            }
+            catch //If exception thrown then couldn't get response from address
+            {
+                return false ;
+            }
+            return true ;
+           }
+
     }
 }
