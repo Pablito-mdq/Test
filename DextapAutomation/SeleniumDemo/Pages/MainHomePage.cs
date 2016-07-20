@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using System.Windows.Forms;
-using MbUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.Pages;
+using NUnit.Framework;
 
 namespace SeleniumDemo.Pages
 {
@@ -48,7 +45,7 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Sign Out')]")]
         private IWebElement _lnkSignOut;
-        
+
         public MainHomePage(IWebDriver driver) : base(driver) { }
 
         public MainHomePage SelectShowEntries(string entries)
@@ -272,38 +269,92 @@ namespace SeleniumDemo.Pages
             return NewPage<LoginPage>();
         }
 
-        public bool GetAllHttpLinkResponses()
+        public bool GetResponse(string extension,string url)
         {
-            using (var client = new WebClient())
-            {
-                byte[] imageData = client.DownloadData("http://qabaeimpact.workstride.net/welcome");
-            }
-            IWebElement[] links = FindElements(By.TagName("href")).ToArray();
-            WebResponse error = null;
-            for (int i = 0; i < links.Length; i++)
-            {
-                if (!isValidURL(links[i].Text, error))
-                    Assert.Fail(links[i].Text + "has a Http error " + error);
-                    return false;
-            }
+            string a = url + "/" + extension;
+            HttpWebRequest myHttpWebRequest = (HttpWebRequest) WebRequest.Create(a);
+            // Sends the HttpWebRequest and waits for a response.
+            HttpWebResponse myHttpWebResponse = (HttpWebResponse) myHttpWebRequest.GetResponse();
+            if (myHttpWebResponse.StatusCode != HttpStatusCode.OK)
+                Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: {0}",
+                    myHttpWebResponse.StatusDescription);
+            // Releases the resources of the response.
+            myHttpWebResponse.Close();
             return true;
         }
 
-        public static bool isValidURL(string url,WebResponse error) 
+        public bool GetAllHttpLinkResponses(string url)
         {
-            WebRequest webRequest = WebRequest.Create(url);
-            WebResponse webResponse;
-            try
-            {
-                webResponse = webRequest.GetResponse();
-                error = webResponse;
-            }
-            catch //If exception thrown then couldn't get response from address
-            {
-                return false ;
-            }
-            return true ;
-           }
-
+            IWebElement a = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'REDEEM')]"));
+            IWebElement b = Synchronization.WaitForElementToBePresent(By.LinkText("//span[contains(.,'HOME')]"));
+            IWebElement c = Synchronization.WaitForElementToBePresent(By.LinkText("//span[contains(.,'RECOGNIZE')]"));
+            IWebElement d = Synchronization.WaitForElementToBePresent(By.LinkText("//span[contains(.,'HELP')]"));
+            IWebElement e = Synchronization.WaitForElementToBePresent(By.LinkText("//span[contains(.,'REPORTS')]"));
+            IWebElement f = Synchronization.WaitForElementToBePresent(By.LinkText("//span[contains(.,'ADMIN')]"));
+            IWebElement g = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Sign Out')]"));
+            IWebElement h = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Go To Mall')]"));
+            IWebElement i = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Recognize Someone')]"));
+            IWebElement j = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Event Calendar')]"));
+            IWebElement k = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]"));
+            IWebElement l = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'My Awards')]"));
+            IWebElement m = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'My Redemptions')]"));
+            IWebElement n = Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@src,'company.png')]"));
+            if (Synchronization.WaitForElementToBePresent(By.XPath("/html/body/div[2]/div/div[1]/div[7]")) != null)
+                Synchronization.WaitForElementToBePresent(By.XPath("/html/body/div[2]/div/div[1]/div[7]")).Click();
+            IWebElement o = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Creating Contest')]"));
+            IWebElement p = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'iRecognize Program Overview')]"));
+            IWebElement q = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Reward Award Guidelines')]"));
+            IWebElement r = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'REDEEM')]"));
+            IWebElement s = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'HOME')]"));
+            IWebElement t = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'RECOGNIZE')]"));
+            IWebElement u = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'HELP')]"));
+            IWebElement v = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'REPORTS')]"));
+            IWebElement w = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'ADMIN')]"));
+            // Creates an HttpWebRequest for the specified URL. 
+            if ((a != null) || (h != null) || (r!=null))
+                if (!GetResponse("mall", url))
+                    return false;
+            if ((b != null) || (n != null) || (s != null))
+                if (!GetResponse("welcome", url))
+                    return false;
+            if ((c != null) || (i != null) || (t != null))
+                if (!GetResponse("nomination", url))
+                    return false;
+            if ((d != null) || (u != null))
+                if (!GetResponse("help", url))
+                    return false;
+            if ((e != null) || (v != null))
+                if (!GetResponse("reports", url))
+                    return false;
+            if ((f != null) || (s != null))
+                if (!GetResponse("proxy", url))
+                    return false;
+            if (g != null)
+                if (!GetResponse("logout", url))
+                    return false;
+            if (j != null)
+                if (!GetResponse("event_calendar", url))
+                    return false;
+            if (k != null)
+                if (!GetResponse("approval", url))
+                    return false;
+            if (l != null)
+                if (!GetResponse("my_awards", url))
+                    return false;
+            if (m != null)
+                if (!GetResponse("my_redemptions", url))
+                    return false;
+            if (o != null)
+                if (!GetResponse("resources/companies/irecognize//RecognitionToolkit/Creating_Contest.pdf", url))
+                    return false;
+            if (p != null)
+                if (!GetResponse("resources/companies/irecognize//RecognitionToolkit/iRecognizeProgramOverview.pdf", url))
+                    return false;
+            if (q != null)
+                if (!GetResponse("resources/companies/irecognize//RecognitionToolkit/RewardAwardGuidelines.pdf", url))
+                    return false;
+            return true;
+        
+      }
     }
 }

@@ -13,6 +13,7 @@ namespace SeleniumDemo.Tests.Sprint
     {
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "Sprint");
 
         [Category("Regression")]
         [Category("Sprint")]
@@ -242,7 +243,7 @@ namespace SeleniumDemo.Tests.Sprint
             {
                 _file = "Resources\\TestsData\\" + client + "\\WS_1155.xml";
                 string path = GeneralData.path(_file);
-                BulkAward bulk = InitialPage.GoSpecial("WS_1155",client,_file).EnterId().Logon().ClickLogin().NavigateToAdminHomePageSpan().
+                BulkAward bulk = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
                     ClickOptionBulk("Bulk Award Upload");
                 bulk.UploadFile();
                 foreach (char a in path)
@@ -253,6 +254,21 @@ namespace SeleniumDemo.Tests.Sprint
                 SendKeys.SendWait("{ENTER}");
                 bulk.WaitForFileToUpload();
                 Assert.IsTrue(bulk.WasFileSuccessfullyUpload(),"The file was not successfully upload");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        //WS-1133
+        [Test]
+        public void WS_1145()
+        {
+            if (!DataParser.ReturnExecution("WS_1145"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url), "No all Responses Get an successfully validation");
             }
         }
     }

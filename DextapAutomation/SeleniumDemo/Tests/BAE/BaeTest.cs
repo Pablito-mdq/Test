@@ -19,6 +19,7 @@ namespace SeleniumDemo.Tests.BAE
         private static string _file;
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml","BAE");
 
         [Category("Regression")]
         [Category("BAE")]
@@ -475,7 +476,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.IsFalse(ste2.IsAwardPresent("Trailblazer Award"), "Trailblazer Award not present");
             }
         }
-/*
+
         [Category("Regression")]
         [Category("BAE")]
         //WS-1133
@@ -487,8 +488,8 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(),"No all Responses Get an successfully validation");
+                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url),"No all Responses Get an successfully validation");
             }
-        }*/
+        }
     }
 }

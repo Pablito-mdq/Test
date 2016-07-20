@@ -1,12 +1,9 @@
-﻿using System;
-using System.Net;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Utils;
 using WebDriverFramework.PageObject;
-using WebDriverFramework.WebDriver;
 
 namespace SeleniumDemo.Pages
 {
