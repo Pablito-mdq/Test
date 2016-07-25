@@ -1,5 +1,4 @@
 <Constants>
           //Please dont erase the aa at the beginning of path variable
 		  <path>aaC:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\Resources\TestsData\Sprint\SprintBulkUploadSampleFile.xlsx</path>
-		  <Url>http://monkey.workstride.net</Url>
  </Constants>

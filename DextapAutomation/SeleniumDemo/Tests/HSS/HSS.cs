@@ -75,7 +75,7 @@ namespace SeleniumDemo.Tests.HSS
                     case "Pinnacol":
                     {
                         Assert.AreEqual(" Recognize Someone", home.GetLeftMenuOpts(0), "Link is Broken or not well written");
-                        NominationHomePage nomination = home.NavigateToNominationPinnacola();
+                        NominationHomePage nomination = home.NavigateToNominationSpan();
                         Assert.AreEqual(url + "nomination#/", home.GetCurrentUrl(), "Url is Broken or not well written or redirects to other pages");
                         home = nomination.NavigateToHomePage();
                         home.ExpandMenuPinnacol();

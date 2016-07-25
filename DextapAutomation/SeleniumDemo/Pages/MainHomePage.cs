@@ -11,6 +11,8 @@ using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.Pages;
 using NUnit.Framework;
+using WebDriverFramework.PageObject;
+using Action = Gallio.Common.Action;
 
 namespace SeleniumDemo.Pages
 {
@@ -209,7 +211,7 @@ namespace SeleniumDemo.Pages
             return (Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-blurb')]")).Text) + (Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='proxy-header']/div[1]/span[3]/strong")).Text);
         }
 
-        public NominationHomePage NavigateToNominationPinnacola()
+        public NominationHomePage NavigateToNominationSpan()
         {
             Synchronization.WaitForElementToBePresent(_lnkNominationPinnacola);
             if (_lnkNominationPinnacola.Displayed)
@@ -356,5 +358,55 @@ namespace SeleniumDemo.Pages
             return true;
         
       }
+
+        public bool IsEveryoneSelected()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//p[contains(.,'Everyone')]")).Displayed;
+        }
+
+        public MainHomePage ClickCheers()
+        {
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).ElementAt(4));
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).FirstOrDefault());
+            Thread.Sleep(500);
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[8]/div/div[1]/div/h5")).Click();
+            return NewPage<MainHomePage>();
+        }
+
+        public string CheersCount()
+        {
+            return Synchronization.WaitForElementToBePresent(By.Id("cheerCount502467")).Text;
+        }
+
+        public string CongratsCount()
+        {
+            return Synchronization.WaitForElementToBePresent(By.Id("commentCount502467")).Text;
+        }
+
+        public MainHomePage ClickCongrats()
+        {
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).ElementAt(4));
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).FirstOrDefault());
+            Thread.Sleep(500);
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[8]/div/div[2]/div/h5")).Click();
+            return NewPage<MainHomePage>();
+        }
+
+        public MainHomePage AddCongrats(string p)
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//textarea[contains(@class,'congratsInput')]")).SendKeys(p);
+            return this;
+        }
+
+        public string GetCongratsMsg()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Your message has been sent!')]")).Text;
+        }
+
+        public MainHomePage SendCongrats()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//input[@data-id='502467']")).Click();
+            return NewPage<MainHomePage>();
+        }
     }
 }

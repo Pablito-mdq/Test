@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
@@ -95,7 +96,7 @@ namespace SeleniumDemo.Tests.Sprint
                     .SearchEmployeeFoundMultiple(user)
                     .ClickNextStep2()
                     .SelectAwardMultiple(award, 0)
-                    .SelectSubAwardType(subAward1,subAward2)
+                    .SelectSubAwardTypeSprint(subAward1,subAward2)
                     .ClickNextFillCard()
                     .FillEditCardEditor(msg)
                     .ClickNextStep()
@@ -269,6 +270,87 @@ namespace SeleniumDemo.Tests.Sprint
             {
                 MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
                 Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url), "No all Responses Get an successfully validation");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1177
+        [Test]
+        public void WS_1177()
+        {
+            if (!DataParser.ReturnExecution("WS_1177"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1177.xml";
+                string user = AwardData.GetAwardUserName(_file), msg = AwardData.GetAwardMessage(_file),
+                    award = AwardData.GetAwardName(_file), subAward1 = AwardData.GetAwardSubType1(_file),
+                    subAward2 = AwardData.GetAwardSubType2(_file);
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNominationSprint();
+                recognitionPage
+                    .SelectRecipientType("multiple")
+                    .SearchEmployeeFoundMultiple(user)
+                    .ClickNextStep2()
+                    .SelectAwardMultiple(award, 0)
+                    .SelectSubAwardTypeSprint(subAward1, subAward2)
+                    .ClickNextFillCard()
+                    .FillEditCardEditor(msg)
+                    .ClickNextStep()
+                    .ClickNextGeneric();
+                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                     "The message is not ready to send");
+                Assert.AreEqual("SEND RECOGNITION", recognitionPage.GetBtnSendRecognition(), "Submit button is not well written");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+                Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
+                Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
+                    "Button finish its not correct write");
+                Assert.Fail("BUG");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1184
+        [Test]
+        public void WS_1185()
+        {
+            if (!DataParser.ReturnExecution("WS_1185"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainHomePage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainHomePage.IsEveryoneSelected(),"Everyone is not selected in display options");
+                mainHomePage.ClickCheers();
+                if (mainHomePage.CheersCount() == "-1")
+                    mainHomePage.ClickCheers();
+                Assert.AreEqual("1",mainHomePage.CheersCount(),"Cheers is not 1");
+                mainHomePage.NavigateToRedeem().NavigateToHomePage();
+                Assert.AreEqual("1", mainHomePage.CheersCount(), "Cheers is not 1");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+
+        //WS_1148
+        [Test]
+        public void WS_1148()
+        {
+            if (!DataParser.ReturnExecution("WS_1148"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainHomePage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainHomePage.IsEveryoneSelected(), "Everyone is not selected in display options");
+                int quantComments = Int32.Parse(mainHomePage.CongratsCount());
+                mainHomePage.ClickCongrats();
+                mainHomePage.AddCongrats("QA Test Submision").SendCongrats();
+                Assert.AreEqual("Your message has been sent!", mainHomePage.GetCongratsMsg(), "Congrats msg was not sent");
+                Assert.AreEqual(quantComments + 1, Int32.Parse(mainHomePage.CongratsCount()), "Congrats was not plus well 1");
             }
         }
     }

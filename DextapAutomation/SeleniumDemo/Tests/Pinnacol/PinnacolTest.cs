@@ -35,7 +35,7 @@ namespace SeleniumDemo.Tests.Pinnacol
                 MainHomePage home = proxyPage.ProxyToMainHomePage();
                 Assert.AreEqual("You are proxied in as:" + user, home.GetProxyLoginMsgPinnacol(),
                     "The message of proxy login is not correct");
-                NominationHomePage recognitionPage = home.NavigateToNominationPinnacola()
+                NominationHomePage recognitionPage = home.NavigateToNominationSpan()
                     .SearchEmployeeFound(proxy_name)
                     .SelectAward(award)
                     .FillReason(reason)

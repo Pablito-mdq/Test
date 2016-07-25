@@ -1,0 +1,8 @@
+<Constants>
+		  <Name>Aaron Smith</Name>
+		  <AwardName>eCard</AwardName>
+		  <AwardSubType1>Business</AwardSubType1>
+		  <AwardSubType2>Anniversary 1</AwardSubType2>
+		  <Message>Test</Message>
+		  <SendType>Email</SendType>
+ </Constants>

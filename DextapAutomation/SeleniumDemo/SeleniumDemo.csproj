@@ -94,6 +94,7 @@
     <Compile Include="Pages\AdminPage\BulkAward.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
+    <Compile Include="Tests\TRU\TRUTests.cs" />
     <Compile Include="Tests\WellCare\WellCareTestCases.cs" />
     <Compile Include="Tests\WorkStrideBaseTest.cs" />
     <Compile Include="Pages\EditProfilePage.cs" />

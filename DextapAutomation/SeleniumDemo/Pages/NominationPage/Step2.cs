@@ -49,6 +49,8 @@ namespace SeleniumDemo.Pages.NominationPage
         {
             if (value!="")
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", value))).Click();
+            else
+                 Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recogStep2']/div[2]/div[4]/div[1]/div[1]/div[1]/label/span")).Click();
             return this;
         }
 

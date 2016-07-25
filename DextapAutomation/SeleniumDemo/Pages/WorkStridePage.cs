@@ -60,6 +60,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/report_builder')]")]
         private IWebElement _lnkReportBuilder;
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'REPORTS')]")]
+        private IWebElement _lnkReportsMain;
+
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
        public MainHomePage NavigateToHomePage()
@@ -168,6 +171,12 @@ namespace SeleniumDemo.Pages
         {
             _lnkReportBuilder.Click();
             return NewPage<ReportBuilderHomePage>();
+        }
+
+        public ReportsPage NavigateToReportsSpan()
+        {
+            _lnkReportsMain.Click();
+            return NewPage<ReportsPage>();
         }
     }
 }

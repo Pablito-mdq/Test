@@ -19,6 +19,9 @@ namespace SeleniumDemo.Pages.Reports
             return NewPage<AllAwards>();
         }
 
-       
+        public string GetAwardName(int row, int col)
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//*[@id='report-table-container']/table/tbody[3]/tr[{0}]/td[{1}]", row, col))).Text;
+        }
     }
 }

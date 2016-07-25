@@ -193,18 +193,16 @@ namespace SeleniumDemo.Pages.NominationPage
             return NewPage<Step2>();
         }
 
-        public NominationHomePage SelectSubAwardType(string type, string type2)
+        public NominationHomePage SelectSubAwardTypeSprint(string type, string order)
         {
-            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
-            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"))
-                .FirstOrDefault()
-                .Click();
-            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
-            IWebElement[] selections =
-                Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"))
-                    .ToArray();
-            Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'ecard-selection-name')]"));
-            selections[2].Click();
+            Thread.Sleep(1000);
+            Synchronization.WaitForElementToBePresent(
+                By.XPath(
+                    "//*[@id='recognition-form']/div/step-award/div[2]/div[4]/ng-form/div/wizard-ecard/div[2]/div/div[1]/div/div[1]/div[2]/div/div[1]/div"));
+            Synchronization.WaitForElementToBePresent(
+                By.XPath(
+                    "//*[@id='recognition-form']/div/step-award/div[2]/div[4]/ng-form/div/wizard-ecard/div[2]/div/div[1]/div/div[1]/div[2]/div/div[1]/div")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recognition-form']/div/step-award/div[2]/div[4]/ng-form/div/wizard-ecard/div[2]/div/div[1]/div/div[2]/div/div[2]/div/div[1]/div")).Click();
             return NewPage<NominationHomePage>();
         }
 
@@ -254,6 +252,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public NominationHomePage ClickNextGeneric()
         {
+            Thread.Sleep(1000);
             Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Next')]")).Click();
             return NewPage<NominationHomePage>();
         }
@@ -330,6 +329,30 @@ namespace SeleniumDemo.Pages.NominationPage
             return
                 Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@style,'display: block;')]"))
                     .Displayed;
+        }
+
+        public string GetBtnSendRecognitionAward()
+        {
+            return
+                Synchronization.WaitForElementToBePresent(
+                    By.XPath(" //button[contains(@class,'content midBannerBtn sendAward')]")).Text;
+        }
+
+        public string GetBtnRecognizOtherLabelXpath()
+        {
+            return
+                Synchronization.WaitForElementToBePresent(
+                    By.XPath("//a[contains(@class,'content midBannerBtn completeRecognition')]")).Text;
+        }
+
+
+        public NominationHomePage SelectAwardMultiple(string award, int order)
+        {
+            IWebElement step2 = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'What Award')]"));
+            IWebElement[] awards = Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).ToArray();
+            if ((step2.Displayed) && (awards[0].Displayed))
+                awards[order].Click();
+            return NewPage<NominationHomePage>();
         }
     }
 }

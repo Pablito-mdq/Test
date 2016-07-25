@@ -30,7 +30,7 @@ namespace SeleniumDemo.Tests.EGroup
                     reason = AwardData.GetAwardReason(_file),
                 proxy_name = ProxyData.GetProxyUserName(_file),
                 approval_name = AwardData.GetApprovalUserName(_file);
-                Step2 step2 = InitialPage.Go().Logon().ClickLogin().NavigateToNominationPinnacola()
+                Step2 step2 = InitialPage.Go().Logon().ClickLogin().NavigateToNominationSpan()
                     .SearchEmployeeFound(user)
                     .SelectAward(award);
                 Assert.AreEqual("This award is worth $250.00", step2.GetValueAward(), "the message is not right");
