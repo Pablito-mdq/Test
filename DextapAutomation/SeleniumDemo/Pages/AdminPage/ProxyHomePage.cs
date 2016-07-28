@@ -83,5 +83,15 @@ namespace SeleniumDemo.Tests.Pages
                 Assert.Fail("User was not found");
             return this;
         }
+
+        public ProxyHomePage EnterUserNameHealthAlliance(string name)
+        {
+            _txtUserName.SendKeys(name);
+            if (Synchronization.WaitForElementToBePresent(By.Id("ui-id-1")) != null)
+                Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'autocomplete-name')]")).Click();
+            else
+                Assert.Fail("User was not found");
+            return this;
+        }
     }
 }

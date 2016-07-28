@@ -61,6 +61,16 @@ namespace SeleniumDemo.Models
         {
             return GetData(configFile, "path2");
         }
+
+        public static string GetPathCreditCard1Img(string configFile)
+        {
+            return GetData(configFile, "CreditCard1Url");
+        }
+
+        public static string GetPathCreditCard2Img(string configFile)
+        {
+            return GetData(configFile, "CreditCard2Url");
+        }
     }
 }
 

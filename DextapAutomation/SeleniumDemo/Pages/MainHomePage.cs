@@ -36,6 +36,9 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//span[contains(.,'REDEEM')]")]
         private IWebElement _lnkNavigateToRedeem;
 
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'REDEEM')]")]
+        private IWebElement _lnkNavigateToRedeemA;
+
         [FindsBy(How = How.XPath, Using = "//span[contains(@class,'myAcctLink')]")]
         private IWebElement _lnkMyAccount;
 
@@ -77,6 +80,12 @@ namespace SeleniumDemo.Pages
         public GoToMallHomePage NavigateToRedeem()
         {
             _lnkNavigateToRedeem.Click();
+            return NewPage<GoToMallHomePage>();
+        }
+
+        public GoToMallHomePage NavigateToRedeemA()
+        {
+            _lnkNavigateToRedeemA.Click();
             return NewPage<GoToMallHomePage>();
         }
 
@@ -407,6 +416,33 @@ namespace SeleniumDemo.Pages
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//input[@data-id='502467']")).Click();
             return NewPage<MainHomePage>();
+        }
+
+        public MainHomePage ClickFollow()
+        {
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).ElementAt(3));
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).FirstOrDefault());
+            Thread.Sleep(500);
+            Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[2]/div/div[1]/div/h5")).Click();
+            return NewPage<MainHomePage>();
+        }
+
+        public bool IsFollowBannerPresent()
+        {
+            Thread.Sleep(1500);
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).ElementAt(3));
+            Actions.MoveToElement(Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).FirstOrDefault());
+            if (Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'follow-ribbon')]")) != null)
+                return
+                    Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'follow-ribbon')]"))
+                        .Displayed;
+            return false;
+        }
+
+        public string GetFollowingRibbonMsg()
+        {
+            Thread.Sleep(1500);
+           return Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[1]/div")).Text;
         }
     }
 }

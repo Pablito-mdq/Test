@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
@@ -489,6 +490,47 @@ namespace SeleniumDemo.Tests.BAE
             {
                 MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
                 Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url),"No all Responses Get an successfully validation");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1189
+        [Test]
+        public void WS_1187()
+        {
+            if (!DataParser.ReturnExecution("WS_1187"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1187.xml";
+                string creditcard1 = GeneralData.GetPathCreditCard1Img(_file), creditcard2 = GeneralData.GetPathCreditCard2Img(_file);
+                GoToMallHomePage redeem = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
+                Assert.AreEqual("Welcome to the Mall!",redeem.GetWelcomeMsg(),"Welcome Msg is not present or well written");
+                redeem.SearchCompany("Work");
+                Assert.AreEqual(creditcard1,redeem.GetImgFirstCreditCard(),"Credit Card 1 source is not the same");
+                Assert.AreEqual(creditcard2,redeem.GetImgSecondCreditCard(),"Credit Card 2 source is not the same");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1189
+        [Test]
+        public void WS_1190()
+        {
+            if (!DataParser.ReturnExecution("WS_1190"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainPage.IsEveryoneSelected(), "Everyone is not selected in display options");
+                if (mainPage.IsFollowBannerPresent())
+                       mainPage.ClickFollow();
+                mainPage.ClickFollow();
+                Assert.IsTrue(mainPage.IsFollowBannerPresent(),"Follow banner is not present");
+                mainPage = mainPage.NavigateToRedeemA().NavigateToHomePage();
+                Assert.AreEqual("FOLLOWING",mainPage.GetFollowingRibbonMsg(),"Following is not present or not spell well");
             }
         }
     }

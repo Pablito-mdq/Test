@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -11,6 +12,9 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         [FindsBy(How = How.Id, Using = "lookupMerchant")]
         private IWebElement _txtCompanyName;
+
+        [FindsBy(How = How.XPath, Using = "//h3[contains(@class,'mall-welcome-message')]")]
+        private IWebElement _lblWelcomeMsg;
 
         public GoToMallHomePage(IWebDriver driver) : base(driver) { }
 
@@ -41,6 +45,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         public GoToMallHomePage SearchCompany(object name)
         {
             _txtCompanyName.SendKeys(name + Keys.Enter);
+            Thread.Sleep(5000);
             return NewPage<GoToMallHomePage>();
         }
 
@@ -75,6 +80,21 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
                    return false;
             }*/
             return true;
+        }
+        public string GetWelcomeMsg()
+        {
+            return _lblWelcomeMsg.Text;
+        }
+
+        public string GetImgFirstCreditCard()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@src,'http://qaassets.workstride.net/resources/images/vendors/vendorimages_workstridediscoverprepaidcard.png')]")).GetAttribute("src");
+        }
+
+        public string GetImgSecondCreditCard()
+        {
+            IWebElement a = Synchronization.WaitForElementToBePresent(By.Id("316")).FindElement(By.XPath("//img[contains(@src,'workstridemilestoneprepaidcard.png')]"));
+            return a.GetAttribute("src");
         }
     }
 }
