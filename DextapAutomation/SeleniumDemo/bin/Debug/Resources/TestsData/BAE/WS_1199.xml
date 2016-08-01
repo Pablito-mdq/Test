@@ -1,0 +1,15 @@
+<Constants>,
+		 <Company>Amazon.com</Company>
+		 <FirstName>QA</FirstName>
+		 <LastName>Testes</LastName>
+		 <Address>Test</Address>
+		 <City>New York</City>
+		 <State>New York</State>
+		 <zip>11101</zip>
+		 <phone>555-555-5555</phone>
+		 <CreditCardNumber>4111111111111111</CreditCardNumber>
+		 <CreditCardName>Test</CreditCardName>
+		 <CreditCardExpireYear>2021</CreditCardExpireYear>
+		 <CreditCardCDI>123</CreditCardCDI>
+		 <CreditCardExpireMonth>January</CreditCardExpireMonth>
+</Constants>

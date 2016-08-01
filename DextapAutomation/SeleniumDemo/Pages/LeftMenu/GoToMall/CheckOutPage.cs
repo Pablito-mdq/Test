@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 {
@@ -8,6 +9,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         [FindsBy(How = How.XPath, Using = "//img[contains(@src,'FootLocker.png')]")] private IWebElement _imgFootLocker;
 
         [FindsBy(How = How.XPath, Using = "//a[@href='/mall/checkout']")] private IWebElement _btnCheckOut;
+
 
         [FindsBy(How = How.XPath, Using = "//input[contains(@name,'sfname')]")]
         private IWebElement _txtfirstName;
@@ -32,6 +34,24 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         [FindsBy(How = How.XPath, Using = "//input[contains(@name,'cardnumber')]")]
         private IWebElement _txtCardNumber;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'cardholder')]")]
+        private IWebElement _txtCardName;
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@name,'cardmonth')]")]
+        private IWebElement _cboCardMonth;
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@name,'cardyear')]")]
+        private IWebElement _cboCardYear;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@name,'cardcsc')]")]
+        private IWebElement _txtCardCDI;
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@class,'sameAddress')]")]
+        private IWebElement _chkBillingAddress;
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@name,'sstate')]")]
+        private IWebElement _cboState;
 
         public CheckOutPage(IWebDriver driver) : base(driver){}
 
@@ -98,6 +118,59 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         public string GetErrorMsgLastName()
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(@id,'slname-error')]")).Text;
+        }
+
+        public CheckOutPage FillCreditCardNumber(string creditcardnumber)
+        {
+            _txtCardNumber.SendKeys(creditcardnumber);
+            return NewPage<CheckOutPage>();
+        }
+
+        public CheckOutPage FillCreditCardName(string creditcardname)
+        {
+            _txtCardName.SendKeys(creditcardname);
+            return NewPage<CheckOutPage>();
+        }
+
+        public CheckOutPage SelectExpireDate(string month, string year)
+        {
+           new SelectElement(_cboCardMonth).SelectByText(month);
+           new SelectElement(_cboCardYear).SelectByText(year);
+           return this;
+        }
+
+        public CheckOutPage FillCreditCardCDI(string creditcardCDI)
+        {
+            _txtCardCDI.SendKeys(creditcardCDI);
+            return this;
+        }
+
+        public CheckOutPage CheckSameBillingAddress()
+        {
+            _chkBillingAddress.Click();
+            return this;
+        }
+
+        public string GetLastStep()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Review items')]")).Text;
+        }
+
+        public CheckOutPage ClickCheckOut()
+        {
+           _btnCheckOut.Click();
+           return NewPage<CheckOutPage>();
+        }
+
+        public bool CannotEditEmail()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//input[contains(@type,'email')]")).GetAttribute("readonly").Equals("");
+        }
+
+        public CheckOutPage SelectState(string state)
+        {
+            new SelectElement(_cboState).SelectByText(state);
+            return this;
         }
     }
 }

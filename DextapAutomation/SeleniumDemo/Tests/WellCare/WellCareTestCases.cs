@@ -47,23 +47,28 @@ namespace SeleniumDemo.Tests.WellCare
             {
                 _file = "Resources\\TestsData\\" + client + "\\WS_1196.xml";
                 string user = AwardData.GetAwardUserName(_file), msg = AwardData.GetAwardMessage(_file),
-                    award = AwardData.GetAwardName(_file), value = AwardData.GetAwardValue(_file),
+                    award = AwardData.GetAwardName(_file), value = AwardData.GetAwardValue(_file), amountvalue= AwardData.GetAwardAmountValue(_file),
                     proxy_name = ProxyData.GetProxyUserName(_file), proxy_name2 = ProxyData.GetProxySecondUserName(_file);
-                ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser().EnterUserNameHealthAlliance(proxy_name);
+                MainHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser().EnterUserNameHealthAlliance(proxy_name).ProxyToMainHomePage();
                 NominationHomePage recognitionPage = proxyPage.NavigateToHomePage().NavigateToNomination();
                 Thread.Sleep(1500);
                 recognitionPage
                     .SearchEmployeeFound(user)
                     .SelectAward(award)
+                    .SelectValueOfAward(amountvalue)
                     .SelectValues(value)
                     .FillMsg(msg)
                     .ClickNext()
                     .EmailReward();
                 recognitionPage.ClickSendRecognition();
-                var proxypage =recognitionPage.ExitProxy().NavigateToAdminHomePageSpan()
-                        .EnterUserName(user)
+                var proxypage = recognitionPage.ExitProxy().NavigateToAdminHomePage().LoginProxyAsuser().EnterUserNameHealthAlliance(proxy_name2)
                         .ProxyToMainHomePage().ClosePopUp();
                 Thread.Sleep(300);
+                var amount = proxypage.GetBudget();
+                //Fail cannot appear link to switch to see the budget
+                PendingApprovals pending = proxypage.NavigateToPendingApprovals();
+                Thread.Sleep(300);
+
                
             }
         }

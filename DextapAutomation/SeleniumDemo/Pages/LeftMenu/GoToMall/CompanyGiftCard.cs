@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumDemo.Pages.LeftMenu.GoToMall
@@ -18,6 +19,9 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         private IWebElement _txtQty;
 
         [FindsBy(How = How.XPath, Using = "//input[contains(@name,'itemamount')]")] private IWebElement _txtAmount;
+
+        [FindsBy(How = How.XPath, Using = "//img[contains(@class,'qInc')]")]
+        private IWebElement _rbtnQty;
 
         public CompanyGiftCard(IWebDriver driver) : base(driver) { }
 
@@ -40,6 +44,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CompanyGiftCard ClickPlusAmount()
         {
+            Synchronization.WaitForElementToBePresent(_btnPlusReward);
             _btnPlusReward.Click();
             return NewPage<CompanyGiftCard>();
         }
@@ -57,14 +62,27 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CompanyGiftCard ClickAddToCart()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@type,'submit')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Add to Cart')]")).Click();
             return NewPage<CompanyGiftCard>();
         }
 
         public CompanyGifCart ClickGoToCart()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/mall/cart')]")).Click();
+            Thread.Sleep(1000);
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@class,'mallBtn content')]")).Click();
             return NewPage<CompanyGifCart>();
+        }
+
+        public string GetSuccesfullMsg()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(.,'Your item has been added to your cart!')]")).Text;
+        }
+
+        public CompanyGiftCard ClickPlusQuantity(int quant)
+        {
+            for (int i = 0; i < quant; i++)
+                 _rbtnQty.Click();
+            return NewPage<CompanyGiftCard>();
         }
     }
 }

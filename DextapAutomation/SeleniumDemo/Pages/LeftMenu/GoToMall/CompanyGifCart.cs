@@ -8,7 +8,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         [FindsBy(How = How.XPath, Using = "//img[contains(@src,'footlocker.png')]")]
         private IWebElement _imgFootLocker;
 
-        [FindsBy(How = How.XPath, Using = "//a[@href='/mall/checkout']")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/mall/checkout')]")]
         private IWebElement _btnCheckOut;
 
         public CompanyGifCart(IWebDriver driver) : base(driver){}

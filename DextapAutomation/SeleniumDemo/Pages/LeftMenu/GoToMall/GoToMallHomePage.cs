@@ -51,7 +51,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CompanyGiftCard SelectCompany()
         {
-           FindElement(By.ClassName("vendorImage")).Click();
+           Synchronization.WaitForElementToBePresent(By.ClassName("vendorImage")).Click();
             return NewPage<CompanyGiftCard>();
         }
 
@@ -95,6 +95,11 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         {
             IWebElement a = Synchronization.WaitForElementToBePresent(By.Id("316")).FindElement(By.XPath("//img[contains(@src,'workstridemilestoneprepaidcard.png')]"));
             return a.GetAttribute("src");
+        }
+
+        public string GetGifCardTitle()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(@class,'vendorTitle')]")).Text;
         }
     }
 }

@@ -7,6 +7,7 @@ using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
+using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
@@ -531,6 +532,48 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.IsTrue(mainPage.IsFollowBannerPresent(),"Follow banner is not present");
                 mainPage = mainPage.NavigateToRedeemA().NavigateToHomePage();
                 Assert.AreEqual("FOLLOWING",mainPage.GetFollowingRibbonMsg(),"Following is not present or not spell well");
+            }
+        }
+
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1201
+        [Test]
+        public void WS_1199()
+        {
+            if (!DataParser.ReturnExecution("WS_1199"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1199.xml";
+                string company = RedeemData.GetRedeemCompany(_file), creditcardnumber=RedeemData.GetRedeemCreditCardNumber(_file)
+                    , creditcardname = RedeemData.GetRedeemCreditCardName(_file), creditcardexpiremonth = RedeemData.GetRedeemCreditCardExpireMonth(_file), creditcardexpireyear = RedeemData.GetRedeemCreditCardExpireYear(_file)
+                    , creditcardCDI = RedeemData.GetRedeemCreditCardCDI(_file), firstname = RedeemData.GetRedeemFirstName(_file),
+                    secondname = RedeemData.GetRedeemSecondName(_file),address = RedeemData.GetRedeemAddress(_file), city = RedeemData.GetRedeemCity(_file),
+                    zip = RedeemData.GetRedeemZip(_file), phone = RedeemData.GetRedeemPhone(_file), state = RedeemData.GetRedeemState(_file);
+                MainHomePage mall = InitialPage.Go().Logon().ClickLogin();
+                var gif = mall.NavigateToRedeemA().SearchCompany(company);
+                Assert.AreEqual("Amazon.com",gif.GetGifCardTitle(),"The gif card is not amazon");
+                var gifcard = gif.SelectCompany().ClickPlusAmount().ClickPlusQuantity(20).ClickAddToCart();
+                Assert.AreEqual("Your item has been added to your cart!",gifcard.GetSuccesfullMsg(),"succesfull msg is not well spell");
+                var checkout = gifcard.ClickGoToCart().ClickCheckOut();
+                checkout.FillName(firstname)
+                    .FillLastName(secondname)
+                    .FillAddress(address)
+                    .FillCity(city)
+                    .SelectState(state)
+                    .FillZipCode(zip)
+                    .FillPhoneNumber(phone);
+                Assert.IsFalse(checkout.CannotEditEmail(),"Email txt field is editable");
+                checkout.ClickNext().FillCreditCardNumber(creditcardnumber)
+                    .FillCreditCardName(creditcardname)
+                    .SelectExpireDate(creditcardexpiremonth,creditcardexpireyear)
+                    .FillCreditCardCDI(creditcardCDI)
+                    .CheckSameBillingAddress()
+                    .ClickNext();
+                Assert.AreEqual("Review items", checkout.GetLastStep(), "Last step title is not right");
+                checkout.ClickCheckOut();
             }
         }
     }

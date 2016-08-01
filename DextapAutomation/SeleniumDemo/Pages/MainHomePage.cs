@@ -444,5 +444,11 @@ namespace SeleniumDemo.Pages
             Thread.Sleep(1500);
            return Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[1]/div")).Text;
         }
+
+        public int GetBudget()
+        {
+            var a = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@id,'navBudget')]")).Text;
+            return Int32.Parse(a);
+        }
     }
 }

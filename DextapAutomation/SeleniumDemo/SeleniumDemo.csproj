@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AwardData.cs" />
+    <Compile Include="Models\RedeemData.cs" />
     <Compile Include="Models\GeneralData.cs" />
     <Compile Include="Models\RegisterData.cs" />
     <Compile Include="Models\TestExecutionModel.cs" />
