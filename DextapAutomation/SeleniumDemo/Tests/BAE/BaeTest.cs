@@ -576,5 +576,60 @@ namespace SeleniumDemo.Tests.BAE
                 checkout.ClickCheckOut();
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1201
+        [Test]
+        public void WS_1198()
+        {
+            if (!DataParser.ReturnExecution("WS_1198"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1198.xml";
+                string company = RedeemData.GetRedeemCompany(_file), firstname = RedeemData.GetRedeemFirstName(_file),
+                    secondname = RedeemData.GetRedeemSecondName(_file), address = RedeemData.GetRedeemAddress(_file), city = RedeemData.GetRedeemCity(_file),
+                    zip = RedeemData.GetRedeemZip(_file), phone = RedeemData.GetRedeemPhone(_file), state = RedeemData.GetRedeemState(_file);
+                MainHomePage mall = InitialPage.Go().Logon().ClickLogin();
+                var gif = mall.NavigateToRedeemA().SearchCompany(company);
+                Assert.AreEqual("Amazon.com", gif.GetGifCardTitle(), "The gif card is not amazon");
+                var gifcard = gif.SelectCompany().ClickAddToCart();
+                Assert.AreEqual("Your item has been added to your cart!", gifcard.GetSuccesfullMsg(), "succesfull msg is not well spell");
+                var checkout = gifcard.ClickGoToCart().ClickCheckOut();
+                checkout.FillName(firstname)
+                    .FillLastName(secondname)
+                    .FillAddress(address)
+                    .FillCity(city)
+                    .SelectState(state)
+                    .FillZipCode(zip)
+                    .FillPhoneNumber(phone);
+                Assert.IsFalse(checkout.CannotEditEmail(), "Email txt field is editable");
+                checkout.ClickNext();
+                Assert.AreEqual("We got you covered Tester Stride", checkout.GetNoCreditCardUseMsg(), "The message is wrong or its possible to use the credit card");
+                Assert.AreEqual("Your rewards have covered your balance.\r\nEnjoy your gift.", checkout.GetNoCreditCardUseMsgSubtitle(), "The message is wrong or its possible to use the credit card");
+                checkout.ClickNextPayment();
+                Assert.AreEqual("Review items", checkout.GetLastStep(), "Last step title is not right");
+                checkout.ClickCheckOut();
+                Assert.AreEqual("$25",checkout.GetAmountChecked(),"Amount Checked is not $25");
+                Assert.AreEqual("1",checkout.GetQuantityChecked(),"Quantity is not 1");
+            }
+        }
+
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1202
+        [Test]
+        public void WS_1202()
+        {
+            if (!DataParser.ReturnExecution("WS_1202"))
+                Assert.Ignore();
+            else
+            {
+                GoToMallHomePage mall = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
+                Assert.IsTrue(mall.AreAllImagesDisplayed(), "No all images all ok Get an successfully validation");
+            }
+        }
     }
 }

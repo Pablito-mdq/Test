@@ -8,7 +8,8 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
     {
         [FindsBy(How = How.XPath, Using = "//img[contains(@src,'FootLocker.png')]")] private IWebElement _imgFootLocker;
 
-        [FindsBy(How = How.XPath, Using = "//a[@href='/mall/checkout']")] private IWebElement _btnCheckOut;
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Checkout')]")]
+        private IWebElement _btnCheckOut;
 
 
         [FindsBy(How = How.XPath, Using = "//input[contains(@name,'sfname')]")]
@@ -99,6 +100,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CheckOutPage ClickNext()
         {
+            Synchronization.WaitForElementToBePresent(_btnNext);
             _btnNext.Click();
             return NewPage<CheckOutPage>();
         }
@@ -159,6 +161,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         public CheckOutPage ClickCheckOut()
         {
            _btnCheckOut.Click();
+           Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@id,'ui-spinner-container')]"));
            return NewPage<CheckOutPage>();
         }
 
@@ -171,6 +174,32 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         {
             new SelectElement(_cboState).SelectByText(state);
             return this;
+        }
+
+        public string GetNoCreditCardUseMsg()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(@class,'alignCenter ')]")).Text;
+        }
+
+        public string GetNoCreditCardUseMsgSubtitle()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h5[contains(@class,'alignCenter ')]")).Text;
+        }
+
+        public string GetAmountChecked()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'$25')]")).Text;
+        }
+
+        public string GetQuantityChecked()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'1')]")).Text;
+        }
+
+        public CheckOutPage ClickNextPayment()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@class,'content alignCenter midBannerBtn billingNotRequiredBtn')]")).Click();
+            return NewPage<CheckOutPage>();
         }
     }
 }

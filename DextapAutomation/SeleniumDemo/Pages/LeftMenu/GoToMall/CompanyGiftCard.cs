@@ -62,6 +62,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CompanyGiftCard ClickAddToCart()
         {
+            Thread.Sleep(1000);
             Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(.,'Add to Cart')]")).Click();
             return NewPage<CompanyGiftCard>();
         }

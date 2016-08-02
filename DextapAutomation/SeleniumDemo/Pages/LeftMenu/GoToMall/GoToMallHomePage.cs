@@ -1,7 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Threading;
+using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using NUnit.Framework;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 {
@@ -101,5 +107,70 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(@class,'vendorTitle')]")).Text;
         }
+
+        public bool AreAllImagesDisplayed()
+        {
+            for (int i = 0; i < 300; i++)
+            {
+                _txtCompanyName.SendKeys(Keys.PageDown);
+            }
+            for (int i = 0; i < 150; i++)
+            {
+                _txtCompanyName.SendKeys(Keys.PageUp);
+            }
+            IWebElement[] img = FindElement(By.Id("vendorContainer")).FindElements(By.XPath("//img[contains(@class,'position-vertCenter')]")).ToArray();
+            for (int j = 0; j < img.Length; j++)
+                {
+                    HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(img[j].GetAttribute("src"));
+                    // Sends the HttpWebRequest and waits for a response.
+                    try
+                    {
+                        HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                        if (myHttpWebResponse.StatusCode != HttpStatusCode.OK)
+                            Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: {0}",
+                            myHttpWebResponse.StatusDescription);
+                        // Releases the resources of the response.
+                        myHttpWebResponse.Close();
+                    }
+                    catch (Exception)
+                    {
+                       Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: {0} , for the url {1}",
+                            (HttpWebResponse)myHttpWebRequest.GetResponse(), img[j].GetAttribute("src"));
+                        // Releases the resources of the response.
+                    }
+
+                }
+            return true;
+        }
+        
+
+
+        /*{
+            string a = "abcdefghijklmnopqrstuvwxyz";
+            string[] b = new string[25];
+            for (int i = 0; i < 25; i++)
+            {
+                b[i] = a.Substring(i, 1);
+            }
+            for (int i = 0; i < 25; i++)
+            {
+                _txtCompanyName.Clear();
+                _txtCompanyName.SendKeys(b[i]);
+                Thread.Sleep(1500);
+                IWebElement[] img = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'vendorImage')]")).ToArray();
+                for (int j = 0; j < img.Length; j++)
+                {
+                    HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(img[j].GetAttribute("src"));
+                    // Sends the HttpWebRequest and waits for a response.
+                    HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                    if (myHttpWebResponse.StatusCode != HttpStatusCode.OK)
+                        Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: {0}",
+                            myHttpWebResponse.StatusDescription);
+                    // Releases the resources of the response.
+                    myHttpWebResponse.Close();
+                }
+            }
+            return true;
+        }*/
     }
 }
