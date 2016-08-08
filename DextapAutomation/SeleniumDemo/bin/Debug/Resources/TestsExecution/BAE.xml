@@ -30,4 +30,9 @@
 		<Test Name="WS_1199" Execution="Yes"/>
 		<Test Name="WS_1198" Execution="Yes"/>
 		<Test Name="WS_1202" Execution="Yes"/>
+		<Test Name="WS_1212" Execution="Yes"/>
+		<Test Name="WS_1210" Execution="Yes"/>
+		<Test Name="WS_1216" Execution="Yes"/>
+		<Test Name="WS_1218" Execution="Yes"/>
+		<Test Name="WS_1225" Execution="Yes"/>
 </TestList>

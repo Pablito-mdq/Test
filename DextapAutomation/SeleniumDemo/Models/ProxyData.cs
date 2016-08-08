@@ -25,10 +25,14 @@ namespace SeleniumDemo.Models
             return GetProxy(configFile, "ProxyName");
         }
 
-
         public static string GetProxySecondUserName(string configFile)
         {
             return GetProxy(configFile, "ProxyName2");
+        }
+
+        public static string GetProxyThirdUserName(string configFile)
+        {
+            return GetProxy(configFile, "ProxyName3");
         }
     }
 }

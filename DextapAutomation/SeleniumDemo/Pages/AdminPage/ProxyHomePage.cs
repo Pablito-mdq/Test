@@ -53,7 +53,7 @@ namespace SeleniumDemo.Tests.Pages
             Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
             IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'valign center')]")).ToArray();
             if (s == "Proxy")
-                a[0].Click();
+                a[1].Click();
             return NewPage<ProxyHomePage>();
         }
 
@@ -92,6 +92,56 @@ namespace SeleniumDemo.Tests.Pages
             else
                 Assert.Fail("User was not found");
             return this;
+        }
+
+        public bool IsBulkAwardOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Bulk Award Upload')]")).Displayed;
+        }
+
+        public bool IsProxyOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Proxy')]")).Displayed;
+        }
+
+        public bool IsBudgetToolOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Budget Tool')]")).Displayed;
+        }
+
+        public bool IsPendingApprovalsOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Pending Approvals')]")).Displayed;
+        }
+
+        public bool IsEditRewardCartUserMessageOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Edit Reward Cart User Message')]")).Displayed;
+        }
+
+        public bool IsProxyManagerOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Proxy Manager')]")).Displayed;
+        }
+
+        public bool IsDeletedUnusedAwardOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Deleted Unused Award')]")).Displayed;
+        }
+
+        public bool IsEditPendingAwardsOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Edit Pending Awards')]")).Displayed;
+        }
+
+        public bool IsDebugRuleOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Debug Rule')]")).Displayed;
+        }
+
+        public bool IsDebugReportOptPresent()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Debug Report')]")).Displayed;
         }
     }
 }

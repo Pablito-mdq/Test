@@ -134,9 +134,8 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
                     }
                     catch (Exception)
                     {
-                       Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: {0} , for the url {1}",
-                            (HttpWebResponse)myHttpWebRequest.GetResponse(), img[j].GetAttribute("src"));
-                        // Releases the resources of the response.
+                       Assert.Fail("\r\nResponse Status Code is not OK and StatusDescription is: 404 , for the url {0}",
+                            img[j].GetAttribute("src"));
                     }
 
                 }

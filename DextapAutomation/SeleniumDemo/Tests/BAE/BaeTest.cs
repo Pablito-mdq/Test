@@ -10,6 +10,7 @@ using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
+using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
@@ -629,6 +630,164 @@ namespace SeleniumDemo.Tests.BAE
             {
                 GoToMallHomePage mall = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
                 Assert.IsTrue(mall.AreAllImagesDisplayed(), "No all images all ok Get an successfully validation");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1212
+        [Test]
+        public void WS_1212()
+        {
+            if (!DataParser.ReturnExecution("WS_1212"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1212.xml";
+                string firstName = RegisterData.GetRegisterFirstName(_file),
+                    lastName = RegisterData.GetRegisterLastName(_file),
+                    ID = RegisterData.GetRegisterID(_file),
+                    email = RegisterData.GetRegisterEmail(_file);
+                Register registerPage = InitialPage.Go().ClickJoinNow();
+                Assert.AreEqual("First Name", registerPage.GetName("First Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
+                Assert.AreEqual("Last Name", registerPage.GetName("Last Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
+                Assert.AreEqual("Employee ID", registerPage.GetName("Employee ID"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "ID field is not available");
+                Assert.AreEqual("Email Address", registerPage.GetName("Email Address"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsEmailFieldAvailable(), "email field is not available");
+                registerPage.EnterFirstName(firstName)
+                    .EnterLastName(lastName)
+                    .EnterEmployeeID(ID)
+                    .EnterEmployeeEmail(email)
+                    .ClickRegister();
+                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void WS_1210()
+        {
+            if (!DataParser.ReturnExecution("WS_1210"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1210.xml";
+                string username1 = ProxyData.GetProxySecondUserName(_file), username = ProxyData.GetProxyUserName(_file),
+                    username2 = ProxyData.GetProxyThirdUserName(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username + " Ahsing", home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                home = home.ExitProxy().EnterUserName(username1).ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + "Aaron " + username1, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                home = home.ClosePopUp().ExitProxy().EnterUserName(username2).ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username2, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1212
+        [Test]
+        public void WS_1216()
+        {
+            if (!DataParser.ReturnExecution("WS_1216"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1216.xml";
+                string firstName = RegisterData.GetRegisterFirstName(_file),
+                    lastName = RegisterData.GetRegisterLastName(_file),
+                    ID = RegisterData.GetRegisterID(_file),
+                    email = RegisterData.GetRegisterEmail(_file);
+                Register registerPage = InitialPage.Go().ClickJoinNow();
+                Assert.AreEqual("First Name", registerPage.GetName("First Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
+                Assert.AreEqual("Last Name", registerPage.GetName("Last Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
+                Assert.AreEqual("Employee ID", registerPage.GetName("Employee ID"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "ID field is not available");
+                Assert.AreEqual("Email Address", registerPage.GetName("Email Address"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsEmailFieldAvailable(), "email field is not available");
+                registerPage.EnterFirstName(firstName)
+                    .EnterLastName(lastName)
+                    .EnterEmployeeID(ID)
+                    .EnterEmployeeEmail(email)
+                    .ClickRegister();
+                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1212
+        [Test]
+        public void WS_1218()
+        {
+            if (!DataParser.ReturnExecution("WS_1218"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1218.xml";
+                string firstName = RegisterData.GetRegisterFirstName(_file),
+                    lastName = RegisterData.GetRegisterLastName(_file),
+                    ID = RegisterData.GetRegisterID(_file),
+                    email = RegisterData.GetRegisterEmail(_file);
+                Register registerPage = InitialPage.Go().ClickJoinNow();
+                Assert.AreEqual("First Name", registerPage.GetName("First Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsFirstNameFieldAvailable(), "First Name field is not available");
+                Assert.AreEqual("Last Name", registerPage.GetName("Last Name"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsLastNameAvailable(), "Last Name button is not available");
+                Assert.AreEqual("Employee ID", registerPage.GetName("Employee ID"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsIDFieldAvailable(), "ID field is not available");
+                Assert.AreEqual("Email Address", registerPage.GetName("Email Address"), "First Name is now well spell");
+                Assert.IsTrue(registerPage.IsEmailFieldAvailable(), "email field is not available");
+                registerPage.EnterFirstName(firstName)
+                    .EnterLastName(lastName)
+                    .EnterEmployeeID(ID)
+                    .EnterEmployeeEmail(email)
+                    .ClickRegister();
+                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1212
+        [Test]
+        public void WS_1225()
+        {
+            if (!DataParser.ReturnExecution("WS_1218"))
+                Assert.Ignore();
+            else
+            {
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
+                Assert.AreEqual(url + "report/bae_awards", reportpage.GetCurrentUrl(),"URL is not the correct");
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(),"The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(1);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(2);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(3);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(4);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(5);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(6);
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickHeader(7);
             }
         }
     }

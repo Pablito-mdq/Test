@@ -450,5 +450,12 @@ namespace SeleniumDemo.Pages
             var a = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@id,'navBudget')]")).Text;
             return Int32.Parse(a);
         }
+
+        public string GetProxyLoginMsgSprint()
+        {
+            string a = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-blurb')]")).Text;
+            string b = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-user-name')]")).Text;
+            return a + b;
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace SeleniumDemo.Pages
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'REDEEM')]")]
         private IWebElement _lnkNavigateReedem;
         
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/report/awards')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'REPORTS')]")]
         private IWebElement _lnkReports;
     
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/my_awards')]")]
