@@ -52,6 +52,7 @@
     <Compile Include="Models\RedeemData.cs" />
     <Compile Include="Models\GeneralData.cs" />
     <Compile Include="Models\RegisterData.cs" />
+    <Compile Include="Models\ReportFilterData.cs" />
     <Compile Include="Models\TestExecutionModel.cs" />
     <Compile Include="Models\ProxyData.cs" />
     <Compile Include="Pages\AwardDetailsPopUp.cs" />

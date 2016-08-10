@@ -764,11 +764,12 @@ namespace SeleniumDemo.Tests.BAE
 
         [Category("Regression")]
         [Category("BAE")]
-        //WS_1212
+        [Category("Sprint")]
+        //WS_1225
         [Test]
         public void WS_1225()
         {
-            if (!DataParser.ReturnExecution("WS_1218"))
+            if (!DataParser.ReturnExecution("WS_1225"))
                 Assert.Ignore();
             else
             {
@@ -789,6 +790,100 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
                 reportpage.ClickHeader(7);
             }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1229
+        [Test]
+        public void WS_1229()
+        {
+            if (!DataParser.ReturnExecution("WS_1229"))
+                Assert.Ignore();
+            else
+            {
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("All Awards"),"Option is not well written");
+                reportpage.ClickLeftMenu("All Awards");
+                Assert.AreEqual(url + "report/bae_awards",reportpage.GetCurrentUrl(),"Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("All Awards (Sector)"), "Option is not well written");
+                reportpage.ClickLeftMenu("All Awards (Sector)");
+                Assert.AreEqual(url + "report/bae_awards_by_sector", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Issued Awards"), "Option is not well written");
+                reportpage.ClickLeftMenu("Issued Awards");
+                Assert.AreEqual(url + "report/bae_issued_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Teams Awards"), "Option is not well written");
+                reportpage.ClickLeftMenu("Teams Awards");
+                Assert.AreEqual(url + "report/awards_by_manager", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Milestones"), "Option is not well written");
+                reportpage.ClickLeftMenu("Milestones");
+                Assert.AreEqual(url + "report/milestones", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Received Awards"), "Option is not well written");
+                reportpage.ClickLeftMenu("Received Awards");
+                Assert.AreEqual(url + "report/bae_received_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll (Sector)"), "Option is not well written");
+                reportpage.ClickLeftMenu("Payroll (Sector)");
+                Assert.AreEqual(url + "report/bae_payroll_sector", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll"), "Option is not well written");
+                reportpage.ClickLeftMenu("Payroll");
+                Assert.AreEqual(url + "report/bae_payroll", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Budget"), "Option is not well written");
+                reportpage.ClickLeftMenu("Budget");
+                Assert.AreEqual(url + "report/edit_budget_tool", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Pending Approvals"), "Option is not well written");
+                reportpage.ClickLeftMenu("Pending Approvals");
+                Assert.AreEqual(url + "report/pending_approvals", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Team Pending Approvals"), "Option is not well written");
+                reportpage.ClickLeftMenu("Team Pending Approvals");
+                Assert.AreEqual(url + "report/pending_approvals_by_manager", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Proxy Access"), "Option is not well written");
+                reportpage.ClickLeftMenu("Proxy Access");
+                Assert.AreEqual(url + "report/proxy_access", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Activity"), "Option is not well written");
+                reportpage.ClickLeftMenu("Activity");
+                Assert.AreEqual(url + "report/activities", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Missing Emails (Internal)"), "Option is not well written");
+                reportpage.ClickLeftMenu("Missing Emails (Internal)");
+                Assert.AreEqual(url + "report/bae_missing_emails", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Awards By Budget"), "Option is not well written");
+                reportpage.ClickLeftMenu("Awards By Budget");
+                Assert.AreEqual(url + "report/awards_by_budget_owner", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll By Budget"), "Option is not well written");
+                reportpage.ClickLeftMenu("Payroll By Budget");
+                Assert.AreEqual(url + "report/payroll_by_budget_owner", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Issued Awards"), "Option is not well written");
+                reportpage.ClickLeftMenu("Manager Issued Awards");
+                Assert.AreEqual(url + "report/manager_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Awards By Payroll (HRBP)"), "Option is not well written");
+                reportpage.ClickLeftMenu("Awards By Payroll (HRBP)");
+                Assert.AreEqual(url + "report?reportName=bae_payroll_by_budget_owner_hrbp", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Budget Transactions"), "Option is not well written");
+                reportpage.ClickLeftMenu("Budget Transactions");
+                Assert.AreEqual(url + "report/budget_adjustments", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Award Totals"), "Option is not well written");
+                reportpage.ClickLeftMenu("Manager Award Totals");
+                Assert.AreEqual(url + "report/manager_issued_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1231
+        [Test]
+        public void WS_1231()
+        {
+            if (!DataParser.ReturnExecution("WS_1231"))
+                Assert.Ignore();
+            else
+            {
+                 _file = "Resources\\TestsData\\" + client + "\\WS_1231.xml";
+                 string startDate = ReportFilterData.GetStartDate(_file),
+                    finishDate = ReportFilterData.GetFinishDate(_file);
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
+                reportpage.ClickFilter().EnterStartDate(startDate).EnterFinishDate(finishDate).ClickSubmit();
+                Assert.AreEqual(startDate,reportpage.GetDate(0),"Start Date is not the same");
+                Assert.AreEqual(finishDate, reportpage.GetDate(1), "Start Date is not the same");
+             }
         }
     }
 }

@@ -14,6 +14,9 @@ namespace SeleniumDemo.Pages.Reports
         [FindsBy(How = How.Id, Using = "report-table-container")]
         private IWebElement _tableReports;
 
+        [FindsBy(How = How.XPath, Using = "//h4[contains(.,'▶ Filters: ')]")]
+        private IWebElement _lnkFilters;
+
         public ReportsPage(IWebDriver driver) : base(driver) { }
 
         public AllAwards clickAllAwards()
@@ -45,6 +48,51 @@ namespace SeleniumDemo.Pages.Reports
             IWebElement a =FindElement(By.XPath(string.Format("//*[@id='report-table-container']/table/tbody[1]/tr/th[{0}]",header)));
             a.Click();
             return NewPage<ReportsPage>();
+        }
+
+        public bool IsOptLeftMenuNameDisplayed(string opt)
+        {
+            Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            return Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//a[contains(.,'{0}')]",opt))).Displayed;
+        }
+
+        public ReportsPage ClickLeftMenu(string p)
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//a[contains(.,'{0}')]",p))).Click();
+            Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            return NewPage<ReportsPage>();
+        }
+
+        public ReportsPage ClickFilter()
+        {
+            Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            _lnkFilters.Click();
+            return NewPage<ReportsPage>();
+        }
+
+        public ReportsPage EnterStartDate(string date)
+        {
+            Synchronization.WaitForElementToBePresent(By.Id("report-filter-send_date_start")).SendKeys(date);
+            return this;
+        }
+
+        public ReportsPage EnterFinishDate(string finishDate)
+        {
+            Synchronization.WaitForElementToBePresent(By.Id("report-filter-send_date_end")).SendKeys(finishDate);
+            return this;
+        }
+
+        public ReportsPage ClickSubmit()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//input[contains(@value,'Submit')]")).Click();
+            Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            return NewPage<ReportsPage>();
+        }
+
+        public string GetDate(int p)
+        {
+            IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//p[contains(@class,'filter-tag')]")).ToArray();
+            return a[p].Text;
         }
     }
 }
