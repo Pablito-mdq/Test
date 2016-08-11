@@ -95,7 +95,7 @@
     <Compile Include="Pages\LeftMenu\GoToMall\CheckOutPage.cs" />
     <Compile Include="Pages\AdminPage\BulkAward.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
-    <Compile Include="Tests\SundGard\SundGardTests.cs" />
+    <Compile Include="Tests\SunGard\SunGardTests.cs" />
     <Compile Include="Tests\Textron\TextronTest.cs" />
     <Compile Include="Tests\TRU\TRUTests.cs" />
     <Compile Include="Tests\WellCare\WellCareTestCases.cs" />

@@ -209,7 +209,7 @@ namespace SeleniumDemo.Pages
         {
             if (client == "Sprint")
             _txtCompnayId.SendKeys("474");
-            if (client == "Sundgard")
+            if (client == "Sungard")
                 _txtCompnayId.SendKeys("478");
             return this;
         }

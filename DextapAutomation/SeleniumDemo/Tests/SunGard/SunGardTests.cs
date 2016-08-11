@@ -11,18 +11,18 @@ using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.SundGard
+namespace SeleniumDemo.Tests.SunGard
 {
-    internal class SundGardTests : WorkStrideBaseTest<LoginPage>
+    internal class SungardTests : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "Sundgard");
+        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "Sungard");
 
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
         //WS-917
         [Test]
         public void WS_1044()
@@ -43,7 +43,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
         //WS-927
         [Test]
         public void WS_927()
@@ -113,7 +113,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
 
         [Test]
         public void WS_1161()
@@ -166,7 +166,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
         //WS-1201
         [Test]
         public void WS_1198()
@@ -214,7 +214,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
         //WS-956
         [Test]
         public void WS_956()
@@ -267,7 +267,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
 
         //WS_1148
         [Test]
@@ -290,7 +290,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
 
         [Test]
         public void WS_1062()
@@ -312,7 +312,7 @@ namespace SeleniumDemo.Tests.SundGard
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
 
         //WS_1184
         [Test]
@@ -325,16 +325,16 @@ namespace SeleniumDemo.Tests.SundGard
                 MainHomePage mainHomePage = InitialPage.Go().EnterId(client).Logon().ClickLogin();
                 Assert.IsTrue(mainHomePage.IsEveryoneSelected(), "Everyone is not selected in display options");
                 mainHomePage.ClickCheers();
-                if (mainHomePage.CheersCountSundgard() == "-1")
+                if (mainHomePage.CheersCountSungard() == "-1")
                     mainHomePage.ClickCheers();
-                Assert.AreEqual("1", mainHomePage.CheersCountSundgard(), "Cheers is not 1");
+                Assert.AreEqual("1", mainHomePage.CheersCountSungard(), "Cheers is not 1");
                 mainHomePage.NavigateToRedeem().NavigateToHomePage();
-                Assert.AreEqual("1", mainHomePage.CheersCountSundgard(), "Cheers is not 1");
+                Assert.AreEqual("1", mainHomePage.CheersCountSungard(), "Cheers is not 1");
             }
         }
 
         [Category("Regression")]
-        [Category("Sundgard")]
+        [Category("Sungard")]
         //WS-1112
         [Test]
         public void WS_1112()

@@ -460,7 +460,7 @@ namespace SeleniumDemo.Pages
             return a + b;
         }
 
-        public string CheersCountSundgard()
+        public string CheersCountSungard()
         {
             return Synchronization.WaitForElementToBePresent(By.Id("cheerCount1148258")).Text;
         }
