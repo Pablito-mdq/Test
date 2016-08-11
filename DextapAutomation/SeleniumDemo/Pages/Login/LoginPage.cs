@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Runtime.Remoting.Channels;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages.Login;
@@ -204,9 +205,12 @@ namespace SeleniumDemo.Pages
             return this;
         }
 
-        public LoginPage EnterId()
+        public LoginPage EnterId(string client)
         {
+            if (client == "Sprint")
             _txtCompnayId.SendKeys("474");
+            if (client == "Sundgard")
+                _txtCompnayId.SendKeys("478");
             return this;
         }
        

@@ -100,7 +100,7 @@ namespace SeleniumDemo.Tests.Sprint
                 NominationHomePage recognitionPage =
                     InitialPage.GoSpecial("WS_1024", client, _file)
                         .Logon()
-                        .EnterId()
+                        .EnterId(client)
                         .ClickLogin()
                         .NavigateToNominationSprint();
                 recognitionPage

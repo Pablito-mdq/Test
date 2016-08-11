@@ -1,0 +1,11 @@
+<TestList>
+        <Test Name="WS_1044" Execution="Yes"/>
+		<Test Name="WS_927" Execution="Yes"/>
+		<Test Name="WS_956" Execution="Yes"/>
+		<Test Name="WS_1062" Execution="Yes"/>
+		<Test Name="WS_1112" Execution="Yes"/>
+		<Test Name="WS_1148" Execution="Yes"/>
+		<Test Name="WS_1185" Execution="Yes"/>
+		<Test Name="WS_1198" Execution="Yes"/>
+
+</TestList>

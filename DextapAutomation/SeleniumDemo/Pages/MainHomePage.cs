@@ -389,7 +389,9 @@ namespace SeleniumDemo.Pages
 
         public string CongratsCount()
         {
-            return Synchronization.WaitForElementToBePresent(By.Id("commentCount502467")).Text;
+                  if(Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[5]/div[2]/div/div"))!=null)
+                      return Synchronization.WaitForElementToBePresent(By.XPath("//*[@id='recContainer']/div[1]/div/div[5]/div[2]/div/div")).Text;
+            return 0.ToString();
         }
 
         public MainHomePage ClickCongrats()
@@ -414,7 +416,7 @@ namespace SeleniumDemo.Pages
 
         public MainHomePage SendCongrats()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//input[@data-id='502467']")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//input[contains(@value,'Send')]")).Click();
             return NewPage<MainHomePage>();
         }
 
@@ -456,6 +458,11 @@ namespace SeleniumDemo.Pages
             string a = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-blurb')]")).Text;
             string b = Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'proxy-user-name')]")).Text;
             return a + b;
+        }
+
+        public string CheersCountSundgard()
+        {
+            return Synchronization.WaitForElementToBePresent(By.Id("cheerCount1148258")).Text;
         }
     }
 }
