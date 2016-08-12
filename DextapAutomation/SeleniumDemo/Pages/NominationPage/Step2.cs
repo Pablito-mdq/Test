@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -38,7 +39,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public Step2 SelectAward(string award)
         {
-            IWebElement step2 = Synchronization.WaitForElementToBePresent(By.Id("recogStep2"));
+            Thread.Sleep(1000);
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award)));
             if (FindElement(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Displayed)
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Click();
