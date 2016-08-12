@@ -1,0 +1,10 @@
+<Constants>
+		  <Name>Aaron Smith</Name>
+		  <AwardName>Above and Beyond</AwardName>
+		  <AmountValue>200</AmountValue>
+		  <Value>Initiative</Value>
+		  <Message>QA Test Message</Message>
+		  <Reason>QA Test Message</Reason>
+		  <SendType>Email</SendType>
+		  <ProxyName>Christin DiFranco</ProxyName>
+ </Constants>

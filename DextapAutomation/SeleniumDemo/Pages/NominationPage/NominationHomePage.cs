@@ -355,6 +355,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public Step2 SearchEmployeeFoundAngular(string user)
         {
+            Thread.Sleep(1000);
             Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
             _txtName.Clear();
             _txtName.SendKeys(user);

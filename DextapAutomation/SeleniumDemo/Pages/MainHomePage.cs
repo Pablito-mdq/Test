@@ -222,6 +222,7 @@ namespace SeleniumDemo.Pages
 
         public NominationHomePage NavigateToNominationSpan()
         {
+            Thread.Sleep(1000);
             Synchronization.WaitForElementToBePresent(_lnkNominationPinnacola);
             if (_lnkNominationPinnacola.Displayed)
                 _lnkNominationPinnacola.Click();

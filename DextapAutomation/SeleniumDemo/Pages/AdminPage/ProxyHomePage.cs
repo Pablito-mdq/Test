@@ -22,6 +22,9 @@ namespace SeleniumDemo.Tests.Pages
         [FindsBy(How = How.Id, Using = "proxy_user-lookup")]
         private IWebElement _txtUserNameSprint;
 
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class,'proxy_submit-btn')]")]
+        private IWebElement _btnProxyToMain;
+
         public ProxyHomePage(IWebDriver driver) : base(driver) { }
 
         public ProxyHomePage EnterUserName(string name)
@@ -52,8 +55,9 @@ namespace SeleniumDemo.Tests.Pages
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
             IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'valign center')]")).ToArray();
-            if (s == "Proxy")
+            if (s == "Proxy2")
                 a[1].Click();
+            a[0].Click();
             return NewPage<ProxyHomePage>();
         }
 
@@ -142,6 +146,12 @@ namespace SeleniumDemo.Tests.Pages
         public bool IsDebugReportOptPresent()
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(.,'Debug Report')]")).Displayed;
+        }
+
+        public MainHomePage ClickProxyBtn()
+        {
+            _btnProxyToMain.Click();
+            return NewPage<MainHomePage>();
         }
     }
 }
