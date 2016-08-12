@@ -25,9 +25,7 @@ namespace SeleniumDemo.Pages.NominationPage
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'employeeMultiSelect selected')]")] private IWebElement
             _btnMulti;
 
-        public NominationHomePage(IWebDriver driver) : base(driver)
-        {
-        }
+        public NominationHomePage(IWebDriver driver) : base(driver){}
 
         public Step2 SearchEmployeeFound(string employee)
         {
@@ -352,6 +350,24 @@ namespace SeleniumDemo.Pages.NominationPage
             IWebElement[] awards = Synchronization.WaitForElementsToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).ToArray();
             if ((step2.Displayed) && (awards[0].Displayed))
                 awards[order].Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public Step2 SearchEmployeeFoundAngular(string user)
+        {
+            Synchronization.WaitForElementToBePresent(By.Name("employee-lookup"));
+            _txtName.Clear();
+            _txtName.SendKeys(user);
+            Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@class,'roundPhoto employeeImage')]")).Click();
+            return NewPage<Step2>();
+        }
+
+        public NominationHomePage DeliverTypeAngular(string printype)
+        {
+            if (printype == "Email")
+                 Synchronization.WaitForElementToBePresent(By.XPath("//h4[contains(.,'I want to Email this award.')]")).Click();
+            else
+                Synchronization.WaitForElementToBePresent(By.XPath("I want to Print this award")).Click();
             return NewPage<NominationHomePage>();
         }
     }

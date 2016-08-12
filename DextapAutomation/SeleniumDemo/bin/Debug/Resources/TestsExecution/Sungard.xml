@@ -7,5 +7,6 @@
 		<Test Name="WS_1148" Execution="Yes"/>
 		<Test Name="WS_1185" Execution="Yes"/>
 		<Test Name="WS_1198" Execution="Yes"/>
-
+        <Test Name="WS_1157_Sample1" Execution="Yes"/>
+		<Test Name="WS_1157_Sample2" Execution="Yes"/>
 </TestList>
