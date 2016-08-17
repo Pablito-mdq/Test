@@ -114,6 +114,7 @@ namespace SeleniumDemo.Pages
         public ReportsPage NavigateToReports()
         {
             _lnkReports.Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             return NewPage<ReportsPage>();
         }

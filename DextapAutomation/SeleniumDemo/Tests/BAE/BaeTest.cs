@@ -885,5 +885,24 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual(finishDate, reportpage.GetDate(1), "Start Date is not the same");
              }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1227
+        [Test]
+        public void WS_1227()
+        {
+            if (!DataParser.ReturnExecution("WS_1227"))
+                Assert.Ignore();
+            else
+            {
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().SelectPageSize("500");
+                int row=500 , col=7;
+                for (int i = 1; i < row; i++)
+                  for (int j = 1; j < col; j++)
+                     Assert.IsTrue(reportpage.IsCellFull(i,j), "Cell is empty");
+                Assert.Pass("All cell Are full");
+            }
+        }
     }
 }

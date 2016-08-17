@@ -466,5 +466,71 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.IsTrue(admin.IsPendingApprovalsOptPresent(), "Pending Approvals is not present");
             }
         }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        //WS-1157
+        [Test]
+        public void WS_1157_Sample3()
+        {
+            if (!DataParser.ReturnExecution("WS_1157_Sample3"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample3.xml";
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file),
+                    printype = AwardData.GetAwardDeliverType(_file),
+                    msg = AwardData.GetAwardMessage(_file);
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNominationSpan();
+                recognitionPage
+                    .SearchEmployeeFoundAngular(user)
+                    .SelectAward(award)
+                    .FillMsg(msg)
+                    .ClickNextSprint();
+                Assert.AreEqual("I want to Email this award.", recognitionPage.GetDeliverLabel("email"),
+                    "Label is not correct");
+                Assert.AreEqual("I want to Print this award", recognitionPage.GetDeliverLabel("print"),
+                    "Label is not correct");
+                recognitionPage.DeliverTypeAngular(printype).ClickNextGeneric();
+                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                    "The message is not ready to send");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        //WS-1157
+        [Test]
+        public void WS_1157_Sample5()
+        {
+            if (!DataParser.ReturnExecution("WS_1157_Sample5"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample5.xml";
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file),
+                    printype = AwardData.GetAwardDeliverType(_file),
+                    msg = AwardData.GetAwardMessage(_file);
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNominationSpan();
+                recognitionPage
+                    .SearchEmployeeFoundAngular(user)
+                    .SelectAward(award)
+                    .FillMsg(msg)
+                    .ClickNextSprint();
+                Assert.AreEqual("I want to Email this award.", recognitionPage.GetDeliverLabel("email"),
+                    "Label is not correct");
+                Assert.AreEqual("I want to Print this award", recognitionPage.GetDeliverLabel("print"),
+                    "Label is not correct");
+                recognitionPage.DeliverTypeAngular(printype).ClickNextGeneric();
+                Assert.AreEqual("Ready to send?", recognitionPage.GetReadyToSendMsg(),
+                    "The message is not ready to send");
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using WebDriverFramework.WebPage;
 
 namespace SeleniumDemo.Pages.Reports
@@ -16,6 +17,9 @@ namespace SeleniumDemo.Pages.Reports
 
         [FindsBy(How = How.XPath, Using = "//h4[contains(.,'▶ Filters: ')]")]
         private IWebElement _lnkFilters;
+
+        [FindsBy(How = How.Id, Using = "report-page-size")]
+        private IWebElement _cboPageSize;
 
         public ReportsPage(IWebDriver driver) : base(driver) { }
 
@@ -93,6 +97,23 @@ namespace SeleniumDemo.Pages.Reports
         {
             IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//p[contains(@class,'filter-tag')]")).ToArray();
             return a[p].Text;
+        }
+
+        public bool IsCellFull(int row, int col)
+        {
+            IWebElement a =
+                Synchronization.WaitForElementToBePresent(
+                    By.XPath(string.Format("//*[@id='report-table-container']/table/tbody[3]/tr[{0}]/td[{1}])", row, col)));
+            return a.Text.Length != 0;
+        }
+
+        public ReportsPage SelectPageSize(string quant)
+        {
+            Synchronization.WaitForElementToBePresent(_cboPageSize);
+            new SelectElement(_cboPageSize).SelectByValue(quant);
+            Thread.Sleep(2500);
+            Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            return NewPage<ReportsPage>();
         }
     }
 }

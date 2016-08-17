@@ -1,0 +1,7 @@
+<Constants>
+		  <Name>Aaron Smith</Name>
+		  <AwardName>Appreciation Award</AwardName>
+		  <Value>Innovation</Value>
+		  <Message>QA Test Message</Message>
+		  <SendType>Email</SendType>
+ </Constants>

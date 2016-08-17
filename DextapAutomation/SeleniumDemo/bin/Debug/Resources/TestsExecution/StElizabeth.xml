@@ -1,0 +1,4 @@
+<TestList>
+           <Test Name="WS_1157_Sample1" Execution="Yes"/>
+	       <Test Name="WS_1157_Sample2" Execution="Yes"/>
+</TestList>
