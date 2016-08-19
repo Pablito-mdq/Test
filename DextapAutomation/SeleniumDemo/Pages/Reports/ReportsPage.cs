@@ -40,7 +40,7 @@ namespace SeleniumDemo.Pages.Reports
         {
             for (int i = 0; i < 11; i++)
             {
-                Thread.Sleep(999);
+                Thread.Sleep(9999);
             }
             if (FindElement(By.XPath("//div[contains(@class,'loader')]"))!= null)
                 return FindElement(By.XPath("//div[contains(@class,'loader')]")).Displayed;
@@ -63,7 +63,6 @@ namespace SeleniumDemo.Pages.Reports
         public ReportsPage ClickLeftMenu(string p)
         {
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//a[contains(.,'{0}')]",p))).Click();
-            Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             return NewPage<ReportsPage>();
         }
 

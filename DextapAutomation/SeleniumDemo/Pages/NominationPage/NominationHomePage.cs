@@ -371,6 +371,20 @@ namespace SeleniumDemo.Pages.NominationPage
                 Synchronization.WaitForElementToBePresent(By.XPath("I want to Print this award")).Click();
             return NewPage<NominationHomePage>();
         }
+
+        public NominationHomePage ClickUploadFile()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//p[contains(.,'Acceptable File Types: (doc, docx, pdf, txt, jpg, png)')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public bool WasFileUploadedCorrectly(object fileName)
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'dz-filename')]"));
+            return
+                Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", fileName)))
+                    .Displayed;
+        }
     }
 }
 

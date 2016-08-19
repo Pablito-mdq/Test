@@ -1,11 +1,12 @@
 <Constants>
 		  <Name>Brittany Smith</Name>
-		  <ProxyName>Alisha Smith</ProxyName>
-		  <AwardName>Appreciation Award</AwardName>
-		  <AmountValue></AmountValue>
+		  <ProxyName>Linda Nice</ProxyName>
+		  <AwardName>Excellence</AwardName>
+		  <SecondValue>Business Operations</SecondValue>
 		  <Value>Quality</Value>
 		  <Impact></Impact>
 		  <Message>QA Test Submission</Message>
 		  <Reason>QA Test Submission</Reason>
-		  <SendType>Email</SendType>
+		  <FileName>UploadToolTestDocument</FileName>
+		  <PathFile>aaaaaaaaaC:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\Resources\TestsData\Akron\UploadToolTestDocument.docx</PathFile>
  </Constants>

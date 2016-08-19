@@ -1,4 +1,5 @@
 ﻿using System.Security.Authentication.ExtendedProtection;
+using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
@@ -123,19 +124,25 @@ namespace SeleniumDemo.Tests.Akron
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
-                    amount = AwardData.GetAwardAmountValue(_file), printype = AwardData.GetAwardDeliverType(_file),
+                    secondvalue = AwardData.GetAwardSecondValue(_file),
+                    file_name = GeneralData.GetFileName(_file),
                     msg = AwardData.GetAwardMessage(_file),
-                    reason = AwardData.GetAwardMessage(_file);
-
+                    reason = AwardData.GetAwardMessage(_file),
+                    path_file = GeneralData.GetPathFile(_file).Trim(),
+                proxy_name = ProxyData.GetProxyUserName(_file);
                 //Scenario 1
-                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser()
+                .EnterUserName(proxy_name).ProxyToMainHomePage().ClosePopUp().NavigateToNomination();
                 recognitionPage
                     .SearchEmployeeFound(user)
                     .SelectAward(award)
                     .SelectValues(value)
-                    .FillMsg(msg)
-                    .FillReason(reason).ClickNext();
-                // BUG button upload is not present
+                    .SelectValues(secondvalue)
+                    .FillReason(reason);
+                recognitionPage.ClickUploadFile();
+                SendKeys.SendWait(path_file);
+                SendKeys.SendWait("{ENTER}");
+                Assert.IsTrue(recognitionPage.WasFileUploadedCorrectly(file_name),"The file was not upload");
             }
         }
     }

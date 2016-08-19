@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
@@ -902,6 +904,93 @@ namespace SeleniumDemo.Tests.BAE
                   for (int j = 1; j < col; j++)
                      Assert.IsTrue(reportpage.IsCellFull(i,j), "Cell is empty");
                 Assert.Pass("All cell Are full");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1233
+        [Test]
+        public void WS_1233()
+        {
+            if (!DataParser.ReturnExecution("WS_1233"))
+                Assert.Ignore();
+            else
+            {
+                int[] list =new int[21];
+                for (int i = 0; i < 21; i++)
+                {
+                    list[i] = Convert.ToInt32("1");
+                }
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
+                Assert.AreEqual(url + "report/bae_awards", reportpage.GetCurrentUrl(), "URL is not the correct");
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
+                reportpage.ClickLeftMenu("All Awards");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[1] = 0;
+                reportpage.ClickLeftMenu("All Awards (Sector)");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[2] = 0;
+                reportpage.ClickLeftMenu("Issued Awards");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[3] = 0;
+                reportpage.ClickLeftMenu("Teams Awards");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[4] = 0;
+                reportpage.ClickLeftMenu("Milestones");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[5] = 0;
+                reportpage.ClickLeftMenu("Received Awards");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[6] = 0;
+                reportpage.ClickLeftMenu("Payroll (Sector)");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[7] = 0;
+                reportpage.ClickLeftMenu("Payroll");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[8] = 0;
+                reportpage.ClickLeftMenu("Budget");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[9] = 0;
+                reportpage.ClickLeftMenu("Pending Approvals");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[10] = 0;
+                reportpage.ClickLeftMenu("Team Pending Approvals");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[11] = 0;
+                reportpage.ClickLeftMenu("Proxy Access");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[12] = 0;
+                reportpage.ClickLeftMenu("Activity");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[13] = 0;
+                reportpage.ClickLeftMenu("Missing Emails (Internal)");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[14] = 0;
+                reportpage.ClickLeftMenu("Awards By Budget");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[15] = 0;
+                reportpage.ClickLeftMenu("Payroll By Budget");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[16] = 0;
+                reportpage.ClickLeftMenu("Manager Issued Awards");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[17] = 0;
+                reportpage.ClickLeftMenu("Awards By Payroll (HRBP)");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[18] = 0;
+                reportpage.ClickLeftMenu("Budget Transactions");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[19] = 0;
+                reportpage.ClickLeftMenu("Manager Award Totals");
+                if (!reportpage.LoadTakesMoreThan10sec())
+                    list[20] = 0;
+                int j = 0;
+                while ((list[j] == 1) && (j < 21))
+                    j++;
+                if (j == 21)
+                    Assert.Pass("All the links are loaded in less than 10 sec");
+                Assert.Fail("Not all the links are loading in less than 10 secs");
             }
         }
     }

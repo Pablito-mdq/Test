@@ -191,6 +191,11 @@ namespace SeleniumDemo.Models
         {
             return GetAward(configFile, "Name5");
         }
+
+        public static string GetAwardSecondValue(string configFile)
+        {
+            return GetAward(configFile, "SecondValue");
+        }
     }
 
 }
