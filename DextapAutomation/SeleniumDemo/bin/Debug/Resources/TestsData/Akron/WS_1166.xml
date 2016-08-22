@@ -8,5 +8,6 @@
 		  <Message>QA Test Submission</Message>
 		  <Reason>QA Test Submission</Reason>
 		  <FileName>UploadToolTestDocument</FileName>
-		  <PathFile>aaaaaaaaaC:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\Resources\TestsData\Akron\UploadToolTestDocument.docx</PathFile>
+		  <PathFile>aaaC:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\Resources\TestsData\Akron\UploadToolTestDocument.docx</PathFile>
+		  <PathWrongFile>aaaC:\Users\PabloRojas\Documents\Fw\DextapAutomation\SeleniumDemo\bin\Debug\Resources\TestsData\Akron\WrongFile.wrong</PathWrongFile>
  </Constants>

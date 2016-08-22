@@ -345,7 +345,6 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("FINISH", recognitionPage.GetBtnFinishLabel(), "Button finish its not correct write");
                 Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelSprint(),
                     "Button finish its not correct write");
-                Assert.Fail("BUG");
             }
         }
 

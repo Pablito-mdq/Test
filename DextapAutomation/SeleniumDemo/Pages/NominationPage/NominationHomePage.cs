@@ -3,6 +3,7 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
+using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages.NominationPage
 {
@@ -384,6 +385,18 @@ namespace SeleniumDemo.Pages.NominationPage
             return
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//span[contains(.,'{0}')]", fileName)))
                     .Displayed;
+        }
+
+        public string GetErrorMsguploadFile()
+        {
+           IWebElement a = Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'dz-filename')]"));
+            Actions.MoveToElement(a);
+            return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'dz-error-message')]")).Text;
+        }
+
+        public string GetErrorMsgupload5Files()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'You can not upload any more files.')]")).Text;
         }
     }
 }

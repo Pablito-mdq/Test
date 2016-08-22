@@ -1,4 +1,5 @@
 ﻿using System.Security.Authentication.ExtendedProtection;
+using System.Threading;
 using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
@@ -109,11 +110,12 @@ namespace SeleniumDemo.Tests.Akron
                 awards.OpenDetailsAward(1,8);
             }
         }
+
         [Category("Regression")]
         [Category("Akron")]
         //WS-218
         [Test]
-        public void WS_1166()
+        public void WS_1166_Sample1()
         {
             if (!DataParser.ReturnExecution("WS_1166"))
                 Assert.Ignore();
@@ -126,11 +128,54 @@ namespace SeleniumDemo.Tests.Akron
                     value = AwardData.GetAwardValue(_file),
                     secondvalue = AwardData.GetAwardSecondValue(_file),
                     file_name = GeneralData.GetFileName(_file),
-                    msg = AwardData.GetAwardMessage(_file),
+                    path_file_wrong = GeneralData.GetPathWrongFile(_file).Trim(),
+                    reason = AwardData.GetAwardMessage(_file),
+                    path_file = GeneralData.GetPathFile(_file).Trim(),
+                    proxy_name = ProxyData.GetProxyUserName(_file);
+
+                //Scenario 1
+                NominationHomePage recognitionPage =
+                    InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser()
+                        .EnterUserName(proxy_name).ProxyToMainHomePage().ClosePopUp().NavigateToNomination();
+                recognitionPage
+                    .SearchEmployeeFound(user)
+                    .SelectAward(award)
+                    .SelectValues(value)
+                    .SelectValues(secondvalue)
+                    .FillReason(reason);
+                recognitionPage.ClickUploadFile();
+                foreach (char a in path_file)
+                {
+                    SendKeys.SendWait(a.ToString());
+                    Thread.Sleep(30);
+                }
+                SendKeys.SendWait("{ENTER}");
+                Assert.IsTrue(recognitionPage.WasFileUploadedCorrectly(file_name), "The file was not upload");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Akron")]
+        //WS-218
+        [Test]
+        public void WS_1166_Sample2()
+        {
+            if (!DataParser.ReturnExecution("WS_1166"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                AwardData.GetAwardImpact(_file);
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file),
+                    value = AwardData.GetAwardValue(_file),
+                    secondvalue = AwardData.GetAwardSecondValue(_file),
+                    file_name = GeneralData.GetFileName(_file),
+                    path_file_wrong = GeneralData.GetPathWrongFile(_file).Trim(),
                     reason = AwardData.GetAwardMessage(_file),
                     path_file = GeneralData.GetPathFile(_file).Trim(),
                 proxy_name = ProxyData.GetProxyUserName(_file);
-                //Scenario 1
+                //Scenario 2
                 NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser()
                 .EnterUserName(proxy_name).ProxyToMainHomePage().ClosePopUp().NavigateToNomination();
                 recognitionPage
@@ -140,9 +185,56 @@ namespace SeleniumDemo.Tests.Akron
                     .SelectValues(secondvalue)
                     .FillReason(reason);
                 recognitionPage.ClickUploadFile();
-                SendKeys.SendWait(path_file);
+                foreach (char a in path_file_wrong)
+                {
+                    SendKeys.SendWait(a.ToString());
+                    Thread.Sleep(30);
+                }
                 SendKeys.SendWait("{ENTER}");
-                Assert.IsTrue(recognitionPage.WasFileUploadedCorrectly(file_name),"The file was not upload");
+                Assert.AreEqual("You can't upload files of this type.", recognitionPage.GetErrorMsguploadFile(), "The file was upload correctly or the msg is not right");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Akron")]
+        //WS-218
+        [Test]
+        public void WS_1166_Sample3()
+        {
+            if (!DataParser.ReturnExecution("WS_1166"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                AwardData.GetAwardImpact(_file);
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file),
+                    value = AwardData.GetAwardValue(_file),
+                    secondvalue = AwardData.GetAwardSecondValue(_file),
+                    file_name = GeneralData.GetFileName(_file),
+                    reason = AwardData.GetAwardMessage(_file),
+                    path_file = GeneralData.GetPathFile(_file).Trim(),
+                proxy_name = ProxyData.GetProxyUserName(_file);
+                //Scenario 2
+                NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage().LoginProxyAsuser()
+                .EnterUserName(proxy_name).ProxyToMainHomePage().ClosePopUp().NavigateToNomination();
+                recognitionPage
+                    .SearchEmployeeFound(user)
+                    .SelectAward(award)
+                    .SelectValues(value)
+                    .SelectValues(secondvalue)
+                    .FillReason(reason);
+                recognitionPage.ClickUploadFile();
+                for (var i=0 ;i < 5; i++)
+                {
+                    foreach (char a in path_file)
+                    {
+                        SendKeys.SendWait(a.ToString());
+                        Thread.Sleep(30);
+                    }
+                    SendKeys.SendWait("{ENTER}");
+                }
+                Assert.AreEqual("You can not upload any more files", recognitionPage.GetErrorMsgupload5Files(), "The file was upload correctly or the msg is not right");
             }
         }
     }

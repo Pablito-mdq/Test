@@ -39,7 +39,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public Step2 SelectAward(string award)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award)));
             if (FindElement(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Displayed)
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Click();

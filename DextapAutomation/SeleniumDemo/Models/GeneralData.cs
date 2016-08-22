@@ -81,6 +81,11 @@ namespace SeleniumDemo.Models
         {
             return GetData(configFile, "FileName");
         }
+
+        public static string GetPathWrongFile(string configFile)
+        {
+            return GetData(configFile, "PathWrongFile");
+        }
     }
 }
 
