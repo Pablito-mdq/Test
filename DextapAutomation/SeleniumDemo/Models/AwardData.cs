@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Xml.Linq;
+using NUnit.Framework;
 using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Models
@@ -197,5 +197,4 @@ namespace SeleniumDemo.Models
             return GetAward(configFile, "SecondValue");
         }
     }
-
 }

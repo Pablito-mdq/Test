@@ -3,7 +3,6 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using WebDriverFramework.WebPage;
 
 namespace SeleniumDemo.Pages.Reports
 {

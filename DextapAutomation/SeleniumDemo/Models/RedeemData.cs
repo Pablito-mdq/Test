@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using System;
-using System.Xml.Linq;
-using SeleniumDemo.Utils;
+﻿using System.Xml.Linq;
+using NUnit.Framework;
 
 namespace SeleniumDemo.Models
 {

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-using System.Runtime.Remoting.Messaging;
 using System.Threading;
-using System.Windows.Forms;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using NUnit.Framework;
-using Keys = OpenQA.Selenium.Keys;
 
 namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 {

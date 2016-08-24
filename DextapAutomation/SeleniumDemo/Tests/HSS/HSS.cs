@@ -13,7 +13,6 @@ namespace SeleniumDemo.Tests.HSS
     {
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml",client);
 
         [Category("Regression")]
         [Category("HSS")]

@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Utils;

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
 using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;
@@ -9,7 +7,6 @@ using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
-using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.Login;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;

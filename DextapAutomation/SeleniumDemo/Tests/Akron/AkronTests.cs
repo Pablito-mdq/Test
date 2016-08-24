@@ -1,5 +1,4 @@
-﻿using System.Security.Authentication.ExtendedProtection;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows.Forms;
 using NUnit.Framework;
 using SeleniumDemo.Models;

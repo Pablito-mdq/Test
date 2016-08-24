@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Threading;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -10,9 +11,6 @@ using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.Pages;
-using NUnit.Framework;
-using WebDriverFramework.PageObject;
-using Action = Gallio.Common.Action;
 
 namespace SeleniumDemo.Pages
 {

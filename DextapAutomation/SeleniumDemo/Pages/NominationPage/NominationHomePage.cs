@@ -3,7 +3,6 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
-using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages.NominationPage
 {
