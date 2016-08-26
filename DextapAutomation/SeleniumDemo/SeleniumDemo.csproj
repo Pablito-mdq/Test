@@ -69,6 +69,7 @@
     <Compile Include="Pages\Reports\AllAwards.cs" />
     <Compile Include="Pages\Textron\RecognitionSteps.cs" />
     <Compile Include="Pages\LeftMenu\TrainingHomePage.cs" />
+    <Compile Include="Pages\VisaCenter\VisaCenterHomePage.cs" />
     <Compile Include="Pages\WorkStridePage.cs" />
     <Compile Include="Pages\MainHomePage.cs" />
     <Compile Include="Pages\Login\LoginPage.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Pages\LeftMenu\GoToMall\GoToMallHomePage.cs" />
     <Compile Include="Pages\Textron\MainHomePageFail.cs" />
     <Compile Include="Pages\LeftMenu\EventCalendar\EventCalendar.cs" />
+    <Compile Include="Pages\Reports\ReportDetailsPage.cs" />
     <Compile Include="Tests\EGroup\EGroupTestCases.cs" />
     <Compile Include="Tests\GreatExpressions\GreatExpressionsTests.cs" />
     <Compile Include="Tests\HSS\HSS.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Pages\LeftMenu\GoToMall\CompanyGifCart.cs" />
     <Compile Include="Pages\LeftMenu\GoToMall\CheckOutPage.cs" />
     <Compile Include="Pages\AdminPage\BulkAward.cs" />
+    <Compile Include="Tests\Quantum\QuantumTestCases.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\StElizabeth\StElizabethTests.cs" />
     <Compile Include="Tests\SunGard\SunGardTests.cs" />

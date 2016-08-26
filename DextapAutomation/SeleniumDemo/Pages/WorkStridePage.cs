@@ -6,6 +6,7 @@ using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
+using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.HSS;
 using SeleniumDemo.Tests.Pages;
@@ -20,6 +21,9 @@ namespace SeleniumDemo.Pages
         
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'REPORTS')]")]
         private IWebElement _lnkReports;
+
+        [FindsBy(How = How.XPath, Using = "//li[contains(.,'ADMIN')]")]
+        private IWebElement _lnkAdminLi;
     
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'/my_awards')]")]
         private IWebElement _lnkMyAwards;
@@ -62,6 +66,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//span[contains(.,'REPORTS')]")]
         private IWebElement _lnkReportsMain;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'Visa Center')]")]
+        private IWebElement _lnkVisaCenter;
 
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
@@ -179,5 +186,18 @@ namespace SeleniumDemo.Pages
             _lnkReportsMain.Click();
             return NewPage<ReportsPage>();
         }
+
+        public ProxyHomePage NavigateToAdminHomePageLi()
+        {
+            _lnkAdminLi.Click();
+            return NewPage<ProxyHomePage>();
+        }
+
+        public VisaCenterHomePage NavigateToVisaCenter()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkVisaCenter);
+            _lnkVisaCenter.Click();
+            return NewPage<VisaCenterHomePage>();
+        }   
     }
 }

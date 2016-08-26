@@ -46,8 +46,8 @@ namespace SeleniumDemo.Tests.TRU
                 Assert.AreEqual("RECOGNIZE SOMEONE ELSE", recognitionPage.GetBtnRecognizOtherLabelXpath(),
                     "Button finish its not correct write");
                 ReportsPage details = recognitionPage.NavigateToReportsSpan().NavigateToReports();
-                Assert.AreEqual(award,details.GetAwardName(1,6), award + "award was not given");
-                Assert.AreEqual(user, details.GetAwardName(1,3), user + "user was not given or present");
+                Assert.AreEqual(award, details.GetAwardTable(1, 6), award + "award was not given");
+                Assert.AreEqual(user, details.GetAwardTable(1,3), user + "user was not given or present");
                 var proxypage =
                     details.NavigateToAdminHomePageSpan()
                         .ClickOptionProxy("Proxy")

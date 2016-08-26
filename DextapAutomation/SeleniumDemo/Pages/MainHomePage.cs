@@ -6,9 +6,11 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
+using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.Pages;
 
@@ -18,7 +20,7 @@ namespace SeleniumDemo.Pages
     {
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'RECOGNIZE')]")]
         private IWebElement _lnkNomination;
-        
+
         [FindsBy(How = How.XPath, Using = "//li[contains(.,'RECOGNIZE')]")]
         private IWebElement _lnkNominationSprint;
 
@@ -463,5 +465,12 @@ namespace SeleniumDemo.Pages
         {
             return Synchronization.WaitForElementToBePresent(By.Id("cheerCount1148258")).Text;
         }
+
+        public string GetRewardsBalance()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'rewards-value')]")).Text;
+        }
+
+    
     }
 }

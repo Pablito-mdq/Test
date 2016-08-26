@@ -990,5 +990,22 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Fail("Not all the links are loading in less than 10 secs");
             }
         }
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1274
+        [Test]
+        public void WS_1274()
+        {
+            if (!DataParser.ReturnExecution("WS_1274"))
+                Assert.Ignore();
+            else
+            {
+                ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
+                string issuer = reportpage.GetAwardTable(1, 8), award = reportpage.GetAwardTable(1, 4), recipient = reportpage.GetAwardTable(1, 2),
+                    awardTie = reportpage.GetAwardTable(1, 4), teamName = reportpage.GetAwardTable(1, 6), date = reportpage.GetAwardTable(1, 1),
+                    amount = reportpage.GetAwardTable(1,3);
+                ReportDetailsPage detailsPage = reportpage.ClickViewDetails(1);
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace SeleniumDemo.Pages.Reports
             return NewPage<AllAwards>();
         }
 
-        public string GetAwardName(int row, int col)
+        public string GetAwardTable(int row, int col)
         {
             return Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//*[@id='report-table-container']/table/tbody[3]/tr[{0}]/td[{1}]", row, col))).Text;
         }
@@ -112,6 +112,13 @@ namespace SeleniumDemo.Pages.Reports
             Thread.Sleep(2500);
             Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             return NewPage<ReportsPage>();
+        }
+
+        public ReportDetailsPage ClickViewDetails(int row)
+        {
+            IWebElement a =Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//*[@id='report-table-container']/table/tbody[3]/tr[{0}]/td[10]", row)));
+            a.FindElement(By.XPath("//input[contains(@class,'approval-details-link')]")).Click();
+            return NewPage<ReportDetailsPage>();
         }
     }
 }
