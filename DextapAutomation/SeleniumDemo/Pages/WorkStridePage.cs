@@ -122,6 +122,7 @@ namespace SeleniumDemo.Pages
         {
             _lnkReports.Click();
             Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            Thread.Sleep(4500);
             Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));
             return NewPage<ReportsPage>();
         }

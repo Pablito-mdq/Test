@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Threading;
-using System.Threading.Tasks;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
-using SeleniumDemo.Pages.NominationPage;
-using SeleniumDemo.Tests.Pages;
+using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Utils;
 using NUnit.Framework;
-using SeleniumDemo.Pages.VisaCenter;
 
 namespace SeleniumDemo.Tests.Quantum
 {
@@ -20,8 +13,8 @@ namespace SeleniumDemo.Tests.Quantum
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
-        [Category("Regression")]
-        [Category("Quantum")]
+        [NUnit.Framework.Category("Regression")]
+        [NUnit.Framework.Category("Quantum")]
         //WS_1273
         
         [Test]
@@ -45,8 +38,8 @@ namespace SeleniumDemo.Tests.Quantum
             }
         }
 
-        [Category("Regression")]
-        [Category("Quantum")]
+        [NUnit.Framework.Category("Regression")]
+        [NUnit.Framework.Category("Quantum")]
         //WS_1278
 
         [Test]
@@ -64,6 +57,10 @@ namespace SeleniumDemo.Tests.Quantum
                 Assert.IsFalse(visaPage.IsSubmitAClaimPresent(), "Option is not present");
                 Assert.IsTrue(visaPage.IsReloadYourCardPresent(), "Reload your card option is present");
                 Assert.IsTrue(visaPage.IsCheckVisaCardBalance(), "Check Visa Card Balance option is present");
+                var balance = visaPage.GetBalance();
+                Assert.IsTrue(visaPage.IsAmountFieldAvl(),"Amount field is not available");
+                visaPage.EnterAmount("100").ClickReloadCard();
+                Assert.AreEqual(balance - 100,visaPage.GetBalance(),"Balance was not right decresing the amount");
             }
         }
     }

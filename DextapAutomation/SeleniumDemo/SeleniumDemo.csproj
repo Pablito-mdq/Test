@@ -67,6 +67,7 @@
     <Compile Include="Pages\NominationPage\Step2.cs" />
     <Compile Include="Pages\PendingApprovals.cs" />
     <Compile Include="Pages\Reports\AllAwards.cs" />
+    <Compile Include="Pages\Reports\BudgetHomePage.cs" />
     <Compile Include="Pages\Textron\RecognitionSteps.cs" />
     <Compile Include="Pages\LeftMenu\TrainingHomePage.cs" />
     <Compile Include="Pages\VisaCenter\VisaCenterHomePage.cs" />

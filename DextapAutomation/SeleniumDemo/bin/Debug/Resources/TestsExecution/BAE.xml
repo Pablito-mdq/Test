@@ -40,5 +40,8 @@
 		<Test Name="WS_1227" Execution="Yes"/>
 		<Test Name="WS_1233" Execution="Yes"/>
 		<Test Name="WS_1274" Execution="Yes"/>
+		<Test Name="WS_1277" Execution="Yes"/>
+        <Test Name="WS_1282" Execution="Yes"/>
+		<Test Name="WS_1291" Execution="Yes"/>
 </TestList>
 

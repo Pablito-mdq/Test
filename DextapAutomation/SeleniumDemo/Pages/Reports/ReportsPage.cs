@@ -65,6 +65,13 @@ namespace SeleniumDemo.Pages.Reports
             return NewPage<ReportsPage>();
         }
 
+        public BudgetHomePage ClickBudgetLeftMenu()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Budget')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'loader')]"));
+            return NewPage<BudgetHomePage>();
+        }
+
         public ReportsPage ClickFilter()
         {
             Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@class,'loader')]"));

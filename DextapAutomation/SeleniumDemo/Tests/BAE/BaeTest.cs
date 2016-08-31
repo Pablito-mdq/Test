@@ -1005,6 +1005,80 @@ namespace SeleniumDemo.Tests.BAE
                     awardTie = reportpage.GetAwardTable(1, 4), teamName = reportpage.GetAwardTable(1, 6), date = reportpage.GetAwardTable(1, 1),
                     amount = reportpage.GetAwardTable(1,3);
                 ReportDetailsPage detailsPage = reportpage.ClickViewDetails(1);
+                Assert.AreEqual(issuer,detailsPage.GetIssuer(),"Issuer Value is not the same");
+                Assert.AreEqual(award, detailsPage.GetAward(), "Issuer Value is not the same");
+                Assert.AreEqual(recipient, detailsPage.GetRecipient(), "Issuer Value is not the same");
+                Assert.AreEqual(awardTie, detailsPage.GetAwardTie(), "Issuer Value is not the same");
+                Assert.AreEqual(teamName, detailsPage.GetteamName(), "Issuer Value is not the same");
+                Assert.AreEqual(date, detailsPage.Getdate(), "Issuer Value is not the same");
+                Assert.AreEqual(amount, detailsPage.GetAmount(), "Issuer Value is not the same");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1274
+        [Test]
+        public void WS_1277()
+        {
+            if (!DataParser.ReturnExecution("WS_1277"))
+                Assert.Ignore();
+            else
+            {
+                BudgetHomePage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
+                var balance = reportpage.GetAwardTable(1, 6);
+                var editdetailsPage = reportpage.ClickEdit(1);
+                Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
+                Assert.AreEqual("SUBTRACT", reportpage.GetSubstratBtnTxt(), "Subtract Value is not the same");
+                Assert.AreEqual("DEACTIVATE", reportpage.GetDeactBtnTxt(), "Deactivate Value is not the same");
+                Assert.AreEqual("CLOSE", reportpage.GetBtnCloseTxt(), "close Value is not the same");
+                reportpage = editdetailsPage.EnterAmount("1000").ClickAdd();
+                var amount = balance + 1000;
+                Assert.AreEqual(amount, reportpage.GetAwardTable(1, 6), "Budget Value is not the same");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1282
+        [Test]
+        public void WS_1282()
+        {
+            if (!DataParser.ReturnExecution("WS_1282"))
+                Assert.Ignore();
+            else
+            {
+                BudgetHomePage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
+                var editdetailsPage = reportpage.ClickEdit(1);
+                Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
+                Assert.AreEqual("SUBTRACT", reportpage.GetSubstratBtnTxt(), "Subtract Value is not the same");
+                Assert.AreEqual("DEACTIVATE", reportpage.GetDeactBtnTxt(), "Deactivate Value is not the same");
+                Assert.AreEqual("CLOSE", reportpage.GetBtnCloseTxt(), "close Value is not the same");
+                reportpage.ClickDeactivate();
+                editdetailsPage = reportpage.ClickEdit(1);
+                Assert.AreEqual("Budget Active Status: false",editdetailsPage.GetDeactMsg(),"Deact Text is not the same as expected");
+                editdetailsPage.ClickActivate();
+                reportpage = editdetailsPage.ClickEdit(1);
+                Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
+                Assert.AreEqual("SUBTRACT", reportpage.GetSubstratBtnTxt(), "Subtract Value is not the same");
+                Assert.AreEqual("DEACTIVATE", reportpage.GetDeactBtnTxt(), "Deactivate Value is not the same");
+                Assert.AreEqual("CLOSE", reportpage.GetBtnCloseTxt(), "close Value is not the same");
+                reportpage.ClickClose();
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS_1291
+        [Test]
+        public void WS_1291()
+        {
+            if (!DataParser.ReturnExecution("WS_1291"))
+                Assert.Ignore();
+            else
+            {
+                GoToMallHomePage mallpage = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
+                Assert.AreEqual("Welcome to the Mall!",mallpage.GetWelcomeMsg(),"You are not in the Welcome page");
             }
         }
     }
