@@ -41,7 +41,15 @@
 		<Test Name="WS_1233" Execution="Yes"/>
 		<Test Name="WS_1274" Execution="Yes"/>
 		<Test Name="WS_1277" Execution="Yes"/>
-        <Test Name="WS_1282" Execution="Yes"/>
+                <Test Name="WS_1282" Execution="Yes"/>
 		<Test Name="WS_1291" Execution="Yes"/>
+		<Test Name="WS_1293" Execution="Yes"/>
+		<Test Name="WS_1302" Execution="Yes"/>
+		<Test Name="WS_1306" Execution="Yes"/>
+		<Test Name="WS_1307" Execution="Yes"/>
+		<Test Name="WS_1313" Execution="Yes"/>
+		<Test Name="WS_1315" Execution="Yes"/>
+		<Test Name="WS_1327" Execution="Yes"/>
+		<Test Name="WS_1334" Execution="Yes"/>
 </TestList>
 

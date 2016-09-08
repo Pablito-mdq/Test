@@ -85,5 +85,6 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
                  _rbtnQty.Click();
             return NewPage<CompanyGiftCard>();
         }
+
     }
 }

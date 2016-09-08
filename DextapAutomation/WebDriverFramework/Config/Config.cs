@@ -25,7 +25,7 @@ namespace WebDriverFramework
             Stream reader = null;
             try
             {
-                reader = new FileStream(AppDomain.CurrentDomain.BaseDirectory + @"\FrameworkConfig.xml", FileMode.Open);
+                reader = new FileStream(AppDomain.CurrentDomain.BaseDirectory + @"\FrameworkConfig.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
                 config = (FrameworkConfig)marshaller.Deserialize(reader);
             }
             finally

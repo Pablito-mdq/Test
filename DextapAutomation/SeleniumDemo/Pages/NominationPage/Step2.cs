@@ -58,7 +58,7 @@ namespace SeleniumDemo.Pages.NominationPage
         public Step2 FillMsg(string msg)
         {
             _txtMsg.SendKeys(msg);
-            return this;
+            return NewPage<Step2>();
         }
 
         public Step2 FillReason(string reason)
@@ -194,5 +194,26 @@ namespace SeleniumDemo.Pages.NominationPage
             return
                 Synchronization.WaitForElementToBePresent(By.XPath(string.Format("//h4[contains(.,'{0}')]", award))).Displayed;
         }
+
+        public NominationHomePage PrintReward()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@data-id,'PRINT')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage EmailReward()
+        {
+            Synchronization.WaitForElementToBePresent
+                (By.XPath("//div[contains(@data-id,'email')]"));
+            Synchronization.WaitForElementToBePresent
+                (By.XPath("//div[contains(@data-id,'email')]")).Click();
+            return NewPage<NominationHomePage>();
+        }
+
+        public NominationHomePage DeliverType(string deliver)
+        {
+            return deliver == "Print" ? PrintReward() : EmailReward();
+        }
+       
     }
 }

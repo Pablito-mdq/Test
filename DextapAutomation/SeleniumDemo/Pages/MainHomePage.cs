@@ -281,7 +281,7 @@ namespace SeleniumDemo.Pages
             return NewPage<LoginPage>();
         }
 
-        public bool GetResponse(string extension,string url)
+        private bool GetResponse(string extension,string url)
         {
             string a = url + "/" + extension;
             HttpWebRequest myHttpWebRequest = (HttpWebRequest) WebRequest.Create(a);
@@ -471,6 +471,46 @@ namespace SeleniumDemo.Pages
             return Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(@class,'rewards-value')]")).Text;
         }
 
-    
+        public string GetServiceMsg()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@class,'btn-cash-out')]")).Text;
+        }
+
+        public bool IsMenuArrowExpanded()
+        {
+            return _lnkEventCalendar.Displayed;
+        }
+
+        public bool AllHeaderLinksWorkFine(string url)
+        {
+            IWebElement r = Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'REDEEM')]"));
+            IWebElement s = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'HOME')]"));
+            IWebElement t = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'RECOGNIZE')]"));
+            IWebElement u = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'HELP')]"));
+            IWebElement v = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'REPORTS')]"));
+            IWebElement w = Synchronization.WaitForElementToBePresent(By.LinkText("//a[contains(.,'ADMIN')]"));
+            // Creates an HttpWebRequest for the specified URL. 
+            if (r != null)
+                if (!GetResponse("mall", url))
+                    return false;
+            if (s != null)
+                if (!GetResponse("welcome", url))
+                    return false;
+            if  (t != null)
+                if (!GetResponse("nomination", url))
+                    return false;
+            if  (u != null)
+                if (!GetResponse("help", url))
+                    return false;
+            if (v != null)
+                if (!GetResponse("reports", url))
+                    return false;
+            if  (s != null)
+                if (!GetResponse("proxy", url))
+                    return false;
+            return true;
+        }
+
+       
     }
 }

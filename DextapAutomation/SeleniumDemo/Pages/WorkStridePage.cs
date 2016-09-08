@@ -1,8 +1,10 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu;
+using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Pages.Reports;
@@ -21,6 +23,9 @@ namespace SeleniumDemo.Pages
         
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'REPORTS')]")]
         private IWebElement _lnkReports;
+
+        [FindsBy(How = How.XPath, Using = "//span[contains(.,'Cart')]")]
+        private IWebElement _lnkCart;
 
         [FindsBy(How = How.XPath, Using = "//li[contains(.,'ADMIN')]")]
         private IWebElement _lnkAdminLi;
@@ -199,6 +204,13 @@ namespace SeleniumDemo.Pages
             Synchronization.WaitForElementToBePresent(_lnkVisaCenter);
             _lnkVisaCenter.Click();
             return NewPage<VisaCenterHomePage>();
-        }   
+        }
+
+        public CheckOutPage NavigateToCart()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkCart);
+            _lnkCart.Click();
+            return NewPage<CheckOutPage>();
+        }
     }
 }

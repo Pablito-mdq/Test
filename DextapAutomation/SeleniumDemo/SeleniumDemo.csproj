@@ -98,6 +98,7 @@
     <Compile Include="Pages\LeftMenu\GoToMall\CheckOutPage.cs" />
     <Compile Include="Pages\AdminPage\BulkAward.cs" />
     <Compile Include="Tests\Quantum\QuantumTestCases.cs" />
+    <Compile Include="Pages\AdminPage\ProxyManagerHomePage.cs" />
     <Compile Include="Tests\Sprint\SprintTest.cs" />
     <Compile Include="Tests\StElizabeth\StElizabethTests.cs" />
     <Compile Include="Tests\SunGard\SunGardTests.cs" />

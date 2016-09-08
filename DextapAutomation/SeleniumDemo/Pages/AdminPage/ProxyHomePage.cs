@@ -51,6 +51,14 @@ namespace SeleniumDemo.Tests.Pages
             return false;
         }
 
+        public ProxyManagerHomePage ClickOptionProxyManager()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
+            IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'valign center')]")).ToArray();
+            a[6].Click();
+            return NewPage<ProxyManagerHomePage>();
+        }
+
         public ProxyHomePage ClickOptionProxy(string s)
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));

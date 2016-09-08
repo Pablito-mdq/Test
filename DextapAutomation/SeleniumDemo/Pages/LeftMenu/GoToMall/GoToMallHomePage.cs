@@ -168,5 +168,17 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
             }
             return true;
         }*/
+
+        public GoToMallHomePage CheckOptionPurchaseType(string type)
+        {
+            Thread.Sleep(1000);
+            IWebElement[] arrow = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'collapseBtn content quickLinksBtn leftMenuLink')]")).ToArray();
+            Thread.Sleep(1000);
+            arrow[1].Click();
+            Thread.Sleep(500);
+            IWebElement[] items = Synchronization.WaitForElementsToBePresent(By.XPath("//span[contains(@class,'mallSelections type')]")).ToArray();
+            items[0].Click();
+            return NewPage<GoToMallHomePage>();
+        }
     }
 }

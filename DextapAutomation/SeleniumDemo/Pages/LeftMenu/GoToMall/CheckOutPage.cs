@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
@@ -53,6 +54,9 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         [FindsBy(How = How.XPath, Using = "//select[contains(@name,'sstate')]")]
         private IWebElement _cboState;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'<< Back to Mall')]")]
+        private IWebElement _lnkBackToMall;
 
         public CheckOutPage(IWebDriver driver) : base(driver){}
 
@@ -160,6 +164,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public CheckOutPage ClickCheckOut()
         {
+            Thread.Sleep(1000);
            _btnCheckOut.Click();
            Synchronization.WaitForElementsNotToBePresent(By.XPath("//div[contains(@id,'ui-spinner-container')]"));
            return NewPage<CheckOutPage>();
@@ -178,6 +183,7 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
 
         public string GetNoCreditCardUseMsg()
         {
+            Thread.Sleep(1000);
             return Synchronization.WaitForElementToBePresent(By.XPath("//h3[contains(@class,'alignCenter ')]")).Text;
         }
 
@@ -200,6 +206,33 @@ namespace SeleniumDemo.Pages.LeftMenu.GoToMall
         {
             Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@class,'content alignCenter midBannerBtn billingNotRequiredBtn')]")).Click();
             return NewPage<CheckOutPage>();
+        }
+
+        public string GetErrorMsgAddress()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(@id,'saddress1-error')]")).Text;
+        }
+
+        public string GetErrorMsgCity()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(@id,'scity-error')]")).Text;
+        }
+
+        public string GetErrorMsgZip()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(@id,'szip-error')]")).Text;
+        }
+
+        public string GetErrorMsgPhone()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//label[contains(@id,'sphone-error')]")).Text;
+        }
+
+        public GoToMallHomePage ClickBackToMall()
+        {
+            Synchronization.WaitForElementToBePresent(_lnkBackToMall);
+            _lnkBackToMall.Click();
+            return NewPage<GoToMallHomePage>();
         }
     }
 }

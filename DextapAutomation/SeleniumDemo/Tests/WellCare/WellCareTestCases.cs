@@ -67,5 +67,31 @@ namespace SeleniumDemo.Tests.WellCare
                 Thread.Sleep(300);
             }
         }
+
+        [Category("WellCare")]
+        //WS-1325
+        [Test]
+        public void WS_1325()
+        {
+            if (!DataParser.ReturnExecution("WS_1325"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1325.xml";
+                string msg = AwardData.GetAwardMessage(_file),
+                    award = AwardData.GetAwardName(_file),
+                    send_type = AwardData.GetAwardDeliverType(_file),
+                    proxy_name = ProxyData.GetProxyUserName(_file);
+                MainHomePage proxyPage =InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().ClickOptionProxy("Proxy")
+                        .EnterUserNameProxySprint2(proxy_name).ProxyToMainHomePageSprint().ClosePopUp();
+                Assert.AreEqual("You are proxied in as:" + proxy_name, proxyPage.GetProxyLoginMsgSprint(),
+                   "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", proxyPage.GetExitMsg(), "The exit proxy link is not present");
+                Step2 step2 = proxyPage.NavigateToEventCalendar().clickSendAniversaryCard();
+                var recognitionPage = step2.SelectAward(award).FillMsg(msg).DeliverType(send_type);
+                recognitionPage.ClickSendRecognition();
+                Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+            }
+        }
     }
 }

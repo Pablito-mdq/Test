@@ -1081,5 +1081,74 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("Welcome to the Mall!",mallpage.GetWelcomeMsg(),"You are not in the Welcome page");
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void WS_1293()
+        {
+            if (!DataParser.ReturnExecution("WS_1293"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1293.xml";
+                string username = ProxyData.GetProxyUserName(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                Assert.AreEqual("SPEND SERVICE AWARD", home.GetServiceMsg(),"Service spend award msg is not correct");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void WS_1302()
+        {
+            if (!DataParser.ReturnExecution("WS_1302"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+               Assert.IsTrue(home.IsMenuArrowExpanded(),"Arrow is not expanded to see the links");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void WS_1327()
+        {
+            if (!DataParser.ReturnExecution("WS_1327"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(home.AllHeaderLinksWorkFine(url),"there is a link that is not working fine");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-317
+        [Test]
+        public void WS_1334()
+        {
+            if (!DataParser.ReturnExecution("WS_1334"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1334.xml";
+                string password = GeneralData.GetPassword(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                var editProfile = home.EditProfile();
+                editProfile.EnterPassword(password).EnterConfirmationPwd(password).ClickSubmit();
+                Assert.AreEqual("Invalid Data - Password must have at least: 1 numeric characters, but only has: 0",editProfile.GetErrorMsg(),"Error Msg is not show or its wrong");
+            }
+        }
     }
 }

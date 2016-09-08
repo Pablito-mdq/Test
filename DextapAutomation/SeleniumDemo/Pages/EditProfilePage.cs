@@ -46,6 +46,9 @@ namespace SeleniumDemo.Tests
         [FindsBy(How = How.Id, Using = "password_again")]
         private IWebElement _txtConfirmPassword;
 
+        [FindsBy(How = How.Id, Using = "password")]
+        private IWebElement _txtPassword;
+
         [FindsBy(How = How.Id, Using = "profile_submit")]
         private IWebElement _btnSubmit;
         
@@ -174,5 +177,22 @@ namespace SeleniumDemo.Tests
                var d = Synchronization.WaitForElementToBePresent(By.XPath("//img[contains(@id,'imagePlaceholder')]")).Size.Width;
                return c + d;
            }
+
+          public EditProfilePage EnterPassword(string password)
+          {
+              _txtPassword.SendKeys(password);
+              return this;
+          }
+
+          public EditProfilePage EnterConfirmationPwd(string password)
+          {
+              _txtConfirmPassword.SendKeys(password);
+              return this;
+          }
+
+          public string GetErrorMsg()
+          {
+              return Synchronization.WaitForElementToBePresent(By.XPath("//p[contains(@class,'error')]")).Text.Substring(1,81);
+          }
     }
 }

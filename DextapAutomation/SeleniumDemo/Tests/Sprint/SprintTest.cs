@@ -410,7 +410,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.AreEqual("You are proxied in as:" + user, proxy.GetProxyLoginMsgSprint(),
                     "The message of proxy login is not correct");
                 Assert.AreEqual("Exit Proxy", proxy.GetExitMsg(), "The exit proxy link is not present");
-                Assert.IsFalse(proxy.IsAdmLnkPresent(),"Admin link is present");
+                Assert.IsFalse(proxy.IsAdmLnkPresent(), "Admin link is present");
             }
         }
 
@@ -430,7 +430,8 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.IsTrue(admin.IsProxyOptPresent(), "Proxy is not present");
                 Assert.IsTrue(admin.IsBudgetToolOptPresent(), "Budget tool is not present");
                 Assert.IsTrue(admin.IsPendingApprovalsOptPresent(), "Pending Approvals is not present");
-                Assert.IsTrue(admin.IsEditRewardCartUserMessageOptPresent(), "Edit Reward Cart User Message is not present");
+                Assert.IsTrue(admin.IsEditRewardCartUserMessageOptPresent(),
+                    "Edit Reward Cart User Message is not present");
                 Assert.IsTrue(admin.IsProxyManagerOptPresent(), "Proxy Manager is not present");
                 Assert.IsTrue(admin.IsDeletedUnusedAwardOptPresent(), "Deleted Unused Award is not present");
                 Assert.IsTrue(admin.IsEditPendingAwardsOptPresent(), "Edit Pending Awards is not present");
@@ -528,6 +529,22 @@ namespace SeleniumDemo.Tests.Sprint
                     "The message is not ready to send");
                 recognitionPage.ClickSendRecognition();
                 Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sprint")]
+        //WS_1299
+        [Test]
+        public void WS_1299()
+        {
+            if (!DataParser.ReturnExecution("WS_1299"))
+                Assert.Ignore();
+            else
+            {
+                ProxyManagerHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
+                    ClickOptionProxyManager();
+                Assert.AreEqual("Proxy Management", proxy.GetTitlePage(), "The title is not Proxy Management");
             }
         }
     }
