@@ -1150,5 +1150,26 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("Invalid Data - Password must have at least: 1 numeric characters, but only has: 0",editProfile.GetErrorMsg(),"Error Msg is not show or its wrong");
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-317
+        [Test]
+        public void WS_1347()
+        {
+            if (!DataParser.ReturnExecution("WS_1347"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1347.xml";
+                string password = GeneralData.GetPassword(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                var editProfile = home.EditProfile();
+                editProfile.EnterPassword(password).EnterConfirmationPwd(password).ClickSubmit();
+                Assert.AreEqual("Settings Successfully Saved!", editProfile.GetSuccessMsg(), "Error Msg is not show or its wrong");
+                home = editProfile.ClickOK().ClickSignOut().Logon().ClickLogin();
+                Assert.AreEqual("Welcome Tester to the BAE Systems, IMPACT!",home.GetWelcomeTitle(),"You are not in the Main Page");
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 <TestList>
         <Test Name="WS_1142" Execution="Yes"/>
 		<Test Name="WS_1325" Execution="Yes"/>
+		<Test Name="WS_1359" Execution="Yes"/>
+		<Test Name="WS_1360" Execution="Yes"/>
 </TestList>
 

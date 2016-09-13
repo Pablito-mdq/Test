@@ -84,5 +84,10 @@ namespace SeleniumDemo.Pages
             Synchronization.WaitForElementsToBePresent(By.XPath("//button[@uib-tooltip='Decline']")).FirstOrDefault().Click();
             return NewPage<AwardDetailsPopUp>();
         }
+
+        public string GetPendingApprovalsUrl()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).GetAttribute("href");
+        }
     }
 }

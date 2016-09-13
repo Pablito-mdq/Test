@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Threading;
+﻿using System.Threading;
 using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
@@ -16,8 +15,8 @@ namespace SeleniumDemo.Tests.StElizabeth
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
         private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "StElizabeth");
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
         //WS-1157
         [Test]
         public void WS_1157_Sample1()
@@ -52,8 +51,8 @@ namespace SeleniumDemo.Tests.StElizabeth
             }
         }
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
         //WS-1157
         [Test]
         public void WS_1157_Sample2()
@@ -86,9 +85,9 @@ namespace SeleniumDemo.Tests.StElizabeth
             }
         }
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
-        [NUnit.Framework.Category("BAE")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
+        [Category("BAE")]
         //WS-1306
         [Test]
         public void WS_1306()
@@ -118,9 +117,9 @@ namespace SeleniumDemo.Tests.StElizabeth
         }
 
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
-        [NUnit.Framework.Category("BAE")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
+        [Category("BAE")]
         //WS-1307
         [Test]
         public void WS_1307()
@@ -161,9 +160,9 @@ namespace SeleniumDemo.Tests.StElizabeth
             }
         }
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
-        [NUnit.Framework.Category("BAE")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
+        [Category("BAE")]
         //WS-1307
         [Test]
         public void WS_1313()
@@ -185,9 +184,8 @@ namespace SeleniumDemo.Tests.StElizabeth
             }
         }
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("StElizabeth")]
-        [NUnit.Framework.Category("BAE")]
+        [Category("Regression")]
+        [Category("StElizabeth")]
         //WS-1315
         [Test]
         public void WS_1315()
@@ -211,7 +209,7 @@ namespace SeleniumDemo.Tests.StElizabeth
             }
         }
 
-        [NUnit.Framework.Category("StElizabeth")]
+        [Category("StElizabeth")]
         //WS-1356
         [Test]
         public void WS_1356()

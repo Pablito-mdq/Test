@@ -56,7 +56,7 @@ namespace SeleniumDemo.Pages
             return GeneralData.GetUrl(file);
         }
 
-        public LoginPage GoSpecial(string testCase,string client,string file)
+        public LoginPage GoSpecial(string file)
         {
             Navigate(string.Format("{0}",GetUrl(file)));
             return this;

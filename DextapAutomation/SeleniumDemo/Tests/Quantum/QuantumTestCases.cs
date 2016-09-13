@@ -1,10 +1,9 @@
-﻿using System.ComponentModel;
-using System.Threading;
+﻿using System.Threading;
+using NUnit.Framework;
 using SeleniumDemo.Models;
 using SeleniumDemo.Pages;
 using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Utils;
-using NUnit.Framework;
 
 namespace SeleniumDemo.Tests.Quantum
 {
@@ -13,8 +12,8 @@ namespace SeleniumDemo.Tests.Quantum
         private static string _file;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("Quantum")]
+        [Category("Regression")]
+        [Category("Quantum")]
         //WS_1273
         
         [Test]
@@ -38,8 +37,8 @@ namespace SeleniumDemo.Tests.Quantum
             }
         }
 
-        [NUnit.Framework.Category("Regression")]
-        [NUnit.Framework.Category("Quantum")]
+        [Category("Regression")]
+        [Category("Quantum")]
         //WS_1278
 
         [Test]

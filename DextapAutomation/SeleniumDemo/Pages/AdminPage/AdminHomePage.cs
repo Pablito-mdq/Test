@@ -48,5 +48,7 @@ namespace SeleniumDemo.Pages.AdminPage
             Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'ADMIN')]"));
             return NewPage<MainHomePage>();
         }
+
+        
     }
 }

@@ -192,7 +192,22 @@ namespace SeleniumDemo.Tests
 
           public string GetErrorMsg()
           {
+              Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@id,'ui-spinner-container')]"));
               return Synchronization.WaitForElementToBePresent(By.XPath("//p[contains(@class,'error')]")).Text.Substring(1,81);
           }
+
+          public string GetSuccessMsg()
+          {
+              Synchronization.WaitForElementNotToBePresent(By.XPath("//div[contains(@id,'ui-spinner-container')]"));
+              return Synchronization.WaitForElementToBePresent(By.XPath("//div[contains(@class,'modal-content-legacy')]")).Text;
+          }
+
+          public EditProfilePage ClickOK()
+          {
+              Synchronization.WaitForElementToBePresent(By.XPath("//button[contains(@class,'confirm-settings-saved')]")).Click();
+              return NewPage<EditProfilePage>();
+          }
+
+          
     }
 }

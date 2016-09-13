@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
@@ -74,6 +73,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//span[contains(.,'Visa Center')]")]
         private IWebElement _lnkVisaCenter;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Sign Out')]")]
+        private IWebElement _lnkSignOut;
 
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
@@ -211,6 +213,12 @@ namespace SeleniumDemo.Pages
             Synchronization.WaitForElementToBePresent(_lnkCart);
             _lnkCart.Click();
             return NewPage<CheckOutPage>();
+        }
+
+        public LoginPage ClickSignOut()
+        {
+            _lnkSignOut.Click();
+            return NewPage<LoginPage>();
         }
     }
 }

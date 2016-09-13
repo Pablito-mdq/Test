@@ -18,9 +18,7 @@ namespace SeleniumDemo.Tests.SunGard
         private static string _file;
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "Sungard");
-
-
+        
         [Category("Regression")]
         [Category("Sungard")]
         //WS-917
@@ -508,6 +506,53 @@ namespace SeleniumDemo.Tests.SunGard
                     "The message is not ready to send");
                 recognitionPage.ClickSendRecognition();
                 Assert.AreEqual("Success!", recognitionPage.GetSuccesMsg(), "Message its not success");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sungard")]
+        //WS-1354
+        [Test]
+        public void WS_1354()
+        {
+            if (!DataParser.ReturnExecution("WS_1354"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1354.xml";
+                string proxy_name = ProxyData.GetProxyUserName(_file),
+                    url = GeneralData.GetUrl(_file);
+                MainHomePage home = InitialPage.GoSpecial(_file).Logon().ClickLogin().NavigateToAdminHomePageSpan().ClickOptionProxy("Proxy")
+                    .EnterUserNameProxySprint2(proxy_name).ClickProxyBtn().ClosePopUp();
+                Assert.AreEqual("http://qaastar-sungardas.workstride.net/ng#/approval", home.GetPendingApprovalsUrl(), "url is not http://qaastar-sungardas.workstride.net/ng#/approval");
+                Assert.AreEqual("You are proxied in under: " + proxy_name, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                PendingApprovals admin = home.NavigateToAdminHomePageSpan().ClickOptionPendingApprovals();
+                Assert.AreEqual("http://qaastar-sungardas.workstride.net/ng#/approval", admin.GetPendingApprovalsUrl(), "url is not http://qaastar-sungardas.workstride.net/ng#/approval");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Sungard")]
+        //WS-1345
+        [Test]
+        public void WS_1345_Sample1()
+        {
+            if (!DataParser.ReturnExecution("WS_1345_Sample1"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\TestsData\\" + client + "\\WS_1345_Sample1.xml";
+                string user = AwardData.GetAwardUserName(_file),
+                    award = AwardData.GetAwardName(_file), financialImpact = AwardData.GetAwardFinancialImpact(_file),
+                    bussinesImpact = AwardData.GetAwardBussinesImpact(_file);
+                NominationHomePage recognitionPage = InitialPage.GoSpecial(_file).Logon().ClickLogin()
+                    .NavigateToNominationSpan();
+                recognitionPage
+                    .SearchEmployeeFoundAngular(user)
+                    .SelectAward(award).SelectValues(bussinesImpact).SelectValues(financialImpact);
+                Assert.AreEqual("I want to Email this award.", recognitionPage.GetDeliverLabel("email"),
+                    "Label is not correct");
             }
         }
     }

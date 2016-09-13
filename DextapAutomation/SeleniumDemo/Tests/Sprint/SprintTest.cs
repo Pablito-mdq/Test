@@ -97,7 +97,7 @@ namespace SeleniumDemo.Tests.Sprint
                     ccEmail = AwardData.GetAwardCCEmail(_file),
                     futureDate = AwardData.GetAwardFutureDate(_file);
                 NominationHomePage recognitionPage =
-                    InitialPage.GoSpecial("WS_1024", client, _file)
+                    InitialPage.GoSpecial(_file)
                         .Logon()
                         .EnterId(client)
                         .ClickLogin()

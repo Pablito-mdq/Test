@@ -161,5 +161,18 @@ namespace SeleniumDemo.Tests.Pages
             _btnProxyToMain.Click();
             return NewPage<MainHomePage>();
         }
+
+        public string GetPendingApprovalsUrl()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).GetAttribute("href");
+        }
+
+        public PendingApprovals ClickOptionPendingApprovals()
+        {
+            Synchronization.WaitForElementToBePresent(By.XPath("//i[contains(@class,'fa fa-3x fa-user-secret')]"));
+            IWebElement[] a = Synchronization.WaitForElementsToBePresent(By.XPath("//div[contains(@class,'valign center')]")).ToArray();
+            a[3].Click();
+            return NewPage<PendingApprovals>();
+        }
     }
 }

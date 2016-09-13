@@ -6,13 +6,12 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Pages.LeftMenu.EventCalendar;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
-using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Tests;
 using SeleniumDemo.Tests.Pages;
+using WebDriverFramework.PageObject;
 
 namespace SeleniumDemo.Pages
 {
@@ -511,6 +510,50 @@ namespace SeleniumDemo.Pages
             return true;
         }
 
-       
+        public string GetPromoBoxHref(string p)
+        {
+            IWebElement[] promoboxes =Synchronization.WaitForElementsToBePresent(By.XPath("//a[contains(@class,'btn btn-default promo-box-btn btn-desktop')]")).ToArray();
+            return p == "Left" ? promoboxes[0].GetAttribute("href") : promoboxes[1].GetAttribute("href");
+        }
+
+        public WorkStridePage ClickPromoBoxBtn(string p)
+        {
+            IWebElement[] promoboxes = Synchronization.WaitForElementsToBePresent(By.XPath("//a[contains(@class,'btn btn-default promo-box-btn btn-desktop')]")).ToArray();
+            if (p == "Left")
+               promoboxes[0].Click();
+            else
+                {
+                    promoboxes[1].Click(); 
+                }
+            return NewPage<WorkStridePage>();
+
+        }
+
+        public string GetPromoBoxHrefAngular(string p)
+        {
+            IWebElement promoboxese = FindElement(By.Id("heroDiv"));
+            IWebElement[] promoboxes =
+                promoboxese.FindElements(By.XPath("//a[contains(@class,'image-href image-regular')]")).ToArray();
+            return p == "Left" ? promoboxes[0].GetAttribute("href") : promoboxes[1].GetAttribute("href");
+        }
+
+        public WorkStridePage ClickPromoBoxBtnAngular(string p)
+        {
+            IWebElement promoboxese = FindElement(By.Id("heroDiv"));
+            IWebElement[] promoboxes =
+                promoboxese.FindElements(By.XPath("//a[contains(@class,'image-href image-regular')]")).ToArray();
+            if (p == "Left")
+                promoboxes[0].Click();
+            else
+            {
+                promoboxes[1].Click();
+            }
+            return NewPage<WorkStridePage>();
+        }
+
+        public string GetPendingApprovalsUrl()
+        {
+            return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).GetAttribute("href");
+        }
     }
 }
