@@ -50,7 +50,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_927.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_927.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     secondAward = AwardData.GetSecondAwardName(_file),
@@ -120,7 +120,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1161.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1161.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     user1 = AwardData.GetAwardUserName1(_file)
                     ,
@@ -173,7 +173,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1198.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1198.xml";
                 string company = RedeemData.GetRedeemCompany(_file),
                     firstname = RedeemData.GetRedeemFirstName(_file),
                     secondname = RedeemData.GetRedeemSecondName(_file),
@@ -221,7 +221,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_956.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_956.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
@@ -297,7 +297,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1062.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1062.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().EnterId(client).Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -380,7 +380,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample1.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample1.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),
@@ -413,7 +413,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample2.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample2.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), value = AwardData.GetAwardValue(_file),
                     amountvalue = AwardData.GetAwardAmountValue(_file),
@@ -448,7 +448,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample4.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample4.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),
@@ -483,7 +483,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample6.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample6.xml";
                 string user = AwardData.GetAwardUserName(_file), value = AwardData.GetAwardValue(_file),
                     amountvalue = AwardData.GetAwardAmountValue(_file),reason = AwardData.GetAwardReason(_file),
                    award = AwardData.GetAwardName(_file),
@@ -519,7 +519,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1354.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1354.xml";
                 string proxy_name = ProxyData.GetProxyUserName(_file),
                     url = GeneralData.GetUrl(_file);
                 MainHomePage home = InitialPage.GoSpecial(_file).Logon().ClickLogin().NavigateToAdminHomePageSpan().ClickOptionProxy("Proxy")
@@ -542,7 +542,7 @@ namespace SeleniumDemo.Tests.SunGard
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1345_Sample1.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1345_Sample1.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), financialImpact = AwardData.GetAwardFinancialImpact(_file),
                     bussinesImpact = AwardData.GetAwardBussinesImpact(_file);

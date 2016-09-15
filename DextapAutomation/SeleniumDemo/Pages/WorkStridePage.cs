@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using SeleniumDemo.Pages.AdminPage;
@@ -76,6 +77,9 @@ namespace SeleniumDemo.Pages
 
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Sign Out')]")]
         private IWebElement _lnkSignOut;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'HELP')]")]
+        private IWebElement _lnkHelpHomePage;
 
         public WorkStridePage(IWebDriver driver) : base(driver) { }
 
@@ -219,6 +223,12 @@ namespace SeleniumDemo.Pages
         {
             _lnkSignOut.Click();
             return NewPage<LoginPage>();
+        }
+
+        public HelpHomePage NavigateToHelp()
+        {
+            _lnkHelpHomePage.Click();
+            return NewPage<HelpHomePage>();
         }
     }
 }

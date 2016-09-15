@@ -23,7 +23,7 @@ namespace SeleniumDemo.Tests.Quantum
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1273.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1273.xml";
                 string proxy_name = ProxyData.GetProxyUserName(_file);
                  MainHomePage home = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageLi().ClickOptionProxy("Proxy")
                     .EnterUserNameProxySprint2(proxy_name).ClickProxyBtn();

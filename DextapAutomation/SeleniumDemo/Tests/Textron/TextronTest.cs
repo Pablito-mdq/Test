@@ -44,7 +44,7 @@ namespace SeleniumDemo.Tests.Textron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_927.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_927.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
@@ -108,7 +108,7 @@ namespace SeleniumDemo.Tests.Textron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_933.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_933.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),
@@ -170,7 +170,7 @@ namespace SeleniumDemo.Tests.Textron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_951.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_951.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), secondAward = AwardData.GetSecondAwardName(_file),
                     populationImpact = AwardData.GetAwardPopulationImpact(_file),

@@ -42,7 +42,7 @@ namespace SeleniumDemo.Tests.WellCare
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1196.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1196.xml";
                 string user = AwardData.GetAwardUserName(_file), msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file), value = AwardData.GetAwardValue(_file), amountvalue= AwardData.GetAwardAmountValue(_file),
                     proxy_name = ProxyData.GetProxyUserName(_file), proxy_name2 = ProxyData.GetProxySecondUserName(_file);
@@ -77,7 +77,7 @@ namespace SeleniumDemo.Tests.WellCare
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1325.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1325.xml";
                 string msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file),
                     send_type = AwardData.GetAwardDeliverType(_file),

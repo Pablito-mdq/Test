@@ -88,7 +88,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1024.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1024.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file),
@@ -136,7 +136,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1130.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1130.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file),
@@ -206,7 +206,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1135.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1135.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file),
@@ -276,7 +276,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1155.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1155.xml";
                 string path = GeneralData.path(_file);
                 BulkAward bulk = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
                     ClickOptionBulk("Bulk Award Upload");
@@ -318,7 +318,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1177.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1177.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file),
@@ -403,7 +403,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1206.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1206.xml";
                 string user = AwardData.GetAwardUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
                     ClickOptionProxy("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
@@ -451,7 +451,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1208.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1208.xml";
                 string user = AwardData.GetAwardUserName(_file);
                 MainHomePage proxy = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePageSpan().
                     ClickOptionProxy("Proxy").EnterUserNameProxySprint2(user).ProxyToMainHomePageSprint().ClosePopUp();
@@ -476,7 +476,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample3.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample3.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),
@@ -509,7 +509,7 @@ namespace SeleniumDemo.Tests.Sprint
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample5.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample5.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),

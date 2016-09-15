@@ -16,12 +16,12 @@ using SeleniumDemo.Utils;
 namespace SeleniumDemo.Tests.BAE
 {
 
-    class SampleTestSuite : WorkStrideBaseTest<LoginPage>
+    internal class SampleTestSuite : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
         private static string username;
         private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml","BAE");
+        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "BAE");
 
         [Category("Regression")]
         [Category("BAE")]
@@ -37,7 +37,7 @@ namespace SeleniumDemo.Tests.BAE
                 string originalURL = MainPage.GetCurrentUrl();
                 LoginPage loginPage = MainPage.ClickLogin().ClickLogOut();
                 string newURL = loginPage.GetCurrentUrl();
-                Assert.AreEqual(originalURL,newURL,"The login page is not the same for SSO users");
+                Assert.AreEqual(originalURL, newURL, "The login page is not the same for SSO users");
             }
         }
 
@@ -55,8 +55,10 @@ namespace SeleniumDemo.Tests.BAE
                 MainHomePage menuPage = InitialPage.Go().Logon().ClickLogin();
                 GoToMallHomePage mallPage = menuPage.NavigateToMall();
                 Assert.AreEqual(" By Price:", mallPage.GetFilterTitleText(0), "The subtitle is not the right one");
-                Assert.AreEqual("  Under $25", mallPage.GetFilterChkTypeByPrice(0), "The category to filter it's wrong labeled");
-                Assert.AreEqual("  $25 - $50", mallPage.GetFilterChkTypeByPrice(1), "The category to filter it's wrong labeled");
+                Assert.AreEqual("  Under $25", mallPage.GetFilterChkTypeByPrice(0),
+                    "The category to filter it's wrong labeled");
+                Assert.AreEqual("  $25 - $50", mallPage.GetFilterChkTypeByPrice(1),
+                    "The category to filter it's wrong labeled");
                 mallPage.CheckOptionByPrice("Under $25");
                 Assert.IsTrue(mallPage.FilterByPriceUnderWorks("$25"), "The Filter Under $25 is not working");
                 mallPage.CheckOptionByPrice("Under $25");
@@ -107,8 +109,9 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1059.xml";
-                string path = GeneralData.path(_file); int width = GeneralData.width(_file), height = GeneralData.height(_file);
+                _file = "Resources\\" + client + "\\TestsData\\WS_1059.xml";
+                string path = GeneralData.path(_file);
+                int width = GeneralData.width(_file), height = GeneralData.height(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 var a = home.EditProfile();
                 a.ClickUploadphoto();
@@ -116,7 +119,7 @@ namespace SeleniumDemo.Tests.BAE
                 SendKeys.SendWait("{ENTER}");
                 int b = width*height;
                 var c = a.getsizeuploadim();
-                Assert.AreNotEqual(b,c, "The size is the same so,the image is not changed");
+                Assert.AreNotEqual(b, c, "The size is the same so,the image is not changed");
             }
         }
 
@@ -130,7 +133,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_61.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_61.xml";
                 string url = GeneralData.GetUrl(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 home.NavigateToMall();
@@ -148,7 +151,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_69.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_69.xml";
                 username = AwardData.GetAwardUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 NominationHomePage recognitionPage = home.NavigateToNomination();
@@ -158,9 +161,12 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.IsTrue(recognitionPage.BringToStep1(), "You didnt go back to step 1");
                 //SCENARIO 2
                 recognitionPage = home.NavigateToNomination();
-                recognitionPage.ClickMultipleRecipients().SearchEmployeeFoundMultiple(username).SearchEmployeeFoundMultiple("John");
+                recognitionPage.ClickMultipleRecipients()
+                    .SearchEmployeeFoundMultiple(username)
+                    .SearchEmployeeFoundMultiple("John");
                 recognitionPage.ClickNextGeneric().ClickEdit().ClickRemove(0);
-                Assert.IsFalse(recognitionPage.IsFirstUserAddedPresent(username), "First User still in the list selected");
+                Assert.IsFalse(recognitionPage.IsFirstUserAddedPresent(username),
+                    "First User still in the list selected");
 
             }
         }
@@ -175,7 +181,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_317.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_317.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -216,7 +222,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_921.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_921.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
@@ -225,7 +231,7 @@ namespace SeleniumDemo.Tests.BAE
                     printype = AwardData.GetAwardDeliverType(_file),
                     msg = AwardData.GetAwardMessage(_file),
                     reason = AwardData.GetAwardReason(_file),
-                proxy_name = ProxyData.GetProxyUserName(_file);
+                    proxy_name = ProxyData.GetProxyUserName(_file);
                 ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
                     .LoginProxyAsuser().EnterUserName(proxy_name);
                 MainHomePage home = proxyPage.ProxyToMainHomePage();
@@ -268,7 +274,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_924.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_924.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     secondAward = AwardData.GetSecondAwardName(_file),
@@ -277,10 +283,11 @@ namespace SeleniumDemo.Tests.BAE
                     bussinesImpact = AwardData.GetAwardBussinesImpact(_file);
                 int amount = AwardData.GetAwardAmountValueNumbers(_file);
                 string printype = AwardData.GetAwardDeliverType(_file),
-                msg = AwardData.GetAwardMessage(_file), reason = AwardData.GetAwardReason(_file),
-                companyValue = AwardData.GetAwardCompanyValue(_file),
-            proxy_name = ProxyData.GetProxyUserName(_file),
-            approval_name = AwardData.GetApprovalUserName(_file);
+                    msg = AwardData.GetAwardMessage(_file),
+                    reason = AwardData.GetAwardReason(_file),
+                    companyValue = AwardData.GetAwardCompanyValue(_file),
+                    proxy_name = ProxyData.GetProxyUserName(_file),
+                    approval_name = AwardData.GetApprovalUserName(_file);
                 ProxyHomePage proxyPage = InitialPage.Go().Logon().ClickLogin().NavigateToAdminHomePage()
                     .LoginProxyAsuser().EnterUserName(proxy_name);
                 MainHomePage home = proxyPage.ProxyToMainHomePage();
@@ -314,10 +321,12 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("You are proxied in under: " + user, home.GetProxyLoginMsg(),
                     "The message of proxy login is not correct");
                 MyAwards awards = home.ClosePopUp().NavigateToMyAwards();
-                Assert.AreEqual(secondAward, awards.GetAwardName(1, 4), "The last award that someone gave you is not present");
+                Assert.AreEqual(secondAward, awards.GetAwardName(1, 4),
+                    "The last award that someone gave you is not present");
                 awards.OpenDetailsAward(1, 7);
             }
         }
+
         [Category("Regression")]
         [Category("BAE")]
         //WS-917
@@ -328,7 +337,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1052.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1052.xml";
                 string firstName = RegisterData.GetRegisterFirstName(_file),
                     lastName = RegisterData.GetRegisterLastName(_file),
                     ID = RegisterData.GetRegisterID(_file),
@@ -347,7 +356,10 @@ namespace SeleniumDemo.Tests.BAE
                     .EnterEmployeeID(ID)
                     .EnterEmployeeEmail(email)
                     .ClickRegister();
-                Assert.AreEqual("Success!\r\nWe found you. Check your inbox at " + email + " for a link to finish registration. Thank you!", registerPage.GetSuccessMsg(), "Message is not the expected");
+                Assert.AreEqual(
+                    "Success!\r\nWe found you. Check your inbox at " + email +
+                    " for a link to finish registration. Thank you!", registerPage.GetSuccessMsg(),
+                    "Message is not the expected");
             }
         }
 
@@ -361,16 +373,19 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_175.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_175.xml";
                 string preferredName = RegisterData.GetRegisterPreferedName(_file);
                 EditProfilePage profilePage = InitialPage.Go().Logon().ClickLogin().EditProfile();
-                Assert.AreEqual("Profile Settings", profilePage.GetTitleName("Profile Settings"), "Title is now well spell");
+                Assert.AreEqual("Profile Settings", profilePage.GetTitleName("Profile Settings"),
+                    "Title is now well spell");
                 profilePage.EnterPreferedName(preferredName).ClickSubmit();
                 Assert.AreEqual(preferredName, profilePage.GetShowName(preferredName), "Prefered Name is now well spell");
                 MainHomePage mainPage = profilePage.NavigateToHomePage();
-                Assert.AreEqual("Welcome " + preferredName + " to the BAE Systems, IMPACT!", mainPage.GetWelcomeTitle(), "Welcome Ttile is now well spell");
+                Assert.AreEqual("Welcome " + preferredName + " to the BAE Systems, IMPACT!", mainPage.GetWelcomeTitle(),
+                    "Welcome Ttile is now well spell");
             }
         }
+
         [Category("Regression")]
         [Category("BAE")]
 
@@ -381,9 +396,10 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1070.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1070.xml";
                 username = ProxyData.GetProxyUserName(_file);
-                string username2 = ProxyData.GetProxySecondUserName(_file), award = AwardData.GetAwardName(_file),
+                string username2 = ProxyData.GetProxySecondUserName(_file),
+                    award = AwardData.GetAwardName(_file),
                     msg = AwardData.GetAwardMessage(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -395,7 +411,8 @@ namespace SeleniumDemo.Tests.BAE
                 EventCalendar eventPage = home.NavigateToEventCalendar();
                 eventPage.ClickRecent();
                 Assert.AreEqual(username2 + "\r\nBirthday", eventPage.GetNameList(0), username2 + " is not present");
-                NominationHomePage nomination = eventPage.clickSendRecognition().SelectAward(award).FillMsg(msg).SelectImgs();
+                NominationHomePage nomination =
+                    eventPage.clickSendRecognition().SelectAward(award).FillMsg(msg).SelectImgs();
                 nomination.EmailReward().ClickSendRecognition();
                 Assert.AreEqual("Success!", nomination.GetSuccesMsg(), "Message its not success");
                 Assert.AreEqual("FINISH", nomination.GetBtnFinishLabel(), "Button finish its not correct write");
@@ -414,9 +431,10 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1084.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1084.xml";
                 username = ProxyData.GetProxyUserName(_file);
-                string username2 = ProxyData.GetProxySecondUserName(_file), award = AwardData.GetAwardName(_file),
+                string username2 = ProxyData.GetProxySecondUserName(_file),
+                    award = AwardData.GetAwardName(_file),
                     msg = AwardData.GetAwardMessage(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -427,8 +445,10 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
                 EventCalendar eventPage = home.NavigateToEventCalendar();
                 eventPage.ClickRecent();
-                Assert.AreEqual(username2 + "\r\n12 year Anniversary", eventPage.GetNameList(6), username2 + " is not present");
-                NominationHomePage nomination = eventPage.clickSendAniversaryCard().SelectAward(award).FillMsg(msg).SelectImgs();
+                Assert.AreEqual(username2 + "\r\n12 year Anniversary", eventPage.GetNameList(6),
+                    username2 + " is not present");
+                NominationHomePage nomination =
+                    eventPage.clickSendAniversaryCard().SelectAward(award).FillMsg(msg).SelectImgs();
                 nomination.EmailReward().ClickSendRecognition();
                 Assert.AreEqual("Success!", nomination.GetSuccesMsg(), "Message its not success");
                 Assert.AreEqual("FINISH", nomination.GetBtnFinishLabel(), "Button finish its not correct write");
@@ -447,27 +467,37 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1161.xml";
-                string user = AwardData.GetAwardUserName(_file), user1 = AwardData.GetAwardUserName1(_file)
-                    , user2 = AwardData.GetAwardUserName2(_file), user3 = AwardData.GetAwardUserName3(_file),
-                    user4 = AwardData.GetAwardUserName4(_file), 
-                    user5 = AwardData.GetAwardUserName5(_file), proxy_name = ProxyData.GetProxyUserName(_file);
-                    
+                _file = "Resources\\" + client + "\\TestsData\\WS_1161.xml";
+                string user = AwardData.GetAwardUserName(_file),
+                    user1 = AwardData.GetAwardUserName1(_file)
+                    ,
+                    user2 = AwardData.GetAwardUserName2(_file),
+                    user3 = AwardData.GetAwardUserName3(_file),
+                    user4 = AwardData.GetAwardUserName4(_file),
+                    user5 = AwardData.GetAwardUserName5(_file),
+                    proxy_name = ProxyData.GetProxyUserName(_file);
+
                 //Scenario 1
                 NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNomination();
                 recognitionPage.ClickMultipleRecipients()
                     .SearchEmployeeFoundMultiple(user)
                     .SearchEmployeeFoundMultiple(user1)
                     .SearchEmployeeFoundMultiple(user2).SearchEmployeeFoundMultiple(user3).ClickNextGeneric();
-                Assert.IsTrue(recognitionPage.IsStep2Block(),"Step2 is not blocked");
+                Assert.IsTrue(recognitionPage.IsStep2Block(), "Step2 is not blocked");
 
                 //Scenario 2
-                MainHomePage mainPage = recognitionPage.NavigateToAdminHomePage().LoginProxyAsuser().EnterUserName(proxy_name).ProxyToMainHomePage();
-                Step2 ste2 =mainPage.NavigateToNomination().SearchEmployeeFound(user4);
-                Assert.AreEqual("Rave",ste2.GetAwardName("Rave"),"Rave Award is not present");
+                MainHomePage mainPage =
+                    recognitionPage.NavigateToAdminHomePage()
+                        .LoginProxyAsuser()
+                        .EnterUserName(proxy_name)
+                        .ProxyToMainHomePage();
+                Step2 ste2 = mainPage.NavigateToNomination().SearchEmployeeFound(user4);
+                Assert.AreEqual("Rave", ste2.GetAwardName("Rave"), "Rave Award is not present");
                 Assert.AreEqual("Pioneer Award", ste2.GetAwardName("Pioneer Award"), "Pioneer Award is not present");
-                Assert.AreEqual("Pathfinder Award", ste2.GetAwardName("Pathfinder Award"), "Pathfinder Award is not present");
-                Assert.AreEqual("Trailblazer Award", ste2.GetAwardName("Trailblazer Award"), "Trailblazer Award is not present");
+                Assert.AreEqual("Pathfinder Award", ste2.GetAwardName("Pathfinder Award"),
+                    "Pathfinder Award is not present");
+                Assert.AreEqual("Trailblazer Award", ste2.GetAwardName("Trailblazer Award"),
+                    "Trailblazer Award is not present");
 
                 //Scenario 3
                 ste2.Refresh();
@@ -490,7 +520,7 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url),"No all Responses Get an successfully validation");
+                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url), "No all Responses Get an successfully validation");
             }
         }
 
@@ -504,13 +534,15 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1187.xml";
-                string creditcard1 = GeneralData.GetPathCreditCard1Img(_file), creditcard2 = GeneralData.GetPathCreditCard2Img(_file);
+                _file = "Resources\\" + client + "\\TestsData\\WS_1187.xml";
+                string creditcard1 = GeneralData.GetPathCreditCard1Img(_file),
+                    creditcard2 = GeneralData.GetPathCreditCard2Img(_file);
                 GoToMallHomePage redeem = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
-                Assert.AreEqual("Welcome to the Mall!",redeem.GetWelcomeMsg(),"Welcome Msg is not present or well written");
+                Assert.AreEqual("Welcome to the Mall!", redeem.GetWelcomeMsg(),
+                    "Welcome Msg is not present or well written");
                 redeem.SearchCompany("Work");
-                Assert.AreEqual(creditcard1,redeem.GetImgFirstCreditCard(),"Credit Card 1 source is not the same");
-                Assert.AreEqual(creditcard2,redeem.GetImgSecondCreditCard(),"Credit Card 2 source is not the same");
+                Assert.AreEqual(creditcard1, redeem.GetImgFirstCreditCard(), "Credit Card 1 source is not the same");
+                Assert.AreEqual(creditcard2, redeem.GetImgSecondCreditCard(), "Credit Card 2 source is not the same");
             }
         }
 
@@ -527,11 +559,12 @@ namespace SeleniumDemo.Tests.BAE
                 MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
                 Assert.IsTrue(mainPage.IsEveryoneSelected(), "Everyone is not selected in display options");
                 if (mainPage.IsFollowBannerPresent())
-                       mainPage.ClickFollow();
+                    mainPage.ClickFollow();
                 mainPage.ClickFollow();
-                Assert.IsTrue(mainPage.IsFollowBannerPresent(),"Follow banner is not present");
+                Assert.IsTrue(mainPage.IsFollowBannerPresent(), "Follow banner is not present");
                 mainPage = mainPage.NavigateToRedeemA().NavigateToHomePage();
-                Assert.AreEqual("FOLLOWING",mainPage.GetFollowingRibbonMsg(),"Following is not present or not spell well");
+                Assert.AreEqual("FOLLOWING", mainPage.GetFollowingRibbonMsg(),
+                    "Following is not present or not spell well");
             }
         }
 
@@ -546,17 +579,28 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1199.xml";
-                string company = RedeemData.GetRedeemCompany(_file), creditcardnumber=RedeemData.GetRedeemCreditCardNumber(_file)
-                    , creditcardname = RedeemData.GetRedeemCreditCardName(_file), creditcardexpiremonth = RedeemData.GetRedeemCreditCardExpireMonth(_file), creditcardexpireyear = RedeemData.GetRedeemCreditCardExpireYear(_file)
-                    , creditcardCDI = RedeemData.GetRedeemCreditCardCDI(_file), firstname = RedeemData.GetRedeemFirstName(_file),
-                    secondname = RedeemData.GetRedeemSecondName(_file),address = RedeemData.GetRedeemAddress(_file), city = RedeemData.GetRedeemCity(_file),
-                    zip = RedeemData.GetRedeemZip(_file), phone = RedeemData.GetRedeemPhone(_file), state = RedeemData.GetRedeemState(_file);
+                _file = "Resources\\" + client + "\\TestsData\\WS_1199.xml";
+                string company = RedeemData.GetRedeemCompany(_file),
+                    creditcardnumber = RedeemData.GetRedeemCreditCardNumber(_file)
+                    ,
+                    creditcardname = RedeemData.GetRedeemCreditCardName(_file),
+                    creditcardexpiremonth = RedeemData.GetRedeemCreditCardExpireMonth(_file),
+                    creditcardexpireyear = RedeemData.GetRedeemCreditCardExpireYear(_file)
+                    ,
+                    creditcardCDI = RedeemData.GetRedeemCreditCardCDI(_file),
+                    firstname = RedeemData.GetRedeemFirstName(_file),
+                    secondname = RedeemData.GetRedeemSecondName(_file),
+                    address = RedeemData.GetRedeemAddress(_file),
+                    city = RedeemData.GetRedeemCity(_file),
+                    zip = RedeemData.GetRedeemZip(_file),
+                    phone = RedeemData.GetRedeemPhone(_file),
+                    state = RedeemData.GetRedeemState(_file);
                 MainHomePage mall = InitialPage.Go().Logon().ClickLogin();
                 var gif = mall.NavigateToRedeemA().SearchCompany(company);
-                Assert.AreEqual("Amazon.com",gif.GetGifCardTitle(),"The gif card is not amazon");
+                Assert.AreEqual("Amazon.com", gif.GetGifCardTitle(), "The gif card is not amazon");
                 var gifcard = gif.SelectCompany().ClickPlusAmount().ClickPlusQuantity(20).ClickAddToCart();
-                Assert.AreEqual("Your item has been added to your cart!",gifcard.GetSuccesfullMsg(),"succesfull msg is not well spell");
+                Assert.AreEqual("Your item has been added to your cart!", gifcard.GetSuccesfullMsg(),
+                    "succesfull msg is not well spell");
                 var checkout = gifcard.ClickGoToCart().ClickCheckOut();
                 checkout.FillName(firstname)
                     .FillLastName(secondname)
@@ -565,10 +609,10 @@ namespace SeleniumDemo.Tests.BAE
                     .SelectState(state)
                     .FillZipCode(zip)
                     .FillPhoneNumber(phone);
-                Assert.IsFalse(checkout.CannotEditEmail(),"Email txt field is editable");
+                Assert.IsFalse(checkout.CannotEditEmail(), "Email txt field is editable");
                 checkout.ClickNext().FillCreditCardNumber(creditcardnumber)
                     .FillCreditCardName(creditcardname)
-                    .SelectExpireDate(creditcardexpiremonth,creditcardexpireyear)
+                    .SelectExpireDate(creditcardexpiremonth, creditcardexpireyear)
                     .FillCreditCardCDI(creditcardCDI)
                     .CheckSameBillingAddress()
                     .ClickNext();
@@ -587,15 +631,21 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1198.xml";
-                string company = RedeemData.GetRedeemCompany(_file), firstname = RedeemData.GetRedeemFirstName(_file),
-                    secondname = RedeemData.GetRedeemSecondName(_file), address = RedeemData.GetRedeemAddress(_file), city = RedeemData.GetRedeemCity(_file),
-                    zip = RedeemData.GetRedeemZip(_file), phone = RedeemData.GetRedeemPhone(_file), state = RedeemData.GetRedeemState(_file);
+                _file = "Resources\\" + client + "\\TestsData\\WS_1198.xml";
+                string company = RedeemData.GetRedeemCompany(_file),
+                    firstname = RedeemData.GetRedeemFirstName(_file),
+                    secondname = RedeemData.GetRedeemSecondName(_file),
+                    address = RedeemData.GetRedeemAddress(_file),
+                    city = RedeemData.GetRedeemCity(_file),
+                    zip = RedeemData.GetRedeemZip(_file),
+                    phone = RedeemData.GetRedeemPhone(_file),
+                    state = RedeemData.GetRedeemState(_file);
                 MainHomePage mall = InitialPage.Go().Logon().ClickLogin();
                 var gif = mall.NavigateToRedeemA().SearchCompany(company);
                 Assert.AreEqual("Amazon.com", gif.GetGifCardTitle(), "The gif card is not amazon");
                 var gifcard = gif.SelectCompany().ClickAddToCart();
-                Assert.AreEqual("Your item has been added to your cart!", gifcard.GetSuccesfullMsg(), "succesfull msg is not well spell");
+                Assert.AreEqual("Your item has been added to your cart!", gifcard.GetSuccesfullMsg(),
+                    "succesfull msg is not well spell");
                 var checkout = gifcard.ClickGoToCart().ClickCheckOut();
                 checkout.FillName(firstname)
                     .FillLastName(secondname)
@@ -606,13 +656,16 @@ namespace SeleniumDemo.Tests.BAE
                     .FillPhoneNumber(phone);
                 Assert.IsFalse(checkout.CannotEditEmail(), "Email txt field is editable");
                 checkout.ClickNext();
-                Assert.AreEqual("We got you covered Tester Stride", checkout.GetNoCreditCardUseMsg(), "The message is wrong or its possible to use the credit card");
-                Assert.AreEqual("Your rewards have covered your balance.\r\nEnjoy your gift.", checkout.GetNoCreditCardUseMsgSubtitle(), "The message is wrong or its possible to use the credit card");
+                Assert.AreEqual("We got you covered Tester Stride", checkout.GetNoCreditCardUseMsg(),
+                    "The message is wrong or its possible to use the credit card");
+                Assert.AreEqual("Your rewards have covered your balance.\r\nEnjoy your gift.",
+                    checkout.GetNoCreditCardUseMsgSubtitle(),
+                    "The message is wrong or its possible to use the credit card");
                 checkout.ClickNextPayment();
                 Assert.AreEqual("Review items", checkout.GetLastStep(), "Last step title is not right");
                 checkout.ClickCheckOut();
-                Assert.AreEqual("$25",checkout.GetAmountChecked(),"Amount Checked is not $25");
-                Assert.AreEqual("1",checkout.GetQuantityChecked(),"Quantity is not 1");
+                Assert.AreEqual("$25", checkout.GetAmountChecked(), "Amount Checked is not $25");
+                Assert.AreEqual("1", checkout.GetQuantityChecked(), "Quantity is not 1");
             }
         }
 
@@ -642,7 +695,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1212.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1212.xml";
                 string firstName = RegisterData.GetRegisterFirstName(_file),
                     lastName = RegisterData.GetRegisterLastName(_file),
                     ID = RegisterData.GetRegisterID(_file),
@@ -661,7 +714,9 @@ namespace SeleniumDemo.Tests.BAE
                     .EnterEmployeeID(ID)
                     .EnterEmployeeEmail(email)
                     .ClickRegister();
-                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+                Assert.AreEqual(
+                    "Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?",
+                    registerPage.GetSuccessMsg(), "Message is not the expected");
             }
         }
 
@@ -674,8 +729,9 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1210.xml";
-                string username1 = ProxyData.GetProxySecondUserName(_file), username = ProxyData.GetProxyUserName(_file),
+                _file = "Resources\\" + client + "\\TestsData\\WS_1210.xml";
+                string username1 = ProxyData.GetProxySecondUserName(_file),
+                    username = ProxyData.GetProxyUserName(_file),
                     username2 = ProxyData.GetProxyThirdUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -705,7 +761,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1216.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1216.xml";
                 string firstName = RegisterData.GetRegisterFirstName(_file),
                     lastName = RegisterData.GetRegisterLastName(_file),
                     ID = RegisterData.GetRegisterID(_file),
@@ -724,7 +780,9 @@ namespace SeleniumDemo.Tests.BAE
                     .EnterEmployeeID(ID)
                     .EnterEmployeeEmail(email)
                     .ClickRegister();
-                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+                Assert.AreEqual(
+                    "Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?",
+                    registerPage.GetSuccessMsg(), "Message is not the expected");
             }
         }
 
@@ -738,7 +796,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1218.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1218.xml";
                 string firstName = RegisterData.GetRegisterFirstName(_file),
                     lastName = RegisterData.GetRegisterLastName(_file),
                     ID = RegisterData.GetRegisterID(_file),
@@ -757,7 +815,9 @@ namespace SeleniumDemo.Tests.BAE
                     .EnterEmployeeID(ID)
                     .EnterEmployeeEmail(email)
                     .ClickRegister();
-                Assert.AreEqual("Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?", registerPage.GetSuccessMsg(), "Message is not the expected");
+                Assert.AreEqual(
+                    "Hmm, we couldn't find anyone matching the information you entered. Please make sure your email and Employee ID are correct. Also, maybe we have a different variation of your first or last name?",
+                    registerPage.GetSuccessMsg(), "Message is not the expected");
             }
         }
 
@@ -773,8 +833,8 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
-                Assert.AreEqual(url + "report/bae_awards", reportpage.GetCurrentUrl(),"URL is not the correct");
-                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(),"The Report takes more than 10 sec to load");
+                Assert.AreEqual(url + "report/bae_awards", reportpage.GetCurrentUrl(), "URL is not the correct");
+                Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
                 reportpage.ClickHeader(1);
                 Assert.IsFalse(reportpage.LoadTakesMoreThan10sec(), "The Report takes more than 10 sec to load");
                 reportpage.ClickHeader(2);
@@ -802,66 +862,85 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("All Awards"),"Option is not well written");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("All Awards"), "Option is not well written");
                 reportpage.ClickLeftMenu("All Awards");
-                Assert.AreEqual(url + "report/bae_awards",reportpage.GetCurrentUrl(),"Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("All Awards (Sector)"), "Option is not well written");
                 reportpage.ClickLeftMenu("All Awards (Sector)");
-                Assert.AreEqual(url + "report/bae_awards_by_sector", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_awards_by_sector", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Issued Awards"), "Option is not well written");
                 reportpage.ClickLeftMenu("Issued Awards");
-                Assert.AreEqual(url + "report/bae_issued_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_issued_awards", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Teams Awards"), "Option is not well written");
                 reportpage.ClickLeftMenu("Teams Awards");
-                Assert.AreEqual(url + "report/awards_by_manager", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/awards_by_manager", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Milestones"), "Option is not well written");
                 reportpage.ClickLeftMenu("Milestones");
                 Assert.AreEqual(url + "report/milestones", reportpage.GetCurrentUrl(), "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Received Awards"), "Option is not well written");
                 reportpage.ClickLeftMenu("Received Awards");
-                Assert.AreEqual(url + "report/bae_received_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_received_awards", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll (Sector)"), "Option is not well written");
                 reportpage.ClickLeftMenu("Payroll (Sector)");
-                Assert.AreEqual(url + "report/bae_payroll_sector", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_payroll_sector", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll"), "Option is not well written");
                 reportpage.ClickLeftMenu("Payroll");
                 Assert.AreEqual(url + "report/bae_payroll", reportpage.GetCurrentUrl(), "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Budget"), "Option is not well written");
                 reportpage.ClickLeftMenu("Budget");
-                Assert.AreEqual(url + "report/edit_budget_tool", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/edit_budget_tool", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Pending Approvals"), "Option is not well written");
                 reportpage.ClickLeftMenu("Pending Approvals");
-                Assert.AreEqual(url + "report/pending_approvals", reportpage.GetCurrentUrl(), "Url is not the expected one");
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Team Pending Approvals"), "Option is not well written");
+                Assert.AreEqual(url + "report/pending_approvals", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Team Pending Approvals"),
+                    "Option is not well written");
                 reportpage.ClickLeftMenu("Team Pending Approvals");
-                Assert.AreEqual(url + "report/pending_approvals_by_manager", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/pending_approvals_by_manager", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Proxy Access"), "Option is not well written");
                 reportpage.ClickLeftMenu("Proxy Access");
                 Assert.AreEqual(url + "report/proxy_access", reportpage.GetCurrentUrl(), "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Activity"), "Option is not well written");
                 reportpage.ClickLeftMenu("Activity");
                 Assert.AreEqual(url + "report/activities", reportpage.GetCurrentUrl(), "Url is not the expected one");
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Missing Emails (Internal)"), "Option is not well written");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Missing Emails (Internal)"),
+                    "Option is not well written");
                 reportpage.ClickLeftMenu("Missing Emails (Internal)");
-                Assert.AreEqual(url + "report/bae_missing_emails", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/bae_missing_emails", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Awards By Budget"), "Option is not well written");
                 reportpage.ClickLeftMenu("Awards By Budget");
-                Assert.AreEqual(url + "report/awards_by_budget_owner", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/awards_by_budget_owner", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Payroll By Budget"), "Option is not well written");
                 reportpage.ClickLeftMenu("Payroll By Budget");
-                Assert.AreEqual(url + "report/payroll_by_budget_owner", reportpage.GetCurrentUrl(), "Url is not the expected one");
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Issued Awards"), "Option is not well written");
+                Assert.AreEqual(url + "report/payroll_by_budget_owner", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Issued Awards"),
+                    "Option is not well written");
                 reportpage.ClickLeftMenu("Manager Issued Awards");
                 Assert.AreEqual(url + "report/manager_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Awards By Payroll (HRBP)"), "Option is not well written");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Awards By Payroll (HRBP)"),
+                    "Option is not well written");
                 reportpage.ClickLeftMenu("Awards By Payroll (HRBP)");
-                Assert.AreEqual(url + "report?reportName=bae_payroll_by_budget_owner_hrbp", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report?reportName=bae_payroll_by_budget_owner_hrbp", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
                 Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Budget Transactions"), "Option is not well written");
                 reportpage.ClickLeftMenu("Budget Transactions");
-                Assert.AreEqual(url + "report/budget_adjustments", reportpage.GetCurrentUrl(), "Url is not the expected one");
-                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Award Totals"), "Option is not well written");
+                Assert.AreEqual(url + "report/budget_adjustments", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
+                Assert.IsTrue(reportpage.IsOptLeftMenuNameDisplayed("Manager Award Totals"),
+                    "Option is not well written");
                 reportpage.ClickLeftMenu("Manager Award Totals");
-                Assert.AreEqual(url + "report/manager_issued_awards", reportpage.GetCurrentUrl(), "Url is not the expected one");
+                Assert.AreEqual(url + "report/manager_issued_awards", reportpage.GetCurrentUrl(),
+                    "Url is not the expected one");
             }
         }
 
@@ -875,14 +954,14 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                 _file = "Resources\\TestsData\\" + client + "\\WS_1231.xml";
-                 string startDate = ReportFilterData.GetStartDate(_file),
+                _file = "Resources\\" + client + "\\TestsData\\WS_1231.xml";
+                string startDate = ReportFilterData.GetStartDate(_file),
                     finishDate = ReportFilterData.GetFinishDate(_file);
                 ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
                 reportpage.ClickFilter().EnterStartDate(startDate).EnterFinishDate(finishDate).ClickSubmit();
-                Assert.AreEqual(startDate,reportpage.GetDate(0),"Start Date is not the same");
+                Assert.AreEqual(startDate, reportpage.GetDate(0), "Start Date is not the same");
                 Assert.AreEqual(finishDate, reportpage.GetDate(1), "Start Date is not the same");
-             }
+            }
         }
 
         [Category("Regression")]
@@ -896,10 +975,10 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().SelectPageSize("500");
-                int row=500 , col=7;
+                int row = 500, col = 7;
                 for (int i = 1; i < row; i++)
-                  for (int j = 1; j < col; j++)
-                     Assert.IsTrue(reportpage.IsCellFull(i,j), "Cell is empty");
+                    for (int j = 1; j < col; j++)
+                        Assert.IsTrue(reportpage.IsCellFull(i, j), "Cell is empty");
                 Assert.Pass("All cell Are full");
             }
         }
@@ -914,7 +993,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                int[] list =new int[21];
+                int[] list = new int[21];
                 for (int i = 0; i < 21; i++)
                 {
                     list[i] = Convert.ToInt32("1");
@@ -990,6 +1069,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Fail("Not all the links are loading in less than 10 secs");
             }
         }
+
         [Category("Regression")]
         [Category("BAE")]
         //WS_1274
@@ -1001,11 +1081,15 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 ReportsPage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports();
-                string issuer = reportpage.GetAwardTable(1, 8), award = reportpage.GetAwardTable(1, 4), recipient = reportpage.GetAwardTable(1, 2),
-                    awardTie = reportpage.GetAwardTable(1, 4), teamName = reportpage.GetAwardTable(1, 6), date = reportpage.GetAwardTable(1, 1),
-                    amount = reportpage.GetAwardTable(1,3);
+                string issuer = reportpage.GetAwardTable(1, 8),
+                    award = reportpage.GetAwardTable(1, 4),
+                    recipient = reportpage.GetAwardTable(1, 2),
+                    awardTie = reportpage.GetAwardTable(1, 4),
+                    teamName = reportpage.GetAwardTable(1, 6),
+                    date = reportpage.GetAwardTable(1, 1),
+                    amount = reportpage.GetAwardTable(1, 3);
                 ReportDetailsPage detailsPage = reportpage.ClickViewDetails(1);
-                Assert.AreEqual(issuer,detailsPage.GetIssuer(),"Issuer Value is not the same");
+                Assert.AreEqual(issuer, detailsPage.GetIssuer(), "Issuer Value is not the same");
                 Assert.AreEqual(award, detailsPage.GetAward(), "Issuer Value is not the same");
                 Assert.AreEqual(recipient, detailsPage.GetRecipient(), "Issuer Value is not the same");
                 Assert.AreEqual(awardTie, detailsPage.GetAwardTie(), "Issuer Value is not the same");
@@ -1025,7 +1109,8 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                BudgetHomePage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
+                BudgetHomePage reportpage =
+                    InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
                 var balance = reportpage.GetAwardTable(1, 6);
                 var editdetailsPage = reportpage.ClickEdit(1);
                 Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
@@ -1048,7 +1133,8 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                BudgetHomePage reportpage = InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
+                BudgetHomePage reportpage =
+                    InitialPage.Go().Logon().ClickLogin().NavigateToReports().ClickBudgetLeftMenu();
                 var editdetailsPage = reportpage.ClickEdit(1);
                 Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
                 Assert.AreEqual("SUBTRACT", reportpage.GetSubstratBtnTxt(), "Subtract Value is not the same");
@@ -1056,7 +1142,8 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("CLOSE", reportpage.GetBtnCloseTxt(), "close Value is not the same");
                 reportpage.ClickDeactivate();
                 editdetailsPage = reportpage.ClickEdit(1);
-                Assert.AreEqual("Budget Active Status: false",editdetailsPage.GetDeactMsg(),"Deact Text is not the same as expected");
+                Assert.AreEqual("Budget Active Status: false", editdetailsPage.GetDeactMsg(),
+                    "Deact Text is not the same as expected");
                 editdetailsPage.ClickActivate();
                 reportpage = editdetailsPage.ClickEdit(1);
                 Assert.AreEqual("ADD", reportpage.GetAddBtnTxt(), "Issuer Value is not the same");
@@ -1078,7 +1165,7 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 GoToMallHomePage mallpage = InitialPage.Go().Logon().ClickLogin().NavigateToRedeemA();
-                Assert.AreEqual("Welcome to the Mall!",mallpage.GetWelcomeMsg(),"You are not in the Welcome page");
+                Assert.AreEqual("Welcome to the Mall!", mallpage.GetWelcomeMsg(), "You are not in the Welcome page");
             }
         }
 
@@ -1091,7 +1178,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1293.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1293.xml";
                 string username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -1100,7 +1187,7 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
                     "The message of proxy login is not correct");
                 Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
-                Assert.AreEqual("SPEND SERVICE AWARD", home.GetServiceMsg(),"Service spend award msg is not correct");
+                Assert.AreEqual("SPEND SERVICE AWARD", home.GetServiceMsg(), "Service spend award msg is not correct");
             }
         }
 
@@ -1114,7 +1201,7 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
-               Assert.IsTrue(home.IsMenuArrowExpanded(),"Arrow is not expanded to see the links");
+                Assert.IsTrue(home.IsMenuArrowExpanded(), "Arrow is not expanded to see the links");
             }
         }
 
@@ -1128,7 +1215,7 @@ namespace SeleniumDemo.Tests.BAE
             else
             {
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(home.AllHeaderLinksWorkFine(url),"there is a link that is not working fine");
+                Assert.IsTrue(home.AllHeaderLinksWorkFine(url), "there is a link that is not working fine");
             }
         }
 
@@ -1142,12 +1229,13 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1334.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1334.xml";
                 string password = GeneralData.GetPassword(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 var editProfile = home.EditProfile();
                 editProfile.EnterPassword(password).EnterConfirmationPwd(password).ClickSubmit();
-                Assert.AreEqual("Invalid Data - Password must have at least: 1 numeric characters, but only has: 0",editProfile.GetErrorMsg(),"Error Msg is not show or its wrong");
+                Assert.AreEqual("Invalid Data - Password must have at least: 1 numeric characters, but only has: 0",
+                    editProfile.GetErrorMsg(), "Error Msg is not show or its wrong");
             }
         }
 
@@ -1161,14 +1249,66 @@ namespace SeleniumDemo.Tests.BAE
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1347.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1347.xml";
                 string password = GeneralData.GetPassword(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 var editProfile = home.EditProfile();
                 editProfile.EnterPassword(password).EnterConfirmationPwd(password).ClickSubmit();
-                Assert.AreEqual("Settings Successfully Saved!", editProfile.GetSuccessMsg(), "Error Msg is not show or its wrong");
+                Assert.AreEqual("Settings Successfully Saved!", editProfile.GetSuccessMsg(),
+                    "Error Msg is not show or its wrong");
                 home = editProfile.ClickOK().ClickSignOut().Logon().ClickLogin();
-                Assert.AreEqual("Welcome Tester to the BAE Systems, IMPACT!",home.GetWelcomeTitle(),"You are not in the Main Page");
+                Assert.AreEqual("Welcome Tester to the BAE Systems, IMPACT!", home.GetWelcomeTitle(),
+                    "You are not in the Main Page");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-917
+        [Test]
+        public void WS_1431()
+        {
+            if (!DataParser.ReturnExecution("WS_1431"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\" + client + "\\TestsData\\WS_1431.xml";
+                string firstname = RegisterData.GetRegisterFirstName(_file),
+                    lastname = RegisterData.GetRegisterLastName(_file),
+                    email = RegisterData.GetRegisterEmail(_file),
+                    inquiry = RegisterData.GetInquiryType(_file),
+                    msg = RegisterData.GetInquiry(_file);
+                HelpHomePage helpPage = InitialPage.Go().Logon().ClickLogin().NavigateToHelp();
+                helpPage.EnterFirstName(firstname)
+                    .EnterLastName(lastname)
+                    .EnterEmail(email)
+                    .SelectCountry(inquiry)
+                    .EnterInquiry(msg)
+                    .ClickSubmit();
+                Assert.AreEqual("Your inquiry has been successfully submitted. Please expect a response within 1 - 2 business days.", helpPage.GetSuccessfullMsg(),
+                    "The inquiry was not send successfully or the message is wrong");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void WS_1438()
+        {
+            if (!DataParser.ReturnExecution("WS_1438"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\" + client + "\\TestsData\\WS_1438.xml";
+                string username = ProxyData.GetProxyUserName(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                Assert.AreEqual("SPEND SERVICE AWARD", home.GetServiceMsg(), "Service spend award msg is not correct");
             }
         }
     }

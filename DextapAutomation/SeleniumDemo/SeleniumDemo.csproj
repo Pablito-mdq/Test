@@ -56,6 +56,7 @@
     <Compile Include="Models\TestExecutionModel.cs" />
     <Compile Include="Models\ProxyData.cs" />
     <Compile Include="Pages\AwardDetailsPopUp.cs" />
+    <Compile Include="Pages\HelpHomePage.cs" />
     <Compile Include="Pages\LeftMenu\DetailsAward.cs" />
     <Compile Include="Pages\LeftMenu\GoToMall\CompanyGiftCard.cs" />
     <Compile Include="Pages\LeftMenu\MyAwards.cs" />

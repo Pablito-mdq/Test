@@ -1,0 +1,7 @@
+<Constants>
+		  <FirstName>QA</FirstName>
+		  <LastName>Test</LastName>
+		  <Email>test@test.com</Email>
+		  <InquiryType>Other</InquiryType>
+		  <Inquiry>QA Test Inquiry</Inquiry>
+</Constants>

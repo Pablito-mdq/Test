@@ -25,7 +25,7 @@ namespace SeleniumDemo.Tests.TRU
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1057.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1057.xml";
                 string user = AwardData.GetAwardUserName(_file), msg = AwardData.GetAwardMessage(_file),
                     award = AwardData.GetAwardName(_file), value = AwardData.GetAwardValue(_file);
                 NominationHomePage recognitionPage = InitialPage.Go().Logon().ClickLogin().NavigateToNominationSpan();

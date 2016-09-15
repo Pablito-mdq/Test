@@ -46,7 +46,7 @@ namespace SeleniumDemo.Pages
         {
             string client = ConfigUtil.ImportClient("Resources\\Config.xml");
             Navigate(client != ""
-                ? string.Format("{0}", ConfigUtil.ImportConfigURL("Resources\\Url.xml", client))
+                ? string.Format("{0}", ConfigUtil.ImportConfigURL("Resources\\" + client + "\\Url.xml", client))
                 : ConfigUtil.ImportConfigURL("Resources\\Url.xml", "WorkStride"));
             return this;
         }

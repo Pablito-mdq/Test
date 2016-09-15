@@ -22,7 +22,7 @@ namespace SeleniumDemo.Tests
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1062.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1062.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -44,7 +44,7 @@ namespace SeleniumDemo.Tests
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1063.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1063.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
@@ -66,7 +66,7 @@ namespace SeleniumDemo.Tests
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1064.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1064.xml";
                 username = ProxyData.GetProxyUserName(_file);
                 string username2 = ProxyData.GetProxySecondUserName(_file), preferedName = RegisterData.GetRegisterPreferedName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();

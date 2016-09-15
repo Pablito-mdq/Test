@@ -555,5 +555,7 @@ namespace SeleniumDemo.Pages
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).GetAttribute("href");
         }
+
+        
     }
 }

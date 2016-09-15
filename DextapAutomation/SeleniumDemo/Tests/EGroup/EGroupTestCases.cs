@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests.EGroup
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1111.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1111.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file), customerImpact = AwardData.GetAwardCustomerImpact(_file),
                     bussinesImpact = AwardData.GetAwardBussinesImpact(_file),

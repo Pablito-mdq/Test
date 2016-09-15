@@ -20,8 +20,8 @@ namespace SeleniumDemo.Utils
 
         public static bool ReturnExecution(string name)
         {
-            
-            XElement list = DeserializeObject("Resources\\TestsExecution\\" + client + ".xml");
+
+            XElement list = DeserializeObject("Resources\\" + client + "\\TestsExecution\\" + client + ".xml");
             XElement result = list.XPathSelectElement(string.Format("//Test[@Name='{0}']",name));
             if (result == null)
                 return false;

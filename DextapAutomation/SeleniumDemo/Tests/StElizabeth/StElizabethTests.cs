@@ -25,7 +25,7 @@ namespace SeleniumDemo.Tests.StElizabeth
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample1.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample1.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     value = AwardData.GetAwardValue(_file),
@@ -61,7 +61,7 @@ namespace SeleniumDemo.Tests.StElizabeth
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1157_Sample2.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1157_Sample2.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),
@@ -128,7 +128,7 @@ namespace SeleniumDemo.Tests.StElizabeth
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1307.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1307.xml";
                 string company = RedeemData.GetRedeemCompany(_file),
                     firstname = RedeemData.GetRedeemFirstName(_file),
                     secondname = RedeemData.GetRedeemSecondName(_file),

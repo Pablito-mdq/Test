@@ -22,7 +22,7 @@ namespace SeleniumDemo.Tests.Pinnacol
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1096.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1096.xml";
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
                     printype = AwardData.GetAwardDeliverType(_file),

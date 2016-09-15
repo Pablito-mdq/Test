@@ -47,5 +47,15 @@ namespace SeleniumDemo.Models
         {
             return GetRegisterField(configFile, "PreferedName");
         }
+
+        public static string GetInquiryType(string configFile)
+        {
+            return GetRegisterField(configFile, "InquiryType");
+        }
+
+        public static string GetInquiry(string configFile)
+        {
+            return GetRegisterField(configFile, "Inquiry");
+        }
     }
 }

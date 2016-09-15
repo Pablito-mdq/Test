@@ -27,7 +27,7 @@ namespace SeleniumDemo.Tests.Akron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_218.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_218.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
@@ -43,7 +43,7 @@ namespace SeleniumDemo.Tests.Akron
                     .SelectValues(value)
                     .FillMsg(msg)
                     .FillReason(reason).ClickNext();
-                Assert.AreEqual("I want to email this award.", recognitionPage.GetDeliverLabel("email"),
+                Assert.AreEqual("I want to Email this award.", recognitionPage.GetDeliverLabel("email"),
                     "Label is not correct");
                 Assert.AreEqual("I want to print this award.", recognitionPage.GetDeliverLabel("print"),
                     "Label is not correct");
@@ -68,7 +68,7 @@ namespace SeleniumDemo.Tests.Akron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_956.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_956.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
@@ -120,7 +120,7 @@ namespace SeleniumDemo.Tests.Akron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1166.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
@@ -163,7 +163,7 @@ namespace SeleniumDemo.Tests.Akron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1166.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
@@ -204,7 +204,7 @@ namespace SeleniumDemo.Tests.Akron
                 Assert.Ignore();
             else
             {
-                _file = "Resources\\TestsData\\" + client + "\\WS_1166.xml";
+                _file = "Resources\\" + client + "\\TestsData\\WS_1166.xml";
                 AwardData.GetAwardImpact(_file);
                 string user = AwardData.GetAwardUserName(_file),
                     award = AwardData.GetAwardName(_file),
