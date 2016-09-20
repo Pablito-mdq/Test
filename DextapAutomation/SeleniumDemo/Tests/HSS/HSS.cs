@@ -30,7 +30,7 @@ namespace SeleniumDemo.Tests.HSS
         [Category("WesternConnecticut")]
         //WS-1112
         [Test]
-        public void WS_1112()
+        public void General_IdentifyIncorrectLinks_WS_1112()
         {
             if (!DataParser.ReturnExecution("WS_1112"))
                 Assert.Ignore();

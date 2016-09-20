@@ -16,7 +16,7 @@ namespace SeleniumDemo.Tests.Pinnacol
         [Category("Pinnacol")]
         //PIN_240
         [Test]
-        public void WS_1096()
+        public void Awards_PointsDepositSuccessfull_WS_1096()
         {
             if (!DataParser.ReturnExecution("WS_1096"))
                 Assert.Ignore();

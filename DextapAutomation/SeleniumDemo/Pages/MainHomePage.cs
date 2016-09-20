@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -556,6 +557,15 @@ namespace SeleniumDemo.Pages
             return Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Pending Approvals')]")).GetAttribute("href");
         }
 
-        
+        public bool WasUserRewarded(string user)
+        {
+            IWebElement[] names = Synchronization.WaitForElementsToBePresent(By.XPath("//h4[contains(@class,'center-align')]")).ToArray();
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (names[i].Text == user)
+                return true;
+            }
+            return false;
+        }
     }
 }

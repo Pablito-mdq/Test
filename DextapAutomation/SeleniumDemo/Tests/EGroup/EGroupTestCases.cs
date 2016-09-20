@@ -15,7 +15,7 @@ namespace SeleniumDemo.Tests.EGroup
         [Category("EGroup")]
         //WS1110
         [Test]
-        public void WS_1111()
+        public void Awards_RemoveFromOtherAppQueue_WS_1111()
         {
             if (!DataParser.ReturnExecution("WS_1111"))
                 Assert.Ignore();

@@ -27,7 +27,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1133
         [Test]
-        public void WS_1133()
+        public void Logout_ViewForNonSSO_WS_1133()
         {
             if (!DataParser.ReturnExecution("WS_1133"))
                 Assert.Ignore();
@@ -46,7 +46,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Cleveland")]
         [Test]
         //WS-65
-        public void WS_65()
+        public void Mall_LeftPanelFilters_WS_65()
         {
             if (!DataParser.ReturnExecution("WS_65"))
                 Assert.Ignore();
@@ -103,7 +103,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-317
         [Test]
-        public void WS_1059()
+        public void Profile_UpdatePhotoAvatar_WS_1059()
         {
             if (!DataParser.ReturnExecution("WS_1059"))
                 Assert.Ignore();
@@ -127,7 +127,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-317
         [Test]
-        public void WS_61()
+        public void Mall_VerifyPageLoads_WS_61()
         {
             if (!DataParser.ReturnExecution("WS_61"))
                 Assert.Ignore();
@@ -145,7 +145,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-317
         [Test]
-        public void WS_69()
+        public void Recognition_EmployeeLookUp_WS_69()
         {
             if (!DataParser.ReturnExecution("WS_69"))
                 Assert.Ignore();
@@ -197,7 +197,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-917
         [Test]
-        public void WS_1044_BAE()
+        public void Login_ValidateForm_WS_1044_BAE()
         {
             if (!DataParser.ReturnExecution("WS_1044_BAE"))
                 Assert.Ignore();
@@ -216,7 +216,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-921
         [Test]
-        public void WS_921()
+        public void Recognition_ApprovalNonMon_WS_921()
         {
             if (!DataParser.ReturnExecution("WS_921"))
                 Assert.Ignore();
@@ -268,7 +268,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-924
         [Test]
-        public void WS_924()
+        public void Recognition_ApprovalMon_WS_924()
         {
             if (!DataParser.ReturnExecution("WS_924"))
                 Assert.Ignore();
@@ -331,7 +331,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-917
         [Test]
-        public void WS_1052()
+        public void Registration_JoinNowSuccess_WS_1052()
         {
             if (!DataParser.ReturnExecution("WS_1052"))
                 Assert.Ignore();
@@ -367,7 +367,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-917
         [Test]
-        public void WS_175()
+        public void Profile_UpdatingFields_WS_175()
         {
             if (!DataParser.ReturnExecution("WS_175"))
                 Assert.Ignore();
@@ -390,7 +390,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
 
         [Test]
-        public void WS_1070()
+        public void EventCalendar_BirthDays_WS_1070()
         {
             if (!DataParser.ReturnExecution("WS_1070"))
                 Assert.Ignore();
@@ -425,7 +425,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
 
         [Test]
-        public void WS_1084()
+        public void EventCalendar_Anniversaries_WS_1084()
         {
             if (!DataParser.ReturnExecution("WS_1084"))
                 Assert.Ignore();
@@ -461,7 +461,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
 
         [Test]
-        public void WS_1161()
+        public void Recognition_RealTimeValidations_WS_1161()
         {
             if (!DataParser.ReturnExecution("WS_1161"))
                 Assert.Ignore();
@@ -513,7 +513,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1133
         [Test]
-        public void WS_1145()
+        public void General_IdentifyDeadLinks_WS_1145()
         {
             if (!DataParser.ReturnExecution("WS_1145"))
                 Assert.Ignore();
@@ -528,7 +528,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1189
         [Test]
-        public void WS_1187()
+        public void Mall_WSBrandedCards_WS_1187()
         {
             if (!DataParser.ReturnExecution("WS_1187"))
                 Assert.Ignore();
@@ -550,7 +550,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1189
         [Test]
-        public void WS_1190()
+        public void SocialStream_FollowFeatures_WS_1190()
         {
             if (!DataParser.ReturnExecution("WS_1190"))
                 Assert.Ignore();
@@ -573,7 +573,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1201
         [Test]
-        public void WS_1199()
+        public void CheckOut_InsufficientFunds_WS_1199()
         {
             if (!DataParser.ReturnExecution("WS_1199"))
                 Assert.Ignore();
@@ -625,7 +625,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1201
         [Test]
-        public void WS_1198()
+        public void CheckOut_InssuficientRewardsFunds_WS_1198()
         {
             if (!DataParser.ReturnExecution("WS_1198"))
                 Assert.Ignore();
@@ -674,7 +674,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-1202
         [Test]
-        public void WS_1202()
+        public void Mall_BrokenImages_WS_1202()
         {
             if (!DataParser.ReturnExecution("WS_1202"))
                 Assert.Ignore();
@@ -689,7 +689,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1212
         [Test]
-        public void WS_1212()
+        public void Registration_EmailUnsuccesfull_WS_1212()
         {
             if (!DataParser.ReturnExecution("WS_1212"))
                 Assert.Ignore();
@@ -723,7 +723,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void WS_1210()
+        public void Proxy_TestSearch_WS_1210()
         {
             if (!DataParser.ReturnExecution("WS_1210"))
                 Assert.Ignore();
@@ -755,7 +755,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1212
         [Test]
-        public void WS_1216()
+        public void Registration_UnsuccesfullFirstName_WS_1216()
         {
             if (!DataParser.ReturnExecution("WS_1216"))
                 Assert.Ignore();
@@ -790,7 +790,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1212
         [Test]
-        public void WS_1218()
+        public void Registration_UnsuccesfulEmpId_WS_1218()
         {
             if (!DataParser.ReturnExecution("WS_1218"))
                 Assert.Ignore();
@@ -826,7 +826,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Sprint")]
         //WS_1225
         [Test]
-        public void WS_1225()
+        public void Reports_SortingColumns_WS_1225()
         {
             if (!DataParser.ReturnExecution("WS_1225"))
                 Assert.Ignore();
@@ -855,7 +855,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1229
         [Test]
-        public void WS_1229()
+        public void Reports_TestLeftLinks_WS_1229()
         {
             if (!DataParser.ReturnExecution("WS_1229"))
                 Assert.Ignore();
@@ -948,7 +948,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1231
         [Test]
-        public void WS_1231()
+        public void Reports_DateFilterWorks_WS_1231()
         {
             if (!DataParser.ReturnExecution("WS_1231"))
                 Assert.Ignore();
@@ -968,7 +968,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1227
         [Test]
-        public void WS_1227()
+        public void Reports_VerifyContainsData_WS_1227()
         {
             if (!DataParser.ReturnExecution("WS_1227"))
                 Assert.Ignore();
@@ -987,7 +987,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1233
         [Test]
-        public void WS_1233()
+        public void Reports_TestReportLoadTimes_WS_1233()
         {
             if (!DataParser.ReturnExecution("WS_1233"))
                 Assert.Ignore();
@@ -1074,7 +1074,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1274
         [Test]
-        public void WS_1274()
+        public void Awards_ViewDetailsModal_WS_1274()
         {
             if (!DataParser.ReturnExecution("WS_1274"))
                 Assert.Ignore();
@@ -1103,7 +1103,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1274
         [Test]
-        public void WS_1277()
+        public void BudGetReport_EditModal_WS_1277()
         {
             if (!DataParser.ReturnExecution("WS_1277"))
                 Assert.Ignore();
@@ -1127,7 +1127,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1282
         [Test]
-        public void WS_1282()
+        public void BudgetReport_DeactivateModal_WS_1282()
         {
             if (!DataParser.ReturnExecution("WS_1282"))
                 Assert.Ignore();
@@ -1158,7 +1158,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS_1291
         [Test]
-        public void WS_1291()
+        public void Mall_NonMIlestone_WS_1291()
         {
             if (!DataParser.ReturnExecution("WS_1291"))
                 Assert.Ignore();
@@ -1172,7 +1172,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void WS_1293()
+        public void Mall_MilestoneRecipient_WS_1293()
         {
             if (!DataParser.ReturnExecution("WS_1293"))
                 Assert.Ignore();
@@ -1194,7 +1194,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void WS_1302()
+        public void HomePage_LeftNavigationBar_WS_1302()
         {
             if (!DataParser.ReturnExecution("WS_1302"))
                 Assert.Ignore();
@@ -1208,7 +1208,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void WS_1327()
+        public void TopNav_Verifylinksload_WS_1327()
         {
             if (!DataParser.ReturnExecution("WS_1327"))
                 Assert.Ignore();
@@ -1223,7 +1223,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-317
         [Test]
-        public void WS_1334()
+        public void ProfilePage_UpdatePassword_WS_1334()
         {
             if (!DataParser.ReturnExecution("WS_1334"))
                 Assert.Ignore();
@@ -1243,7 +1243,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-317
         [Test]
-        public void WS_1347()
+        public void Settings_UpdatePassword_WS_1347()
         {
             if (!DataParser.ReturnExecution("WS_1347"))
                 Assert.Ignore();
@@ -1266,7 +1266,7 @@ namespace SeleniumDemo.Tests.BAE
         [Category("BAE")]
         //WS-917
         [Test]
-        public void WS_1431()
+        public void ContactUs_Submission_WS_1431()
         {
             if (!DataParser.ReturnExecution("WS_1431"))
                 Assert.Ignore();
@@ -1293,22 +1293,26 @@ namespace SeleniumDemo.Tests.BAE
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void WS_1438()
+        public void Awards_MultipleRecipients_WS_1438()
         {
             if (!DataParser.ReturnExecution("WS_1438"))
                 Assert.Ignore();
             else
             {
                 _file = "Resources\\" + client + "\\TestsData\\WS_1438.xml";
-                string username = ProxyData.GetProxyUserName(_file);
+                string proxy_name = ProxyData.GetProxyUserName(_file);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
-                proxyPage.EnterUserName(username);
+                proxyPage.EnterUserName(proxy_name);
                 home = proxyPage.ProxyToMainHomePage();
                 Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
                     "The message of proxy login is not correct");
                 Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
-                Assert.AreEqual("SPEND SERVICE AWARD", home.GetServiceMsg(), "Service spend award msg is not correct");
+                NominationHomePage nominationHome = home.NavigateToNomination().ClickMultipleRecipients();
+                nominationHome.SearchEmployeeFoundMultiple("Brian Walters")
+                    .SearchEmployeeFoundMultiple("Aaron Ashing")
+                    .ClickNextGeneric();
+                Assert.AreEqual("Rave",nominationHome.GetFirstAwardName(),"the only Award name is not Rave");
             }
         }
     }

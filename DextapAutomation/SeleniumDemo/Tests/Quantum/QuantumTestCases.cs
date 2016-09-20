@@ -17,7 +17,7 @@ namespace SeleniumDemo.Tests.Quantum
         //WS_1273
         
         [Test]
-        public void WS_1273()
+        public void VisaCard_ReloadWithoutBalance_WS_1273()
         {
             if (!DataParser.ReturnExecution("WS_1273"))
                 Assert.Ignore();
@@ -42,7 +42,7 @@ namespace SeleniumDemo.Tests.Quantum
         //WS_1278
 
         [Test]
-        public void WS_1279()
+        public void VisaCard_ReloadWithBalance_WS_1279()
         {
             if (!DataParser.ReturnExecution("WS_1279"))
                 Assert.Ignore();

@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests.Akron
         [Category("Akron")]
         //WS-218
         [Test]
-        public void WS_218()
+        public void Recognition_AwardDeliveryTypes_WS_218()
         {
             if (!DataParser.ReturnExecution("WS_218"))
                 Assert.Ignore();
@@ -62,7 +62,7 @@ namespace SeleniumDemo.Tests.Akron
         [Category("Akron")]
         //WS-956
         [Test]
-        public void WS_956()
+        public void Recognition_AkronNonMonetary_WS_956()
         {
             if (!DataParser.ReturnExecution("WS_956"))
                 Assert.Ignore();
@@ -114,7 +114,7 @@ namespace SeleniumDemo.Tests.Akron
         [Category("Akron")]
         //WS-218
         [Test]
-        public void WS_1166_Sample1()
+        public void Recognition_UploadAttachments_WS_1166_Sample1()
         {
             if (!DataParser.ReturnExecution("WS_1166"))
                 Assert.Ignore();
@@ -157,7 +157,7 @@ namespace SeleniumDemo.Tests.Akron
         [Category("Akron")]
         //WS-218
         [Test]
-        public void WS_1166_Sample2()
+        public void Recognition_UploadAttachments_WS_1166_Sample2()
         {
             if (!DataParser.ReturnExecution("WS_1166"))
                 Assert.Ignore();
@@ -198,7 +198,7 @@ namespace SeleniumDemo.Tests.Akron
         [Category("Akron")]
         //WS-218
         [Test]
-        public void WS_1166_Sample3()
+        public void Recognition_UploadAttachments_WS_1166_Sample3()
         {
             if (!DataParser.ReturnExecution("WS_1166"))
                 Assert.Ignore();

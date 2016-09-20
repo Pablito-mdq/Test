@@ -95,7 +95,7 @@ namespace SeleniumDemo.Pages.NominationPage
 
         public MainHomePage ClickFinish()
         {
-            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(@href,'/welcome')]")).Click();
+            Synchronization.WaitForElementToBePresent(By.XPath("//a[contains(.,'Finish')]")).Click();
             return NewPage<MainHomePage>();
         }
 
@@ -396,6 +396,11 @@ namespace SeleniumDemo.Pages.NominationPage
         public string GetErrorMsgupload5Files()
         {
             return Synchronization.WaitForElementToBePresent(By.XPath("//span[contains(.,'You can not upload any more files.')]")).Text;
+        }
+
+        internal object GetFirstAwardName()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

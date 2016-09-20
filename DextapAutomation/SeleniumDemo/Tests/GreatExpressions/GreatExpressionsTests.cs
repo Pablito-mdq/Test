@@ -14,7 +14,7 @@ namespace SeleniumDemo.Tests.GreatExpressions
         [Category("GreatExpressions")]
         //WS-1132
         [Test]
-        public void WS_1132()
+        public void Logout_ViewForSSO_WS_1132()
         {
             if (!DataParser.ReturnExecution("WS_1132"))
                 Assert.Ignore();

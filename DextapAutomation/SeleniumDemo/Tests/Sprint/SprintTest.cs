@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         [Test]
         //WS_1118
-        public void WS_1118()
+        public void Checkout_ShippingValidateFullNamePT1_WS_1118()
         {
             if (!DataParser.ReturnExecution("WS_1118"))
                 Assert.Ignore();
@@ -50,7 +50,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         [Test]
         //WS_1120
-        public void WS_1120()
+        public void Checkout_ShippingValidateFullNamePT2_WS_1120()
         {
             if (!DataParser.ReturnExecution("WS_1120"))
                 Assert.Ignore();
@@ -82,7 +82,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //SPRIN-67
         [Test]
-        public void WS_1024()
+        public void Recognition_DistributionList_WS_1024()
         {
             if (!DataParser.ReturnExecution("WS_1024"))
                 Assert.Ignore();
@@ -130,7 +130,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1130
         [Test]
-        public void WS_1130()
+        public void Approval_BulkApprovalToolApprove_WS_1130()
         {
             if (!DataParser.ReturnExecution("WS_1130"))
                 Assert.Ignore();
@@ -200,7 +200,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1130
         [Test]
-        public void WS_1135()
+        public void Approval_BulkApprovalToolDeny_WS_1135()
         {
             if (!DataParser.ReturnExecution("WS_1135"))
                 Assert.Ignore();
@@ -270,7 +270,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1155
         [Test]
-        public void WS_1155()
+        public void Awards_BulkUploadTool_WS_1155()
         {
             if (!DataParser.ReturnExecution("WS_1155"))
                 Assert.Ignore();
@@ -296,7 +296,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         //WS-1133
         [Test]
-        public void WS_1145()
+        public void General_IdentifyDeadLinks_WS_1145()
         {
             if (!DataParser.ReturnExecution("WS_1145"))
                 Assert.Ignore();
@@ -312,7 +312,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1177
         [Test]
-        public void WS_1177()
+        public void SprintAwards_PostReleaseRegression_WS_1177()
         {
             if (!DataParser.ReturnExecution("WS_1177"))
                 Assert.Ignore();
@@ -352,7 +352,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1184
         [Test]
-        public void WS_1185()
+        public void SocialStream_Cheers_WS_1185()
         {
             if (!DataParser.ReturnExecution("WS_1185"))
                 Assert.Ignore();
@@ -374,7 +374,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1148
         [Test]
-        public void WS_1148()
+        public void SocialStream_Congrats_WS_1148()
         {
             if (!DataParser.ReturnExecution("WS_1148"))
                 Assert.Ignore();
@@ -397,7 +397,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1206
         [Test]
-        public void WS_1206()
+        public void Admin_NoPermissionNoAccess_WS_1206()
         {
             if (!DataParser.ReturnExecution("WS_1206"))
                 Assert.Ignore();
@@ -419,7 +419,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1206
         [Test]
-        public void WS_1204()
+        public void Admin_TestSupportPermissionAccess_WS_1204()
         {
             if (!DataParser.ReturnExecution("WS_1204"))
                 Assert.Ignore();
@@ -445,7 +445,7 @@ namespace SeleniumDemo.Tests.Sprint
 
         //WS_1208
         [Test]
-        public void WS_1208()
+        public void Admin_LimitedPermissionAcess_WS_1208()
         {
             if (!DataParser.ReturnExecution("WS_1208"))
                 Assert.Ignore();
