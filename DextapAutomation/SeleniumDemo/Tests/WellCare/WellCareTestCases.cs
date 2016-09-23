@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests.WellCare
         [Category("HealthAlliance")]
         //WS-1132
         [Test]
-        public void WS_1142()
+        public void HomePAge_ClienteBackgroundImg_WS_1142()
         {
             if (!DataParser.ReturnExecution("WS_1142"))
                 Assert.Ignore();
@@ -36,7 +36,7 @@ namespace SeleniumDemo.Tests.WellCare
         [Category("HealthAlliance")]
         //WS-1196
         [Test]
-        public void WS_1196()
+        public void Bugdet_FundFromReciepts_WS_1196()
         {
             if (!DataParser.ReturnExecution("WS_1196"))
                 Assert.Ignore();
@@ -71,7 +71,7 @@ namespace SeleniumDemo.Tests.WellCare
         [Category("WellCare")]
         //WS-1325
         [Test]
-        public void WS_1325()
+        public void Service_AnniversarySubmission_WS_1325()
         {
             if (!DataParser.ReturnExecution("WS_1325"))
                 Assert.Ignore();

@@ -19,7 +19,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("StElizabeth")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample1()
+        public void Recognition_NonMonAndMon_WS_1157_Sample1()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample1"))
                 Assert.Ignore();
@@ -55,7 +55,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("StElizabeth")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample2()
+        public void Recognition_NonMonAndMon_WS_1157_Sample2()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample2"))
                 Assert.Ignore();
@@ -90,7 +90,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("BAE")]
         //WS-1306
         [Test]
-        public void WS_1306()
+        public void CheckOut_NoAddresValidation_WS_1306()
         {
             if (!DataParser.ReturnExecution("WS_1306"))
                 Assert.Ignore();
@@ -122,7 +122,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("BAE")]
         //WS-1307
         [Test]
-        public void WS_1307()
+        public void CheckOut_WrongZip_WS_1307()
         {
             if (!DataParser.ReturnExecution("WS_1307"))
                 Assert.Ignore();
@@ -165,7 +165,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("BAE")]
         //WS-1307
         [Test]
-        public void WS_1313()
+        public void Cart_DeleteItem_WS_1313()
         {
             if (!DataParser.ReturnExecution("WS_1313"))
                 Assert.Ignore();
@@ -188,7 +188,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("StElizabeth")]
         //WS-1315
         [Test]
-        public void WS_1315()
+        public void Cart_PayCalculation_WS_1315()
         {
             if (!DataParser.ReturnExecution("WS_1315"))
                 Assert.Ignore();
@@ -212,7 +212,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("StElizabeth")]
         //WS-1356
         [Test]
-        public void WS_1356()
+        public void Cart_BackToMall_WS_1356()
         {
             if (!DataParser.ReturnExecution("WS_1356"))
                 Assert.Ignore();
@@ -228,7 +228,7 @@ namespace SeleniumDemo.Tests.StElizabeth
         [Category("StElizabeth")]
         //WS-1391
         [Test]
-        public void WS_1391()
+        public void SocialStream_Recognition_WS_1391()
         {
             if (!DataParser.ReturnExecution("WS_1391"))
                 Assert.Ignore();

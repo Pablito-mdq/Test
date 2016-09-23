@@ -19,7 +19,7 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         //WS-917
         [Test]
-        public void WS_1045_Textron()
+        public void Login_LoginFormRouting_WS_1045_Textron()
         {
             if (!DataParser.ReturnExecution("WS_1045_Textron"))
                 Assert.Ignore();
@@ -38,7 +38,7 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         //WS-927
         [Test]
-        public void WS_927()
+        public void Approval_StandardMonAppvTextron_WS_927()
         {
             if (!DataParser.ReturnExecution("WS_927"))
                 Assert.Ignore();
@@ -102,7 +102,7 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         
         [Test]
-        public void WS_933()
+        public void Approvals_StandardDenialTextron_WS_933()
         {
             if (!DataParser.ReturnExecution("WS_933"))
                 Assert.Ignore();
@@ -164,7 +164,7 @@ namespace SeleniumDemo.Tests.Textron
         [Category("Textron")]
         
         [Test]
-        public void WS_951()
+        public void Approvals_ChangingNomdurAppWS_951()
         {
             if (!DataParser.ReturnExecution("WS_951"))
                 Assert.Ignore();

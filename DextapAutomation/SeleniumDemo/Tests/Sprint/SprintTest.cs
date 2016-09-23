@@ -470,7 +470,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample3()
+        public void Recognition_NonMonAndMon_WS_1157_Sample3()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample3"))
                 Assert.Ignore();
@@ -503,7 +503,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample5()
+        public void Recognition_NonMonAndMon_WS_1157_Sample5()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample5"))
                 Assert.Ignore();
@@ -536,7 +536,7 @@ namespace SeleniumDemo.Tests.Sprint
         [Category("Sprint")]
         //WS_1299
         [Test]
-        public void WS_1299()
+        public void Proxy_ManagerAccess_WS_1299()
         {
             if (!DataParser.ReturnExecution("WS_1299"))
                 Assert.Ignore();

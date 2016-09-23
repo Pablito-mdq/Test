@@ -23,7 +23,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-917
         [Test]
-        public void WS_1044()
+        public void Login_ValidateLoginForm_WS_1044()
         {
             if (!DataParser.ReturnExecution("WS_1044"))
                 Assert.Ignore();
@@ -44,7 +44,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-927
         [Test]
-        public void WS_927()
+        public void Recognition_TextronStandardMonetary_WS_927()
         {
             if (!DataParser.ReturnExecution("WS_927"))
                 Assert.Ignore();
@@ -114,7 +114,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
 
         [Test]
-        public void WS_1161()
+        public void Recognition_RealTimeValidation_WS_1161()
         {
             if (!DataParser.ReturnExecution("WS_1161"))
                 Assert.Ignore();
@@ -167,7 +167,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1201
         [Test]
-        public void WS_1198()
+        public void CheckOut_UseSufficientFunds_WS_1198()
         {
             if (!DataParser.ReturnExecution("WS_1198"))
                 Assert.Ignore();
@@ -215,7 +215,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-956
         [Test]
-        public void WS_956()
+        public void Recognition_AkronNonMonetary_WS_956()
         {
             if (!DataParser.ReturnExecution("WS_956"))
                 Assert.Ignore();
@@ -269,7 +269,7 @@ namespace SeleniumDemo.Tests.SunGard
 
         //WS_1148
         [Test]
-        public void WS_1148()
+        public void SocialStream_Congrats_WS_1148()
         {
             if (!DataParser.ReturnExecution("WS_1148"))
                 Assert.Ignore();
@@ -291,7 +291,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
 
         [Test]
-        public void WS_1062()
+        public void Proxy_StandardFunctionality_WS_1062()
         {
             if (!DataParser.ReturnExecution("WS_1062"))
                 Assert.Ignore();
@@ -314,7 +314,7 @@ namespace SeleniumDemo.Tests.SunGard
 
         //WS_1184
         [Test]
-        public void WS_1185()
+        public void SocialStream_Cheers_WS_1185()
         {
             if (!DataParser.ReturnExecution("WS_1185"))
                 Assert.Ignore();
@@ -335,7 +335,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1112
         [Test]
-        public void WS_1112()
+        public void General_IdentifyIncorrectLinks_WS_1112()
         {
             if (!DataParser.ReturnExecution("WS_1112"))
                 Assert.Ignore();
@@ -374,7 +374,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample1()
+        public void Recognition_NonMonAndMon_WS_1157_Sample1()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample1"))
                 Assert.Ignore();
@@ -407,7 +407,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample2()
+        public void Recognition_NonMonAndMon_WS_1157_Sample2()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample2"))
                 Assert.Ignore();
@@ -442,7 +442,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample4()
+        public void Recognition_NonMonAndMon_WS_1157_Sample4()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample4"))
                 Assert.Ignore();
@@ -477,7 +477,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1157
         [Test]
-        public void WS_1157_Sample6()
+        public void Recognition_NonMonAndMon_WS_1157_Sample6()
         {
             if (!DataParser.ReturnExecution("WS_1157_Sample6"))
                 Assert.Ignore();
@@ -513,7 +513,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1354
         [Test]
-        public void WS_1354()
+        public void Angular_ApprovalPage_WS_1354()
         {
             if (!DataParser.ReturnExecution("WS_1354"))
                 Assert.Ignore();
@@ -536,7 +536,7 @@ namespace SeleniumDemo.Tests.SunGard
         [Category("Sungard")]
         //WS-1345
         [Test]
-        public void WS_1345_Sample1()
+        public void Award_Wizard_WS_1345_Sample1()
         {
             if (!DataParser.ReturnExecution("WS_1345_Sample1"))
                 Assert.Ignore();
