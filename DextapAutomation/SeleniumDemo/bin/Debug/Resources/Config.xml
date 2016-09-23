@@ -1,6 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Constants>
-    <BROWSER>CHROME</BROWSER>
-    <CLIENT>Akron</CLIENT>
-    <USERNAME>support@workstride.com</USERNAME>
-    <PASSWORD>Demo9494</PASSWORD>
+  <BROWSER>CHROME</BROWSER>
+  <CLIENT>all</CLIENT>
+  <USERNAME>support@workstride.com</USERNAME>
+  <PASSWORD>Demo9494</PASSWORD>
 </Constants>

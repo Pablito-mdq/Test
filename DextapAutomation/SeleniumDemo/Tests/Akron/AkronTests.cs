@@ -12,7 +12,8 @@ namespace SeleniumDemo.Tests.Akron
 {
     class NominationTests : WorkStrideBaseTest<LoginPage>
     {
-        private static string client = ConfigUtil.ImportClient("Resources\\Config.xml"); string _file = null;
+        private static string client = DataParser.Getclient();
+        string _file = null;
 
         /// <summary>
         /// 

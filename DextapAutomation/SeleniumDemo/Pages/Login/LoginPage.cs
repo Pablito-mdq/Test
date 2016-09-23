@@ -44,10 +44,10 @@ namespace SeleniumDemo.Pages
 
         public LoginPage Go()
         {
-            string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+            string client = DataParser.Getclient();
             Navigate(client != ""
                 ? string.Format("{0}", ConfigUtil.ImportConfigURL("Resources\\" + client + "\\Url.xml", client))
-                : ConfigUtil.ImportConfigURL("Resources\\Url.xml", "WorkStride"));
+                : ConfigUtil.ImportConfigURL("Resources\\Url.xml", client));
             return this;
         }
 

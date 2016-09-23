@@ -20,8 +20,8 @@ namespace SeleniumDemo.Tests.BAE
     {
         private static string _file;
         private static string username;
-        private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-        private static string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", "BAE");
+        private static string client = DataParser.Getclient();
+        private static string url = ConfigUtil.ImportConfigURL(string.Format("Resources\\{0}\\Url.xml",client), client);
 
         [Category("Regression")]
         [Category("BAE")]

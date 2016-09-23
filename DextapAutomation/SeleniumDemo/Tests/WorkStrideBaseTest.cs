@@ -8,6 +8,7 @@ namespace SeleniumDemo.Tests
 {
     class WorkStrideBaseTest<T> : AbstractNUnitTestCase<T> where T : AbstractWebPage
     {
+        
         [SetUp]
         public void setUpBrowser()
         {
