@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SeleniumDemo.Pages;
+using SeleniumDemo.Utils;
 
 namespace SeleniumDemo.Tests
 {
@@ -10,7 +11,23 @@ namespace SeleniumDemo.Tests
     class HomePageTest : WorkStrideBaseTest<LoginPage>
     {
 
-       /// <summary>
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void HomePage_LeftNavigationBar_WS_1302()
+        {
+            if (!DataParser.ReturnExecution("WS_1302"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(home.IsMenuArrowExpanded(), "Arrow is not expanded to see the links");
+            }
+        }
+
+
+        /// <summary>
         /// WS_XXX
         /// </summary>
         /// 

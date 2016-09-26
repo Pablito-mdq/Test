@@ -7,12 +7,14 @@ namespace SeleniumDemo.Tests
 {
     class LoginPageTests : WorkStrideBaseTest<LoginPage>
     {
+        string client = DataParser.Getclient();
+
 
         [Category("Regression")]
         [Category("WorkStride")]
         //WS-917
         [Test]
-        public void WS_1044()
+        public void Login_ValidateLoginForm_WS_1044()
         {
             if (!DataParser.ReturnExecution("WS_1044"))
                 Assert.Ignore();
@@ -33,7 +35,7 @@ namespace SeleniumDemo.Tests
         [Category("WorkStride")]
         //WS-917
         [Test]
-        public void WS_1045()
+        public void Login_TestLoginFormRouting_WS_1045()
         {
             if (!DataParser.ReturnExecution("WS_1045"))
                 Assert.Ignore();
@@ -69,7 +71,7 @@ namespace SeleniumDemo.Tests
         [Category("WorkStride")]
         //WS-917
         [Test]
-        public void WS_1046()
+        public void Login_ForgotPassword_WS_1046()
         {
             if (!DataParser.ReturnExecution("WS_1046"))
                 Assert.Ignore();
@@ -88,7 +90,7 @@ namespace SeleniumDemo.Tests
         [Category("WorkStride")]
         //WS-917
         [Test]
-        public void WS_1048()
+        public void LandingPage_TestContactUs_WS_1151()
         {
             if (!DataParser.ReturnExecution("WS_1048"))
                 Assert.Ignore();
@@ -138,6 +140,80 @@ namespace SeleniumDemo.Tests
                     "The user exists or the msg  not the correct");
             }
         }*/
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1133
+        [Test]
+        public void Logout_ViewForNonSSO_WS_1133()
+        {
+            if (!DataParser.ReturnExecution("WS_1133"))
+                Assert.Ignore();
+            else
+            {
+                LoginPage MainPage = InitialPage.Go().Logon();
+                string originalURL = MainPage.GetCurrentUrl();
+                LoginPage loginPage = MainPage.ClickLogin().ClickLogOut();
+                string newURL = loginPage.GetCurrentUrl();
+                Assert.AreEqual(originalURL, newURL, "The login page is not the same for SSO users");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-917
+        [Test]
+        public void Login_ValidateForm_WS_1044_BAE()
+        {
+            if (!DataParser.ReturnExecution("WS_1044_BAE"))
+                Assert.Ignore();
+            else
+            {
+                LoginPage loginPage = InitialPage.Go();
+                Assert.AreEqual("IMPACT ID", loginPage.GetUsernameTitle(), "title is not IMPACT ID");
+                Assert.AreEqual("Password", loginPage.GetPasswordTitle(), "title is not Password");
+                Assert.IsTrue(loginPage.IsUsernameFieldAvl(), "username field is not available");
+                Assert.IsTrue(loginPage.IsPasswordFieldAvl(), "username field is not available");
+            }
+
+        }
+
+
+        [Category("Regression")]
+        [Category("GreatExpressions")]
+        //WS-1132
+        [Test]
+        public void Logout_ViewForSSO_WS_1132()
+        {
+            if (!DataParser.ReturnExecution("WS_1132"))
+                Assert.Ignore();
+            else
+            {
+                LoginPage MainPage = InitialPage.Go().Logon();
+                string originalURL = MainPage.GetCurrentUrl();
+                LoginPage loginPage = MainPage.ClickLogin().ClickLogOut();
+                string newURL = loginPage.GetCurrentUrl();
+                Assert.AreNotEqual(originalURL, newURL, "The login page is not the same for SSO users");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("Textron")]
+        //WS-917
+        [Test]
+        public void Login_LoginFormRouting_WS_1045_Textron()
+        {
+            if (!DataParser.ReturnExecution("WS_1045_Textron"))
+                Assert.Ignore();
+            else
+            {
+                LoginPage loginPage = InitialPage.Go().FailLogon();
+                loginPage.ClickLogin();
+                Assert.IsTrue(loginPage.WasFailLogin(), "You are login");
+                loginPage.FailLogonTextron().ClickLoginTextron();
+                Assert.AreEqual("Authentication Failed. Click Here to enable your new portal password.", loginPage.GetFailLoginMsgTextron(),
+                    "The message is not the correct for fail login");
+            }
+        }
 
     }
 }

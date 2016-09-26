@@ -88,5 +88,61 @@ namespace SeleniumDemo.Tests
                 Assert.IsTrue(adminPage.IsAdminLoginUsernameLevel(preferedName), "You are not in the login leveled like support,admin or proxy");
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void Proxy_TestSearch_WS_1210()
+        {
+            if (!DataParser.ReturnExecution("WS_1210"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\" + client + "\\TestsData\\WS_1210.xml";
+                string username1 = ProxyData.GetProxySecondUserName(_file),
+                    username = ProxyData.GetProxyUserName(_file),
+                    username2 = ProxyData.GetProxyThirdUserName(_file);
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username + " Ahsing", home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                home = home.ExitProxy().EnterUserName(username1).ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + "Aaron " + username1, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+                home = home.ClosePopUp().ExitProxy().EnterUserName(username2).ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username2, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+            }
+        }
+
+
+        [Category("Regression")]
+        [Category("Sungard")]
+
+        [Test]
+        public void Proxy_StandardFunctionality_WS_1062()
+        {
+            if (!DataParser.ReturnExecution("WS_1062"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\" + client + "\\TestsData\\WS_1062.xml";
+                username = ProxyData.GetProxyUserName(_file);
+                MainHomePage home = InitialPage.Go().EnterId(client).Logon().ClickLogin();
+                ProxyHomePage proxyPage = home.NavigateToAdminHomePage().LoginProxyAsuser();
+                proxyPage.EnterUserName(username);
+                home = proxyPage.ProxyToMainHomePage();
+                Assert.AreEqual("You are proxied in under: " + username, home.GetProxyLoginMsg(),
+                    "The message of proxy login is not correct");
+                Assert.AreEqual("Exit Proxy", home.GetExitMsg(), "The exit proxy link is not present");
+            }
+        }
+
+
     }
 }
