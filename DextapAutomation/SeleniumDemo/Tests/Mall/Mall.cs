@@ -21,7 +21,7 @@ namespace SeleniumDemo.Tests
         //WS-65
         public void Mall_LeftPanelFilters_WS_65()
         {
-            if (!DataParser.ReturnExecution("WS_65"))
+            if (false)
                 Assert.Ignore();
             else
             {
@@ -120,7 +120,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Mall_BrokenImages_WS_1202()
         {
-            if (!DataParser.ReturnExecution("WS_1202"))
+            if (false)
                 Assert.Ignore();
             else
             {

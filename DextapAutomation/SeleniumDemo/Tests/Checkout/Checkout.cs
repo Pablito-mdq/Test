@@ -202,7 +202,7 @@ namespace SeleniumDemo.Tests
         //WS_1118
         public void Checkout_ShippingValidateFullNamePT1_WS_1118()
         {
-            if (!DataParser.ReturnExecution("WS_1118"))
+            if (false)
                 Assert.Ignore();
             else
             {
@@ -232,7 +232,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void CheckOut_NoAddresValidation_WS_1306()
         {
-            if (!DataParser.ReturnExecution("WS_1306"))
+            if (false)
                 Assert.Ignore();
             else
             {

@@ -24,7 +24,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Cart_DeleteItem_WS_1313()
         {
-            if (!DataParser.ReturnExecution("WS_1313"))
+            if (false)
                 Assert.Ignore();
             else
             {
@@ -71,7 +71,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Cart_BackToMall_WS_1356()
         {
-            if (!DataParser.ReturnExecution("WS_1356"))
+            if (false)
                 Assert.Ignore();
             else
             {

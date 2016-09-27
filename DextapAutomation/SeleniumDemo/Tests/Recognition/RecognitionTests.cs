@@ -363,7 +363,7 @@ namespace SeleniumDemo.Tests
         [Test]
         public void Recognition_EmployeeLookUp_WS_69()
         {
-            if (!DataParser.ReturnExecution("WS_69"))
+            if (false)
                 Assert.Ignore();
             else
             {

@@ -14,18 +14,20 @@ namespace SeleniumDemo.Tests
     /// <summary>
     /// 
     /// </summary>
+
     [Category("Regression")]
     class HomePageTest : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
         private static string client = DataParser.Getclient();
+        private static string url = ConfigUtil.ImportConfigURL(string.Format("Resources\\{0}\\Url.xml", client), client);
 
         [Category("Regression")]
         [Category("BAE")]
         [Test]
         public void HomePage_LeftNavigationBar_WS_1302()
         {
-            if (!DataParser.ReturnExecution("WS_1302"))
+            if (false)
                 Assert.Ignore();
             else
             {
@@ -33,6 +35,22 @@ namespace SeleniumDemo.Tests
                 Assert.IsTrue(home.IsMenuArrowExpanded(), "Arrow is not expanded to see the links");
             }
         }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-1133
+        [Test]
+        public void Homepage_IdentifyDeadLinks_WS_1145()
+        {
+            if (!DataParser.ReturnExecution("WS_1145"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url), "No all Responses Get an successfully validation");
+            }
+        }
+
 
         [Category("Regression")]
         [Category("HSS")]
