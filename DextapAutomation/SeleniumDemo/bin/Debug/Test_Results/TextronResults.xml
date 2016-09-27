@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run start-time="2016-09-27 14:07:52Z">
-  <command-line><![CDATA[NUNIT3-CONSOLE  SeleniumDemo.dll --testlist=RunLists/TextronRunList.txt --work=Test_Results --result=TextronResults.xml --params Client=Textron]]></command-line>
-</test-run>
