@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using SeleniumDemo.Tests.Sprint;
 
-namespace SeleniumDemo.Tests.Awards
+namespace SeleniumDemo.Tests
 {
     class Awards : WorkStrideBaseTest<LoginPage>
     {

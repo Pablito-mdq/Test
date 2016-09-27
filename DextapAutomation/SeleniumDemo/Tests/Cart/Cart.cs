@@ -6,7 +6,7 @@ using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.Cart
+namespace SeleniumDemo.Tests
 {
     internal class Cart : WorkStrideBaseTest<LoginPage>
     {

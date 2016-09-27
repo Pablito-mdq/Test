@@ -10,7 +10,7 @@ namespace SeleniumDemo.Tests
     {
         private static string _file;
         private static string username;
-        private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
+        private static string client = DataParser.Getclient();
 
         [Category("Regression")]
         [Category("WorkStride")]

@@ -139,7 +139,7 @@ namespace TestRunner.Methods
             }
 
         }
-        public static void SendEmailWithRecipients(string Body)
+        public static void SendEmailWithRecipients()
         {
 
             int HowManyUsers;
@@ -192,7 +192,7 @@ namespace TestRunner.Methods
                 }
             }
             PrintMessage("Sending Email.....");
-            SendEmail(Users,Body);
+            SendEmail(Users);
         }
 
         public static string CheckAndSetUrl(string client)
@@ -342,7 +342,7 @@ namespace TestRunner.Methods
             }
         }
 
-        public static void SendEmail(List<string> Recipients,string EMailBody)
+        public static void SendEmail(List<string> Recipients)
         {
             string Sender;
             string Password;
@@ -355,7 +355,7 @@ namespace TestRunner.Methods
 
             MailMessage message = new MailMessage(Sender, Recipients[0]);
             message.Subject = "Test Results";
-            message.Body = string.Format(@"Here are the test results from todays Run, they took: {0} long to Run",EMailBody);
+            message.Body = "Attached are results from todays test run";
             SmtpClient client = new SmtpClient("mail.giveanything.com");
             client.UseDefaultCredentials = false;
             client.Credentials = new NetworkCredential(Sender, Password);

@@ -4,8 +4,8 @@ using SeleniumDemo.Utils;
 using SeleniumDemo.Models;
 using System.Windows.Forms;
 
-namespace SeleniumDemo.Tests.ProfilePage
-{
+namespace SeleniumDemo.Tests
+{ 
     class ProfilePage : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;

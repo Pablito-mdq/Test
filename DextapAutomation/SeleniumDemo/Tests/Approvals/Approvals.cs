@@ -9,7 +9,7 @@ using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.Approvals
+namespace SeleniumDemo.Tests
 {
     class Approvals : WorkStrideBaseTest<LoginPage>
     {

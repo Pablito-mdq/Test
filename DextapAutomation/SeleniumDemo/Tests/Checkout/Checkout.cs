@@ -6,8 +6,8 @@ using SeleniumDemo.Pages.VisaCenter;
 using SeleniumDemo.Utils;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 
-namespace SeleniumDemo.Tests.Checkout
-{
+namespace SeleniumDemo.Tests
+{ 
     class Checkout : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;

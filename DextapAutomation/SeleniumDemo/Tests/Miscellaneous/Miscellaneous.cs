@@ -10,7 +10,7 @@ using SeleniumDemo.Pages.LeftMenu.GoToMall;
 using SeleniumDemo.Pages.LeftMenu;
 using SeleniumDemo.Pages.LeftMenu.MyRedemption;
 
-namespace SeleniumDemo.Tests.Miscellaneous
+namespace SeleniumDemo.Tests
 {
     class Miscellaneous : WorkStrideBaseTest<LoginPage>
     {
@@ -246,6 +246,49 @@ namespace SeleniumDemo.Tests.Miscellaneous
                 Assert.AreEqual("My Redemptions", home.GetLeftMenuOpts(5), "Link is Broken or not well written");
                 MyRedemptions redemption = home.NavigateToMyRedemptions();
                 Assert.AreEqual(url + "my_redemptions#/", home.GetCurrentUrl(), "Url is Broken or not well written or redirects to other pages");
+            }
+        }
+
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void TopNav_Verifylinksload_WS_1327()
+        {
+            if (!DataParser.ReturnExecution("WS_1327"))
+                Assert.Ignore();
+            else
+            {
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(home.AllHeaderLinksWorkFine(url), "there is a link that is not working fine");
+            }
+        }
+
+
+        [Category("Regression")]
+        [Category("BAE")]
+        //WS-917
+        [Test]
+        public void ContactUs_Submission_WS_1431()
+        {
+            if (!DataParser.ReturnExecution("WS_1431"))
+                Assert.Ignore();
+            else
+            {
+                _file = "Resources\\" + client + "\\TestsData\\WS_1431.xml";
+                string firstname = RegisterData.GetRegisterFirstName(_file),
+                    lastname = RegisterData.GetRegisterLastName(_file),
+                    email = RegisterData.GetRegisterEmail(_file),
+                    inquiry = RegisterData.GetInquiryType(_file),
+                    msg = RegisterData.GetInquiry(_file);
+                HelpHomePage helpPage = InitialPage.Go().Logon().ClickLogin().NavigateToHelp();
+                helpPage.EnterFirstName(firstname)
+                    .EnterLastName(lastname)
+                    .EnterEmail(email)
+                    .SelectCountry(inquiry)
+                    .EnterInquiry(msg)
+                    .ClickSubmit();
+                Assert.AreEqual("Your inquiry has been successfully submitted. Please expect a response within 1 - 2 business days.", helpPage.GetSuccessfullMsg(),
+                    "The inquiry was not send successfully or the message is wrong");
             }
         }
 

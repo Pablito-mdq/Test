@@ -6,7 +6,7 @@ using SeleniumDemo.Utils;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Pages.LeftMenu.GoToMall;
 
-namespace SeleniumDemo.Tests.Mall
+namespace SeleniumDemo.Tests
 {
     class Mall : WorkStrideBaseTest<LoginPage>
     {

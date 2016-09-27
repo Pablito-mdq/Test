@@ -9,8 +9,8 @@ using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Pages.AdminPage;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.Recognition
-{
+namespace SeleniumDemo.Tests
+{ 
     class Recognition : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;

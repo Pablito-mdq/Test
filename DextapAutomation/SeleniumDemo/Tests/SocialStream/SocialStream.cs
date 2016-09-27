@@ -10,7 +10,7 @@ using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Tests.Sprint;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.SocialStream
+namespace SeleniumDemo.Tests
 {
     internal class SocialStream : WorkStrideBaseTest<LoginPage>
     {

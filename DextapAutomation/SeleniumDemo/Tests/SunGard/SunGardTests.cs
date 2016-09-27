@@ -11,13 +11,13 @@ using SeleniumDemo.Pages.NominationPage;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.SunGard
+namespace SeleniumDemo.Tests
 {
     internal class SungardTests : WorkStrideBaseTest<LoginPage>
     {
         private static string _file;
-        private static string client = ConfigUtil.ImportClient("Resources\\Config.xml");
-      
+        private static string client = DataParser.Getclient();
+
 
         [Category("Regression")]
         [Category("Sungard")]

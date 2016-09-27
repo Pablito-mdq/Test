@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Constants>
   <BROWSER>CHROME</BROWSER>
-  <CLIENT>BAE</CLIENT>
+  <CLIENT>all</CLIENT>
   <USERNAME>support@workstride.com</USERNAME>
   <PASSWORD>Demo9494</PASSWORD>
 </Constants>

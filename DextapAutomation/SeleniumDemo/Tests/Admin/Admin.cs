@@ -7,7 +7,7 @@ using SeleniumDemo.Pages.Reports;
 using SeleniumDemo.Tests.Pages;
 using SeleniumDemo.Utils;
 
-namespace SeleniumDemo.Tests.Admin
+namespace SeleniumDemo.Tests
 {
     class Admin : WorkStrideBaseTest<LoginPage>
     {

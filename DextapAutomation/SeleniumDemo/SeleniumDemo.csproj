@@ -86,7 +86,6 @@
     <Compile Include="Pages\Reports\ReportDetailsPage.cs" />
     <Compile Include="Tests\Mall\Mall.cs" />
     <Compile Include="Tests\ProfilePage\ProfilePage.cs" />
-    <Compile Include="Tests\HomePage\HomePage.cs" />
     <Compile Include="Pages\LeftMenu\MyRedemption\MyRedemptions.cs" />
     <Compile Include="Pages\LeftMenu\SendAppreciation\SendAppreciationPage.cs" />
     <Compile Include="Pages\LeftMenu\SocialStreamHomePage.cs" />

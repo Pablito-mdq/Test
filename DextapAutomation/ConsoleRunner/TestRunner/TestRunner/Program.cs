@@ -20,8 +20,6 @@ namespace TestRunner
             string BatchFileName = null;
             string UrlToRun = null;
             string Browser = null;
-            Stopwatch Watch = new Stopwatch();
-            
 
             //Used to set all the config arguments before the tests run.
             while (true)
@@ -46,15 +44,13 @@ namespace TestRunner
             //Cleans up results directory
             Util.CheckDirectoryAndDelete(Client);
 
-           // Executes Tests
+            //Executes Tests
             Util.PrintMessage("Running Tests...");
-            Watch.Start();
             Util.ExecuteProcess(BatchFileName);
-            Watch.Stop();
 
-          //  Executes Test Report And Sends Email
+            //Executes Test Report And Sends Email
             Util.ExecuteTestReporter(Client);
-            Util.SendEmailWithRecipients(Watch.ToString());
+            Util.SendEmailWithRecipients();
             //Util.KillLeftOverProcesses();
 
         }
