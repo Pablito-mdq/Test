@@ -43,6 +43,7 @@ namespace TestRunner.Methods
 
         public static string WorkingDirectory()
         {
+            //Last two cases are for AWS server
             string WDir = null;
             string User = Environment.UserName.ToLower();
             switch (User)
@@ -57,6 +58,12 @@ namespace TestRunner.Methods
 
                 case "pablorojas":
                     WDir = @"C:\Users\Pablo\Documents\workstride-automated-tests\DextapAutomation\SeleniumDemo\bin\Debug\";
+                    break;
+                case "vchirinian":
+                    WDir= @"C:\workstride-automated-tests\DextapAutomation\SeleniumDemo\bin\Debug\";
+                    break;
+                case "yphadke":
+                    WDir= @"C:\workstride-automated-tests\DextapAutomation\SeleniumDemo\bin\Debug\"; 
                     break;
             }
 

@@ -20,22 +20,6 @@ namespace SeleniumDemo.Tests
 
 
 
-
-        [Category("Regression")]
-        [Category("Sprint")]
-        //WS-1133
-        [Test]
-        public void General_IdentifyDeadLinks_WS_1145()
-        {
-            if (!DataParser.ReturnExecution("WS_1145"))
-                Assert.Ignore();
-            else
-            {
-                MainHomePage mainPage = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(mainPage.GetAllHttpLinkResponses(url), "No all Responses Get an successfully validation");
-            }
-        }
-
      
         [Category("Regression")]
         [Category("Sprint")]

@@ -19,6 +19,7 @@ namespace SeleniumDemo.Tests
         private static string client = DataParser.Getclient();
         private static string url = ConfigUtil.ImportConfigURL(string.Format("Resources\\{0}\\Url.xml", client), client);
 
+
         [Category("Regression")]
         [Category("BAE")]
         [Category("Textron")]
@@ -236,19 +237,7 @@ namespace SeleniumDemo.Tests
             }
         }
 
-        [Category("Regression")]
-        [Category("BAE")]
-        [Test]
-        public void TopNav_Verifylinksload_WS_1327()
-        {
-            if (!DataParser.ReturnExecution("WS_1327"))
-                Assert.Ignore();
-            else
-            {
-                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(home.AllHeaderLinksWorkFine(url), "there is a link that is not working fine");
-            }
-        }
+       
 
 
         [Category("Regression")]

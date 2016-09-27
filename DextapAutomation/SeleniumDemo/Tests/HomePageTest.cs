@@ -25,19 +25,20 @@ namespace SeleniumDemo.Tests
         [Category("Regression")]
         [Category("BAE")]
         [Test]
-        public void HomePage_LeftNavigationBar_WS_1302()
+        public void HomePage_TopNav_Verifylinksload_WS_1327()
         {
-            if (false)
+            if (!DataParser.ReturnExecution("WS_1327"))
                 Assert.Ignore();
             else
             {
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
-                Assert.IsTrue(home.IsMenuArrowExpanded(), "Arrow is not expanded to see the links");
+                Assert.IsTrue(home.AllHeaderLinksWorkFine(url), "there is a link that is not working fine");
             }
         }
 
+
         [Category("Regression")]
-        [Category("BAE")]
+        [Category("Sprint")]
         //WS-1133
         [Test]
         public void Homepage_IdentifyDeadLinks_WS_1145()
@@ -51,6 +52,19 @@ namespace SeleniumDemo.Tests
             }
         }
 
+        [Category("Regression")]
+        [Category("BAE")]
+        [Test]
+        public void HomePage_LeftNavigationBar_WS_1302()
+        {
+            if (false)
+                Assert.Ignore();
+            else
+            {
+                MainHomePage home = InitialPage.Go().Logon().ClickLogin();
+                Assert.IsTrue(home.IsMenuArrowExpanded(), "Arrow is not expanded to see the links");
+            }
+        }
 
         [Category("Regression")]
         [Category("HSS")]
