@@ -13,7 +13,7 @@ namespace SeleniumDemo.Utils
         public static string Getclient()
         {
             TestParameters TP = TestContext.Parameters;
-            string Client = TP.Get("Client");
+            string Client = TP.Get("Client").ToLower();
             return Client != null ? Client : Client = ConfigUtil.ImportClient("Resources\\Config.xml");
 
         }

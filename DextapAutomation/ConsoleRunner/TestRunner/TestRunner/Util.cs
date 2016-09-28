@@ -77,7 +77,7 @@ namespace TestRunner.Methods
             PrintMessage("Please set what client you would like to run the tests for: ");
             while (true)
             {
-                Client = Console.ReadLine().Trim();
+                Client = Console.ReadLine().ToLower().Trim();
                 PrintMessage(string.Format("Is this the correct client Name: {0}, type < Y or N >", Client));
                 Confirmation = Console.ReadLine().ToLower().Trim();
                 if (Confirmation != "y" && Confirmation != "n")
