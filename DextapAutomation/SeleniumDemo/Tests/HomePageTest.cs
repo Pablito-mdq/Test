@@ -88,7 +88,6 @@ namespace SeleniumDemo.Tests
                 Assert.Ignore();
             else
             {
-                string url = ConfigUtil.ImportConfigURL("Resources\\Url.xml", client);
                 MainHomePage home = InitialPage.Go().Logon().ClickLogin();
                 switch (client)
                 {

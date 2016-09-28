@@ -77,7 +77,7 @@ namespace TestRunner.Methods
             PrintMessage("Please set what client you would like to run the tests for: ");
             while (true)
             {
-                Client = Console.ReadLine().ToLower().Trim();
+                Client = Console.ReadLine().Trim();
                 PrintMessage(string.Format("Is this the correct client Name: {0}, type < Y or N >", Client));
                 Confirmation = Console.ReadLine().ToLower().Trim();
                 if (Confirmation != "y" && Confirmation != "n")
@@ -87,7 +87,7 @@ namespace TestRunner.Methods
                 else
                 {
                     if (Client.Length > 2 && Confirmation == "y")
-                        return Client;
+                        return Client.ToLower();
                     else
                         PrintMessage("Please enter a correct client name");
                 }
@@ -354,7 +354,7 @@ namespace TestRunner.Methods
             string Sender;
             string Password;
 
-            using (StreamReader Reader = new StreamReader(WorkingDirectory() + @"EmailCreds.txt"))
+            using (StreamReader Reader = new StreamReader(@"C:\crd\EmailCreds.txt"))
             {
                 Sender = Reader.ReadLine().Trim();
                 Password = Reader.ReadLine().Trim();
